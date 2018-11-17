@@ -1,4 +1,4 @@
-﻿#include "CMenuScene.h"
+#include "CMenuScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "Common/const.h"

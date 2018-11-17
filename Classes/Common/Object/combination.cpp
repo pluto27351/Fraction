@@ -39,9 +39,7 @@ combination::combination(const char *name, float scale){
 
 combination::~combination()
 {
-	//delete[] img;
-	//delete _StickyData;
-
+    
 }
 
 

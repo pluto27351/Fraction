@@ -7,31 +7,28 @@
 class CTeachScene : public cocos2d::Layer
 {
 public:
-	~CTeachScene();
-	// ¤Ş¤JªºÃş§OÅÜ¼Æ
-	CHandDrawing	 *_handDrawing;
-	CQueController   *_queController;  // °İÃDÅª¨ú»PÅã¥Üªº±±¨î¾¹
-
-	int _curMode;		// ¬ö¿ı¥Ø«e¾Ş§@ªº¼Ò¦¡¬Oµe¹Ï¡B²¾°Êª«Åé©Î¨ä¥L
-	bool _bFracBoardOn;	// ¥Ø«e¦³Åã¥Ü¥­¤À¿ï¶µ
-
-	//  Ãş§O¤ºªº¨ç¦¡
-	static cocos2d::Scene* createScene(int unit);
-
-	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-	virtual bool init();
-	void doStep(float dt);
-	void setCreate(int unit);
-
-	CButton _menuBtn;
-
-	//Ä²¸I
-	cocos2d::EventListenerTouchAllAtOnce *_listener1;
-	void onTouchesBegan(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
-	void onTouchesMoved(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
-	void onTouchesEnded(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
-	void OnTouchesCancelled(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
-
-																	   // implement the "static create()" method manually
-	CREATE_FUNC(CTeachScene);
+    ~CTeachScene();
+    
+    CHandDrawing     *_handDrawing;    // ç¹ªåœ–å€
+    CQueController   *_queController;  // é¡Œç›®å€
+    
+    int _curMode;        //  æ¨¡å¼ ç­†ï¼æ“¦å¸ƒï¼æ‰‹
+    bool _bFracBoardOn;    //  å¹³åˆ†å€å¡Šæ˜¯å¦è¢«èµ·å‹•
+    
+    static cocos2d::Scene* createScene(int unit);
+    
+    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+    virtual bool init();
+    void doStep(float dt);
+    void setCreate(int unit);
+    
+    
+    cocos2d::EventListenerTouchAllAtOnce *_listener1;
+    void onTouchesBegan(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
+    void onTouchesMoved(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
+    void onTouchesEnded(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
+    void OnTouchesCancelled(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event);
+    
+    // implement the "static create()" method manually
+    CREATE_FUNC(CTeachScene);
 };

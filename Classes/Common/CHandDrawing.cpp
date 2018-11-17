@@ -1,4 +1,4 @@
-﻿#include "CHandDrawing.h"
+#include "CHandDrawing.h"
 
 #define BRUSH_SIZE 0.35f
 

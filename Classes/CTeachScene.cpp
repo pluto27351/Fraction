@@ -98,7 +98,6 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 				_curMode = _handDrawing->getMode();
 			}
 		if (_queController->touchesEnded(touchLoc, touchId, _curMode)) {
-			// check 目前是否有開啟平分選單
 			if (_queController->getBoardStatus())
 				_bFracBoardOn = true;
 			else _bFracBoardOn = false;

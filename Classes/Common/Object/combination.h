@@ -11,29 +11,31 @@ USING_NS_CC;
 using namespace cocostudio::timeline;
 using namespace ui;
 
-struct StickyData 
+struct StickyData
 {
-	float angle;
-	Point pos;
-	bool isSticky = false;
+    float angle;
+    Point pos;
+    bool isSticky = false;
 };
 
 class combination : public cocos2d::Node
 {
 private:
     TouchSprite *img;
-    int n;  //¹Ï¤ù¼Æ¶q
-	int touchedAmount; //³QÂIÀ»ªº¼Æ¶q
-	TouchSprite *rotateImg;
-	Point rotatePos;
-	int rotateId;
-
-	StickyData *_StickyData;
-	float _StickyRadius;        //ºÏÅK¥b®|
-	void Sticky(TouchSprite*);
+    TouchSprite *rotateImg;
+    
+    int n;  //åœ–ç‰‡æ•¸é‡
+    int touchedAmount; //è§¸æ§é»æ•¸é‡
+    
+    Point rotatePos;
+    int rotateId;
+    
+    StickyData *_StickyData;
+    float _StickyRadius;        //âˆ«Å“â‰ˆKâ€¢bÃ†|
+    void Sticky(TouchSprite*);
 public:
     combination(const char *name, float scale);
-	~combination();
+    ~combination();
     void touchesBegin(cocos2d::Point inPos, int id);
     bool touchesMoved(cocos2d::Point inPos, int id);
     void touchesEnded(cocos2d::Point inPos, int id);

@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "Object/COnOffButton.h"
 #include "Object/CButton.h"
 #include "Object/CEqualController.h"
-#include "Object/faction.h"
+#include "Object/fraction.h"
 #include "Object/combination.h"
 #include "const.h"
 
@@ -46,12 +46,12 @@ private:
 	CEqualController *_equalController;
 
 	combination *try_img;
-	Node *answer;
-
+	//Node *answer;
+    fraction * try_topic;
 
 	Layer *_parentLayer;
 
 	void setBtn(Node &rootNode, cocos2d::Layer &parent);
 
-	void reset(int queNO = 0, int equal = 0);  	//queNo =  題號變化量  / equal = 數字變化 (0 = 隨機)
+	void reset(int queNO , int equal);  	//queNo =  題號變化量  / equal = 數字變化 (0 = 隨機)
 };

@@ -1,4 +1,4 @@
-﻿
+
 #include "CQueController.h"
 #include "cocostudio/CocoStudio.h"
 
@@ -39,16 +39,19 @@ CQueController::CQueController(int iUnitNo, Node &rootNode, cocos2d::Layer &pare
 	_curEqual = equalData[_curQueNo - 1][equal];
 
 	//題目-答案
-	char ans[20];
-	sprintf(ans, "ans/unit%d_%d.csb", _curUnit, _curQueNo);
-	fraction *U1 = new fraction();
-	answer = CSLoader::createNode(ans);
-	answer->setPosition(Point(1250,800));
-	U1->Input_Que(*answer, _curEqual);
-	//answer->setVisible(false);
-	parent.addChild(answer);
-	delete U1;
+//    char ans[20];
+//    sprintf(ans, "ans/unit%d_%d.csb", _curUnit, _curQueNo);
+//    fraction *U1 = new fraction();
+//    answer = CSLoader::createNode(ans);
+//    answer->setPosition(Point(1250,800));
+//    U1->Input_Que(*answer, _curEqual);
+//    //answer->setVisible(false);
+//    parent.addChild(answer);
+//    delete U1;
 
+    try_topic = new fraction(_curUnit,_curQueNo,_curEqual);
+    _parentLayer->addChild(try_topic);
+    
 	//圖片
 	char pic[20];
 	sprintf(pic, "pancake%d_01.png", _curEqual);
@@ -125,7 +128,7 @@ void CQueController::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	rootNode.removeChildByName("menu_btn");
 }
 
-void CQueController::reset(int queNO,int equal)   	//queNo =  題號變化量  / equal = 數字變化 (0 = 隨機)
+void CQueController::reset(int queNO = 0, int equal = 0)   	//queNo =  題號變化量  / equal = 數字變化 (0 = 隨機)
 {	
 	//題號改變 重設答案
 	if (queNO != 0) {
@@ -140,18 +143,20 @@ void CQueController::reset(int queNO,int equal)   	//queNo =  題號變化量  /
 			equal = (rand() % equalData[_curQueNo - 1][0]) + 1;
 			equal = equalData[_curQueNo - 1][equal];
 		} while (equal == _curEqual && equalData[_curQueNo - 1][0] != 1);
-		_curEqual = equal;
 	}
-
-	_parentLayer->removeChild(answer);
-	char ans[20];
-	sprintf(ans, "ans/unit%d_%d.csb",_curUnit, _curQueNo);
-	fraction *U1 = new fraction();
-	answer = CSLoader::createNode(ans);
-	answer->setPosition(Point(1250, 800));
-	U1->Input_Que(*answer, _curEqual);
-	_parentLayer->addChild(answer);
-	delete U1;
+    
+    _curEqual = equal;
+	_parentLayer->removeChild(try_topic);
+//    char ans[20];
+//    sprintf(ans, "ans/unit%d_%d.csb",_curUnit, _curQueNo);
+//    fraction *U1 = new fraction();
+//    answer = CSLoader::createNode(ans);
+//    answer->setPosition(Point(1250, 800));
+//    U1->Input_Que(*answer, _curEqual);
+//    _parentLayer->addChild(answer);
+//    delete U1;
+    try_topic = new fraction(_curUnit, _curQueNo,_curEqual);
+    _parentLayer->addChild(try_topic);
 
 	_equalController->setEqualQuantity(equalData, _curQueNo, _curEqual); // 內部自動呼叫 reset()
 
@@ -181,7 +186,7 @@ void CQueController::reset(int queNO,int equal)   	//queNo =  題號變化量  /
 
 CQueController::~CQueController()
 {
-	//delete try_img;
+    if(try_img != NULL)delete try_img;
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }
 
@@ -263,7 +268,7 @@ bool CQueController::touchesEnded(Point inPt, int iId, int iMode)
 		}
 		else if (_answerBtn.touchesEnded(inPt)) { // 顯示答案按鈕被按下
 			_bAnswer = !_bAnswer;
-			answer->setVisible(_bAnswer);
+			try_topic->setVisible(_bAnswer);
 			return true;
 		}
 		else if (_itemBtn.touchesEnded(inPt)) { // 顯示切換物件顯示按鈕被按下

@@ -14,8 +14,6 @@
 		2D8E4310A2E154128CD9AB6F /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51554DA9A2FA70F46AF9E679 /* libcocos2d Mac.a */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -61,6 +59,19 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		F1ABBBE021A0679600730450 /* fraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1ABBBDF21A0679600730450 /* fraction.cpp */; };
+		F1E7E46021A017A8006BFFB6 /* CTeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44421A017A7006BFFB6 /* CTeachScene.cpp */; };
+		F1E7E46121A017A8006BFFB6 /* CMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44521A017A7006BFFB6 /* CMenuScene.cpp */; };
+		F1E7E46221A017A8006BFFB6 /* CHandDrawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44821A017A7006BFFB6 /* CHandDrawing.cpp */; };
+		F1E7E46321A017A8006BFFB6 /* CEqualController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44D21A017A7006BFFB6 /* CEqualController.cpp */; };
+		F1E7E46421A017A8006BFFB6 /* CSwitchButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44F21A017A7006BFFB6 /* CSwitchButton.cpp */; };
+		F1E7E46521A017A8006BFFB6 /* CButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45121A017A7006BFFB6 /* CButton.cpp */; };
+		F1E7E46621A017A8006BFFB6 /* COnButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45221A017A7006BFFB6 /* COnButton.cpp */; };
+		F1E7E46721A017A8006BFFB6 /* combination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45321A017A7006BFFB6 /* combination.cpp */; };
+		F1E7E46821A017A8006BFFB6 /* COnOffButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45521A017A7006BFFB6 /* COnOffButton.cpp */; };
+		F1E7E46A21A017A8006BFFB6 /* TouchSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45821A017A7006BFFB6 /* TouchSprite.cpp */; };
+		F1E7E46B21A017A8006BFFB6 /* CQueController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45D21A017A7006BFFB6 /* CQueController.cpp */; };
+		F1E7E46C21A017A8006BFFB6 /* CHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45E21A017A7006BFFB6 /* CHomeScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +83,6 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -121,6 +130,33 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F1ABBBD421A05F9F00730450 /* CTeachScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTeachScene.h; sourceTree = "<group>"; };
+		F1ABBBD521A0656000730450 /* combination.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = combination.h; sourceTree = "<group>"; };
+		F1ABBBDE21A0679600730450 /* fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fraction.h; sourceTree = "<group>"; };
+		F1ABBBDF21A0679600730450 /* fraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fraction.cpp; sourceTree = "<group>"; };
+		F1E7E44421A017A7006BFFB6 /* CTeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTeachScene.cpp; sourceTree = "<group>"; };
+		F1E7E44521A017A7006BFFB6 /* CMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMenuScene.cpp; sourceTree = "<group>"; };
+		F1E7E44621A017A7006BFFB6 /* CMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMenuScene.h; sourceTree = "<group>"; };
+		F1E7E44821A017A7006BFFB6 /* CHandDrawing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CHandDrawing.cpp; sourceTree = "<group>"; };
+		F1E7E44921A017A7006BFFB6 /* CHandDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHandDrawing.h; sourceTree = "<group>"; };
+		F1E7E44A21A017A7006BFFB6 /* CQueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQueController.h; sourceTree = "<group>"; };
+		F1E7E44D21A017A7006BFFB6 /* CEqualController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CEqualController.cpp; sourceTree = "<group>"; };
+		F1E7E44E21A017A7006BFFB6 /* CButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
+		F1E7E44F21A017A7006BFFB6 /* CSwitchButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSwitchButton.cpp; sourceTree = "<group>"; };
+		F1E7E45021A017A7006BFFB6 /* CEqualController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEqualController.h; sourceTree = "<group>"; };
+		F1E7E45121A017A7006BFFB6 /* CButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CButton.cpp; sourceTree = "<group>"; };
+		F1E7E45221A017A7006BFFB6 /* COnButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COnButton.cpp; sourceTree = "<group>"; };
+		F1E7E45321A017A7006BFFB6 /* combination.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = combination.cpp; sourceTree = "<group>"; };
+		F1E7E45421A017A7006BFFB6 /* TouchSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSprite.h; sourceTree = "<group>"; };
+		F1E7E45521A017A7006BFFB6 /* COnOffButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COnOffButton.cpp; sourceTree = "<group>"; };
+		F1E7E45821A017A7006BFFB6 /* TouchSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchSprite.cpp; sourceTree = "<group>"; };
+		F1E7E45921A017A7006BFFB6 /* COnOffButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COnOffButton.h; sourceTree = "<group>"; };
+		F1E7E45A21A017A7006BFFB6 /* CSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwitchButton.h; sourceTree = "<group>"; };
+		F1E7E45B21A017A7006BFFB6 /* COnButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COnButton.h; sourceTree = "<group>"; };
+		F1E7E45C21A017A7006BFFB6 /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
+		F1E7E45D21A017A7006BFFB6 /* CQueController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQueController.cpp; sourceTree = "<group>"; };
+		F1E7E45E21A017A7006BFFB6 /* CHomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CHomeScene.cpp; sourceTree = "<group>"; };
+		F1E7E45F21A017A7006BFFB6 /* CHomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomeScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,13 +230,13 @@
 			isa = PBXGroup;
 			children = (
 				46880B8319C43A87006E1F66 /* Classes */,
-				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				080E96DDFE201D6D7F000001 /* ios */,
-				503AE10617EB990700D1A890 /* mac */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
 				B80C4D17930725E9FD8729D1 /* ios-libs */,
+				503AE10617EB990700D1A890 /* mac */,
 				9FB840E18B0F8082A4A0AB3A /* mac-libs */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				46880B7519C43A67006E1F66 /* Resources */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -243,10 +279,15 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F1E7E44721A017A7006BFFB6 /* Common */,
+				F1E7E45E21A017A7006BFFB6 /* CHomeScene.cpp */,
+				F1E7E45F21A017A7006BFFB6 /* CHomeScene.h */,
+				F1E7E44521A017A7006BFFB6 /* CMenuScene.cpp */,
+				F1E7E44621A017A7006BFFB6 /* CMenuScene.h */,
+				F1E7E44421A017A7006BFFB6 /* CTeachScene.cpp */,
+				F1ABBBD421A05F9F00730450 /* CTeachScene.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -313,6 +354,42 @@
 				5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */,
 			);
 			name = "ios-libs";
+			sourceTree = "<group>";
+		};
+		F1E7E44721A017A7006BFFB6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F1E7E44B21A017A7006BFFB6 /* Object */,
+				F1E7E44821A017A7006BFFB6 /* CHandDrawing.cpp */,
+				F1E7E44921A017A7006BFFB6 /* CHandDrawing.h */,
+				F1E7E45C21A017A7006BFFB6 /* const.h */,
+				F1E7E45D21A017A7006BFFB6 /* CQueController.cpp */,
+				F1E7E44A21A017A7006BFFB6 /* CQueController.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F1E7E44B21A017A7006BFFB6 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				F1ABBBDF21A0679600730450 /* fraction.cpp */,
+				F1ABBBDE21A0679600730450 /* fraction.h */,
+				F1E7E45121A017A7006BFFB6 /* CButton.cpp */,
+				F1E7E44E21A017A7006BFFB6 /* CButton.h */,
+				F1E7E44D21A017A7006BFFB6 /* CEqualController.cpp */,
+				F1E7E45021A017A7006BFFB6 /* CEqualController.h */,
+				F1E7E45321A017A7006BFFB6 /* combination.cpp */,
+				F1ABBBD521A0656000730450 /* combination.h */,
+				F1E7E45221A017A7006BFFB6 /* COnButton.cpp */,
+				F1E7E45B21A017A7006BFFB6 /* COnButton.h */,
+				F1E7E45521A017A7006BFFB6 /* COnOffButton.cpp */,
+				F1E7E45921A017A7006BFFB6 /* COnOffButton.h */,
+				F1E7E44F21A017A7006BFFB6 /* CSwitchButton.cpp */,
+				F1E7E45A21A017A7006BFFB6 /* CSwitchButton.h */,
+				F1E7E45821A017A7006BFFB6 /* TouchSprite.cpp */,
+				F1E7E45421A017A7006BFFB6 /* TouchSprite.h */,
+			);
+			path = Object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,11 +500,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E7E46621A017A8006BFFB6 /* COnButton.cpp in Sources */,
+				F1E7E46821A017A8006BFFB6 /* COnOffButton.cpp in Sources */,
+				F1ABBBE021A0679600730450 /* fraction.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				F1E7E46421A017A8006BFFB6 /* CSwitchButton.cpp in Sources */,
+				F1E7E46B21A017A8006BFFB6 /* CQueController.cpp in Sources */,
+				F1E7E46721A017A8006BFFB6 /* combination.cpp in Sources */,
+				F1E7E46121A017A8006BFFB6 /* CMenuScene.cpp in Sources */,
+				F1E7E46C21A017A8006BFFB6 /* CHomeScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				F1E7E46321A017A8006BFFB6 /* CEqualController.cpp in Sources */,
+				F1E7E46021A017A8006BFFB6 /* CTeachScene.cpp in Sources */,
+				F1E7E46A21A017A8006BFFB6 /* TouchSprite.cpp in Sources */,
+				F1E7E46521A017A8006BFFB6 /* CButton.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				F1E7E46221A017A8006BFFB6 /* CHandDrawing.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +526,6 @@
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,10 +557,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -507,10 +592,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -546,10 +628,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -580,10 +659,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
