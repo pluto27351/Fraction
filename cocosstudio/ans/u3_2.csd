@@ -18,7 +18,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="1459922706" Tag="2128" IconVisible="False" LeftMargin="-207.2602" RightMargin="135.2602" TopMargin="55.4992" BottomMargin="-162.4992" FontSize="72" LabelText="12" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="N_1" ActionTag="1459922706" Tag="2128" IconVisible="False" LeftMargin="-207.2625" RightMargin="135.2625" TopMargin="55.5009" BottomMargin="-162.5009" FontSize="72" LabelText="12" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="72.0000" Y="107.0000" />
             <AnchorPoint ScaleX="0.3303" ScaleY="0.4259" />
             <Position X="-183.4809" Y="-116.9296" />
@@ -30,125 +30,86 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="1956037738" Tag="2130" IconVisible="False" LeftMargin="-174.0403" RightMargin="66.0403" TopMargin="-160.4513" BottomMargin="53.4513" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-120.0403" Y="106.9513" />
+          <AbstractNodeData Name="F_1" ActionTag="-85680348" Tag="113" IconVisible="True" LeftMargin="-128.0266" RightMargin="128.0266" TopMargin="-112.1632" BottomMargin="112.1632" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-128.0266" Y="112.1632" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_3" ActionTag="-1744182502" Tag="2132" IconVisible="False" LeftMargin="266.5872" RightMargin="-374.5872" TopMargin="513.4774" BottomMargin="-620.4774" FontSize="72" LabelText="2/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="320.5872" Y="-566.9774" />
+          <AbstractNodeData Name="F_2" ActionTag="-1957593709" Tag="114" IconVisible="True" LeftMargin="57.5952" RightMargin="-57.5952" TopMargin="-107.4047" BottomMargin="107.4047" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="57.5952" Y="107.4047" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_2" ActionTag="1393887352" Tag="108" IconVisible="False" LeftMargin="10.4552" RightMargin="-118.4552" TopMargin="-159.4460" BottomMargin="52.4460" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="64.4552" Y="105.9460" />
+          <AbstractNodeData Name="F_3" ActionTag="468132204" Tag="115" IconVisible="True" LeftMargin="-129.6135" RightMargin="129.6135" TopMargin="-1.1086" BottomMargin="1.1086" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-129.6135" Y="1.1086" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_3" ActionTag="-1296435136" Tag="109" IconVisible="False" LeftMargin="-178.4319" RightMargin="70.4319" TopMargin="-56.9063" BottomMargin="-50.0938" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-124.4319" Y="3.4063" />
+          <AbstractNodeData Name="F_4" ActionTag="-1154659275" Tag="116" IconVisible="True" LeftMargin="57.5952" RightMargin="-57.5952" TopMargin="-1.1093" BottomMargin="1.1093" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="57.5952" Y="1.1093" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_4" ActionTag="-884280636" Tag="110" IconVisible="False" LeftMargin="3.2609" RightMargin="-111.2609" TopMargin="-56.9064" BottomMargin="-50.0936" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="57.2609" Y="3.4064" />
+          <AbstractNodeData Name="F_5" ActionTag="1195802624" Tag="117" IconVisible="True" LeftMargin="232.1113" RightMargin="-232.1113" TopMargin="-2.6965" BottomMargin="2.6965" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="232.1113" Y="2.6965" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_5" ActionTag="-1423107915" Tag="111" IconVisible="False" LeftMargin="166.9648" RightMargin="-274.9648" TopMargin="-53.3085" BottomMargin="-53.6915" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="220.9648" Y="-0.1915" />
+          <AbstractNodeData Name="F_6" ActionTag="-1603009448" Tag="118" IconVisible="True" LeftMargin="40.1437" RightMargin="-40.1437" TopMargin="106.7712" BottomMargin="-106.7712" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="40.1437" Y="-106.7712" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_6" ActionTag="830769785" Tag="112" IconVisible="False" LeftMargin="-21.9236" RightMargin="-86.0764" TopMargin="56.4272" BottomMargin="-163.4272" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="32.0764" Y="-109.9272" />
+          <AbstractNodeData Name="F_7" ActionTag="1280087870" Tag="144" IconVisible="True" LeftMargin="-90.7037" RightMargin="90.7037" TopMargin="202.5371" BottomMargin="-202.5371" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-90.7037" Y="-202.5371" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_7" ActionTag="-422350103" Tag="113" IconVisible="False" LeftMargin="-269.1716" RightMargin="161.1716" TopMargin="177.9616" BottomMargin="-284.9616" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-215.1716" Y="-231.4616" />
+          <AbstractNodeData Name="F_8" ActionTag="-22062346" Tag="119" IconVisible="True" LeftMargin="-264.4670" RightMargin="264.4670" TopMargin="203.5469" BottomMargin="-203.5469" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-264.4670" Y="-203.5469" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_8" ActionTag="302248523" Tag="114" IconVisible="False" LeftMargin="-103.6682" RightMargin="-4.3318" TopMargin="185.1575" BottomMargin="-292.1575" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-49.6682" Y="-238.6575" />
+          <AbstractNodeData Name="F_9" ActionTag="1759440454" Tag="120" IconVisible="True" LeftMargin="-178.7961" RightMargin="178.7961" TopMargin="209.8910" BottomMargin="-209.8910" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-178.7961" Y="-209.8910" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="F_9" ActionTag="2007395620" Tag="115" IconVisible="False" LeftMargin="72.6278" RightMargin="-180.6278" TopMargin="186.9567" BottomMargin="-293.9567" FontSize="72" LabelText="1/2" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="108.0000" Y="107.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="126.6278" Y="-240.4567" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

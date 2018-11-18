@@ -1,114 +1,8 @@
-//#include "faction.h"
-//
-//void fraction::Input_Que(Node &Q, int number) {
-//    char Input[5];
-//    //®˙±o¬\©Ò¶Ï§l
-//    //∞Í¶r
-//    Text* Output_c = (Text*)Q.getChildByName("C_1");
-//    Output_c->setString(chiness[number - 2]);
-//    Output_c->setScale(2);
-//
-//    //º∆¶r
-//    for (int i = 0; i < 2; i++) {
-//        sprintf(Input, "N_%d", i + 1);
-//        Text *Output_n = (Text *)Q.getChildByName(Input);
-//        sprintf(Input, "%d", number);
-//        Output_n->setString(Input);
-//        Output_n->setScale(2);
-//    }
-//
-//    //§¿º∆
-//    for (int i = 0; i<3; i++) {
-//        sprintf(Input, "F_%d", i + 1);
-//        Node *Output_f = (Node *)Q.getChildByName(Input);
-//        sprintf(Input, "%d", number);
-//        if (i < 2)
-//            Output_f->addChild(Set_fraction("1", Input));
-//        else
-//            Output_f->addChild(Set_fraction(Input, Input));
-//    }
-//
-//    //πB∫‚¶°
-//    Node *Output_af = Q.getChildByName("AF_1");
-//    Output_af->addChild(FractionOperation(number));
-//}
-//
-//Node * fraction::Set_fraction(const char *numerator, const char *denominator) {
-//    auto fn = (Node *)Node::create(); //≥Ã´·™∫¶^∂«-§¿º∆™∫ßŒ™¨
-//    Sprite *bar;
-//    auto Ntor = cocos2d::ui::Text::create();
-//    auto Dtor = cocos2d::ui::Text::create();
-//    bar = (Sprite *)Sprite::create("bar.png");
-//    bar->setScale(5, 2);
-//
-//    Ntor->setString(numerator);
-//    Ntor->setPosition(Point(0, 15));
-//    Ntor->setScale(2.5);
-//    Dtor->setString(denominator);
-//    Dtor->setPosition(Point(0, -15));
-//    Dtor->setScale(2.5);
-//
-//    fn->addChild(bar);
-//    fn->addChild(Ntor);
-//    fn->addChild(Dtor);
-//    return(fn);
-//}
-//
-//cocos2d::Node * fraction::FractionOperation(int n) {
-//    char c_n[5];
-//    sprintf(c_n, "%d", n);
-//    auto plus = new cocos2d::ui::Text*[n - 1]; //•[
-//    auto equal = cocos2d::ui::Text::create(); //µ•©Û
-//
-//    auto fn = (Node *)Node::create(); //≥Ã´·™∫¶^∂«-πB∫‚¶°™∫ßŒ™¨
-//
-//                                      //§¿º∆•Õ¶®
-//    Node ** all_f = new Node*[n + 1];
-//    for (int i = 0; i<n + 1; i++) {
-//        if (i<n)
-//            all_f[i] = Set_fraction("1", c_n);
-//        else
-//            all_f[i] = Set_fraction(c_n, c_n);
-//    }
-//
-//    //±∆¶Ï§l
-//    for (int i = 0; i<2 * n + 1; i++) {
-//        if (i % 2) {
-//            if (i == 2 * n - 1) {
-//                equal = cocos2d::ui::Text::create();
-//                equal->setString("=");
-//                equal->setScale(2.5);
-//                equal->setPosition(Point(30 * i, 0));
-//            }
-//            else {
-//                plus[(i - 1) / 2] = cocos2d::ui::Text::create();
-//                plus[(i - 1) / 2]->setString("+");
-//                plus[(i - 1) / 2]->setScale(2.5);
-//                plus[(i - 1) / 2]->setPosition(Point(30 * i, 0));
-//            }
-//        }
-//        else {
-//            all_f[i / 2]->setPosition(30 * i, 0);
-//        }
-//    }
-//
-//    for (int i = 0; i<n + 1; i++)
-//        fn->addChild(all_f[i]);
-//    for (int i = 0; i<n - 1; i++)
-//        fn->addChild(plus[i]);
-//    fn->addChild(equal);
-//
-//
-//    return(fn);
-//}
 #include "fraction.h"
 
 fraction::fraction(int uni,int queNo, int number){
     Node * answer;
     
-// char ans[20];
-//    sprintf(ans,"ans/u%d_%d.csb", uni, queNo);
-//    answer = CSLoader::createNode(ans);
     int u = uni * 10 + queNo;
     switch(u){
         case 11:
@@ -147,7 +41,7 @@ void fraction::Input_u1(Node &Q, int number){
     //國字
     Text* Output_c = (Text*)Q.getChildByName("C_1");
     Output_c->setString(chiness[number-2]);
-    Output_c->setScale(2);
+    //Output_c->setScale(2);
     
     //數字
     for(int i = 0;i<2;i++){
@@ -155,7 +49,7 @@ void fraction::Input_u1(Node &Q, int number){
         Text *Output_n = (Text *)Q.getChildByName(Input);
         sprintf(Input,"%d",number);
         Output_n->setString(Input);
-        Output_n->setScale(2);
+        //Output_n->setScale(2);
     }
     
     //分數
@@ -181,7 +75,7 @@ void fraction::Input_u2_4(Node &Q, int number){
     //國字
     Text* Output_c = (Text*)Q.getChildByName("C_1");
     Output_c->setString(chiness[number-2]);
-    Output_c->setScale(2);
+   // Output_c->setScale(2);
     
     //數字
     for(int i = 0;i<2;i++){
@@ -189,13 +83,14 @@ void fraction::Input_u2_4(Node &Q, int number){
         Text *Output_n = (Text *)Q.getChildByName(Input);
         sprintf(Input,"%d",number);
         Output_n->setString(Input);
-        Output_n->setScale(2);
+        //Output_n->setScale(2);
     }
     
     //分數
     for(int i = 0;i<9;i++){
         sprintf(Input,"F_%d",i+1);
         Node *Output_f = (Node *)Q.getChildByName(Input);
+
         sprintf(Input,"%d",number);
         if(i < 2)
             Output_f->addChild(Set_fraction("1", Input, "0"));
@@ -218,7 +113,7 @@ void fraction::Input_u2_7(Node &Q, int number){
     //國字
     Text* Output_c = (Text*)Q.getChildByName("C_1");
     Output_c->setString(chiness[number-2]);
-    Output_c->setScale(2);
+   // Output_c->setScale(2);
     
     //數字
     for(int i = 0;i<3;i++){
@@ -226,7 +121,7 @@ void fraction::Input_u2_7(Node &Q, int number){
         Text *Output_n = (Text *)Q.getChildByName(Input);
         sprintf(Input,"%d",number);
         Output_n->setString(Input);
-        Output_n->setScale(2);
+      // Output_n->setScale(2);
     }
     
     //分數
@@ -251,7 +146,7 @@ void fraction::Input_u3_2(Node &Q, int number){
     Text *Output_n = (Text *)Q.getChildByName("N_1");
     sprintf(Input,"%d",number*4+2);
     Output_n->setString(Input);
-    Output_n->setScale(2);
+    //Output_n->setScale(2);
     
     //分數
     for(int i = 0;i<9;i++){
@@ -298,18 +193,25 @@ Node * fraction::Set_fraction(const char *numerator, const char *denominator, co
     auto Ntor = cocos2d::ui::Text::create();
     auto Dtor = cocos2d::ui::Text::create();
     bar = (Sprite *)Sprite::create("bar.png");
-    bar->setScale(5*scale, 2);
+    bar->setScale(6*scale, 5);
+    bar->setColor(Color3B::BLACK);
     
+    Ntor->setFontSize(60);
     Ntor->setString(numerator);
-    Ntor->setPosition(Point(0,15));
-    Ntor->setScale(2.5);
+    Ntor->setPosition(Point(0,30));
+    //Ntor->setScale(2.5);
+    Ntor->setColor(Color3B::BLACK);
+    
+    Dtor->setFontSize(60);
     Dtor->setString(denominator);
-    Dtor->setPosition(Point(0,-15));
-    Dtor->setScale(2.5);
+    Dtor->setPosition(Point(0,-30));
+    //Dtor->setScale(2.5);
+    Dtor->setColor(Color3B::BLACK);
     
     fn->addChild(bar);
     fn->addChild(Ntor);
     fn->addChild(Dtor);
+    
     if(front != "0"){
         auto Ftor = cocos2d::ui::Text::create();
         Ftor->setString(front);
@@ -343,18 +245,22 @@ cocos2d::Node * fraction::FractionOperation(int n){
             if(i==2*n-1){
                 equal = cocos2d::ui::Text::create();
                 equal->setString("=");
-                equal->setScale(2.5);
-                equal->setPosition(Point(30*i,0));
+                //equal->setScale(2.5);
+                equal->setFontSize(60);
+                equal->setColor(Color3B::BLACK);
+                equal->setPosition(Point(50*i,0));
             }
             else{
                 plus[(i-1)/2] = cocos2d::ui::Text::create();
                 plus[(i-1)/2]->setString("+");
-                plus[(i-1)/2]->setScale(2.5);
-                plus[(i-1)/2]->setPosition(Point(30*i,0));
+               // plus[(i-1)/2]->setScale(2.5);
+                plus[(i-1)/2]->setFontSize(60);
+                plus[(i-1)/2]->setColor(Color3B::BLACK);
+                plus[(i-1)/2]->setPosition(Point(50*i,0));
             }
         }
         else{
-            all_f[i/2]->setPosition(30*i,0);
+            all_f[i/2]->setPosition(50*i,0);
         }
     }
     

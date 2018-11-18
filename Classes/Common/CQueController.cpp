@@ -39,17 +39,8 @@ CQueController::CQueController(int iUnitNo, Node &rootNode, cocos2d::Layer &pare
 	_curEqual = equalData[_curQueNo - 1][equal];
 
 	//題目-答案
-//    char ans[20];
-//    sprintf(ans, "ans/unit%d_%d.csb", _curUnit, _curQueNo);
-//    fraction *U1 = new fraction();
-//    answer = CSLoader::createNode(ans);
-//    answer->setPosition(Point(1250,800));
-//    U1->Input_Que(*answer, _curEqual);
-//    //answer->setVisible(false);
-//    parent.addChild(answer);
-//    delete U1;
-
     try_topic = new fraction(_curUnit,_curQueNo,_curEqual);
+    try_topic->setPosition(300,0);
     _parentLayer->addChild(try_topic);
     
 	//圖片
@@ -147,15 +138,9 @@ void CQueController::reset(int queNO = 0, int equal = 0)   	//queNo =  題號變
     
     _curEqual = equal;
 	_parentLayer->removeChild(try_topic);
-//    char ans[20];
-//    sprintf(ans, "ans/unit%d_%d.csb",_curUnit, _curQueNo);
-//    fraction *U1 = new fraction();
-//    answer = CSLoader::createNode(ans);
-//    answer->setPosition(Point(1250, 800));
-//    U1->Input_Que(*answer, _curEqual);
-//    _parentLayer->addChild(answer);
-//    delete U1;
+
     try_topic = new fraction(_curUnit, _curQueNo,_curEqual);
+    try_topic->setPosition(300,0);
     _parentLayer->addChild(try_topic);
 
 	_equalController->setEqualQuantity(equalData, _curQueNo, _curEqual); // 內部自動呼叫 reset()
