@@ -9,11 +9,11 @@
           <Project Name="u1_3.csd" Type="Node" />
           <Project Name="u1_4.csd" Type="Node" />
           <Project Name="u1_5.csd" Type="Node" />
+          <Project Name="u1_6.csd" Type="Node" />
           <Project Name="u2_1.csd" Type="Node" />
           <Project Name="u2_4.csd" Type="Node" />
           <Project Name="u2_7.csd" Type="Node" />
           <Project Name="u3_2.csd" Type="Node" />
-          <Project Name="u1_6.csd" Type="Node" />
         </Folder>
         <PlistImageFolder Image="equalcontrol.png" PListFile="equalcontrol.plist" Name=".equalcontrol_PList.Dir">
           <PlistImageFile Name="bb_no01.png" Key="bb_no01.png" />

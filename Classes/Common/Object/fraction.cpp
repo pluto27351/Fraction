@@ -50,6 +50,7 @@ fraction::fraction(int uni,int queNo, int number){ //單元．題目．數字
 
 void fraction::Input_u1(Node &Q, int number){
     char Input[5];
+    char fn[3];
     //取得擺放位子
     //國字
     Text* Output_c = (Text*)Q.getChildByName("C_1");
@@ -69,7 +70,8 @@ void fraction::Input_u1(Node &Q, int number){
         Node *Output_f = (Node *)Q.getChildByName(Input);
         Text *c = (Text *)Output_f->getChildByName("ntor");
         sprintf(Input,"%d",number);
-        Output_f->addChild(Set_fraction(Numerator(c->getString().c_str(),Input), Input, "0"));
+        sprintf(fn,"%d",c->getTag());
+        Output_f->addChild(Set_fraction(Numerator(c->getString().c_str(),Input), Input, fn));
         Output_f->removeChildByName("ntor");
     }
     
@@ -80,6 +82,7 @@ void fraction::Input_u1(Node &Q, int number){
 
 void fraction::Input_u2_1(Node &Q, int number){
     char Input[5];
+    char fn[3];
     //取得擺放位子
     //國字
     Text* Output_c = (Text*)Q.getChildByName("C_1");
@@ -91,7 +94,8 @@ void fraction::Input_u2_1(Node &Q, int number){
         Node *Output_f = (Node *)Q.getChildByName(Input);
         Text *c = (Text *)Output_f->getChildByName("ntor");
         sprintf(Input,"%d",number);
-        Output_f->addChild(Set_fraction(Numerator(c->getString().c_str(),Input), Input, "0"));
+        sprintf(fn,"%d",c->getTag());
+        Output_f->addChild(Set_fraction(Numerator(c->getString().c_str(),Input), Input, fn));
         Output_f->removeChildByName("ntor");
     }
     for(int i = 2;i<4;i++){
@@ -224,7 +228,7 @@ Node * fraction::Set_fraction(const char *numerator, const char *denominator, co
     fn->addChild(Ntor);
     fn->addChild(Dtor);
     
-    if(front != "0"){
+    for( int i=0; front[i]!=NULL && front[i]!='0'; i++){
         auto Ftor = cocos2d::ui::Text::create();
         Ftor->setFontSize(60);
         Ftor->setString(front);
