@@ -71,10 +71,10 @@ bool combination::touchesMoved(cocos2d::Point inPos, int id) {
 		int status = img[i].touchesMoved(inPos, id);
 
 		if (status == MOVE)  return true;
-		else if (status == EXIT) {
-			if (rotateImg == &img[i]) rotateImg = NULL;
-			return false;
-		}
+//        else if (status == EXIT) {
+//            if (rotateImg == &img[i]) rotateImg = NULL;
+//            return false;
+//        }
 	}
 	if (rotateId == id) rotatePos = inPos;
 	return false;

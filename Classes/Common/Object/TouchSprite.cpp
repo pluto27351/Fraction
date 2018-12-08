@@ -97,20 +97,26 @@ int TouchSprite::touchesMoved(cocos2d::Point inPos, int id) {
        if(id == touchID[1]) touchPos[1] =inPos;
        RotateMoved();
     }
-	else if (_bTouched && touchID[0] == id) {
-		if (!SectorCollision(inPos)) {
-			_bTouched = false;
-			touchID[0] = -1;
-            touchPos[0] = Point(0,0);
-			return(2);  //離開移動範圍
-		}
-		else {
-			SetPosition(inPos - d);
-            touchPos[0] = inPos;
-			return(1);  //移動了
-		}
-	}
-	return(0);   //非移動狀態
+    else if(_bTouched && touchID[0] == id){
+        SetPosition(inPos - d);
+        touchPos[0] = inPos;
+        return(1);
+    }
+    return(0);
+//    else if (_bTouched && touchID[0] == id) {
+//        if (!SectorCollision(inPos)) {
+//            _bTouched = false;
+//            touchID[0] = -1;
+//            touchPos[0] = Point(0,0);
+//            return(2);  //離開移動範圍
+//        }
+//        else {
+//            SetPosition(inPos - d);
+//            touchPos[0] = inPos;
+//            return(1);  //移動了
+//        }
+//    }
+//    return(0);   //非移動狀態
 }
 
 

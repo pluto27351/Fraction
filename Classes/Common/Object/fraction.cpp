@@ -5,35 +5,30 @@ fraction::fraction(int uni,int queNo, int number){ //單元．題目．數字
     
     int u = uni * 100 + queNo;
     char name[14];
-    sprintf(name,"ans/u%d_%d.csb",uni, queNo);
-    printf("s",name);
+    //sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     switch(u){
-        case 101:
-        case 102:    //測試用
-        case 103:    //測試用
-        case 104:    //測試用
-        case 105:    //測試用
-        case 106:    //測試用
+        case 101:  case 102:  case 103:  case 104:  case 105:  case 106:
+            sprintf(name,"ans/u%d_%d.csb",uni, 1);
             answer = CSLoader::createNode(name);
             Input_u1(*answer, number);
             break;
-        case 201:    //測試用
-        case 202:    //測試用
-        case 203:    //測試用
+        case 201:  case 202:  case 203:
+            sprintf(name,"ans/u%d_%d.csb",uni, 1);
             answer = CSLoader::createNode(name);
             Input_u2_1(*answer, number);
             break;
-        case 204:
-        case 205:
-        case 206:
+        case 204:  case 205: case 206:
+            sprintf(name,"ans/u%d_%d.csb",uni, 4);
             answer = CSLoader::createNode(name);
             Input_u2_4(*answer, number);
             break;
-        case 207:
-        case 208:
-        case 209:
-        case 210:
-        case 211:
+        case 207:  case 208:  case 209:  case 210:  case 211:
+            sprintf(name,"ans/u%d_%d.csb",uni, 7);
+            answer = CSLoader::createNode(name);
+            Input_u2_7(*answer, number);
+            break;
+        default:
+            sprintf(name,"ans/u%d_%d.csb",3,2);
             answer = CSLoader::createNode(name);
             Input_u2_7(*answer, number);
             break;
