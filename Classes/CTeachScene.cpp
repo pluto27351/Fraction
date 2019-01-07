@@ -41,6 +41,7 @@ bool CTeachScene::init()
 void CTeachScene::setCreate(int unit) 
 {
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("handdrawing.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_Btn.plist");
 
 	auto rootNode = CSLoader::createNode("unitscene.csb");
 	addChild(rootNode);

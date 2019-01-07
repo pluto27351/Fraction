@@ -39,29 +39,29 @@ bool CMenuScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size size;
 
-
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("menuscene.plist");
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("menuscene.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_Btn.plist");
     auto rootNode = CSLoader::createNode("menuscene.csb");
     addChild(rootNode);
 
-	auto bk_img = Sprite::create("bkimg.png", Rect(0, 0, visibleSize.width, visibleSize.height));
-	Texture2D::TexParams tp = { GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT };
-	bk_img->getTexture()->setTexParameters(tp);
-	bk_img->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	this->addChild(bk_img, -1);
-
+//    auto bk_img = Sprite::create("bkimg.png", Rect(0, 0, visibleSize.width, visibleSize.height));
+//    Texture2D::TexParams tp = { GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT };
+//    bk_img->getTexture()->setTexParameters(tp);
+//    bk_img->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+//    this->addChild(bk_img, -1);
 
 	// 設定按鈕
-	char tname[30], tpngname[30];
+	char tname[30], tpngname[30], tpngnamehover[30];
 	for (int i = 0; i < MAX_UNITS; i++)
 	{
 		sprintf(tname, "unit%d_btn", i + 1);
-		sprintf(tpngname, "unit%d_btn.png", i + 1);
 		auto spt = (Sprite*)rootNode->getChildByName(tname);
+        sprintf(tpngname, "bt_0%d.png", i + 1);
+        sprintf(tpngnamehover, "bt_0%d_hover.png", i + 1);
 		Point pt = spt->getPosition();
 		_unitBtn[i] = new CButton();
-		_unitBtn[i]->setButtonInfo(tpngname, tpngname, *this, pt, INTERFACE_LEVEL);
-		_unitBtn[i]->setScale(2.0f);
+		_unitBtn[i]->setButtonInfo(tpngname, tpngnamehover, *this, pt, INTERFACE_LEVEL);
+		//_unitBtn[i]->setScale(2.0f);
 		rootNode->removeChildByName(tname);
 	}
 	_unitIdx = 0;	// 設定成切換的單元，1 到 5
@@ -102,8 +102,6 @@ bool  CMenuScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//
 	{
 		_unitBtn[i]->touchesBegin(touchLoc);
 	}
-	
-
 //	_handDrawing->drawing(touchLoc);
 	return true;
 }

@@ -11,8 +11,8 @@ enum IMG_STATUS {NONE = 0, MOVE = 1, EXIT = 2};
 
 combination::combination(const char *name, float scale){
     std::string num;
-    num.assign(name,strlen(name)-8,1);
-    n = (int)num[0]-48;//圖片數量
+    num.assign(name,strlen(name)-6,2);
+    n = ((int)num[0]-48)*10 + (int)num[1]-48;//圖片數量
     img = new TouchSprite[n];
 	_StickyData = new StickyData[n];
     for(int i=0;i<n;i++){

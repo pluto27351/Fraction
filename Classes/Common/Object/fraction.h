@@ -11,7 +11,7 @@ using namespace ui;
 class fraction : public cocos2d::Node
 {
 private:
-    char chiness[10][4] = {{"一"},{"二"},{"三"},{"四"},{"五"},{"六"},{"七"},{"八"},{"九"},{"十"}};
+    char chiness[11][8] = {{"二"},{"三"},{"四"},{"五"},{"六"},{"七"},{"八"},{"九"},{"十"},{"十一"},{"十二"}};
 public:
     fraction(int uni,int queNo, int number);
     

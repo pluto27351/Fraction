@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 // 
 // 本身包含狀態的切換按鈕，根據傳入的觸控點位置去改變按鈕的狀態，同時切換繪圖的模式
@@ -30,8 +30,9 @@ protected:
 	
 	static CHandDrawing* _pHandDrawing;
 	CSwitchButton _colorBtn;
-	COnButton  _penBtn, _eraserBtn, _handBtn;
-	CButton    _clearAllBtn;
+	COnButton  _eraserBtn, _handBtn;
+    //COnButton  _penBtn, _eraserBtn, _handBtn;
+	//CButton    _clearAllBtn;
 
 public:
 	static CHandDrawing *create();		// 建立物件的實體

@@ -1,4 +1,4 @@
-﻿//
+//
 //	提供五種不同顏色切換顯示的按鈕
 //
 //
@@ -12,7 +12,7 @@
 USING_NS_CC;
 using namespace cocos2d;
 
-#define NUM_COLOR 5
+#define NUM_COLOR 3
 
 class CSwitchButton : public Ref
 {

@@ -1,4 +1,4 @@
-﻿#include "CButton.h"
+#include "CButton.h"
 
 USING_NS_CC;
 
@@ -10,7 +10,7 @@ void CButton::setButtonInfo(const char *normalImg, const char *touchedImg, Layer
 	_normalPic->setPosition(_BtnLoc); // 設定位置
 	_touchedPic->setPosition(_BtnLoc); // 設定位置
 	_touchedPic->setVisible(false);
-	_touchedPic->setScale(_fScale*1.15f);
+	//_touchedPic->setScale(_fScale*1.15f);
 	parent.addChild(_normalPic, level);  // 加入目前的 Layer 中 1: Z 軸的層次，越大代表在越上層
 	parent.addChild(_touchedPic, level); // 加入目前的 Layer 中 1: Z 軸的層次，越大代表在越上層
 
@@ -24,7 +24,6 @@ void CButton::setButtonInfo(const char *normalImg, const char *touchedImg, Layer
 	_fScale = 1.0f;
 	_bVisible = _bEnabled = true;
 }
-
 
 bool CButton::touchesBegin(cocos2d::Point inPos)
 {

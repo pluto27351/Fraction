@@ -5,11 +5,6 @@
       <RootFolder Name=".">
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
-          <Project Name="u1_2.csd" Type="Node" />
-          <Project Name="u1_3.csd" Type="Node" />
-          <Project Name="u1_4.csd" Type="Node" />
-          <Project Name="u1_5.csd" Type="Node" />
-          <Project Name="u1_6.csd" Type="Node" />
           <Project Name="u2_1.csd" Type="Node" />
           <Project Name="u2_4.csd" Type="Node" />
           <Project Name="u2_7.csd" Type="Node" />
@@ -56,6 +51,48 @@
           <PlistImageFile Name="btn12_on.png" Key="btn12_on.png" />
           <PlistImageFile Name="display_txt1.png" Key="display_txt1.png" />
           <PlistImageFile Name="frac_board.png" Key="frac_board.png" />
+        </PlistImageFolder>
+        <PlistImageFolder Image="Fraction_Btn.png" PListFile="Fraction_Btn.plist" Name=".Fraction_Btn_PList.Dir">
+          <PlistImageFile Name="blue.png" Key="blue.png" />
+          <PlistImageFile Name="bt_01.png" Key="bt_01.png" />
+          <PlistImageFile Name="bt_01_hover.png" Key="bt_01_hover.png" />
+          <PlistImageFile Name="bt_02.png" Key="bt_02.png" />
+          <PlistImageFile Name="bt_02_hover.png" Key="bt_02_hover.png" />
+          <PlistImageFile Name="bt_03.png" Key="bt_03.png" />
+          <PlistImageFile Name="bt_03_hover.png" Key="bt_03_hover.png" />
+          <PlistImageFile Name="bt_04.png" Key="bt_04.png" />
+          <PlistImageFile Name="bt_04_hover.png" Key="bt_04_hover.png" />
+          <PlistImageFile Name="bt_05.png" Key="bt_05.png" />
+          <PlistImageFile Name="bt_05_hover.png" Key="bt_05_hover.png" />
+          <PlistImageFile Name="cover_start.png" Key="cover_start.png" />
+          <PlistImageFile Name="cover_start_clik.png" Key="cover_start_clik.png" />
+          <PlistImageFile Name="erease.png" Key="erease.png" />
+          <PlistImageFile Name="green.png" Key="green.png" />
+          <PlistImageFile Name="red.png" Key="red.png" />
+          <PlistImageFile Name="reset.png" Key="reset.png" />
+          <PlistImageFile Name="select.png" Key="select.png" />
+          <PlistImageFile Name="topic1_number.png" Key="topic1_number.png" />
+          <PlistImageFile Name="topic1_number_back.png" Key="topic1_number_back.png" />
+          <PlistImageFile Name="topic1_number02.png" Key="topic1_number02.png" />
+          <PlistImageFile Name="topic1_number03.png" Key="topic1_number03.png" />
+          <PlistImageFile Name="topic1_number04.png" Key="topic1_number04.png" />
+          <PlistImageFile Name="topic1_number05.png" Key="topic1_number05.png" />
+          <PlistImageFile Name="topic1_number06.png" Key="topic1_number06.png" />
+          <PlistImageFile Name="topic1_number07.png" Key="topic1_number07.png" />
+          <PlistImageFile Name="topic1_number08.png" Key="topic1_number08.png" />
+          <PlistImageFile Name="topic1_number09.png" Key="topic1_number09.png" />
+          <PlistImageFile Name="topic1_number10.png" Key="topic1_number10.png" />
+          <PlistImageFile Name="topic1_number11.png" Key="topic1_number11.png" />
+          <PlistImageFile Name="topic1_number12.png" Key="topic1_number12.png" />
+          <PlistImageFile Name="topic1_OK.png" Key="topic1_OK.png" />
+        </PlistImageFolder>
+        <PlistImageFolder Image="Fraction_Wood.png" PListFile="Fraction_Wood.plist" Name=".Fraction_Wood_PList.Dir">
+          <PlistImageFile Name="topic1_wood_01.png" Key="topic1_wood_01.png" />
+          <PlistImageFile Name="topic1_wood_02.png" Key="topic1_wood_02.png" />
+          <PlistImageFile Name="topic1_wood_04.png" Key="topic1_wood_04.png" />
+          <PlistImageFile Name="topic1_wood_06.png" Key="topic1_wood_06.png" />
+          <PlistImageFile Name="topic1_wood_08.png" Key="topic1_wood_08.png" />
+          <PlistImageFile Name="topic1_wood_12.png" Key="topic1_wood_12.png" />
         </PlistImageFolder>
         <PlistImageFolder Image="handdrawing.png" PListFile="handdrawing.plist" Name=".handdrawing_PList.Dir">
           <PlistImageFile Name="brush.png" Key="brush.png" />
@@ -1515,6 +1552,7 @@
         </Folder>
         <Image Name="bar.png" />
         <Image Name="bkimg.png" />
+        <Image Name="cover_bk.jpg" />
         <File Name="DemiLight.otf" />
         <Project Name="equalcontrolnode.csd" Type="Node" />
         <Image Name="frac_board.png" />
@@ -1522,6 +1560,9 @@
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
+        <Image Name="page1_bk.jpg" />
+        <Image Name="topic1_back.png" />
+        <Image Name="topic1_question.png" />
         <Project Name="unitscene.csd" Type="Scene" />
       </RootFolder>
     </Group>

@@ -14,7 +14,7 @@ protected:
 	static CEqualController *_pEqualController;
 	Point  _OnScreenLoc;	// 顯示在畫面上的位置
 	COnButton _equalBtn[MAX_EQUALITY];  // 0 for ok btn,  1 for 2....
-	Sprite *_equalNo[MAX_EQUALITY];		 // 顯示等分的數字
+	//Sprite *_equalNo[MAX_EQUALITY];		 // 顯示等分的數字
 	int   _selected;	// 所選取的均分量, 預設為 1，代表 2 等分被選取
 	int   _selectedQuan[MAX_EQUALITY];	// [0] 放置目前提供的平分值數量，1 ~ 12 儲存平分值
 

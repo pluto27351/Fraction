@@ -24,6 +24,7 @@ public:
 	bool touchesEnded(Point inPt,int iId, int iMode);
 	bool getBoardStatus();
 	bool goBackToMenu();
+    Text *Que_number;
 
 private:
 	bool _bFracBoardOn;	// 顯示平分選單
@@ -39,8 +40,9 @@ private:
 	const int(*equalData)[12];
 
 	// 按鈕
-	COnOffButton _answerBtn, _itemBtn, _equalBtn;  // 顯示答案與設定範例圖示顯示開關
-	CButton _prevBtn, _nextBtn, _resetQueBtn,_menuBtn;	 // 前一題、下一題與本題重新出題的切換按鈕
+    CButton _resetQueBtn;     // 前一題、下一題與本題重新出題的切換按鈕
+	//COnOffButton _answerBtn, _itemBtn, _equalBtn;  // 顯示答案與設定範例圖示顯示開關
+	//CButton _prevBtn, _nextBtn, _resetQueBtn,_menuBtn;	 // 前一題、下一題與本題重新出題的切換按鈕
 
 	// 均分選單控制者
 	CEqualController *_equalController;

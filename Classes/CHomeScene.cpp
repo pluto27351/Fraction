@@ -1,4 +1,4 @@
-﻿#include "cocostudio/CocoStudio.h"
+#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "CHomeScene.h"
 #include "CMenuScene.h"
@@ -37,17 +37,20 @@ bool CHomeScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size size;
 
-
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("homescene.plist");
+    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile("homescene.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_Btn.plist");
     auto rootNode = CSLoader::createNode("homescene.csb");
     addChild(rootNode);
-	_startTap = (Sprite *)rootNode->getChildByName("start_tap");
-
-	auto bk_img = Sprite::create("bkimg.png", Rect(0, 0, visibleSize.width, visibleSize.height));
-	Texture2D::TexParams tp = { GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT };
-	bk_img->getTexture()->setTexParameters(tp);
-	bk_img->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	this->addChild(bk_img, -1);
+    //_startTap = (Sprite *)rootNode->getChildByName("start_tap");
+    _startTap = (Sprite *)rootNode->getChildByName("start_btn");
+    auto _BtnSize = _startTap->getContentSize();
+    auto _BtnLoc = _startTap->getPosition();
+    
+	//auto bk_img = Sprite::create("bkimg.png", Rect(0, 0, visibleSize.width, visibleSize.height));
+	//Texture2D::TexParams tp = { GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT };
+	//bk_img->getTexture()->setTexParameters(tp);
+	//bk_img->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	//this->addChild(bk_img, -1);
 
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
 	_listener1->onTouchBegan = CC_CALLBACK_2(CHomeScene::onTouchBegan, this);		//加入觸碰開始事件
@@ -71,7 +74,7 @@ void CHomeScene::doStep(float dt)  // OnFrameMove
 	}
 	else {
 		// 每秒鐘讓 _startTap 從目前的大小變大1.5倍在縮小
-		float t = fabs(sinf(_fTotalTime*M_PI_4)*0.45f)+2;
+		float t = fabs(sinf(_fTotalTime*M_PI_4)*0.25f)*0.5f+1;
 		_startTap->setScale(t);
 		_fTotalTime += dt;
 	}
@@ -93,7 +96,7 @@ void  CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 {
 	Point touchLoc = pTouch->getLocation();
 	// switch to menu scene
-	_bToMenuScene = true;
+    _bToMenuScene = true;
 
 }
 

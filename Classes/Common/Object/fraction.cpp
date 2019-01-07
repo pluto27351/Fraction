@@ -49,7 +49,7 @@ void fraction::Input_u1(Node &Q, int number){
     //取得擺放位子
     //國字
     Text* Output_c = (Text*)Q.getChildByName("C_1");
-    Output_c->setString(chiness[number-1]);
+    Output_c->setString(chiness[number-2]);
     
     //數字
     for(int i = 0;i<2;i++){
@@ -209,12 +209,12 @@ Node * fraction::Set_fraction(const char *numerator, const char *denominator, co
     bar->setScale(6*scale, 5);
     bar->setColor(Color3B::BLACK);
     
-    Ntor->setFontSize(60);
+    Ntor->setFontSize(50);
     Ntor->setString(numerator);
     Ntor->setPosition(Point(0,30));
     Ntor->setColor(Color3B::BLACK);
     
-    Dtor->setFontSize(60);
+    Dtor->setFontSize(50);
     Dtor->setString(denominator);
     Dtor->setPosition(Point(0,-30));
     Dtor->setColor(Color3B::BLACK);
@@ -225,7 +225,7 @@ Node * fraction::Set_fraction(const char *numerator, const char *denominator, co
     
     for( int i=0; front[i]!=NULL && front[i]!='0'; i++){
         auto Ftor = cocos2d::ui::Text::create();
-        Ftor->setFontSize(60);
+        Ftor->setFontSize(50);
         Ftor->setString(front);
         Ftor->setPosition(Point(-40,0));
         Ftor->setColor(Color3B::BLACK);
@@ -257,14 +257,14 @@ cocos2d::Node * fraction::FractionOperation(int n){
             if(i==2*n-1){
                 equal = cocos2d::ui::Text::create();
                 equal->setString("=");
-                equal->setFontSize(60);
+                equal->setFontSize(50);
                 equal->setColor(Color3B::BLACK);
                 equal->setPosition(Point(50*i,0));
             }
             else{
                 plus[(i-1)/2] = cocos2d::ui::Text::create();
                 plus[(i-1)/2]->setString("+");
-                plus[(i-1)/2]->setFontSize(60);
+                plus[(i-1)/2]->setFontSize(50);
                 plus[(i-1)/2]->setColor(Color3B::BLACK);
                 plus[(i-1)/2]->setPosition(Point(50*i,0));
             }

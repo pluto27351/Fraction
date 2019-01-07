@@ -39,27 +39,27 @@ void  CHandDrawing::initHandDrawing(Node &rootNode, cocos2d::Layer &parent)	// �
 	_colorBtn.setButtonInfo(rootNode, parent, INTERFACE_LEVEL);
 
 	// 設定 畫筆與橡皮擦兩個按鈕
-	Sprite *pBtn = (Sprite *)rootNode.getChildByName("pen_on");
-	Point pt = pBtn->getPosition();
-	_penBtn.setButtonInfo("pen_off.png", "pen_on.png", parent, pt, INTERFACE_LEVEL);
-	_penBtn.setButtonOn();
-	rootNode.removeChildByName("pen_on");
+//    Sprite *pBtn = (Sprite *)rootNode.getChildByName("pen_on");
+//    Point pt = pBtn->getPosition();
+//    _penBtn.setButtonInfo("pen_off.png", "pen_on.png", parent, pt, INTERFACE_LEVEL);
+//    _penBtn.setButtonOn();
+//    rootNode.removeChildByName("pen_on");
 
-	pBtn = (Sprite *)rootNode.getChildByName("eraser_on");
-	pt = pBtn->getPosition();
-	_eraserBtn.setButtonInfo("eraser_off.png", "eraser_on.png", parent, pt, INTERFACE_LEVEL);
+	Sprite *pBtn = (Sprite *)rootNode.getChildByName("erease_on");
+	Point pt = pBtn->getPosition();
+	_eraserBtn.setButtonInfo("erease.png", "erease.png", parent, pt, INTERFACE_LEVEL);
 	rootNode.removeChildByName("pen_on");
 
 	// 設定清楚螢幕所有手繪圖型的按鈕
-	pBtn = (Sprite *)rootNode.getChildByName("clearall_nl");
-	pt = pBtn->getPosition();
-	_clearAllBtn.setButtonInfo("clearall_nl.png", "clearall_on.png", parent, pt, INTERFACE_LEVEL);
-	rootNode.removeChildByName("clearall_nl");
+//    pBtn = (Sprite *)rootNode.getChildByName("clearall_nl");
+//    pt = pBtn->getPosition();
+//    _clearAllBtn.setButtonInfo("clearall_nl.png", "clearall_on.png", parent, pt, INTERFACE_LEVEL);
+//    rootNode.removeChildByName("clearall_nl");
 
 	// 設定移動物件的按鈕
 	pBtn = (Sprite *)rootNode.getChildByName("hand_on");
 	pt = pBtn->getPosition();
-	_handBtn.setButtonInfo("hand_off.png", "hand_on.png", parent, pt, INTERFACE_LEVEL);
+	_handBtn.setButtonInfo("select.png", "select.png", parent, pt, INTERFACE_LEVEL);
 	rootNode.removeChildByName("hand_on");
 
 	_lineColor = _colorBtn.getColor();
@@ -124,10 +124,10 @@ void CHandDrawing::setLineColor(Color3B color)
 bool CHandDrawing::touchesBegin(cocos2d::Point inPt)
 {
 	_colorBtn.touchesBegin(inPt);
-	_penBtn.touchesBegin(inPt);
+	//_penBtn.touchesBegin(inPt);
 	_eraserBtn.touchesBegin(inPt);
 	_handBtn.touchesBegin(inPt);
-	_clearAllBtn.touchesBegin(inPt);
+	//_clearAllBtn.touchesBegin(inPt);
 	return(true);
 }
 
@@ -136,9 +136,9 @@ bool CHandDrawing::touchesMoved(Point inPt, Point inPrePt)
 	bool bBtnOn = false;
 	// 按在按鈕上時，不產生線條
 	if( _colorBtn.touchesMoved(inPt) ) bBtnOn = true;
-	else if( _penBtn.touchesMoved(inPt) ) bBtnOn = true;
+	//else if( _penBtn.touchesMoved(inPt) ) bBtnOn = true;
 	else if( _eraserBtn.touchesMoved(inPt) ) bBtnOn = true;
-	else if( _clearAllBtn.touchesMoved(inPt)) bBtnOn = true;
+	//else if( _clearAllBtn.touchesMoved(inPt)) bBtnOn = true;
 	else if (_handBtn.touchesMoved(inPt)) bBtnOn = true;
 
 	// 產生手繪線
@@ -197,23 +197,23 @@ bool CHandDrawing::touchesEnded(cocos2d::Point inPt)
 		if ( _drawingMode == ERASER_MODE || _drawingMode == MOVEINGOBJ_MODE ) { // 切換到畫筆模式
 			_eraserBtn.setButtonOff(); // 設定橡皮擦圖示關閉
 			_handBtn.setButtonOff(); // 設定移動物件圖示關閉
-			_penBtn.setButtonOn();
+			//_penBtn.setButtonOn();
 			_drawingMode = DRAWING_MODE;
 		}
 		return(true);
 	}
-	if ( _penBtn.touchesEnded(inPt) ) { // 按下的是 pen button
-		if (_drawingMode == ERASER_MODE || _drawingMode == MOVEINGOBJ_MODE ) { // 前一次是在橡皮擦模式
-			_eraserBtn.setButtonOff(); // 設定橡皮擦圖示關閉
-			_handBtn.setButtonOff(); // 設定移動物件圖示關閉
-			_drawingMode = DRAWING_MODE;
-		}
-		return(true);
-	}
+//    if ( _penBtn.touchesEnded(inPt) ) { // 按下的是 pen button
+//        if (_drawingMode == ERASER_MODE || _drawingMode == MOVEINGOBJ_MODE ) { // 前一次是在橡皮擦模式
+//            _eraserBtn.setButtonOff(); // 設定橡皮擦圖示關閉
+//            _handBtn.setButtonOff(); // 設定移動物件圖示關閉
+//            _drawingMode = DRAWING_MODE;
+//        }
+//        return(true);
+//    }
 
 	if ( _eraserBtn.touchesEnded(inPt)  ) { // 按下的是 eraser button
 		if ( _drawingMode == DRAWING_MODE || _drawingMode == MOVEINGOBJ_MODE) { // 前一次是在畫筆模式
-			_penBtn.setButtonOff();		// 切換畫筆圖示關閉
+			//_penBtn.setButtonOff();		// 切換畫筆圖示關閉
 			_handBtn.setButtonOff(); // 設定移動物件圖示關閉
 			_drawingMode = ERASER_MODE;
 		}
@@ -222,7 +222,7 @@ bool CHandDrawing::touchesEnded(cocos2d::Point inPt)
 
 	if (_handBtn.touchesEnded(inPt)) {
 		if (_drawingMode == DRAWING_MODE || _drawingMode == ERASER_MODE) { // 前一次是在畫筆模式
-			_penBtn.setButtonOff();		// 切換畫筆圖示關閉
+			//_penBtn.setButtonOff();		// 切換畫筆圖示關閉
 			_eraserBtn.setButtonOff(); // 設定橡皮擦圖示關閉
 			_handBtn.setButtonOn(); // 設定移動物件圖示關閉
 			_drawingMode = MOVEINGOBJ_MODE;
@@ -230,10 +230,10 @@ bool CHandDrawing::touchesEnded(cocos2d::Point inPt)
 		return(true);
 	}
 
-	if (_clearAllBtn.touchesEnded(inPt)) { // 確認被按下
-		// 清除螢幕上所有手繪的內容
-		removeAll();
-		return(true);
-	}
+//    if (_clearAllBtn.touchesEnded(inPt)) { // 確認被按下
+//        // 清除螢幕上所有手繪的內容
+//        removeAll();
+//        return(true);
+//    }
 	return(false);
 }

@@ -1,4 +1,4 @@
-﻿#include "COnOffButton.h"
+#include "COnOffButton.h"
 
 USING_NS_CC;
 
