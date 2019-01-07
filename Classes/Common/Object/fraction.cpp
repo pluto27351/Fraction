@@ -32,11 +32,6 @@ fraction::fraction(int uni,int queNo, int number){ //單元．題目．數字
             answer = CSLoader::createNode(name);
             Input_u2_7(*answer, number);
             break;
-//        case 31:    //測試用
-//        case 32:
-//            answer = CSLoader::createNode(name);
-//            Input_u3_2(*answer, number);
-//            break;
     }
     answer->setPosition(Point(1024,700));
    // answer->setPosition(Point(480,320));
@@ -111,68 +106,38 @@ void fraction::Input_u2_7(Node &Q, int number){
     
 }
 
-//void fraction::Input_u3_2(Node &Q, int number){
-//    char Input[5];
-//    char I2[5];
-//    //取得擺放位子
-//    //數字
-//    Text *Output_n = (Text *)Q.getChildByName("N_1");
-//    sprintf(Input,"%d",number*4+2);
-//    Output_n->setString(Input);
-//    //Output_n->setScale(2);
-//
-//    //分數
-//    for(int i = 0;i<9;i++){
-//        sprintf(Input,"F_%d",i+1);
-//        Node *Output_f = (Node *)Q.getChildByName(Input);
-//        sprintf(Input,"%d",number);
-//        switch(i){
-//            case 0:
-//            case 1:
-//                sprintf(I2,"%dx4",number);
-//                Output_f->addChild(Set_fraction(I2, Input, "0"));
-//                break;
-//            case 2:
-//                sprintf(I2,"%d",number*4);
-//                Output_f->addChild(Set_fraction(I2, Input, "0"));
-//                break;
-//            case 3:
-//                Output_f->addChild(Set_fraction("2", Input, "4"));
-//                break;
-//            case 4:
-//                Output_f->addChild(Set_fraction("2", Input, "0"));
-//                break;
-//            case 5:
-//                sprintf(I2,"%d+2",number*4);
-//                Output_f->addChild(Set_fraction(I2, Input, "0"));
-//                break;
-//            case 6:
-//            case 7:
-//                sprintf(I2,"%d",number*4+2);
-//                Output_f->addChild(Set_fraction(I2, Input, "0"));
-//                break;
-//            case 8:
-//                Output_f->addChild(Set_fraction("1", Input, "0"));
-//                break;
-//        }
-//    }
-//}
 
 char * fraction::Numerator(const char *c ,const char *number){
-    char *ntor = (char*)c;
+    char *ntor =(char*)c;
     bool count = false; //判斷是否要運算(+,-,*,/)
+    bool z =false;
+    if(number[1]!=NULL)z =true;        //判斷幾位數 2位以上
+    
+    //型成字串的過程
     for( int i=0; c[i]!=NULL; i++){
-        if(c[i] == 'F')ntor[i] = number[0];
-        else if(c[i] == '='){
+        if(c[i] == 'F'){               //F分母的數
+            if(z == true){
+                ntor= new char[strlen(c)+1];
+                ntor =(char*)c;
+                for(int i = strlen(ntor)-1; i>=0; i--) //將字串往後推
+                    ntor[i+1] = c[i];
+                ntor[i] = number[0];ntor[i+1] = number[1];
+            }else{
+                ntor[i] = number[0];
+            }
+        }
+        else if(c[i] == '='){ //出現'＝'進運算
             count = true;
         }
     }
+    
+    //加減乘除運算
     if(count == true){
         int a=0,b=0;
-        for( int i=0; c[i]!=NULL; i++)
+        for( int i=0; ntor[i]!=NULL; i++)
             switch(c[i]){
                 case '+':
-                    for(int x = i-1,y = 0; x>0; x--,y++)
+                    for(int x = i-1,y = 0; x>0; x--,y++)//x數字 y個位數或十位數
                         a+=(ntor[x]-'0')*pow(10,y);
                     for(int x = strlen(c)-1,y = 0; x>i; x--,y++)
                         b+=(ntor[x]-'0')*pow(10,y);
