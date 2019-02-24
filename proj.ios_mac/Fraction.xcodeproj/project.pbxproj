@@ -59,19 +59,17 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
-		F1ABBBE021A0679600730450 /* fraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1ABBBDF21A0679600730450 /* fraction.cpp */; };
-		F1E7E46021A017A8006BFFB6 /* CTeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44421A017A7006BFFB6 /* CTeachScene.cpp */; };
-		F1E7E46121A017A8006BFFB6 /* CMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44521A017A7006BFFB6 /* CMenuScene.cpp */; };
-		F1E7E46221A017A8006BFFB6 /* CHandDrawing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44821A017A7006BFFB6 /* CHandDrawing.cpp */; };
-		F1E7E46321A017A8006BFFB6 /* CEqualController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44D21A017A7006BFFB6 /* CEqualController.cpp */; };
-		F1E7E46421A017A8006BFFB6 /* CSwitchButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E44F21A017A7006BFFB6 /* CSwitchButton.cpp */; };
-		F1E7E46521A017A8006BFFB6 /* CButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45121A017A7006BFFB6 /* CButton.cpp */; };
-		F1E7E46621A017A8006BFFB6 /* COnButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45221A017A7006BFFB6 /* COnButton.cpp */; };
-		F1E7E46721A017A8006BFFB6 /* combination.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45321A017A7006BFFB6 /* combination.cpp */; };
-		F1E7E46821A017A8006BFFB6 /* COnOffButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45521A017A7006BFFB6 /* COnOffButton.cpp */; };
-		F1E7E46A21A017A8006BFFB6 /* TouchSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45821A017A7006BFFB6 /* TouchSprite.cpp */; };
-		F1E7E46B21A017A8006BFFB6 /* CQueController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45D21A017A7006BFFB6 /* CQueController.cpp */; };
-		F1E7E46C21A017A8006BFFB6 /* CHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1E7E45E21A017A7006BFFB6 /* CHomeScene.cpp */; };
+		F13EDDF42222CD3C00DD2F00 /* CTeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDDD2222CD3B00DD2F00 /* CTeachScene.cpp */; };
+		F13EDDF52222CD3C00DD2F00 /* CQuePanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDDE2222CD3B00DD2F00 /* CQuePanel.cpp */; };
+		F13EDDF62222CD3C00DD2F00 /* CMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE02222CD3B00DD2F00 /* CMenuScene.cpp */; };
+		F13EDDF72222CD3C00DD2F00 /* CDrawingPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE42222CD3C00DD2F00 /* CDrawingPanel.cpp */; };
+		F13EDDF82222CD3C00DD2F00 /* CHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE52222CD3C00DD2F00 /* CHomeScene.cpp */; };
+		F13EDDF92222CD3C00DD2F00 /* CSwitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE82222CD3C00DD2F00 /* CSwitch.cpp */; };
+		F13EDDFA2222CD3C00DD2F00 /* CButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDEB2222CD3C00DD2F00 /* CButton.cpp */; };
+		F13EDDFB2222CD3C00DD2F00 /* TouchSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDEE2222CD3C00DD2F00 /* TouchSprite.cpp */; };
+		F13EDDFC2222CD3C00DD2F00 /* CCutImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDEF2222CD3C00DD2F00 /* CCutImage.cpp */; };
+		F13EDDFD2222CD3C00DD2F00 /* CAnsCreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDF02222CD3C00DD2F00 /* CAnsCreater.cpp */; };
+		F13EDDFE2222CD3C00DD2F00 /* CSwitchGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDF12222CD3C00DD2F00 /* CSwitchGroup.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,33 +128,29 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		F1ABBBD421A05F9F00730450 /* CTeachScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTeachScene.h; sourceTree = "<group>"; };
-		F1ABBBD521A0656000730450 /* combination.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = combination.h; sourceTree = "<group>"; };
-		F1ABBBDE21A0679600730450 /* fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fraction.h; sourceTree = "<group>"; };
-		F1ABBBDF21A0679600730450 /* fraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fraction.cpp; sourceTree = "<group>"; };
-		F1E7E44421A017A7006BFFB6 /* CTeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTeachScene.cpp; sourceTree = "<group>"; };
-		F1E7E44521A017A7006BFFB6 /* CMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMenuScene.cpp; sourceTree = "<group>"; };
-		F1E7E44621A017A7006BFFB6 /* CMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMenuScene.h; sourceTree = "<group>"; };
-		F1E7E44821A017A7006BFFB6 /* CHandDrawing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CHandDrawing.cpp; sourceTree = "<group>"; };
-		F1E7E44921A017A7006BFFB6 /* CHandDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHandDrawing.h; sourceTree = "<group>"; };
-		F1E7E44A21A017A7006BFFB6 /* CQueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQueController.h; sourceTree = "<group>"; };
-		F1E7E44D21A017A7006BFFB6 /* CEqualController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CEqualController.cpp; sourceTree = "<group>"; };
-		F1E7E44E21A017A7006BFFB6 /* CButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
-		F1E7E44F21A017A7006BFFB6 /* CSwitchButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSwitchButton.cpp; sourceTree = "<group>"; };
-		F1E7E45021A017A7006BFFB6 /* CEqualController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEqualController.h; sourceTree = "<group>"; };
-		F1E7E45121A017A7006BFFB6 /* CButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CButton.cpp; sourceTree = "<group>"; };
-		F1E7E45221A017A7006BFFB6 /* COnButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COnButton.cpp; sourceTree = "<group>"; };
-		F1E7E45321A017A7006BFFB6 /* combination.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = combination.cpp; sourceTree = "<group>"; };
-		F1E7E45421A017A7006BFFB6 /* TouchSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSprite.h; sourceTree = "<group>"; };
-		F1E7E45521A017A7006BFFB6 /* COnOffButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = COnOffButton.cpp; sourceTree = "<group>"; };
-		F1E7E45821A017A7006BFFB6 /* TouchSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchSprite.cpp; sourceTree = "<group>"; };
-		F1E7E45921A017A7006BFFB6 /* COnOffButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COnOffButton.h; sourceTree = "<group>"; };
-		F1E7E45A21A017A7006BFFB6 /* CSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwitchButton.h; sourceTree = "<group>"; };
-		F1E7E45B21A017A7006BFFB6 /* COnButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COnButton.h; sourceTree = "<group>"; };
-		F1E7E45C21A017A7006BFFB6 /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
-		F1E7E45D21A017A7006BFFB6 /* CQueController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQueController.cpp; sourceTree = "<group>"; };
-		F1E7E45E21A017A7006BFFB6 /* CHomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CHomeScene.cpp; sourceTree = "<group>"; };
-		F1E7E45F21A017A7006BFFB6 /* CHomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomeScene.h; sourceTree = "<group>"; };
+		F13EDDDC2222CD3B00DD2F00 /* CTeachScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTeachScene.h; sourceTree = "<group>"; };
+		F13EDDDD2222CD3B00DD2F00 /* CTeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTeachScene.cpp; sourceTree = "<group>"; };
+		F13EDDDE2222CD3B00DD2F00 /* CQuePanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQuePanel.cpp; sourceTree = "<group>"; };
+		F13EDDDF2222CD3B00DD2F00 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		F13EDDE02222CD3B00DD2F00 /* CMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMenuScene.cpp; sourceTree = "<group>"; };
+		F13EDDE12222CD3B00DD2F00 /* CQuePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQuePanel.h; sourceTree = "<group>"; };
+		F13EDDE22222CD3B00DD2F00 /* CDrawingPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDrawingPanel.h; sourceTree = "<group>"; };
+		F13EDDE32222CD3B00DD2F00 /* CMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMenuScene.h; sourceTree = "<group>"; };
+		F13EDDE42222CD3C00DD2F00 /* CDrawingPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDrawingPanel.cpp; sourceTree = "<group>"; };
+		F13EDDE52222CD3C00DD2F00 /* CHomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CHomeScene.cpp; sourceTree = "<group>"; };
+		F13EDDE72222CD3C00DD2F00 /* CSwitchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwitchGroup.h; sourceTree = "<group>"; };
+		F13EDDE82222CD3C00DD2F00 /* CSwitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSwitch.cpp; sourceTree = "<group>"; };
+		F13EDDE92222CD3C00DD2F00 /* CButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CButton.h; sourceTree = "<group>"; };
+		F13EDDEA2222CD3C00DD2F00 /* CCutImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCutImage.h; sourceTree = "<group>"; };
+		F13EDDEB2222CD3C00DD2F00 /* CButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CButton.cpp; sourceTree = "<group>"; };
+		F13EDDEC2222CD3C00DD2F00 /* TouchSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchSprite.h; sourceTree = "<group>"; };
+		F13EDDED2222CD3C00DD2F00 /* CSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwitch.h; sourceTree = "<group>"; };
+		F13EDDEE2222CD3C00DD2F00 /* TouchSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TouchSprite.cpp; sourceTree = "<group>"; };
+		F13EDDEF2222CD3C00DD2F00 /* CCutImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCutImage.cpp; sourceTree = "<group>"; };
+		F13EDDF02222CD3C00DD2F00 /* CAnsCreater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAnsCreater.cpp; sourceTree = "<group>"; };
+		F13EDDF12222CD3C00DD2F00 /* CSwitchGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSwitchGroup.cpp; sourceTree = "<group>"; };
+		F13EDDF22222CD3C00DD2F00 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
+		F13EDDF32222CD3C00DD2F00 /* CHomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomeScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,15 +273,20 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F1E7E44721A017A7006BFFB6 /* Common */,
-				F1E7E45E21A017A7006BFFB6 /* CHomeScene.cpp */,
-				F1E7E45F21A017A7006BFFB6 /* CHomeScene.h */,
-				F1E7E44521A017A7006BFFB6 /* CMenuScene.cpp */,
-				F1E7E44621A017A7006BFFB6 /* CMenuScene.h */,
-				F1E7E44421A017A7006BFFB6 /* CTeachScene.cpp */,
-				F1ABBBD421A05F9F00730450 /* CTeachScene.h */,
+				F13EDDE62222CD3C00DD2F00 /* Common */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				F13EDDE42222CD3C00DD2F00 /* CDrawingPanel.cpp */,
+				F13EDDE22222CD3B00DD2F00 /* CDrawingPanel.h */,
+				F13EDDE52222CD3C00DD2F00 /* CHomeScene.cpp */,
+				F13EDDF32222CD3C00DD2F00 /* CHomeScene.h */,
+				F13EDDE02222CD3B00DD2F00 /* CMenuScene.cpp */,
+				F13EDDE32222CD3B00DD2F00 /* CMenuScene.h */,
+				F13EDDDE2222CD3B00DD2F00 /* CQuePanel.cpp */,
+				F13EDDE12222CD3B00DD2F00 /* CQuePanel.h */,
+				F13EDDDD2222CD3B00DD2F00 /* CTeachScene.cpp */,
+				F13EDDDC2222CD3B00DD2F00 /* CTeachScene.h */,
+				F13EDDDF2222CD3B00DD2F00 /* Data.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -356,40 +355,23 @@
 			name = "ios-libs";
 			sourceTree = "<group>";
 		};
-		F1E7E44721A017A7006BFFB6 /* Common */ = {
+		F13EDDE62222CD3C00DD2F00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F1E7E44B21A017A7006BFFB6 /* Object */,
-				F1E7E44821A017A7006BFFB6 /* CHandDrawing.cpp */,
-				F1E7E44921A017A7006BFFB6 /* CHandDrawing.h */,
-				F1E7E45C21A017A7006BFFB6 /* const.h */,
-				F1E7E45D21A017A7006BFFB6 /* CQueController.cpp */,
-				F1E7E44A21A017A7006BFFB6 /* CQueController.h */,
+				F13EDDF02222CD3C00DD2F00 /* CAnsCreater.cpp */,
+				F13EDDF22222CD3C00DD2F00 /* CAnsCreater.h */,
+				F13EDDEB2222CD3C00DD2F00 /* CButton.cpp */,
+				F13EDDE92222CD3C00DD2F00 /* CButton.h */,
+				F13EDDEF2222CD3C00DD2F00 /* CCutImage.cpp */,
+				F13EDDEA2222CD3C00DD2F00 /* CCutImage.h */,
+				F13EDDE82222CD3C00DD2F00 /* CSwitch.cpp */,
+				F13EDDED2222CD3C00DD2F00 /* CSwitch.h */,
+				F13EDDF12222CD3C00DD2F00 /* CSwitchGroup.cpp */,
+				F13EDDE72222CD3C00DD2F00 /* CSwitchGroup.h */,
+				F13EDDEE2222CD3C00DD2F00 /* TouchSprite.cpp */,
+				F13EDDEC2222CD3C00DD2F00 /* TouchSprite.h */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		F1E7E44B21A017A7006BFFB6 /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				F1ABBBDF21A0679600730450 /* fraction.cpp */,
-				F1ABBBDE21A0679600730450 /* fraction.h */,
-				F1E7E45121A017A7006BFFB6 /* CButton.cpp */,
-				F1E7E44E21A017A7006BFFB6 /* CButton.h */,
-				F1E7E44D21A017A7006BFFB6 /* CEqualController.cpp */,
-				F1E7E45021A017A7006BFFB6 /* CEqualController.h */,
-				F1E7E45321A017A7006BFFB6 /* combination.cpp */,
-				F1ABBBD521A0656000730450 /* combination.h */,
-				F1E7E45221A017A7006BFFB6 /* COnButton.cpp */,
-				F1E7E45B21A017A7006BFFB6 /* COnButton.h */,
-				F1E7E45521A017A7006BFFB6 /* COnOffButton.cpp */,
-				F1E7E45921A017A7006BFFB6 /* COnOffButton.h */,
-				F1E7E44F21A017A7006BFFB6 /* CSwitchButton.cpp */,
-				F1E7E45A21A017A7006BFFB6 /* CSwitchButton.h */,
-				F1E7E45821A017A7006BFFB6 /* TouchSprite.cpp */,
-				F1E7E45421A017A7006BFFB6 /* TouchSprite.h */,
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,23 +487,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E7E46621A017A8006BFFB6 /* COnButton.cpp in Sources */,
-				F1E7E46821A017A8006BFFB6 /* COnOffButton.cpp in Sources */,
-				F1ABBBE021A0679600730450 /* fraction.cpp in Sources */,
+				F13EDDFA2222CD3C00DD2F00 /* CButton.cpp in Sources */,
+				F13EDDF82222CD3C00DD2F00 /* CHomeScene.cpp in Sources */,
+				F13EDDFB2222CD3C00DD2F00 /* TouchSprite.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				F1E7E46421A017A8006BFFB6 /* CSwitchButton.cpp in Sources */,
-				F1E7E46B21A017A8006BFFB6 /* CQueController.cpp in Sources */,
-				F1E7E46721A017A8006BFFB6 /* combination.cpp in Sources */,
-				F1E7E46121A017A8006BFFB6 /* CMenuScene.cpp in Sources */,
-				F1E7E46C21A017A8006BFFB6 /* CHomeScene.cpp in Sources */,
+				F13EDDF72222CD3C00DD2F00 /* CDrawingPanel.cpp in Sources */,
+				F13EDDF92222CD3C00DD2F00 /* CSwitch.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				F13EDDFC2222CD3C00DD2F00 /* CCutImage.cpp in Sources */,
+				F13EDDFE2222CD3C00DD2F00 /* CSwitchGroup.cpp in Sources */,
+				F13EDDF52222CD3C00DD2F00 /* CQuePanel.cpp in Sources */,
+				F13EDDFD2222CD3C00DD2F00 /* CAnsCreater.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				F1E7E46321A017A8006BFFB6 /* CEqualController.cpp in Sources */,
-				F1E7E46021A017A8006BFFB6 /* CTeachScene.cpp in Sources */,
-				F1E7E46A21A017A8006BFFB6 /* TouchSprite.cpp in Sources */,
-				F1E7E46521A017A8006BFFB6 /* CButton.cpp in Sources */,
+				F13EDDF42222CD3C00DD2F00 /* CTeachScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				F1E7E46221A017A8006BFFB6 /* CHandDrawing.cpp in Sources */,
+				F13EDDF62222CD3C00DD2F00 /* CMenuScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

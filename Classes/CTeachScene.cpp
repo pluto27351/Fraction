@@ -1,8 +1,8 @@
-#include "CTeachScene.h"
-#include "cocostudio/CocoStudio.h"
+ï»¿#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "CTeachScene.h"
 #include "CMenuScene.h"
-
+#include "Data.h"
 
 USING_NS_CC;
 
@@ -32,7 +32,7 @@ bool CTeachScene::init()
 	_listener1->onTouchesMoved = CC_CALLBACK_2(CTeachScene::onTouchesMoved, this);
 	_listener1->onTouchesEnded = CC_CALLBACK_2(CTeachScene::onTouchesEnded, this);
 
-	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//¥[¤J­è³Ð«Øªº¨Æ¥ó²âÅ¥¾¹
+	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//åŠ å…¥å‰›å‰µå»ºçš„äº‹ä»¶è†è½å™¨
 	this->schedule(CC_SCHEDULE_SELECTOR(CTeachScene::doStep));
 
 	return true;
@@ -40,37 +40,61 @@ bool CTeachScene::init()
 
 void CTeachScene::setCreate(int unit) 
 {
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("handdrawing.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_Btn.plist");
-
-	auto rootNode = CSLoader::createNode("unitscene.csb");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/handdrawing.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Wood.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/quecontrol.plist");
+	auto rootNode = CSLoader::createNode("TeachScene.csb");
 	addChild(rootNode);
 
-	_handDrawing = CHandDrawing::create();
-	_handDrawing->initHandDrawing(*rootNode, *this);
+	_handDrawing = CDrawingPanel::create();
+	_handDrawing->initDrawingPanel(*rootNode, *this);
 	_handDrawing->retain();
 
+	//menubtn
+	auto pt = rootNode->getChildByName("menubtn")->getPosition();
+	auto scale = rootNode->getChildByName("menubtn")->getScale();
+	_menuBtn.setButtonInfo("prevque_off.png", "prevque_off.png", *this, pt, 1);
+	_menuBtn.setScale(scale);
+	rootNode->removeChildByName("menubtn");
 
-	// °ÝÃDÅª¨ú±±¨î¾¹ªì©l³]©w
-	_queController = new CQueController(unit, *rootNode, *this);  // ³]©w¬°Åª¨ú unit1 ªºÃD¥Ø
+	// å•é¡Œè®€å–æŽ§åˆ¶å™¨åˆå§‹è¨­å®š
+	_queController = new CQuePanel(unit, *rootNode, *this);  // è¨­å®šç‚ºè®€å– unit1 çš„é¡Œç›®
+
 	_bFracBoardOn = false;
-
+	_toolMode = _handDrawing->getMode();
 }
 
 void CTeachScene::doStep(float dt)  // OnFrameMove
 {
+	if (_bMeunBtnPressed) {
+		this->unscheduleAllCallbacks();
+		Director::getInstance()->runWithScene(CMenuScene::createScene());
+	}
 	_handDrawing->doStep(dt);
 
 }
+
 
 void CTeachScene::onTouchesBegan(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event) {
 	for (auto &item : touches) {
 		auto touch = item;
 		auto touchLoc = touch->getLocation();
 		auto touchId = touch->getID();
+		bool touchOnEmpty = true;
 
-		if (!_bFracBoardOn) _handDrawing->touchesBegin(touchLoc);
-		_queController->touchesBegin(touchLoc, touchId, _curMode);
+		touchOnEmpty *= !_queController->touchesBegin(touchLoc, touchId, _toolMode);
+
+		if (!_bFracBoardOn) {
+			touchOnEmpty *= !_menuBtn.touchesBegin(touchLoc);
+			touchOnEmpty *= !_handDrawing->touchesBegin(touchLoc);
+
+			if (touchOnEmpty && _toolMode == HAND_MODE) {
+				_handDrawing->changeToBlackPen();
+			}
+		}
+		
+
 	}
 }
 
@@ -82,8 +106,13 @@ void CTeachScene::onTouchesMoved(const std::vector<cocos2d::Touch*> touches, coc
 		auto touchId = touch->getID();
 		Point preTouchLoc = touch->getPreviousLocation();
 
-		if (!_bFracBoardOn) _handDrawing->touchesMoved(touchLoc, preTouchLoc);
-		_queController->touchesMoved(touchLoc, touchId, _curMode);
+		_queController->touchesMoved(touchLoc, touchId, _toolMode);
+
+		if (!_bFracBoardOn) {
+			bool p = _menuBtn.touchesMoved(touchLoc);
+			if(!p) _handDrawing->touchesMoved(touchLoc, preTouchLoc);
+		}
+
 	}
 }
 
@@ -93,20 +122,16 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 		auto touch = item;
 		auto touchLoc = touch->getLocation();
 		auto touchId = touch->getID();
-
-		if (!_bFracBoardOn)
-			if (_handDrawing->touchesEnded(touchLoc)) {
-				_curMode = _handDrawing->getMode();
-			}
-		if (_queController->touchesEnded(touchLoc, touchId, _curMode)) {
-			if (_queController->getBoardStatus())
-				_bFracBoardOn = true;
+			
+		if (_queController->touchesEnded(touchLoc, touchId, _toolMode)) {
+			if (_queController->getBoardStatus())  _bFracBoardOn = true;
 			else _bFracBoardOn = false;
+		}
 
-			if (_queController->goBackToMenu()) {
-				this->unscheduleAllCallbacks();
-				Director::getInstance()->runWithScene(CMenuScene::createScene());
-			}
+
+		if (!_bFracBoardOn) {
+			if (_menuBtn.touchesEnded(touchLoc)) _bMeunBtnPressed = true;
+			else if (_handDrawing->touchesEnded(touchLoc)) _toolMode = _handDrawing->getMode();
 		}
 	}
 }
@@ -114,9 +139,12 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 CTeachScene::~CTeachScene()
 {
 	_handDrawing->release();
-	delete _queController;
+	//delete _queController;
 	this->removeAllChildren();
 
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("handdrawing.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/handdrawing.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Btn.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Wood.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/quecontrol.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

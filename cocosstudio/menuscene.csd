@@ -1,75 +1,86 @@
 <GameFile>
-  <PropertyGroup Name="menuscene" Type="Scene" ID="af2d0314-d6a0-4271-9d7a-3902d86eb61c" Version="3.10.0.0" />
+  <PropertyGroup Name="MenuScene" Type="Scene" ID="484b5821-b9ca-4aeb-ad9b-e5a5ba35f169" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Scene" Tag="274" ctype="GameNodeObjectData">
+      <ObjectData Name="Scene" Tag="98" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="page1_bk_6" CanEdit="False" ActionTag="964774015" Tag="30" IconVisible="False" LeftMargin="-216.0006" RightMargin="-215.9995" TopMargin="0.0024" BottomMargin="-0.0025" ctype="SpriteObjectData">
-            <Size X="2480.0000" Y="1536.0000" />
+          <AbstractNodeData Name="menu_1" ActionTag="-993406567" Tag="124" IconVisible="False" LeftMargin="543.9985" RightMargin="544.0015" TopMargin="408.0022" BottomMargin="407.9979" ctype="SpriteObjectData">
+            <Size X="960.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1023.9994" Y="767.9975" />
-            <Scale ScaleX="0.8247" ScaleY="1.0000" />
+            <Position X="1023.9985" Y="767.9979" />
+            <Scale ScaleX="2.1541" ScaleY="2.1541" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.2109" Y="1.0000" />
-            <FileData Type="Normal" Path="page1_bk.jpg" Plist="" />
+            <PreSize X="0.4688" Y="0.4688" />
+            <FileData Type="Normal" Path="img/menu.jpg" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="unit1_btn" ActionTag="1889633090" Tag="8" IconVisible="False" LeftMargin="419.5000" RightMargin="419.5000" TopMargin="121.2686" BottomMargin="1173.7314" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_1" ActionTag="-1202152989" Tag="186" IconVisible="False" LeftMargin="-78.8625" RightMargin="917.8625" TopMargin="591.2642" BottomMargin="703.7358" ctype="SpriteObjectData">
             <Size X="1209.0000" Y="241.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="1294.2314" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="525.6375" Y="824.2358" />
+            <Scale ScaleX="0.4585" ScaleY="0.4585" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.8426" />
+            <PrePosition X="0.2567" Y="0.5366" />
             <PreSize X="0.5903" Y="0.1569" />
-            <FileData Type="PlistSubImage" Path="bt_01.png" Plist="Fraction_Btn.plist" />
+            <FileData Type="PlistSubImage" Path="bt_01.png" Plist="img/Fraction_Btn.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="unit2_btn" ActionTag="733143419" Tag="9" IconVisible="False" LeftMargin="419.5000" RightMargin="419.5000" TopMargin="384.3479" BottomMargin="910.6521" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_2" ActionTag="2120822245" Tag="187" IconVisible="False" LeftMargin="185.3159" RightMargin="653.6841" TopMargin="216.8940" BottomMargin="1078.1060" ctype="SpriteObjectData">
             <Size X="1209.0000" Y="241.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="1031.1521" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="789.8159" Y="1198.6060" />
+            <Scale ScaleX="0.4585" ScaleY="0.4585" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.6713" />
+            <PrePosition X="0.3857" Y="0.7803" />
             <PreSize X="0.5903" Y="0.1569" />
-            <FileData Type="PlistSubImage" Path="bt_02.png" Plist="Fraction_Btn.plist" />
+            <FileData Type="PlistSubImage" Path="bt_02.png" Plist="img/Fraction_Btn.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="unit3_btn" ActionTag="-287360693" Tag="10" IconVisible="False" LeftMargin="419.5000" RightMargin="419.5000" TopMargin="647.4257" BottomMargin="647.5743" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_4" ActionTag="1594341732" Tag="188" IconVisible="False" LeftMargin="751.4089" RightMargin="87.5911" TopMargin="237.0991" BottomMargin="1057.9009" ctype="SpriteObjectData">
             <Size X="1209.0000" Y="241.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="768.0743" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="1355.9089" Y="1178.4009" />
+            <Scale ScaleX="0.4585" ScaleY="0.4585" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
+            <PrePosition X="0.6621" Y="0.7672" />
             <PreSize X="0.5903" Y="0.1569" />
-            <FileData Type="PlistSubImage" Path="bt_03.png" Plist="Fraction_Btn.plist" />
+            <FileData Type="PlistSubImage" Path="bt_04.png" Plist="img/Fraction_Btn.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="unit4_btn" ActionTag="963469629" Tag="11" IconVisible="False" LeftMargin="419.5000" RightMargin="419.5000" TopMargin="910.5045" BottomMargin="384.4955" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_5" ActionTag="827197879" Tag="189" IconVisible="False" LeftMargin="1043.6892" RightMargin="-204.6892" TopMargin="563.5845" BottomMargin="731.4155" ctype="SpriteObjectData">
             <Size X="1209.0000" Y="241.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="504.9955" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.4787" ScaleY="0.5205" />
+            <Position X="1622.4375" Y="856.8560" />
+            <Scale ScaleX="0.4585" ScaleY="0.4585" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.3288" />
+            <PrePosition X="0.7922" Y="0.5578" />
             <PreSize X="0.5903" Y="0.1569" />
-            <FileData Type="PlistSubImage" Path="bt_04.png" Plist="Fraction_Btn.plist" />
+            <FileData Type="PlistSubImage" Path="bt_05.png" Plist="img/Fraction_Btn.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="unit5_btn" ActionTag="-1228901856" Tag="12" IconVisible="False" LeftMargin="419.5000" RightMargin="419.5000" TopMargin="1173.5833" BottomMargin="121.4168" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_3" ActionTag="-2130686124" Tag="190" IconVisible="False" LeftMargin="411.7525" RightMargin="427.2476" TopMargin="757.7148" BottomMargin="537.2852" ctype="SpriteObjectData">
             <Size X="1209.0000" Y="241.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="241.9168" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="1016.2525" Y="657.7852" />
+            <Scale ScaleX="0.4585" ScaleY="0.4585" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.1575" />
+            <PrePosition X="0.4962" Y="0.4282" />
             <PreSize X="0.5903" Y="0.1569" />
-            <FileData Type="PlistSubImage" Path="bt_05.png" Plist="Fraction_Btn.plist" />
+            <FileData Type="PlistSubImage" Path="bt_03.png" Plist="img/Fraction_Btn.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="gobtn" ActionTag="1917846829" Tag="196" IconVisible="False" LeftMargin="1794.7148" RightMargin="-57.7148" TopMargin="620.4204" BottomMargin="680.5796" ctype="SpriteObjectData">
+            <Size X="311.0000" Y="235.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1950.2148" Y="798.0796" />
+            <Scale ScaleX="0.7000" ScaleY="0.7000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9523" Y="0.5196" />
+            <PreSize X="0.1519" Y="0.1530" />
+            <FileData Type="PlistSubImage" Path="cover_start.png" Plist="img/Fraction_Btn.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

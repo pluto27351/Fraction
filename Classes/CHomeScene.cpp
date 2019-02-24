@@ -1,56 +1,55 @@
-#include "cocostudio/CocoStudio.h"
-#include "ui/CocosGUI.h"
-#include "CHomeScene.h"
+﻿#include "CHomeScene.h"
 #include "CMenuScene.h"
 
-USING_NS_CC;
-
-using namespace cocostudio::timeline;
 
 Scene* CHomeScene::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = CHomeScene::create();
+	auto scene = Scene::create();
 
-    // add layer as a child to scene
-    scene->addChild(layer);
+	auto layer = CHomeScene::create();
 
-    // return the scene
-    return scene;
+	scene->addChild(layer);
+
+	return scene;
 }
 
-// on "init" you need to initialize your instance
+
 bool CHomeScene::init()
 {
-     
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
-        return false;
-    }
+
+	if (!Layer::init())
+	{
+		return false;
+	}
 
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-	Size size;
+	//Size size;
 
-    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile("homescene.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_Btn.plist");
-    auto rootNode = CSLoader::createNode("homescene.csb");
-    addChild(rootNode);
-    //_startTap = (Sprite *)rootNode->getChildByName("start_tap");
-    _startTap = (Sprite *)rootNode->getChildByName("start_btn");
-    auto _BtnSize = _startTap->getContentSize();
-    auto _BtnLoc = _startTap->getPosition();
-    
-	//auto bk_img = Sprite::create("bkimg.png", Rect(0, 0, visibleSize.width, visibleSize.height));
-	//Texture2D::TexParams tp = { GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT };
-	//bk_img->getTexture()->setTexParameters(tp);
-	//bk_img->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	//this->addChild(bk_img, -1);
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/homescene.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plis");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/scene101.plist");
+	auto rootNode = CSLoader::createNode("HomeScene.csb");	
+	addChild(rootNode);
+
+	auto _BtnLoc = rootNode->getChildByName("startBtn")->getPosition();
+	_startBtn.setButtonInfo("cover_start.png", "cover_start_clik.png", *this, _BtnLoc, 1);
+	rootNode->removeChildByName("startBtn");
+
+    _BtnLoc = rootNode->getChildByName("Boo")->getPosition();
+	auto _scale = rootNode->getChildByName("Boo")->getScale();
+	_Boo.setButtonInfo("bean2_01.png", "bean2_01.png", *this, _BtnLoc, 1);
+	_Boo.setTouchScale(1);
+	_Boo.setScale(_scale);
+	rootNode->removeChildByName("Boo");
+
+	_BooAct = CSLoader::createNode("ani/Boo.csb");
+	_BooAct->setPosition(_BtnLoc);
+	_BooAct->setScale(_scale);
+	this->addChild(_BooAct);
+	_BooAct->setVisible(false);
+	_BooActTime = (ActionTimeline *)CSLoader::createTimeline("ani/Boo.csb");
+	_BooAct->runAction(_BooActTime);
 
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
 	_listener1->onTouchBegan = CC_CALLBACK_2(CHomeScene::onTouchBegan, this);		//加入觸碰開始事件
@@ -60,9 +59,9 @@ bool CHomeScene::init()
 	_fTotalTime = 0; _bToMenuScene = false;
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(_listener1, this);	//加入剛創建的事件聆聽器
 	this->schedule(CC_SCHEDULE_SELECTOR(CHomeScene::doStep));
-	
 
-    return true;
+
+	return true;
 }
 
 void CHomeScene::doStep(float dt)  // OnFrameMove
@@ -72,37 +71,46 @@ void CHomeScene::doStep(float dt)  // OnFrameMove
 		auto scene = TransitionMoveInR::create(0.5f, CMenuScene::createScene());
 		Director::getInstance()->runWithScene(scene);
 	}
-	else {
-		// 每秒鐘讓 _startTap 從目前的大小變大1.5倍在縮小
-		float t = fabs(sinf(_fTotalTime*M_PI_4)*0.25f)*0.5f+1;
-		_startTap->setScale(t);
-		_fTotalTime += dt;
-	}
 }
 
 bool  CHomeScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
 	Point touchLoc = pTouch->getLocation();
-//	_handDrawing->drawing(touchLoc);
+	_startBtn.touchesBegin(touchLoc);
+	_Boo.touchesBegin(touchLoc);
 	return true;
 }
 
 void  CHomeScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰移動事件
 {
 	Point touchLoc = pTouch->getLocation();
+	_startBtn.touchesMoved(touchLoc);
+	_Boo.touchesMoved(touchLoc);
 }
 
 void  CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
 {
 	Point touchLoc = pTouch->getLocation();
-	// switch to menu scene
-    _bToMenuScene = true;
+	if (_Boo.touchesEnded(touchLoc)) {
+		_Boo.setVisible(false);  _BooAct->setVisible(true);
+		_BooActTime->gotoFrameAndPlay(0, 15, false);
+		_BooActTime->setLastFrameCallFunc([=]()
+		{
+			_Boo.setVisible(true);  _BooAct->setVisible(false);
+		});
+	}
+
+	if (_startBtn.touchesEnded(touchLoc)) _bToMenuScene = true;
+
 
 }
 
 CHomeScene::~CHomeScene()
 {
 	this->removeAllChildren();
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("homescene.plist");
+
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/homescene.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Btn.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/scene101.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }
