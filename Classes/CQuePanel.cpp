@@ -50,7 +50,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 
 	//設定分母選單
 	_numSwitcher.init("topic1_number", 11, true, "topic1_number_back.png", parent, Vec2(75, 700), INTERFACE_LEVEL);
-	_numSwitcher.setEnabled(equalData, _curQue, _curNum);
+	_numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
 	_numSwitcher.setVisible(false);
 
 	//設定剪刀選單
@@ -58,7 +58,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_cutSwitcher.setAsColumn();
 	_cutSwitcher.setBgScale(4.7,2);
 	_cutSwitcher.setScale(0.8);
-	_cutSwitcher.setEnabled(equalData, _curQue, _curNum);
+    _cutSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
 	_cutSwitcher.setVisible(false);
 
 	//按鈕設定
@@ -67,8 +67,8 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_bFracBoardOn = false;
 	_bDivided = false;	// 預設沒有平分
 	_bAnswer = false;
-	_bnum = false;      
-
+	_bnum = false;
+    _bResetActive = false;
 }
 
 void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
@@ -106,53 +106,51 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 
 }
 
-void CQuePanel::reset(int que = 0, int num = 0)   	//queNo =  題號變化量  / num = 數字變化 (0 = 隨機)
+void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / num = 數字變化 (0=自己)
 {
-	//題號改變 獲取分母資訊
+	//題號有改變  改變分母
 	if (que != 0) {  
 		_curQue += que;
-		if (_curQue < 1) _curQue = QUEDATA[_curUnit - 1];       //前一題
-		else if (_curQue > QUEDATA[_curUnit - 1]) _curQue = 1;  //後一題
+		if (_curQue < 1) _curQue = QUEDATA[_curUnit - 1];            //避免超過範圍１～最後一題
+		else if (_curQue > QUEDATA[_curUnit - 1]) _curQue = 1;
+        
+        //隨機取分母
+        do {
+            num = (rand() % equalData[_curQue - 1][0]) + 1;
+            num = equalData[_curQue - 1][num];
+        } while (num == _curNum && equalData[_curQue - 1][0] != 1);
+
 	}
 
-	//隨機取分母
-	if (num == 0)
-	{
-		do {
-			num = (rand() % equalData[_curQue - 1][0]) + 1;
-			num = equalData[_curQue - 1][num];
-		} while (num == _curNum && equalData[_curQue - 1][0] != 1);
-	}
-
-	_curNum = num;
-
-	//重設答案
-	_parentLayer->removeChild(_ans);  delete _ans;
-	_ans = new CAnsCreater(_curUnit, _curQue, _curNum);
-	_ans->setPosition(ANS_POS);
-	_ans->setVisible(false);
-	_parentLayer->addChild(_ans);
-
-	//重設題目
-	_parentLayer->removeChild(_que);  delete _que;
-	_que = new CAnsCreater();
-	_que->queCreater(_curUnit, _curQue, _curNum);
-	_que->setPosition(QUE_POS);
-	_parentLayer->addChild(_que);
-
-	if (que != 0) {
-		//重設分母
-		_numSwitcher.setEnabled(equalData, _curQue, _curNum);
-
-		//重設剪刀
-		_cutSwitcher.setEnabled(equalData, _curQue, _curNum);
-
-		//切塊圖還原
-		_parentLayer->removeChild(_cutImage);
-		delete _cutImage;
-		_cutImage = new CCutImage("topic1_wood", 1.0f);
-		_parentLayer->addChild(_cutImage);
-	}
+    //分母有改變  重設答案＆重設題目
+    if (num != 0) {
+        _curNum = num;
+        
+        //重設答案
+        _parentLayer->removeChild(_ans);  delete _ans;
+        _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
+        _ans->setPosition(ANS_POS);
+        _ans->setVisible(false);
+        _parentLayer->addChild(_ans);
+        
+        //重設題目
+        _parentLayer->removeChild(_que);  delete _que;
+        _que = new CAnsCreater();
+        _que->queCreater(_curUnit, _curQue, _curNum);
+        _que->setPosition(QUE_POS);
+        _parentLayer->addChild(_que);
+    }
+    
+    //重設分母選單
+    _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    //重設剪刀選單
+    _cutSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    
+    //切塊圖還原
+    _parentLayer->removeChild(_cutImage);
+    delete _cutImage;
+    _cutImage = new CCutImage("topic1_wood", 1.0f);
+    _parentLayer->addChild(_cutImage);
     
     //按鈕關閉隱藏
     _ansBtn.setStatus(false);
@@ -183,6 +181,13 @@ bool CQuePanel::getBoardStatus()
 	return(_bFracBoardOn);
 }
 
+bool CQuePanel::resetActive(){
+    if(_bResetActive){
+        _bResetActive= false;
+        return true;
+    }
+    return false;
+}
 
 bool CQuePanel::touchesBegin(Point inPt, int iId, int iMode)
 {
@@ -246,13 +251,15 @@ bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
 	}
 	else {
 		if (_prevBtn.touchesEnded(inPt)) { // 切換到前一題
-			reset(-1);
+            reset(-1);
+            _bResetActive = true;
 			_nextBtn.setEnabled(true);
 			if (_curQue == 1)_prevBtn.setEnabled(false);
 			return true;
 		}
 		if (_nextBtn.touchesEnded(inPt)) {     // 下一題按鈕被按下
 			reset(1);
+            _bResetActive = true;
 			_prevBtn.setEnabled(true);
 			if (_curQue == QUEDATA[_curUnit - 1])_nextBtn.setEnabled(false);
 			return true;
@@ -273,6 +280,7 @@ bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
 			if (_numSwitcher.touchesEnded(inPt)) {
 				int num = _numSwitcher.getSelectNumber() + 2;
 				reset(0, num);
+                _bResetActive = true;
 				return true;
 			}
 		}

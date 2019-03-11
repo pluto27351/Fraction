@@ -127,12 +127,8 @@ void CDrawingPanel::drawing(Point &pt)
 
 }
 
-void CDrawingPanel::clear()
-{
 
-}
-
-void CDrawingPanel::removeAll()
+void CDrawingPanel::clearWhiteBoard()
 {
 	_pWhiteBoard->clear(0, 0, 0, 0);
 }
@@ -213,34 +209,29 @@ bool CDrawingPanel::touchesEnded(cocos2d::Point inPt)
 	if (_toolBtn[redpen].touchesEnded(inPt)) {
 		SetPen(_defaultColor[red]);
 		SwitchButton(redpen);
-		return(true);
 	}
-	if (_toolBtn[blackpen].touchesEnded(inPt)) {
+	else if (_toolBtn[blackpen].touchesEnded(inPt)) {
 		SetPen(_defaultColor[black]);
 		SwitchButton(blackpen);
-		return(true);
 	}
-	if (_toolBtn[bluepen].touchesEnded(inPt)) {
+	else if (_toolBtn[bluepen].touchesEnded(inPt)) {
 		SetPen(_defaultColor[blue]);
 		SwitchButton(bluepen);
-		return(true);
 	}
 
-	if (_toolBtn[eraser].touchesEnded(inPt)) { // 按下的是 eraser button
+	else if (_toolBtn[eraser].touchesEnded(inPt)) { // 按下的是 eraser button
 		SwitchButton(eraser);
 		_toolMode = ERASER_MODE;
-		return(true);
 	}
 
-	if (_toolBtn[hand].touchesEnded(inPt)) {
+	else if (_toolBtn[hand].touchesEnded(inPt)) {
 		SwitchButton(hand);
 		_toolMode = HAND_MODE;
-		return(true);
 	}
 
-	if (_clearAllBtn.touchesEnded(inPt)) { // 確認被按下
+	else if (_clearAllBtn.touchesEnded(inPt)) { // 確認被按下
 	    // 清除螢幕上所有手繪的內容
-	    removeAll();
+	    clearWhiteBoard();
 	    return(true);
 	}
 	return(false);
@@ -253,9 +244,10 @@ void CDrawingPanel::changeToBlackPen() {
 
 
 void CDrawingPanel::SetPen(Color3B color = Color3B(0, 0, 0)) {
+    _toolMode = PEN_MODE;
 	_lineColor = color;
 	_pPenBrush->setColor(_lineColor);
-	_toolMode = PEN_MODE;
+
 }
 void CDrawingPanel::SwitchButton(int btn) {
 	for (int i = 0; i < 5; i++)_toolBtn[i].setStatus(false);

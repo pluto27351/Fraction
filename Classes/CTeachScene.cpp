@@ -1,4 +1,4 @@
-﻿#include "cocostudio/CocoStudio.h"
+#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "CTeachScene.h"
 #include "CMenuScene.h"
@@ -71,12 +71,12 @@ void CTeachScene::doStep(float dt)  // OnFrameMove
 		this->unscheduleAllCallbacks();
 		Director::getInstance()->runWithScene(CMenuScene::createScene());
 	}
-	_handDrawing->doStep(dt);
 
 }
 
 
 void CTeachScene::onTouchesBegan(const std::vector<cocos2d::Touch*> touches, cocos2d::Event *event) {
+    _toolMode = _handDrawing->getMode();
 	for (auto &item : touches) {
 		auto touch = item;
 		auto touchLoc = touch->getLocation();
@@ -126,12 +126,14 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 		if (_queController->touchesEnded(touchLoc, touchId, _toolMode)) {
 			if (_queController->getBoardStatus())  _bFracBoardOn = true;
 			else _bFracBoardOn = false;
+            
+            if(_queController->resetActive())_handDrawing->clearWhiteBoard();
 		}
 
 
 		if (!_bFracBoardOn) {
 			if (_menuBtn.touchesEnded(touchLoc)) _bMeunBtnPressed = true;
-			else if (_handDrawing->touchesEnded(touchLoc)) _toolMode = _handDrawing->getMode();
+            else if (_handDrawing->touchesEnded(touchLoc)) _queController->reset();     //只有reset鍵時回傳true
 		}
 	}
 }

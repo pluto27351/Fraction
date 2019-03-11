@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "CSwitch.h"
@@ -28,7 +28,7 @@ public:
 	void setVisible(int number,bool bVis);
 	void setEnabled(bool bEnable);
 	void setEnabled(int number, bool bEnable);
-	void setEnabled(const int(*data)[12], int que, int num = 1);
+    void setEnabledBtns(const int data[12],int num=1);
 	void setSelectBtn(int number);
 	int getSelectNumber();
 

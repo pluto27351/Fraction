@@ -60,15 +60,15 @@ void CSwitchGroup::setAsColumn() {
 
 }
 
-void CSwitchGroup::setEnabled(const int(*data)[12], int que, int num)
+void CSwitchGroup::setEnabledBtns(const int data[12], int num)
 {
-	setEnabled(false);
-	int maxNum = data[que - 1][0];
-	for (int i = 1; i <= maxNum; i++) {
-		int n = data[que - 1][i];
-		setEnabled(n - 2, true);
-	}
-	setSelectBtn(num - 2);
+    setEnabled(false);
+    int maxNum = data[0];
+    for (int i = 1; i <= maxNum; i++) {  //讀取可用按鈕號碼
+        int n = data[i];
+        setEnabled(n - 2, true);         //按扭從２開始 -> ２號＝[0]
+    }
+    setSelectBtn(num - 2);
 }
 
 void CSwitchGroup::setScale(float s) {

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
@@ -25,13 +25,19 @@ public:
 	bool touchesBegin(Point inPt, int iId, int iMode);
 	bool touchesMoved(Point inPt, int iId, int iMode);
 	bool touchesEnded(Point inPt, int iId, int iMode);
+    
 	bool getBoardStatus();
+    bool resetActive();
+    void reset(int queNO = 0, int equal = 0);      //queNo =  題號變化量  / equal = 數字變化 (0 = 隨機)
+    void setBtn(Node &rootNode, cocos2d::Layer &parent);
 
+    
 private:
 	bool _bFracBoardOn;	// 顯示平分選單
 	bool _bDivided;		// 已經被平分了
 	bool _bAnswer;
 	bool _bnum;         //選擇分母介面是否顯示
+    bool _bResetActive;
 
 	int _curUnit;  //單元
 	int _curQue; //題號
@@ -43,11 +49,6 @@ private:
 	CCutImage *_cutImage;
 	CAnsCreater *_ans,*_que;
 	const int(*equalData)[12];
-
-
+    
 	Layer *_parentLayer;
-
-	void setBtn(Node &rootNode, cocos2d::Layer &parent);
-
-	void reset(int queNO, int equal);  	//queNo =  題號變化量  / equal = 數字變化 (0 = 隨機)
 };

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <Vector>
 #include "cocos2d.h"
@@ -39,8 +39,8 @@ public:
 
 	void setLineColor(Color3B color);
 	void drawing(Point &pt);
-	void clear();	// 清除所有繪製在畫面上的線條
-	void removeAll();	// 清除所有繪製在畫面上的線條
+
+	void clearWhiteBoard();	// 清除所有繪製在畫面上的線條
 	int  getMode();	// 取得目前的狀態
 	void changeToBlackPen();
 
