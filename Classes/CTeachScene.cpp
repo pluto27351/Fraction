@@ -54,7 +54,7 @@ void CTeachScene::setCreate(int unit)
 	//menubtn
 	auto pt = rootNode->getChildByName("menubtn")->getPosition();
 	auto scale = rootNode->getChildByName("menubtn")->getScale();
-	_menuBtn.setButtonInfo("prevque_off.png", "prevque_off.png", *this, pt, 1);
+	_menuBtn.setButtonInfo("Q_home.png", "Q_home_hover.png", *this, pt, 1);
 	_menuBtn.setScale(scale);
 	rootNode->removeChildByName("menubtn");
 

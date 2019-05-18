@@ -75,7 +75,7 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	//前一題
 	auto pt = rootNode.getChildByName("prevbtn")->getPosition();
 	auto scale = rootNode.getChildByName("prevbtn")->getScale();
-	_prevBtn.setButtonInfo("prevque_on.png", "prevque_off.png", parent, pt, INTERFACE_LEVEL);
+	_prevBtn.setButtonInfo("Q_back.png", "Q_back.png", parent, pt, INTERFACE_LEVEL);
 	_prevBtn.setScale(scale);
 	if (_curQue == 1)_prevBtn.setEnabled(false);
 	rootNode.removeChildByName("prevbtn");
@@ -83,24 +83,24 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	//下一題
 	pt = rootNode.getChildByName("nextbtn")->getPosition();
 	scale = rootNode.getChildByName("nextbtn")->getScale();
-	_nextBtn.setButtonInfo("nextque_on.png", "nextque_off.png", parent, pt, INTERFACE_LEVEL);
+	_nextBtn.setButtonInfo("Q_next.png", "Q_next.png", parent, pt, INTERFACE_LEVEL);
 	_nextBtn.setScale(scale);
 	if (_curQue == QUEDATA[_curUnit - 1])_nextBtn.setEnabled(false);
 	rootNode.removeChildByName("nextbtn");
 
 	// 設定答案按鈕
     pt = rootNode.getChildByName("answerbtn")->getPosition();
-	_ansBtn.setButtonInfo("answer_off.png", "answer_on.png", parent, pt, INTERFACE_LEVEL);
+	_ansBtn.setButtonInfo("Q_Answer.png", "Q_Answer_hover.png", parent, pt, INTERFACE_LEVEL);
     rootNode.removeChildByName("answerbtn");
 
 	// 設定選擇分母按鈕
 	pt = rootNode.getChildByName("numbtn")->getPosition();
-	_numBtn.setButtonInfo("menu_on.png", "menu_off.png", parent, pt, INTERFACE_LEVEL);
+	_numBtn.setButtonInfo("Q_leaf.png", "Q_leaf.png", parent, pt, INTERFACE_LEVEL);
 	rootNode.removeChildByName("numbtn");
 	
 	// 設定切分按鈕
 	pt = rootNode.getChildByName("cut")->getPosition();
-	_cutBtn.setButtonInfo("equal_off.png", "equal_on.png", parent, pt, INTERFACE_LEVEL);
+	_cutBtn.setButtonInfo("Q_tool pic.png", "Q_tool pic_hover.png", parent, pt, INTERFACE_LEVEL);
 	rootNode.removeChildByName("cut");
 
 
