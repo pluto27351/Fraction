@@ -181,6 +181,9 @@
         </Folder>
         <Folder Name="que">
           <Project Name="q1_1.csd" Type="Node" />
+          <Project Name="q1_10.csd" Type="Node" />
+          <Project Name="q1_11.csd" Type="Node" />
+          <Project Name="q1_12.csd" Type="Node" />
           <Project Name="q1_2.csd" Type="Node" />
           <Project Name="q1_3.csd" Type="Node" />
           <Project Name="q1_4.csd" Type="Node" />
@@ -189,12 +192,30 @@
           <Project Name="q1_7.csd" Type="Node" />
           <Project Name="q1_8.csd" Type="Node" />
           <Project Name="q1_9.csd" Type="Node" />
-          <Project Name="q1_10.csd" Type="Node" />
-          <Project Name="q1_11.csd" Type="Node" />
-          <Project Name="q1_12.csd" Type="Node" />
           <Project Name="q2_1.csd" Type="Node" />
+          <Project Name="q2_10.csd" Type="Node" />
+          <Project Name="q2_11.csd" Type="Node" />
+          <Project Name="q2_12.csd" Type="Node" />
           <Project Name="q2_2.csd" Type="Node" />
           <Project Name="q2_3.csd" Type="Node" />
+          <Project Name="q2_4.csd" Type="Node" />
+          <Project Name="q2_5.csd" Type="Node" />
+          <Project Name="q2_6.csd" Type="Node" />
+          <Project Name="q2_7.csd" Type="Node" />
+          <Project Name="q2_8.csd" Type="Node" />
+          <Project Name="q2_9.csd" Type="Node" />
+          <Project Name="q3_1.csd" Type="Node" />
+          <Project Name="q3_10.csd" Type="Node" />
+          <Project Name="q3_11.csd" Type="Node" />
+          <Project Name="q3_12.csd" Type="Node" />
+          <Project Name="q3_2.csd" Type="Node" />
+          <Project Name="q3_3.csd" Type="Node" />
+          <Project Name="q3_4.csd" Type="Node" />
+          <Project Name="q3_5.csd" Type="Node" />
+          <Project Name="q3_6.csd" Type="Node" />
+          <Project Name="q3_7.csd" Type="Node" />
+          <Project Name="q3_8.csd" Type="Node" />
+          <Project Name="q3_9.csd" Type="Node" />
         </Folder>
         <Project Name="HomeScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />

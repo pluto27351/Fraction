@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1338067615" Tag="100" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" FontSize="60" LabelText="5. &#xA;　熱心的小寶答應了小松鼠，幫忙他們收集&#xA;橡樹果實，請問一堆橡樹果實和　　分之幾&#xA;堆橡樹果實一樣多?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1338067615" Tag="100" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="5. &#xA;　小寶幫忙松鼠弟收集橡樹果實，請問一堆橡樹果實和    分之幾堆橡樹果實一樣多?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1141.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -18,10 +18,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="C_1" ActionTag="-1882694570" Tag="80" IconVisible="False" LeftMargin="305.3767" RightMargin="-339.3767" TopMargin="6.8286" BottomMargin="-74.8286" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="34.0000" Y="68.0000" />
+          <AbstractNodeData Name="C_1" ActionTag="-1882694570" Tag="80" IconVisible="False" LeftMargin="-216.5876" RightMargin="188.5876" TopMargin="12.8289" BottomMargin="-72.8289" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="28.0000" Y="60.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="322.3767" Y="-40.8286" />
+            <Position X="-202.5876" Y="-42.8289" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />

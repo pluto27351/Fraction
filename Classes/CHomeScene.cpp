@@ -1,4 +1,4 @@
-﻿#include "CHomeScene.h"
+#include "CHomeScene.h"
 #include "CMenuScene.h"
 
 
@@ -29,9 +29,9 @@ bool CHomeScene::init()
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/homescene.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plis");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/scene101.plist");
-	auto rootNode = CSLoader::createNode("HomeScene.csb");	
-	addChild(rootNode);
-
+    auto rootNode = CSLoader::createNode("homescene.csb");
+    addChild(rootNode);
+    
 	auto _BtnLoc = rootNode->getChildByName("startBtn")->getPosition();
 	_startBtn.setButtonInfo("cover_start.png", "cover_start_clik.png", *this, _BtnLoc, 1);
 	rootNode->removeChildByName("startBtn");

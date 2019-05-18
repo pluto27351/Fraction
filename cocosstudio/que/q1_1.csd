@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1338067615" Tag="100" IconVisible="False" LeftMargin="-540.5000" RightMargin="-540.5000" TopMargin="-178.0000" BottomMargin="-178.0000" FontSize="60" LabelText="1. &#xA;　森林裡有一條湖水綠色的美麗河流，用&#xA;相同玻璃杯裝湖水，請問一杯水和　　分&#xA;之幾杯水一樣多?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1081.0000" Y="356.0000" />
+          <AbstractNodeData Name="bg" ActionTag="-1583610892" Tag="100" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="1. &#xA;　鹿先生用玻璃杯裝起清澈的湖水，請問一杯水和     分之幾杯水一樣多?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1141.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -18,10 +18,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="C_1" ActionTag="-1608460685" Tag="97" IconVisible="False" LeftMargin="403.4430" RightMargin="-437.4430" TopMargin="8.2993" BottomMargin="-76.2993" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="C_1" ActionTag="-1608460685" Tag="97" IconVisible="False" LeftMargin="-324.1436" RightMargin="290.1436" TopMargin="10.4403" BottomMargin="-78.4403" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="34.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="420.4430" Y="-42.2993" />
+            <Position X="-307.1436" Y="-44.4403" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />

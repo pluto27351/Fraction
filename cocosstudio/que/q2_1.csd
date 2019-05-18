@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1338067615" Tag="1" IconVisible="False" LeftMargin="-585.5000" RightMargin="-585.5000" TopMargin="-133.5000" BottomMargin="-133.5000" FontSize="60" LabelText="1. &#xA;　請問一塊鬆餅又   塊鬆餅，合起來和幾塊&#xA;鬆餅一樣多? 請用帶分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1171.0000" Y="267.0000" />
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="1. &#xA;　請問一塊鬆餅又    塊鬆餅，合起來和幾塊鬆餅一樣多? 請用帶分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1141.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -18,10 +18,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="-2013530149" Tag="138" IconVisible="True" LeftMargin="-55.2689" RightMargin="55.2689" TopMargin="-1.1093" BottomMargin="1.1093" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-2013530149" Tag="100" IconVisible="True" LeftMargin="-20.7310" RightMargin="20.7310" TopMargin="-45.0607" BottomMargin="45.0607" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="-1545611172" Tag="139" IconVisible="False" LeftMargin="-6.0000" RightMargin="-6.0000" TopMargin="-11.5000" BottomMargin="-11.5000" FontSize="20" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-6.0000" RightMargin="-6.0000" TopMargin="-11.5000" BottomMargin="-11.5000" FontSize="20" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="12.0000" Y="23.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -34,7 +34,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="-55.2689" Y="1.1093" />
+            <Position X="-20.7310" Y="45.0607" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

@@ -59,7 +59,7 @@ void CTeachScene::setCreate(int unit)
 	rootNode->removeChildByName("menubtn");
 
 	// 問題讀取控制器初始設定
-	_queController = new CQuePanel(unit, *rootNode, *this);  // 設定為讀取 unit1 的題目
+	_queController = new CQuePanel(unit, *rootNode, *this);  // 設3定為讀取 unit1 的題目
 
 	_bFracBoardOn = false;
 	_toolMode = _handDrawing->getMode();

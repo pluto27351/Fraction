@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1338067615" Tag="100" IconVisible="False" LeftMargin="-585.5000" RightMargin="-585.5000" TopMargin="-133.5000" BottomMargin="-133.5000" FontSize="60" LabelText="8. &#xA;   小寶想要從蘋果樹下走到湖畔邊，請問一&#xA;公里和　　分之幾公里一樣遠?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1171.0000" Y="267.0000" />
+          <AbstractNodeData Name="bg" ActionTag="1940399823" Tag="100" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="8. &#xA;　鹿先生的家到湖畔有一公里，請問一公里和     分之幾公里一樣遠?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1141.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -18,10 +18,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="C_1" ActionTag="-1882694570" Tag="80" IconVisible="False" LeftMargin="-367.6122" RightMargin="333.6122" TopMargin="53.7438" BottomMargin="-121.7438" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="C_1" ActionTag="-1882694570" Tag="80" IconVisible="False" LeftMargin="-444.3925" RightMargin="410.3925" TopMargin="9.1044" BottomMargin="-77.1044" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="34.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-350.6122" Y="-87.7438" />
+            <Position X="-427.3925" Y="-43.1044" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />

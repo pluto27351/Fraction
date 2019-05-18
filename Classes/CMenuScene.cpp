@@ -1,4 +1,4 @@
-﻿#include "CMenuScene.h"
+#include "CMenuScene.h"
 //#include "Common/const.h"
 #include "CTeachScene.h"
 
@@ -26,7 +26,7 @@ bool CMenuScene::init()
 	Size size;
 
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
-	auto rootNode = CSLoader::createNode("MenuScene.csb");
+	auto rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
 
 	Point pt;
@@ -47,7 +47,9 @@ bool CMenuScene::init()
 		_unitBtn[i]->setEnabled(false);
 		rootNode->removeChildByName(spriteName);
 	}
-	_unitBtn[0]->setEnabled(true);
+    _unitBtn[0]->setEnabled(true);
+    _unitBtn[1]->setEnabled(true);
+    _unitBtn[2]->setEnabled(true);
 	_unitIdx = 0;	// 設定成切換的單元，1 到 5
 
 	pt = rootNode->getChildByName("gobtn")->getPosition();

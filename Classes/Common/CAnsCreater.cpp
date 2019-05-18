@@ -1,4 +1,4 @@
-﻿#include "CAnsCreater.h"
+#include "CAnsCreater.h"
 
 CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．數字
 	Node * answer;
@@ -113,6 +113,10 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 	bool count = false; //判斷是否要運算(+,-,*,/)
 	bool z = false;
 	if (number[1] != NULL)z = true;        //判斷幾位數 2位以上
+    if(c[0] == 'd'){  //如果是改變分子 把d移掉全完前
+        for(int i = 0; c[i] != NULL; i++)
+            ntor[i] = c[i+1];
+    }
 
 	//型成字串的過程
 	for (int i = 0; c[i] != NULL; i++) {
@@ -254,7 +258,10 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目
 	Node * answer;
 
 	char name[14];
-	sprintf(name, "que/q%d_%d.csb", uni, queNo);
+    if(queNo < 10)
+        sprintf(name, "que/q%d_%d.csb", uni, queNo);
+    else
+        sprintf(name, "que/q%d_%2d.csb", uni, queNo);
 	auto queNode = CSLoader::createNode(name);
 	Input_que(*queNode, number);
 	
@@ -268,7 +275,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	auto bg = (Node *)Q.getChildByName("bg");
 
 	//國字
-	inputData = bg->getTag();
+	inputData = bg->getTag(); //百位數表示國字數量 十位數表示數字數量 個位數表示分數數量
 	data = inputData / 100;
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "C_%d", i + 1);
@@ -295,7 +302,10 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 		Text *f = (Text *)Output_f->getChildByName("ntor");
 		sprintf(Input, "%d", number);
 		sprintf(fn, "%d", f->getTag());
-		Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
+        if(f->getString().c_str()[0]=='d') //判斷固定分子還分母 有d是固定分母
+            Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
+        else
+            Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
 		Output_f->removeChildByName("ntor");
 	}
 
