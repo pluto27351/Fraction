@@ -243,11 +243,11 @@ bool CDrawingPanel::touchesEnded(cocos2d::Point inPt) //只有清除按鈕回傳
 		_toolMode = HAND_MODE;
         return(false);
 	}
-    if (_eraserAllBtn.touchesEnded(inPt)) {
+    if (_eraserAllBtn.touchesEnded(inPt)) {  // 清除螢幕上所有手繪的內容
         clearWhiteBoard();
         return(false);
     }
-    if (_clearAllBtn.touchesEnded(inPt)) {       // 清除螢幕上所有手繪的內容
+    if (_clearAllBtn.touchesEnded(inPt)) {
         clearWhiteBoard();
         return(true);
     }
