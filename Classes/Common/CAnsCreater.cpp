@@ -46,13 +46,14 @@ void CAnsCreater::Input_u1(Node &Q, int number) {
 	//國字
 	Text* Output_c = (Text*)Q.getChildByName("C_1");
 	Output_c->setString(chiness[number - 2]);
-
+    Output_c->setTextColor(_textColor4B);
 	//數字
 	for (int i = 0; i < 2; i++) {
 		sprintf(Input, "N_%d", i + 1);
 		Text *Output_n = (Text *)Q.getChildByName(Input);
 		sprintf(Input, "%d", number);
 		Output_n->setString(Input);
+        Output_n->setTextColor(_textColor4B);
 	}
 
 	//分數
@@ -78,7 +79,8 @@ void CAnsCreater::Input_u2_1(Node &Q, int number) {
 	//國字
 	Text* Output_c = (Text*)Q.getChildByName("C_1");
 	Output_c->setString(chiness[number - 2]);
-
+    Output_c->setTextColor(_textColor4B);
+    
 	//分數
 	for (int i = 0; i < 2; i++) {
 		sprintf(Input, "F_%d", i + 1);
@@ -178,17 +180,17 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 
 	bar = (Sprite *)Sprite::create("img/bar.png");
 	bar->setScale(6 * scale, 5);
-	bar->setColor(Color3B::BLACK);
+    bar->setColor(_textColor3B);
 
 	Ntor->setFontSize(50);
 	Ntor->setString(numerator);
 	Ntor->setPosition(Point(0, 30));
-	Ntor->setColor(Color3B::BLACK);
+	Ntor->setTextColor(_textColor4B);
 
 	Dtor->setFontSize(50);
 	Dtor->setString(denominator);
 	Dtor->setPosition(Point(0, -30));
-	Dtor->setColor(Color3B::BLACK);
+	Dtor->setTextColor(_textColor4B);
 
 	fn->addChild(bar);
 	fn->addChild(Ntor);
@@ -199,7 +201,7 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 		Ftor->setFontSize(50);
 		Ftor->setString(front);
 		Ftor->setPosition(Point(-40, 0));
-		Ftor->setColor(Color3B::BLACK);
+		Ftor->setTextColor(_textColor4B);
 		fn->addChild(Ftor);
 	}
 	return(fn);
@@ -229,14 +231,14 @@ cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
 				equal = cocos2d::ui::Text::create();
 				equal->setString("=");
 				equal->setFontSize(50);
-				equal->setColor(Color3B::BLACK);
+				equal->setTextColor(_textColor4B);
 				equal->setPosition(Point(50 * i, 0));
 			}
 			else {
 				plus[(i - 1) / 2] = cocos2d::ui::Text::create();
 				plus[(i - 1) / 2]->setString("+");
 				plus[(i - 1) / 2]->setFontSize(50);
-				plus[(i - 1) / 2]->setColor(Color3B::BLACK);
+				plus[(i - 1) / 2]->setTextColor(_textColor4B);
 				plus[(i - 1) / 2]->setPosition(Point(50 * i, 0));
 			}
 		}
@@ -258,10 +260,7 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目
 	Node * answer;
 
 	char name[14];
-    if(queNo < 10)
-        sprintf(name, "que/q%d_%d.csb", uni, queNo);
-    else
-        sprintf(name, "que/q%d_%2d.csb", uni, queNo);
+    sprintf(name, "que/q%d_%d.csb", uni, queNo);
 	auto queNode = CSLoader::createNode(name);
 	Input_que(*queNode, number);
 	
@@ -281,6 +280,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 		sprintf(Input, "C_%d", i + 1);
 		Text* Output_c = (Text*)Q.getChildByName(Input);
 		Output_c->setString(chiness[number - 2]);
+        Output_c->setTextColor(_textColor4B);
 	}
 	inputData = inputData % 100;
 
@@ -291,6 +291,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 		Text *Output_n = (Text *)Q.getChildByName(Input);
 		sprintf(Input, "%d", number);
 		Output_n->setString(Input);
+        Output_n->setTextColor(_textColor4B);
 	}
 	inputData = inputData % 10;
 

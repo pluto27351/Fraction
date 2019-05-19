@@ -61,7 +61,8 @@ void CTeachScene::setCreate(int unit)
 	// 問題讀取控制器初始設定
 	_queController = new CQuePanel(unit, *rootNode, *this);  // 設3定為讀取 unit1 的題目
 
-	_bFracBoardOn = false;
+	//_bFracBoardOn = false;
+    _bBtnLock = false;
 	_toolMode = _handDrawing->getMode();
 }
 
@@ -85,7 +86,7 @@ void CTeachScene::onTouchesBegan(const std::vector<cocos2d::Touch*> touches, coc
 
 		touchOnEmpty *= !_queController->touchesBegin(touchLoc, touchId, _toolMode);
 
-		if (!_bFracBoardOn) {
+		if (!_bBtnLock) {
 			touchOnEmpty *= !_menuBtn.touchesBegin(touchLoc);
 			touchOnEmpty *= !_handDrawing->touchesBegin(touchLoc);
 
@@ -108,7 +109,7 @@ void CTeachScene::onTouchesMoved(const std::vector<cocos2d::Touch*> touches, coc
 
 		_queController->touchesMoved(touchLoc, touchId, _toolMode);
 
-		if (!_bFracBoardOn) {
+		if (!_bBtnLock) {
 			bool p = _menuBtn.touchesMoved(touchLoc);
 			if(!p) _handDrawing->touchesMoved(touchLoc, preTouchLoc);
 		}
@@ -124,14 +125,14 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 		auto touchId = touch->getID();
 			
 		if (_queController->touchesEnded(touchLoc, touchId, _toolMode)) {
-			if (_queController->getBoardStatus())  _bFracBoardOn = true;
-			else _bFracBoardOn = false;
+			if (_queController->getBoardStatus())  _bBtnLock = true;
+			else _bBtnLock = false;
             
             if(_queController->resetActive())_handDrawing->clearWhiteBoard();
+            else if (_queController->cutDown())_handDrawing->changeToHand();
 		}
 
-
-		if (!_bFracBoardOn) {
+		if (!_bBtnLock) {
 			if (_menuBtn.touchesEnded(touchLoc)) _bMeunBtnPressed = true;
             else if (_handDrawing->touchesEnded(touchLoc)) _queController->reset();     //只有reset鍵時回傳true
 		}

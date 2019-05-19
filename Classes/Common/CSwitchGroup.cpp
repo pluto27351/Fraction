@@ -16,7 +16,8 @@ void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, co
 	_bg = (Sprite *)Sprite::createWithSpriteFrameName(bg);
 	_bg->setPosition(locPt);
 	parent.addChild(_bg, level);
-
+    
+    
 	Vec2 L_half = Vec2(0, (n - 1) / 2.0f * 100);
 	Vec2 L_ok = Vec2(0, 70);
 	_halfLength = L_half + L_ok;
@@ -27,6 +28,7 @@ void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, co
 		_okBtn = new CButton();
 		_okBtn->setButtonInfo("topic1_OK.png", "topic1_OK.png", parent, locPt - _okPos, level);
 		_okBtn->setScale(0.85);
+        _okBtn->setEnabled(false);
 	}
 
 	_numBtn = new CSwitch[n];
@@ -39,8 +41,9 @@ void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, co
 	};
 
 	_n = n;
-	_selectNumber = 0;
-	setSelectBtn(_selectNumber);
+	_selectNumber = -1;
+	//setSelectBtn(_selectNumber);
+    _hasChoiceNum = false;
 }
 
 void CSwitchGroup::setAsColumn() {
@@ -57,8 +60,8 @@ void CSwitchGroup::setAsColumn() {
 		pos.x += 170;
 	};
 
-
 }
+
 
 void CSwitchGroup::setEnabledBtns(const int data[12], int num)
 {
@@ -68,7 +71,8 @@ void CSwitchGroup::setEnabledBtns(const int data[12], int num)
         int n = data[i];
         setEnabled(n - 2, true);         //按扭從２開始 -> ２號＝[0]
     }
-    setSelectBtn(num - 2);
+
+    //setSelectBtn(num - 2);
 }
 
 void CSwitchGroup::setScale(float s) {
@@ -111,11 +115,20 @@ void CSwitchGroup::setPosition(int number, Vec2 locPt)
 
 void CSwitchGroup::setVisible(bool bVis) 
 {
+    if(!bVis){
+        if(_selectNumber != -1){
+            _numBtn[_selectNumber].setStatus(false);
+            _selectNumber = -1;
+        }
+        _okBtn->setEnabled(false);
+    }
+    
 	_bg->setVisible(bVis);
 	if (_okBtn != NULL) _okBtn->setVisible(bVis);
 
 	for (int i = 0; i < _n; i++)
 		_numBtn[i].setVisible(bVis);
+    
 }
 
 void CSwitchGroup::setVisible(int number, bool bVis) 
@@ -136,7 +149,7 @@ void CSwitchGroup::setEnabled(int number, bool bEnable)
 
 void CSwitchGroup::setSelectBtn(int number) //以陣列編號
 {
-	_numBtn[_selectNumber].setStatus(false);
+	if(_selectNumber != -1)_numBtn[_selectNumber].setStatus(false);
 	_selectNumber = number;
 	_numBtn[_selectNumber].setStatus(true);
 }
@@ -150,7 +163,9 @@ bool CSwitchGroup::touchesBegin(cocos2d::Point inPos)
 	for (int i = 0; i < _n; i++) 
 		if (_numBtn[i].touchesBegin(inPos))return true;
 
-	if (_okBtn->touchesBegin(inPos))return true;
+    if(_selectNumber != -1){
+        if (_okBtn->touchesBegin(inPos))return true;
+    }
 
 	return(false);
 }
@@ -160,7 +175,7 @@ bool CSwitchGroup::touchesMoved(cocos2d::Point inPos)
 	for (int i = 0; i < _n; i++)
 		_numBtn[i].touchesMoved(inPos);
 
-	_okBtn->touchesMoved(inPos);
+    if(_selectNumber != -1){_okBtn->touchesMoved(inPos);}
 
 	return true;
 }
@@ -169,10 +184,21 @@ bool CSwitchGroup::touchesEnded(cocos2d::Point inPos)
 {
 	for (int i = 0; i < _n; i++)
 		if (_numBtn[i].touchesEnded(inPos)) {
-			setSelectBtn(i);
+            if(i ==_selectNumber){
+                _selectNumber = -1;
+                _okBtn->setEnabled(false);
+            }
+            else {
+                setSelectBtn(i);
+                _okBtn->setEnabled(true);
+            }
 		}
 
-	if (_okBtn->touchesEnded(inPos))return true;
+    if(_selectNumber != -1){
+        if (_okBtn->touchesEnded(inPos)){
+            return true;
+        }
+    }
 
 	return(false);
 }

@@ -27,7 +27,7 @@ protected:
 	int     _toolMode;
 
 	static CDrawingPanel* _pHandDrawing;
-	CButton _clearAllBtn;
+	CButton _clearAllBtn,_eraserAllBtn;
 	CSwitch _toolBtn[5];
 
 	void SetPen(Color3B color);
@@ -43,7 +43,7 @@ public:
 	void clearWhiteBoard();	// 清除所有繪製在畫面上的線條
 	int  getMode();	// 取得目前的狀態
 	void changeToBlackPen();
-
+    void changeToHand();
 	bool touchesBegin(Point inPt);
 	bool touchesMoved(Point inPt, Point inPrePt);
 	bool touchesEnded(Point inPt);

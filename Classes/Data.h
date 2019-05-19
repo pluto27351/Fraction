@@ -1,8 +1,9 @@
 #pragma once
 
 #define BOTTOM_LEVEL 1
-#define INTERFACE_LEVEL 3
 #define WHITEBOARD_LEVEL 2
+#define INTERFACE_LEVEL 3
+#define SWITCHBOARD_LEVEL 4
 // for hand drawing
 #define HAND_MODE    1
 #define PEN_MODE     2
@@ -80,7 +81,7 @@ const int UNIT_1[12][12] = {
     { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12},
     { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}};
 
- ／/認識帶分數
+//認識帶分數
 const int UNIT_2[12][12] = {
     { 11, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12},
     { 11, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12},
@@ -92,7 +93,7 @@ const int UNIT_2[12][12] = {
     {  5, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0},
     { 11, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12},
     {  7, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0},
-    {  7, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0  0},
+    {  7, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0},
     { 11, 2, 3, 4, 5, 6, 7, 8, 9,10,11, 2}};
 
 //帶分數假分數互換

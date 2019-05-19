@@ -65,8 +65,7 @@ void CCutImage::divide(int num) {
 		delete [] img;
 		delete [] _StickyData;
 	}
-	
-	_fullImg->setColor(Color3B(100,100,100));
+    _fullImg->setOpacity(100);
 
 	char picname[20];
 	sprintf(picname, "%s_%02d.png", _name, num);

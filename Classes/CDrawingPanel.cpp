@@ -73,7 +73,15 @@ void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	//
 	_toolBtn[eraser].setScale(s);
 	rootNode.removeChildByName("erease");
 
-	// 設定清楚螢幕所有手繪圖型的按鈕
+    // 設定清楚螢幕所有手繪圖型的按鈕
+    pBtn = (Sprite *)rootNode.getChildByName("eraser_all");
+    pt = pBtn->getPosition();
+    s = pBtn->getScale();
+    _eraserAllBtn.setButtonInfo("Q_tool erase all.png", "Q_tool erase all.png", parent, pt, INTERFACE_LEVEL);
+    _eraserAllBtn.setScale(s);
+    rootNode.removeChildByName("eraser_all");
+    
+	// 重置按鈕
     pBtn = (Sprite *)rootNode.getChildByName("reset");
     pt = pBtn->getPosition();
 	s = pBtn->getScale();
@@ -146,6 +154,8 @@ bool CDrawingPanel::touchesBegin(cocos2d::Point inPt)
 	}
 
 	if(_clearAllBtn.touchesBegin(inPt)) return(true);
+    
+    if(_eraserAllBtn.touchesBegin(inPt)) return(true);
 	return(false);
 }
 
@@ -154,9 +164,11 @@ bool CDrawingPanel::touchesMoved(Point inPt, Point inPrePt)
 	bool bBtnOn = false;
 
 	if (_clearAllBtn.touchesMoved(inPt)) bBtnOn = true;
-	else 
-		for (int i = 0; i < 5; i++)
-			if (_toolBtn[i].touchesMoved(inPt))bBtnOn = true;
+    else if (_eraserAllBtn.touchesMoved(inPt)) bBtnOn = true;
+    else {
+        for (int i = 0; i < 5 && !bBtnOn; i++) if (_toolBtn[i].touchesMoved(inPt))bBtnOn = true;
+    }
+    
 
 	// 產生手繪線
 	if (!bBtnOn) {
@@ -204,42 +216,52 @@ bool CDrawingPanel::touchesMoved(Point inPt, Point inPrePt)
 	return(true);
 }
 
-bool CDrawingPanel::touchesEnded(cocos2d::Point inPt)
+bool CDrawingPanel::touchesEnded(cocos2d::Point inPt) //只有清除按鈕回傳true
 {
 	if (_toolBtn[redpen].touchesEnded(inPt)) {
 		SetPen(_defaultColor[red]);
 		SwitchButton(redpen);
+        return(false);
 	}
-	else if (_toolBtn[blackpen].touchesEnded(inPt)) {
+	if (_toolBtn[blackpen].touchesEnded(inPt)) {
 		SetPen(_defaultColor[black]);
 		SwitchButton(blackpen);
+        return(false);
 	}
-	else if (_toolBtn[bluepen].touchesEnded(inPt)) {
+	if (_toolBtn[bluepen].touchesEnded(inPt)) {
 		SetPen(_defaultColor[blue]);
 		SwitchButton(bluepen);
+        return(false);
 	}
-
-	else if (_toolBtn[eraser].touchesEnded(inPt)) { // 按下的是 eraser button
+	if (_toolBtn[eraser].touchesEnded(inPt)) {
 		SwitchButton(eraser);
 		_toolMode = ERASER_MODE;
+        return(false);
 	}
-
-	else if (_toolBtn[hand].touchesEnded(inPt)) {
+	if (_toolBtn[hand].touchesEnded(inPt)) {
 		SwitchButton(hand);
 		_toolMode = HAND_MODE;
+        return(false);
 	}
-
-	else if (_clearAllBtn.touchesEnded(inPt)) { // 確認被按下
-	    // 清除螢幕上所有手繪的內容
-	    clearWhiteBoard();
-	    return(true);
-	}
+    if (_eraserAllBtn.touchesEnded(inPt)) {
+        clearWhiteBoard();
+        return(false);
+    }
+    if (_clearAllBtn.touchesEnded(inPt)) {       // 清除螢幕上所有手繪的內容
+        clearWhiteBoard();
+        return(true);
+    }
+    
 	return(false);
 }
 
 void CDrawingPanel::changeToBlackPen() {
 	SetPen(_defaultColor[black]);
 	SwitchButton(blackpen);
+}
+void CDrawingPanel::changeToHand() {
+    SwitchButton(hand);
+    _toolMode = HAND_MODE;
 }
 
 

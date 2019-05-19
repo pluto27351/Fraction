@@ -11,10 +11,10 @@ public:
     
 	CDrawingPanel *_handDrawing;    // 工具區(手.筆.擦)
 	CQuePanel   *_queController;  // 題目區
-	CButton _menuBtn;
+    CButton _menuBtn;
 
     int _toolMode;        //  模式 筆．擦布．手
-    bool _bFracBoardOn;    //  平分區塊是否被起動
+    bool _bBtnLock;    //  數字選單區塊是否被起動(題目和切分)
 	bool _bMeunBtnPressed = false;
     static cocos2d::Scene* createScene(int unit);
     

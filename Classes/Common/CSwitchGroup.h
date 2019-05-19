@@ -13,7 +13,7 @@ private:
 	Sprite *_bg;
 
 	Vec2 _halfLength,_okPos;
-
+    bool _hasChoiceNum;
 	int _n,_selectNumber;
 public:
 	CSwitchGroup();
@@ -28,10 +28,10 @@ public:
 	void setVisible(int number,bool bVis);
 	void setEnabled(bool bEnable);
 	void setEnabled(int number, bool bEnable);
-    void setEnabledBtns(const int data[12],int num=1);
+    void setEnabledBtns(const int data[12],int num=0);
 	void setSelectBtn(int number);
 	int getSelectNumber();
-
+    
 	/*void setSwitch(int number, const char *normalImg, const char *selectImg, const cocos2d::Point locPt);
 	void setOkBtn(const char *normalImg, const char *selectImg, const cocos2d::Point locPt);*/
 
