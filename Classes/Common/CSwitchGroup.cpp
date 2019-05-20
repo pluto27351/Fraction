@@ -13,31 +13,32 @@ CSwitchGroup::~CSwitchGroup() {
 
 void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level) 
 {
+    _locPt = locPt;
 	_bg = (Sprite *)Sprite::createWithSpriteFrameName(bg);
-	_bg->setPosition(locPt);
+	_bg->setPosition(_locPt);
 	parent.addChild(_bg, level);
     
     
-	Vec2 L_half = Vec2(0, (n - 1) / 2.0f * 100);
+	Vec2 L_half = Vec2(-130, (n - 1) / 2.0f * 80);
 	Vec2 L_ok = Vec2(0, 70);
 	_halfLength = L_half + L_ok;
-	_okPos = _halfLength;
 
+    _okPos.x = -_halfLength.x;
+    _okPos.y = _halfLength.y;
+    
 	char pic[20];
 	if (useOkbtn) {
 		_okBtn = new CButton();
-		_okBtn->setButtonInfo("topic1_OK.png", "topic1_OK.png", parent, locPt - _okPos, level);
-		_okBtn->setScale(0.85);
+		_okBtn->setButtonInfo("Q_OK.png", "Q_OK.png", parent, _locPt - _okPos, level);
         _okBtn->setEnabled(false);
 	}
 
 	_numBtn = new CSwitch[n];
-	Vec2 pos = locPt + _halfLength;
+	Vec2 pos = _locPt + _halfLength;
 	for (int i = 0; i < n; i++) {
-		sprintf(pic, "%s%02d.png", btn, i+2);
+		sprintf(pic, "%s_%d.png", btn, i+2);
 		_numBtn[i].setButtonInfo(pic, pic, parent, pos, level);
-		_numBtn[i].setScale(0.8);
-		pos.y -= 100;
+		pos.y -= 85;
 	};
 
 	_n = n;
@@ -46,15 +47,33 @@ void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, co
     _hasChoiceNum = false;
 }
 
-void CSwitchGroup::setAsColumn() {
-	Point locPt = _bg->getPosition();
+void CSwitchGroup::showSelectNumber(int n,cocos2d::Layer &parent, const cocos2d::Point dPt, int level) {
+    char name[10];
+    sprintf(name, "Q_%d.png",n);
+    _selectN = (Sprite *)Sprite::createWithSpriteFrameName(name);
+    _nPos = dPt;
+    _selectN->setPosition(_locPt + _nPos);
+    parent.addChild(_selectN,level);
+    _showSelectN = true;
+    
+}
 
+void CSwitchGroup::setSelectNumber(int n) {
+    char name[10];
+    sprintf(name, "Q_%d.png",n);
+    auto num = (Sprite *)Sprite::createWithSpriteFrameName(name);
+    _selectN->setDisplayFrame(num->getDisplayFrame());
+    
+}
+
+
+void CSwitchGroup::setAsColumn() {
 	_halfLength = Vec2(-(_n - 1) / 2.0f * 170,75);
 	_okPos = Vec2(0, -75);
 
-	if (_okBtn!= NULL) _okBtn->setPosition(locPt + _okPos);
+	if (_okBtn!= NULL) _okBtn->setPosition(_locPt + _okPos);
 
-	Vec2 pos = locPt + _halfLength;
+	Vec2 pos = _locPt + _halfLength;
 	for (int i = 0; i < _n; i++) {
 		_numBtn[i].setPosition(pos);
 		pos.x += 170;
@@ -76,10 +95,10 @@ void CSwitchGroup::setEnabledBtns(const int data[12], int num)
 }
 
 void CSwitchGroup::setScale(float s) {
-	if (_okBtn != NULL) _okBtn->setScale(s*0.85f);
+	if (_okBtn != NULL) _okBtn->setScale(s);
 	
 	for (int i = 0; i < _n; i++) 
-		_numBtn[i].setScale(s*0.8);
+		_numBtn[i].setScale(s);
 }
 
 void CSwitchGroup::setBgScale(float w, float h) 
@@ -95,23 +114,34 @@ void CSwitchGroup::setBgScale(float w, float h)
 
 void CSwitchGroup::setPosition(Vec2 locPt) 
 {
-	_bg->setPosition(locPt);
+    _locPt = locPt;
+	_bg->setPosition(_locPt );
 
-	if (_okBtn != NULL) _okBtn->setPosition(locPt - _okPos);
-		
-	Vec2 pos = locPt + _halfLength;
+	if (_okBtn != NULL) _okBtn->setPosition(_locPt  - _okPos);
+    if (_showSelectN) _selectN->setPosition(_locPt + _nPos);
+    
+	Vec2 pos = _locPt  + _halfLength;
 	for (int i = 0; i < _n; i++) {
 		_numBtn[i].setPosition(pos);
-		pos.y -= 100;
+		pos.y -= 70;
 	};
 }
 
-void CSwitchGroup::setPosition(int number, Vec2 locPt) 
+
+void CSwitchGroup::move(Vec2 dPt)
 {
-	Vec2 pos = locPt + _halfLength;
-	pos.y -= 100 * number;
-	_numBtn[number].setPosition(pos);
+    _locPt += dPt;
+    _bg->setPosition(_locPt);
+    
+    if (_okBtn != NULL) _okBtn->setPosition(_locPt - _okPos);
+    if (_showSelectN) _selectN->setPosition(_locPt + _nPos);
+    
+    for (int i = 0; i < _n; i++) {
+        auto pt = _numBtn[i].getPosition()+ dPt;
+        _numBtn[i].setPosition(pt);
+    };
 }
+
 
 void CSwitchGroup::setVisible(bool bVis) 
 {

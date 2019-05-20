@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 
@@ -28,6 +28,7 @@ public:
 	void setStatus(bool status);	// 設定這個按鈕目前是選取狀態
 	void setEnabled(bool bEnable);
 	void setPosition(Vec2 locPt);
+    Point getPosition(){return _BtnLoc;}
 	void setScale(float fscale);
 	void setTouchScale(float s);
 };

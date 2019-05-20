@@ -7,7 +7,7 @@
             <key>0_Banboo.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3622,176},{100,468}}</string>
+                <string>{{3782,176},{100,468}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>Background.jpg</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1751},{2731,1536}}</string>
+                <string>{{0,1814},{2731,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -30,166 +30,153 @@
                 <key>sourceSize</key>
                 <string>{2731,1536}</string>
             </dict>
-            <key>Q_1.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{553,0},{79,72}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
-                <key>sourceSize</key>
-                <string>{79,72}</string>
-            </dict>
             <key>Q_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{711,0},{79,72}}</string>
+                <string>{{637,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{869,0},{79,72}}</string>
+                <string>{{819,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{790,0},{79,72}}</string>
+                <string>{{910,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{79,0},{79,72}}</string>
+                <string>{{728,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{474,0},{79,72}}</string>
+                <string>{{91,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{455,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{158,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{395,0},{79,72}}</string>
+                <string>{{182,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{237,0},{79,72}}</string>
+                <string>{{364,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{632,0},{79,72}}</string>
+                <string>{{546,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{316,0},{79,72}}</string>
+                <string>{{273,0},{91,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{79,72}}</string>
+                <string>{{0,0},{91,84}}</string>
                 <key>sourceSize</key>
-                <string>{79,72}</string>
+                <string>{91,84}</string>
             </dict>
             <key>Q_Answer.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3118,176},{252,315}}</string>
+                <string>{{3278,176},{252,315}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +189,7 @@
             <key>Q_Answer_hover.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3370,176},{252,315}}</string>
+                <string>{{3530,176},{252,315}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -212,10 +199,23 @@
                 <key>sourceSize</key>
                 <string>{252,315}</string>
             </dict>
+            <key>Q_OK.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1001,0},{134,90}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{134,90}}</string>
+                <key>sourceSize</key>
+                <string>{134,90}</string>
+            </dict>
             <key>Q_Rock.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2632,0},{675,171}}</string>
+                <string>{{2819,0},{675,171}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +228,7 @@
             <key>Q_back.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2064,0},{284,157}}</string>
+                <string>{{2251,0},{284,157}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +254,7 @@
             <key>Q_home.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1164,176},{204,210}}</string>
+                <string>{{1120,176},{204,210}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -267,7 +267,7 @@
             <key>Q_home_hover.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{960,176},{204,210}}</string>
+                <string>{{1324,176},{204,210}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -280,7 +280,7 @@
             <key>Q_leaf.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1368,176},{223,222}}</string>
+                <string>{{1528,176},{223,222}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -293,7 +293,7 @@
             <key>Q_next.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2348,0},{284,157}}</string>
+                <string>{{2535,0},{284,157}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +319,7 @@
             <key>Q_tool Blue.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3307,0},{160,176}}</string>
+                <string>{{3654,0},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +332,7 @@
             <key>Q_tool Red.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3467,0},{160,176}}</string>
+                <string>{{3814,0},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +345,7 @@
             <key>Q_tool Reset.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3787,0},{160,176}}</string>
+                <string>{{0,176},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +358,7 @@
             <key>Q_tool Reset_hover.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,176},{160,176}}</string>
+                <string>{{480,176},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -371,7 +371,7 @@
             <key>Q_tool erase all.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{320,176},{160,176}}</string>
+                <string>{{160,176},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -384,7 +384,7 @@
             <key>Q_tool eraser.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{160,176},{160,176}}</string>
+                <string>{{3494,0},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -397,7 +397,7 @@
             <key>Q_tool hand.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3627,0},{160,176}}</string>
+                <string>{{320,176},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -410,7 +410,7 @@
             <key>Q_tool pic.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{480,176},{160,176}}</string>
+                <string>{{640,176},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -423,7 +423,7 @@
             <key>Q_tool pic_hover.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{640,176},{160,176}}</string>
+                <string>{{960,176},{160,176}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -436,7 +436,7 @@
             <key>Q_tool.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1591,176},{1527,231}}</string>
+                <string>{{1751,176},{1527,231}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -449,7 +449,7 @@
             <key>Q_top tree.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{948,0},{1116,102}}</string>
+                <string>{{1135,0},{1116,102}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -485,6 +485,19 @@
                 <key>sourceSize</key>
                 <string>{366,1107}</string>
             </dict>
+            <key>Q_wood.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3460,644},{442,1170}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{442,1170}}</string>
+                <key>sourceSize</key>
+                <string>{442,1170}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -499,7 +512,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a8cc52e4f04d206818378f4f230e1090:59c753731e0dc1febf47302ee8bd5570:c5bdb230243b42d56cbe0c28c42c4e28$</string>
+            <string>$TexturePacker:SmartUpdate:49604bb33c5a67a4b82a8bb438b69de6:c1ed890c813021ab2debf04664c49403:c5bdb230243b42d56cbe0c28c42c4e28$</string>
             <key>textureFileName</key>
             <string>fraction_tea.png</string>
         </dict>

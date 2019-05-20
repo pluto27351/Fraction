@@ -14,10 +14,25 @@
           <Project Name="u2_7.csd" Type="Node" />
           <Project Name="u3_2.csd" Type="Node" />
         </Folder>
+        <PlistImageFolder Image="fraction_menu.png" PListFile="fraction_menu.plist" Name=".fraction_menu_PList.Dir">
+          <PlistImageFile Name="Ch_01-click.png" Key="Ch_01-click.png" />
+          <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />
+          <PlistImageFile Name="Ch_02-click.png" Key="Ch_02-click.png" />
+          <PlistImageFile Name="Ch_02.png" Key="Ch_02.png" />
+          <PlistImageFile Name="Ch_03-click.png" Key="Ch_03-click.png" />
+          <PlistImageFile Name="Ch_03.png" Key="Ch_03.png" />
+          <PlistImageFile Name="Ch_04-click.png" Key="Ch_04-click.png" />
+          <PlistImageFile Name="Ch_04.png" Key="Ch_04.png" />
+          <PlistImageFile Name="Ch_05-click.png" Key="Ch_05-click.png" />
+          <PlistImageFile Name="Ch_05.png" Key="Ch_05.png" />
+          <PlistImageFile Name="Ch_Course.jpg" Key="Ch_Course.jpg" />
+          <PlistImageFile Name="Ch_cloud.png" Key="Ch_cloud.png" />
+          <PlistImageFile Name="Ch_story.png" Key="Ch_story.png" />
+          <PlistImageFile Name="Ch_story_hover.png" Key="Ch_story_hover.png" />
+        </PlistImageFolder>
         <PlistImageFolder Image="fraction_tea.png" PListFile="fraction_tea.plist" Name=".fraction_tea_PList.Dir">
           <PlistImageFile Name="0_Banboo.png" Key="0_Banboo.png" />
           <PlistImageFile Name="Background.jpg" Key="Background.jpg" />
-          <PlistImageFile Name="Q_1.png" Key="Q_1.png" />
           <PlistImageFile Name="Q_10.png" Key="Q_10.png" />
           <PlistImageFile Name="Q_11.png" Key="Q_11.png" />
           <PlistImageFile Name="Q_12.png" Key="Q_12.png" />
@@ -31,27 +46,29 @@
           <PlistImageFile Name="Q_9.png" Key="Q_9.png" />
           <PlistImageFile Name="Q_Answer.png" Key="Q_Answer.png" />
           <PlistImageFile Name="Q_Answer_hover.png" Key="Q_Answer_hover.png" />
-          <PlistImageFile Name="Q_Rock.png" Key="Q_Rock.png" />
           <PlistImageFile Name="Q_back.png" Key="Q_back.png" />
           <PlistImageFile Name="Q_grass.png" Key="Q_grass.png" />
           <PlistImageFile Name="Q_home.png" Key="Q_home.png" />
           <PlistImageFile Name="Q_home_hover.png" Key="Q_home_hover.png" />
           <PlistImageFile Name="Q_leaf.png" Key="Q_leaf.png" />
           <PlistImageFile Name="Q_next.png" Key="Q_next.png" />
+          <PlistImageFile Name="Q_Rock.png" Key="Q_Rock.png" />
           <PlistImageFile Name="Q_tool Black.png" Key="Q_tool Black.png" />
           <PlistImageFile Name="Q_tool Blue.png" Key="Q_tool Blue.png" />
-          <PlistImageFile Name="Q_tool Red.png" Key="Q_tool Red.png" />
-          <PlistImageFile Name="Q_tool Reset.png" Key="Q_tool Reset.png" />
-          <PlistImageFile Name="Q_tool Reset_hover.png" Key="Q_tool Reset_hover.png" />
           <PlistImageFile Name="Q_tool erase all.png" Key="Q_tool erase all.png" />
           <PlistImageFile Name="Q_tool eraser.png" Key="Q_tool eraser.png" />
           <PlistImageFile Name="Q_tool hand.png" Key="Q_tool hand.png" />
           <PlistImageFile Name="Q_tool pic.png" Key="Q_tool pic.png" />
           <PlistImageFile Name="Q_tool pic_hover.png" Key="Q_tool pic_hover.png" />
+          <PlistImageFile Name="Q_tool Red.png" Key="Q_tool Red.png" />
+          <PlistImageFile Name="Q_tool Reset.png" Key="Q_tool Reset.png" />
+          <PlistImageFile Name="Q_tool Reset_hover.png" Key="Q_tool Reset_hover.png" />
           <PlistImageFile Name="Q_tool.png" Key="Q_tool.png" />
           <PlistImageFile Name="Q_top tree.png" Key="Q_top tree.png" />
           <PlistImageFile Name="Q_tree Left.png" Key="Q_tree Left.png" />
           <PlistImageFile Name="Q_tree Right.png" Key="Q_tree Right.png" />
+          <PlistImageFile Name="Q_OK.png" Key="Q_OK.png" />
+          <PlistImageFile Name="Q_wood.png" Key="Q_wood.png" />
         </PlistImageFolder>
         <Folder Name="img">
           <PlistImageFolder Image="Fraction_Btn.png" PListFile="Fraction_Btn.plist" Name=".Fraction_Btn_PList.Dir">
@@ -259,7 +276,6 @@
         <Image Name="60608281_467798820427910_8645112543657852928_n.jpg" />
         <Project Name="HomeScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
-        <Project Name="MeunScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="TeachScene.csd" Type="Scene" />
       </RootFolder>

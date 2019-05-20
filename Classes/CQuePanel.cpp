@@ -49,12 +49,15 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單
-	_numSwitcher.init("topic1_number", 11, true, "topic1_number_back.png", parent, Vec2(75, 700), SWITCHBOARD_LEVEL);
+    auto pt = rootNode.getChildByName("numwood")->getPosition();
+	_numSwitcher.init("Q", 11, true, "Q_wood.png", parent, pt, SWITCHBOARD_LEVEL);
+    _numSwitcher.showSelectNumber(_curNum, parent, Vec2(60,-30), SWITCHBOARD_LEVEL);
 	_numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
 	_numSwitcher.setVisible(false);
+    rootNode.removeChildByName("numwood");
 
 	//設定剪刀選單
-	_cutSwitcher.init("topic1_number", 11, true, "btn_menu.png", parent, Vec2(1024,768), SWITCHBOARD_LEVEL);
+	_cutSwitcher.init("Q", 11, true, "btn_menu.png", parent, Vec2(1024,768), SWITCHBOARD_LEVEL);
 	_cutSwitcher.setAsColumn();
 	_cutSwitcher.setBgScale(4.7,2);
 	_cutSwitcher.setScale(0.8);
@@ -64,8 +67,6 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	//按鈕設定
 	setBtn(rootNode, parent);
     
-
-
 	_bFracBoardOn = false;
 	_bDivided = false;	// 預設沒有平分
 	_bAnswer = false;
@@ -99,12 +100,6 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	pt = rootNode.getChildByName("numbtn")->getPosition();
 	_numBtn.setButtonInfo("Q_leaf.png", "Q_leaf.png", parent, pt, INTERFACE_LEVEL);
 	rootNode.removeChildByName("numbtn");
-    
-    char name[10];
-    sprintf(name, "Q_%d.png",_curNum);
-    _numPic = (Sprite *)Sprite::createWithSpriteFrameName(name);
-    _numPic->setPosition(pt);
-    parent.addChild(_numPic,INTERFACE_LEVEL);
 
 	// 設定切分按鈕
 	pt = rootNode.getChildByName("cut")->getPosition();
@@ -149,14 +144,12 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
         _parentLayer->addChild(_que);
         
         //重設葉子數字
-        char name[10];
-        sprintf(name, "Q_%d.png",_curNum);
-        auto num = (Sprite *)Sprite::createWithSpriteFrameName(name);
-        _numPic->setDisplayFrame(num->getDisplayFrame());
+        _numSwitcher.setSelectNumber(_curNum);
     }
     
     //重設分母選單
     _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    if(_bnum)_numSwitcher.move(Vec2(-200,0));
     //重設剪刀選單
     _cutSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
     
@@ -169,6 +162,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     //按鈕關閉隱藏
     _ansBtn.setStatus(false);
     _numBtn.setStatus(false);
+    if(_bnum)_numBtn.setPosition(_numBtn.getPosition() - Vec2(200,0));
     _cutBtn.setStatus(false);
     
 	//選單隱藏
@@ -267,6 +261,16 @@ bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
     if (_numBtn.touchesEnded(inPt)) {  // 分母按鈕被按下
         _bnum = !_bnum;
         _numSwitcher.setVisible(_bnum);
+        
+        if(_bnum){
+            _numBtn.setPosition(_numBtn.getPosition() + Vec2(200,0));
+            _numSwitcher.move(Vec2(200,0));
+        }
+        else  {
+            _numBtn.setPosition(_numBtn.getPosition() - Vec2(200,0));
+            _numSwitcher.move(Vec2(-200,0));
+        }
+        
         return true;
     }
     

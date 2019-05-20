@@ -26,6 +26,7 @@ bool CMenuScene::init()
 	Size size;
 
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_menu.plist");
 	auto rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
 
@@ -37,8 +38,8 @@ bool CMenuScene::init()
 	{
 		sprintf(spriteName, "levelbtn_%d", i + 1);
 		auto spt = (Sprite*)rootNode->getChildByName(spriteName);
-		sprintf(normalName, "bt_0%d.png", i + 1);
-		sprintf(touchedName, "bt_0%d_hover.png", i + 1);
+		sprintf(normalName, "Ch_%02d.png", i + 1);
+		sprintf(touchedName, "Ch_%02d-click.png", i + 1);
 		pt = spt->getPosition();
 		scale = spt->getScale();
 		_unitBtn[i] = new CButton();

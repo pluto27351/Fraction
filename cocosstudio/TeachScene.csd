@@ -105,7 +105,7 @@
             <FileData Type="PlistSubImage" Path="Q_tool Black.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pen_blue" ActionTag="-1340230087" Tag="198" IconVisible="False" LeftMargin="678.9335" RightMargin="1209.0664" TopMargin="1354.9756" BottomMargin="5.0245" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pen_blue" ActionTag="-1340230087" Tag="198" IconVisible="False" LeftMargin="678.9335" RightMargin="1209.0665" TopMargin="1354.9755" BottomMargin="5.0245" ctype="SpriteObjectData">
             <Size X="160.0000" Y="176.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="758.9335" Y="93.0245" />
@@ -116,7 +116,7 @@
             <FileData Type="PlistSubImage" Path="Q_tool Blue.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pen_red" ActionTag="-1174350589" Tag="201" IconVisible="False" LeftMargin="814.4808" RightMargin="1073.5192" TopMargin="1355.8035" BottomMargin="4.1965" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pen_red" ActionTag="-1174350589" Tag="201" IconVisible="False" LeftMargin="814.4808" RightMargin="1073.5193" TopMargin="1355.8035" BottomMargin="4.1965" ctype="SpriteObjectData">
             <Size X="160.0000" Y="176.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="894.4808" Y="92.1965" />
@@ -127,7 +127,7 @@
             <FileData Type="PlistSubImage" Path="Q_tool Red.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="erease" ActionTag="1566050996" Tag="199" IconVisible="False" LeftMargin="959.4006" RightMargin="928.5994" TopMargin="1355.1920" BottomMargin="4.8079" ctype="SpriteObjectData">
+          <AbstractNodeData Name="erease" ActionTag="1566050996" Tag="199" IconVisible="False" LeftMargin="959.4006" RightMargin="928.5994" TopMargin="1355.1921" BottomMargin="4.8079" ctype="SpriteObjectData">
             <Size X="160.0000" Y="176.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1039.4006" Y="92.8079" />
@@ -215,26 +215,37 @@
             <FileData Type="PlistSubImage" Path="Q_back.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="numbtn" ActionTag="-1506651905" Tag="69" IconVisible="False" LeftMargin="-28.2437" RightMargin="1853.2437" TopMargin="645.5643" BottomMargin="668.4357" ctype="SpriteObjectData">
+          <AbstractNodeData Name="numbtn" ActionTag="-1506651905" Tag="69" IconVisible="False" LeftMargin="-31.5000" RightMargin="1856.5000" TopMargin="645.0000" BottomMargin="669.0000" ctype="SpriteObjectData">
             <Size X="223.0000" Y="222.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="83.2563" Y="779.4357" />
+            <Position X="80.0000" Y="780.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0407" Y="0.5074" />
+            <PrePosition X="0.0391" Y="0.5078" />
             <PreSize X="0.1089" Y="0.1445" />
             <FileData Type="PlistSubImage" Path="Q_leaf.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bar_2" ActionTag="-375674515" Tag="100" IconVisible="False" LeftMargin="2071.1694" RightMargin="-33.1694" TopMargin="31.2596" BottomMargin="1501.7404" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bar_2" ActionTag="-375674515" Tag="100" IconVisible="False" LeftMargin="2071.1694" RightMargin="-33.1694" TopMargin="31.2600" BottomMargin="1501.7400" ctype="SpriteObjectData">
             <Size X="10.0000" Y="3.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="2076.1694" Y="1503.2404" />
+            <Position X="2076.1694" Y="1503.2400" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="1.0138" Y="0.9787" />
             <PreSize X="0.0049" Y="0.0020" />
             <FileData Type="Normal" Path="img/bar.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="numwood" ActionTag="1870126550" Tag="46" IconVisible="False" LeftMargin="-231.0000" RightMargin="1837.0000" TopMargin="159.0336" BottomMargin="206.9664" ctype="SpriteObjectData">
+            <Size X="442.0000" Y="1170.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-10.0000" Y="791.9664" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="-0.0049" Y="0.5156" />
+            <PreSize X="0.2158" Y="0.7617" />
+            <FileData Type="PlistSubImage" Path="Q_wood.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
