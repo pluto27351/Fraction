@@ -45,27 +45,35 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_parentLayer->addChild(_ans);
 
 	//設定圖片
-	_cutImage = new CCutImage("topic1_wood", 1.0f);
+	_cutImage = new CCutImage("stuff_muffin", 1.0f);
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單
     auto pt = rootNode.getChildByName("numwood")->getPosition();
-	_numSwitcher.init("Q", 11, true, "Q_wood.png", parent, pt, SWITCHBOARD_LEVEL);
+	_numSwitcher.init("Q","Q_OK.png", "Q_wood.png", parent, pt, SWITCHBOARD_LEVEL);
     _numSwitcher.showSelectNumber(_curNum, parent, Vec2(60,-30), SWITCHBOARD_LEVEL);
 	_numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
 	_numSwitcher.setVisible(false);
     rootNode.removeChildByName("numwood");
 
 	//設定剪刀選單
-	_cutSwitcher.init("Q", 11, true, "btn_menu.png", parent, Vec2(1024,768), SWITCHBOARD_LEVEL);
+    pt = rootNode.getChildByName("cutPic")->getPosition();
+	_cutSwitcher.init("Q", "Q_okay.png", "Q_cut.png", parent, pt, SWITCHBOARD_LEVEL);
 	_cutSwitcher.setAsColumn();
-	_cutSwitcher.setBgScale(4.7,2);
-	_cutSwitcher.setScale(0.8);
     _cutSwitcher.setEnabledBtns(equalData[_curQue-1]);
 	_cutSwitcher.setVisible(false);
-
+    rootNode.removeChildByName("cutPic");
+    
+    _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("Q_backcolor.png");
+    _blackMask->setPosition(Vec2(1024,768));
+    _blackMask->setScale(4);
+    _blackMask->setVisible(false);
+    _parentLayer->addChild(_blackMask,INTERFACE_LEVEL);
+    
 	//按鈕設定
 	setBtn(rootNode, parent);
+    
+
     
 	_bFracBoardOn = false;
 	_bDivided = false;	// 預設沒有平分
@@ -103,7 +111,7 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 
 	// 設定切分按鈕
 	pt = rootNode.getChildByName("cut")->getPosition();
-	_cutBtn.setButtonInfo("Q_tool pic.png", "Q_tool pic_hover.png", parent, pt, INTERFACE_LEVEL);
+	_cutBtn.setButtonInfo("Q_tool pic.png", "Q_tool pic_hover.png", parent, pt, SWITCHBOARD_LEVEL);
 	rootNode.removeChildByName("cut");
 
 
@@ -156,7 +164,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     //切塊圖還原
     _parentLayer->removeChild(_cutImage);
     delete _cutImage;
-    _cutImage = new CCutImage("topic1_wood", 1.0f);
+    _cutImage = new CCutImage("stuff_muffin", 1.0f);
     _parentLayer->addChild(_cutImage);
     
     //按鈕關閉隱藏
@@ -168,6 +176,8 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
 	//選單隱藏
 	_numSwitcher.setVisible(false);
     _cutSwitcher.setVisible(false);
+    
+    _blackMask->setVisible(false);
 
 	_bDivided = false;
 	_bAnswer = false;
@@ -181,6 +191,7 @@ CQuePanel::~CQuePanel()
 {
 	if (_cutImage != NULL)delete _cutImage;
 	if (_ans != NULL)delete _ans;
+    if (_que != NULL)delete _que;
 	//Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }
 
@@ -256,6 +267,7 @@ bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
     if (_cutBtn.touchesEnded(inPt)) {  // 剪刀按鈕被按下
         _bFracBoardOn = !_bFracBoardOn;
         _cutSwitcher.setVisible(_bFracBoardOn);
+        _blackMask->setVisible(_bFracBoardOn);
         return true;
     }
     if (_numBtn.touchesEnded(inPt)) {  // 分母按鈕被按下
@@ -287,6 +299,7 @@ bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
         if (_cutSwitcher.touchesEnded(inPt)) {
             int num = _cutSwitcher.getSelectNumber() + 2;
             _cutImage->divide(num);                           //切圖片
+            _blackMask->setVisible(false);
             _bFracBoardOn = false; _bDivided = true,_bCutDown = true;
             _cutBtn.setStatus(false);
             _cutSwitcher.setVisible(false);

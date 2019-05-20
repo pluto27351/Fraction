@@ -11,7 +11,7 @@ CSwitchGroup::~CSwitchGroup() {
 	delete _okBtn;
 }
 
-void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level) 
+void CSwitchGroup::init(const char *btn ,const char *Okbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level)
 {
     _locPt = locPt;
 	_bg = (Sprite *)Sprite::createWithSpriteFrameName(bg);
@@ -19,7 +19,7 @@ void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, co
 	parent.addChild(_bg, level);
     
     
-	Vec2 L_half = Vec2(-130, (n - 1) / 2.0f * 80);
+	Vec2 L_half = Vec2(-130, 400);
 	Vec2 L_ok = Vec2(0, 70);
 	_halfLength = L_half + L_ok;
 
@@ -27,21 +27,20 @@ void CSwitchGroup::init(const char *btn,int n, bool useOkbtn, const char *bg, co
     _okPos.y = _halfLength.y;
     
 	char pic[20];
-	if (useOkbtn) {
-		_okBtn = new CButton();
-		_okBtn->setButtonInfo("Q_OK.png", "Q_OK.png", parent, _locPt - _okPos, level);
-        _okBtn->setEnabled(false);
-	}
 
-	_numBtn = new CSwitch[n];
+    _okBtn = new CButton();
+    _okBtn->setButtonInfo(Okbtn,Okbtn, parent, _locPt - _okPos, level);
+    _okBtn->setEnabled(false);
+	
+
+	_numBtn = new CSwitch[11];
 	Vec2 pos = _locPt + _halfLength;
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < 11; i++) {
 		sprintf(pic, "%s_%d.png", btn, i+2);
 		_numBtn[i].setButtonInfo(pic, pic, parent, pos, level);
 		pos.y -= 85;
 	};
 
-	_n = n;
 	_selectNumber = -1;
 	//setSelectBtn(_selectNumber);
     _hasChoiceNum = false;
@@ -68,15 +67,15 @@ void CSwitchGroup::setSelectNumber(int n) {
 
 
 void CSwitchGroup::setAsColumn() {
-	_halfLength = Vec2(-(_n - 1) / 2.0f * 170,75);
-	_okPos = Vec2(0, -75);
+	_halfLength = Vec2(-475,70);
+	_okPos = Vec2(0, -50);
 
 	if (_okBtn!= NULL) _okBtn->setPosition(_locPt + _okPos);
 
 	Vec2 pos = _locPt + _halfLength;
-	for (int i = 0; i < _n; i++) {
+	for (int i = 0; i <11; i++) {
 		_numBtn[i].setPosition(pos);
-		pos.x += 170;
+		pos.x += 95;
 	};
 
 }
@@ -97,7 +96,7 @@ void CSwitchGroup::setEnabledBtns(const int data[12], int num)
 void CSwitchGroup::setScale(float s) {
 	if (_okBtn != NULL) _okBtn->setScale(s);
 	
-	for (int i = 0; i < _n; i++) 
+	for (int i = 0; i < 11 ; i++)
 		_numBtn[i].setScale(s);
 }
 
@@ -121,7 +120,7 @@ void CSwitchGroup::setPosition(Vec2 locPt)
     if (_showSelectN) _selectN->setPosition(_locPt + _nPos);
     
 	Vec2 pos = _locPt  + _halfLength;
-	for (int i = 0; i < _n; i++) {
+	for (int i = 0; i < 11; i++) {
 		_numBtn[i].setPosition(pos);
 		pos.y -= 70;
 	};
@@ -136,7 +135,7 @@ void CSwitchGroup::move(Vec2 dPt)
     if (_okBtn != NULL) _okBtn->setPosition(_locPt - _okPos);
     if (_showSelectN) _selectN->setPosition(_locPt + _nPos);
     
-    for (int i = 0; i < _n; i++) {
+    for (int i = 0; i < 11; i++) {
         auto pt = _numBtn[i].getPosition()+ dPt;
         _numBtn[i].setPosition(pt);
     };
@@ -156,7 +155,7 @@ void CSwitchGroup::setVisible(bool bVis)
 	_bg->setVisible(bVis);
 	if (_okBtn != NULL) _okBtn->setVisible(bVis);
 
-	for (int i = 0; i < _n; i++)
+	for (int i = 0; i < 11; i++)
 		_numBtn[i].setVisible(bVis);
     
 }
@@ -168,7 +167,7 @@ void CSwitchGroup::setVisible(int number, bool bVis)
 
 void CSwitchGroup::setEnabled(bool bEnable) 
 {
-	for (int i = 0; i < _n; i++)
+	for (int i = 0; i < 11; i++)
 		_numBtn[i].setEnabled(bEnable);
 }
 
@@ -190,7 +189,7 @@ int CSwitchGroup::getSelectNumber() {
 
 bool CSwitchGroup::touchesBegin(cocos2d::Point inPos)
 {
-	for (int i = 0; i < _n; i++) 
+	for (int i = 0; i < 11; i++)
 		if (_numBtn[i].touchesBegin(inPos))return true;
 
     if(_selectNumber != -1){
@@ -202,7 +201,7 @@ bool CSwitchGroup::touchesBegin(cocos2d::Point inPos)
 
 bool CSwitchGroup::touchesMoved(cocos2d::Point inPos)
 {
-	for (int i = 0; i < _n; i++)
+	for (int i = 0; i < 11; i++)
 		_numBtn[i].touchesMoved(inPos);
 
     if(_selectNumber != -1){_okBtn->touchesMoved(inPos);}
@@ -212,7 +211,7 @@ bool CSwitchGroup::touchesMoved(cocos2d::Point inPos)
 
 bool CSwitchGroup::touchesEnded(cocos2d::Point inPos)
 {
-	for (int i = 0; i < _n; i++)
+	for (int i = 0; i < 11; i++)
 		if (_numBtn[i].touchesEnded(inPos)) {
             if(i ==_selectNumber){
                 _selectNumber = -1;

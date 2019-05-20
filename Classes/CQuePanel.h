@@ -33,6 +33,7 @@ private:
     CSwitchGroup _numSwitcher,_cutSwitcher;
     CCutImage *_cutImage;
     CAnsCreater *_ans,*_que;
+    Sprite *_blackMask;
     const int(*equalData)[12];
     
     Layer *_parentLayer;

@@ -14,17 +14,16 @@ private:
     Point _locPt;
 	Vec2 _halfLength,_okPos,_nPos;
     bool _hasChoiceNum;
-	int _n,_selectNumber;
+	int _selectNumber;
     bool _showSelectN = false;
 public:
 	CSwitchGroup();
 	~CSwitchGroup();
-	void init(const char *btn,int n,bool useOkbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
+	void init(const char *btn,const char *Okbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
 	void setAsColumn();
 	void setScale(float s);
 	void setBgScale(float w,float h=0);
 	void setPosition(Vec2 locPt);
-	//void setPosition(int number,Vec2 locPt);
 	void setVisible(bool bVis);
 	void setVisible(int number,bool bVis);
 	void setEnabled(bool bEnable);

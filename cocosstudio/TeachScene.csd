@@ -248,6 +248,17 @@
             <FileData Type="PlistSubImage" Path="Q_wood.png" Plist="fraction_tea.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="cutPic" ActionTag="-602976702" Tag="76" IconVisible="False" LeftMargin="355.0012" RightMargin="316.9988" TopMargin="930.9995" BottomMargin="123.0005" ctype="SpriteObjectData">
+            <Size X="1376.0000" Y="482.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1043.0012" Y="364.0005" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5093" Y="0.2370" />
+            <PreSize X="0.6719" Y="0.3138" />
+            <FileData Type="PlistSubImage" Path="Q_cut.png" Plist="fraction_tea.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

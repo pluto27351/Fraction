@@ -69,6 +69,25 @@
           <PlistImageFile Name="Q_tree Right.png" Key="Q_tree Right.png" />
           <PlistImageFile Name="Q_OK.png" Key="Q_OK.png" />
           <PlistImageFile Name="Q_wood.png" Key="Q_wood.png" />
+          <PlistImageFile Name="Q_backcolor.png" Key="Q_backcolor.png" />
+          <PlistImageFile Name="Q_cut.png" Key="Q_cut.png" />
+          <PlistImageFile Name="Q_okay.png" Key="Q_okay.png" />
+        </PlistImageFolder>
+        <PlistImageFolder Image="fraction_teaobj.png" PListFile="fraction_teaobj.plist" Name=".fraction_teaobj_PList.Dir">
+          <PlistImageFile Name="stuff_banana.png" Key="stuff_banana.png" />
+          <PlistImageFile Name="stuff_banboo.png" Key="stuff_banboo.png" />
+          <PlistImageFile Name="stuff_flower.png" Key="stuff_flower.png" />
+          <PlistImageFile Name="stuff_muffin.png" Key="stuff_muffin.png" />
+          <PlistImageFile Name="stuff_muffin10.png" Key="stuff_muffin10.png" />
+          <PlistImageFile Name="stuff_muffin12.png" Key="stuff_muffin12.png" />
+          <PlistImageFile Name="stuff_muffin2.png" Key="stuff_muffin2.png" />
+          <PlistImageFile Name="stuff_muffin3.png" Key="stuff_muffin3.png" />
+          <PlistImageFile Name="stuff_muffin4.png" Key="stuff_muffin4.png" />
+          <PlistImageFile Name="stuff_muffin5.png" Key="stuff_muffin5.png" />
+          <PlistImageFile Name="stuff_muffin6.png" Key="stuff_muffin6.png" />
+          <PlistImageFile Name="stuff_muffin8.png" Key="stuff_muffin8.png" />
+          <PlistImageFile Name="stuff_red.png" Key="stuff_red.png" />
+          <PlistImageFile Name="stuff_tomato.png" Key="stuff_tomato.png" />
         </PlistImageFolder>
         <Folder Name="img">
           <PlistImageFolder Image="Fraction_Btn.png" PListFile="Fraction_Btn.plist" Name=".Fraction_Btn_PList.Dir">
@@ -277,6 +296,7 @@
         <Project Name="HomeScene.csd" Type="Scene" />
         <Project Name="MenuScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
+        <Image Name="Q_34_black.jpg" />
         <Project Name="TeachScene.csd" Type="Scene" />
       </RootFolder>
     </Group>

@@ -26,7 +26,7 @@ bool CMenuScene::init()
 	Size size;
 
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_menu.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_menu.plist");
 	auto rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
 

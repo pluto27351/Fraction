@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/CMenuScene.cpp"
-            timestampString = "580054522.235377"
+            timestampString = "580066963.441756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/CTeachScene.cpp"
-            timestampString = "579973289.494224"
+            timestampString = "580066963.443072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "CTeachScene::onTouchesBegan(const std::vector&lt;cocos2d::Touch*&gt; touches, cocos2d::Event *event)"
             landmarkType = "7">
          </BreakpointContent>

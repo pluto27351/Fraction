@@ -41,9 +41,8 @@ bool CTeachScene::init()
 void CTeachScene::setCreate(int unit) 
 {
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/handdrawing.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Wood.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/quecontrol.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_tea.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_teaobj.plist");
 	auto rootNode = CSLoader::createNode("TeachScene.csb");
 	addChild(rootNode);
 
@@ -142,12 +141,14 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 CTeachScene::~CTeachScene()
 {
 	_handDrawing->release();
-	//delete _queController;
-	this->removeAllChildren();
+    _queController->release();
+    this->removeAllChildren();
+    
+	delete _queController;
+    delete _handDrawing;
 
 	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/handdrawing.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Btn.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Wood.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/quecontrol.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_tea.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_teaobj.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

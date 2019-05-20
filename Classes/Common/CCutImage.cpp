@@ -6,7 +6,7 @@
 
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
-#define POS Vec2(620,650)
+#define POS Vec2(500,650)
 
 enum IMG_STATUS { NONE = 0, MOVE = 1, EXIT = 2 };
 
@@ -16,7 +16,7 @@ CCutImage::CCutImage(const char *name, float scale) {
 	//n = ((int)num[0] - 48) * 10 + (int)num[1] - 48;//圖片數量
 
 	char picname[20];
-	sprintf(picname, "%s_%02d.png", name,1);
+	sprintf(picname, "%s.png",name);
 	_fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
 	_fullImg->setPosition(POS);
 	_fullImg->setScale(scale);
@@ -55,7 +55,8 @@ CCutImage::CCutImage(const char *name, float scale) {
 
 CCutImage::~CCutImage()
 {
-
+    delete [] img;
+    delete [] _StickyData;
 }
 
 
@@ -68,7 +69,7 @@ void CCutImage::divide(int num) {
     _fullImg->setOpacity(100);
 
 	char picname[20];
-	sprintf(picname, "%s_%02d.png", _name, num);
+	sprintf(picname, "%s%d.png", _name, num);
 	_n = num;
 	img = new TouchSprite[_n];
 	_StickyData = new StickyData[_n];
