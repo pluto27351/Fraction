@@ -55,8 +55,11 @@ CCutImage::CCutImage(const char *name, float scale) {
 
 CCutImage::~CCutImage()
 {
-    delete [] img;
-    delete [] _StickyData;
+    if (_n != 0) {
+        for (int i = 0; i < _n; i++) removeChild(img[i].getImg());
+        delete [] img;
+        delete [] _StickyData;
+    }
 }
 
 
