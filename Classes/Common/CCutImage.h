@@ -1,4 +1,4 @@
-﻿#ifndef CCutImage_h
+#ifndef CCutImage_h
 #define CCutImage_h
 
 #include "cocos2d.h"
@@ -38,9 +38,9 @@ private:
 	float _StickyRadius;        
 	void Sticky(TouchSprite*);
 public:
-	CCutImage(const char *name, float scale);
+	CCutImage(const char *name, float scale,int num);
 	~CCutImage();
-	void divide(int num);
+	void divide(bool);
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	bool touchesMoved(cocos2d::Point inPos, int id);
 	void touchesEnded(cocos2d::Point inPos, int id);

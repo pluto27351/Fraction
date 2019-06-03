@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -40,7 +40,6 @@ public:
 	void setSectorButtonInfo(const char *Img, float scale);
 	void setRotation(float r);
 
-
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	int touchesMoved(cocos2d::Point inPos, int id);
 	bool touchesEnded(cocos2d::Point inPos, int id);
@@ -57,4 +56,5 @@ public:
 	float getAngle() { return (_fangle); }
 	void setSticky(int stickyNumber);
 	int ResetSticky();
+    void setVisible(bool b);
 };

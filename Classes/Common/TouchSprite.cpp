@@ -1,4 +1,4 @@
-﻿#include "TouchSprite.h"
+#include "TouchSprite.h"
 #include <cmath>
 
 #define IMG_ANGLE 90
@@ -15,6 +15,10 @@ void TouchSprite::setSectorButtonInfo(const char *Img, float scale)
 	_bTouched = false;
 	_bRotated = false;
 	_bVisible = _bEnabled = true;
+}
+
+void TouchSprite::setVisible(bool b){
+    _Pic->setVisible(b);
 }
 
 bool TouchSprite::SectorCollision(Point touch) {

@@ -45,24 +45,16 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_parentLayer->addChild(_ans);
 
 	//設定圖片
-	_cutImage = new CCutImage("stuff_muffin", 1.0f);
+	_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單
-    auto pt = rootNode.getChildByName("numwood")->getPosition();
-	_numSwitcher.init("Q","Q_OK.png", "Q_wood.png", parent, pt, SWITCHBOARD_LEVEL);
-    _numSwitcher.showSelectNumber(_curNum, parent, Vec2(60,-30), SWITCHBOARD_LEVEL);
-	_numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
-	_numSwitcher.setVisible(false);
-    rootNode.removeChildByName("numwood");
-
-	//設定剪刀選單
-    pt = rootNode.getChildByName("cutPic")->getPosition();
-	_cutSwitcher.init("Q", "Q_okay.png", "Q_cut.png", parent, pt, SWITCHBOARD_LEVEL);
-	_cutSwitcher.setAsColumn();
-    _cutSwitcher.setEnabledBtns(equalData[_curQue-1]);
-	_cutSwitcher.setVisible(false);
-    rootNode.removeChildByName("cutPic");
+    auto pt = rootNode.getChildByName("numPic")->getPosition();
+    _numSwitcher.init("Q", "Q_okay.png", "Q_cut.png", parent, pt, SWITCHBOARD_LEVEL);
+    _numSwitcher.setAsColumn();
+    _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    _numSwitcher.setVisible(false);
+    rootNode.removeChildByName("numPic");
     
     _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("Q_backcolor.png");
     _blackMask->setPosition(Vec2(1024,768));
@@ -73,9 +65,6 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	//按鈕設定
 	setBtn(rootNode, parent);
     
-
-    
-	_bFracBoardOn = false;
 	_bDivided = false;	// 預設沒有平分
 	_bAnswer = false;
 	_bnum = false;
@@ -151,34 +140,25 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
         _que->setPosition(QUE_POS);
         _parentLayer->addChild(_que);
         
-        //重設葉子數字
-        _numSwitcher.setSelectNumber(_curNum);
     }
     
     //重設分母選單
     _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
-    if(_bnum)_numSwitcher.move(Vec2(-200,0));
-    //重設剪刀選單
-    _cutSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    _numSwitcher.setVisible(false);
+    
     
     //切塊圖還原
     _parentLayer->removeChild(_cutImage);
     delete _cutImage;
-    _cutImage = new CCutImage("stuff_muffin", 1.0f);
+    _cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
     _parentLayer->addChild(_cutImage);
     
     //按鈕關閉隱藏
     _ansBtn.setStatus(false);
     _numBtn.setStatus(false);
-    if(_bnum)_numBtn.setPosition(_numBtn.getPosition() - Vec2(200,0));
     _cutBtn.setStatus(false);
-    
-	//選單隱藏
-	_numSwitcher.setVisible(false);
-    _cutSwitcher.setVisible(false);
-    
-    _blackMask->setVisible(false);
 
+    _blackMask->setVisible(false);
 	_bDivided = false;
 	_bAnswer = false;
 	_bFracBoardOn = false;
@@ -197,7 +177,7 @@ CQuePanel::~CQuePanel()
 
 bool CQuePanel::getBoardStatus()
 {
-	return(_bFracBoardOn || _bnum);
+	return(_bnum);
 }
 
 bool CQuePanel::resetActive(){
@@ -217,21 +197,19 @@ bool CQuePanel::cutDown(){
 
 bool CQuePanel::touchesBegin(Point inPt, int iId, int iMode)
 {
-    if (!_bnum && _cutBtn.touchesBegin(inPt)) return true;               //剪刀按鈕
-    if (!_bFracBoardOn && _numBtn.touchesBegin(inPt)) return true;          //分母按鈕
+    if (_numBtn.touchesBegin(inPt)) return true;          //分母按鈕
     
     if(_bnum){
         if ( _numSwitcher.touchesBegin(inPt) )return true; //分母選單
     }
-    else if(_bFracBoardOn){
-        if (_cutSwitcher.touchesBegin(inPt))return true;       //剪刀選單
-    }
     else{
+        if (_cutBtn.touchesBegin(inPt))return true;
 		if ( _prevBtn.touchesBegin(inPt) )return true;         //前一題
 		if ( _nextBtn.touchesBegin(inPt) ) return true;		   //後一題
 		if ( _ansBtn.touchesBegin(inPt) ) return true;		   //顯示答案
-		if (iMode == HAND_MODE && _bDivided)
+        if (iMode == HAND_MODE && _bDivided){
 			if(_cutImage->touchesBegin(inPt, iId))return true; //切塊
+        }
 	}
 
 	return false;
@@ -241,16 +219,14 @@ bool CQuePanel::touchesBegin(Point inPt, int iId, int iMode)
 
 bool CQuePanel::touchesMoved(Point inPt, int iId, int iMode)
 {
-	_cutBtn.touchesMoved(inPt);
+	
     _numBtn.touchesMoved(inPt);
     
     if(_bnum){
         _numSwitcher.touchesMoved(inPt);
     }
-    else if (_bFracBoardOn){
-        _cutSwitcher.touchesMoved(inPt);
-    }
 	else{
+        _cutBtn.touchesMoved(inPt);
 		_prevBtn.touchesMoved(inPt);
 		_nextBtn.touchesMoved(inPt);
 		_ansBtn.touchesMoved(inPt);
@@ -258,36 +234,19 @@ bool CQuePanel::touchesMoved(Point inPt, int iId, int iMode)
 		if (iMode == HAND_MODE && _bDivided) _cutImage->touchesMoved(inPt, iId);
 	}
 
-
 	return true;
 }
 
 bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
 {
-    if (_cutBtn.touchesEnded(inPt)) {  // 剪刀按鈕被按下
-        _bFracBoardOn = !_bFracBoardOn;
-        _cutSwitcher.setVisible(_bFracBoardOn);
-        _blackMask->setVisible(_bFracBoardOn);
-        return true;
-    }
     if (_numBtn.touchesEnded(inPt)) {  // 分母按鈕被按下
         _bnum = !_bnum;
         _numSwitcher.setVisible(_bnum);
-        
-        if(_bnum){
-            _numBtn.setPosition(_numBtn.getPosition() + Vec2(200,0));
-            _numSwitcher.move(Vec2(200,0));
-        }
-        else  {
-            _numBtn.setPosition(_numBtn.getPosition() - Vec2(200,0));
-            _numSwitcher.move(Vec2(-200,0));
-        }
-        
+        _blackMask->setVisible(_bnum);
         return true;
     }
     
-    if (_bnum)                           //分母選單
-    {
+    if (_bnum){                       //分母選單
         if (_numSwitcher.touchesEnded(inPt)) {
             int num = _numSwitcher.getSelectNumber() + 2;
             reset(0, num);
@@ -295,18 +254,15 @@ bool CQuePanel::touchesEnded(Point inPt, int iId, int iMode)
             return true;
         }
     }
-    else if (_bFracBoardOn) {                                   //剪刀選單
-        if (_cutSwitcher.touchesEnded(inPt)) {
-            int num = _cutSwitcher.getSelectNumber() + 2;
-            _cutImage->divide(num);                           //切圖片
-            _blackMask->setVisible(false);
-            _bFracBoardOn = false; _bDivided = true,_bCutDown = true;
-            _cutBtn.setStatus(false);
-            _cutSwitcher.setVisible(false);
+    else {
+        if (_cutBtn.touchesEnded(inPt)) {  // 剪刀按鈕被按下
+            _bDivided = !_bDivided;
+
+            _cutImage->divide(_bDivided); //切圖片
+            _bCutDown = _bDivided;
+            
             return true;
         }
-    }
-    else {
 		if (_prevBtn.touchesEnded(inPt)) { // 切換到前一題
             reset(-1);
             _bResetActive = true;

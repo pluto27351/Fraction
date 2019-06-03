@@ -90,7 +90,7 @@ void CSwitchGroup::setEnabledBtns(const int data[12], int num)
         setEnabled(n - 2, true);         //按扭從２開始 -> ２號＝[0]
     }
 
-    //setSelectBtn(num - 2);
+    setSelectBtn(num - 2);
 }
 
 void CSwitchGroup::setScale(float s) {
