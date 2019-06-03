@@ -170,6 +170,7 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 	return(ntor);
 }
 
+                                                // 分子-分母-帶分數
 Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominator, const char *front) {
 	float scale = 0.5f;
 	for (int i = 0; numerator[i] != NULL; scale += 0.5f, i++);
@@ -256,6 +257,8 @@ cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
 	return(fn);
 }
 
+
+//生成題目
 void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目．數字
 	Node * answer;
 
@@ -300,13 +303,32 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "F_%d", i + 1);
 		Node *Output_f = (Node *)Q.getChildByName(Input);
-		Text *f = (Text *)Output_f->getChildByName("ntor");
-		sprintf(Input, "%d", number);
-		sprintf(fn, "%d", f->getTag());
-        if(f->getString().c_str()[0]=='d') //判斷固定分子還分母 有d是固定分母
-            Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
-        else
-            Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
+		Text *ntor = (Text *)Output_f->getChildByName("ntor");
+        
+        int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};  //帶分／分母／分子
+        
+        if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
+        
+        if(outNumber[0] != -1){  //一般情況判斷分子
+            sprintf(Input, "%d", number);
+            outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
+        }
+        else {  // 特殊情況(帶分數設定為-1) 假分數轉帶分數時用(應該僅第三章答案部分會用到)
+            outNumber[0] = number / outNumber[1];
+            outNumber[2] = number % outNumber[1];
+        }
+        char n[4],d[4],f[4];
+        sprintf(n, "%d", outNumber[2]);
+        sprintf(d, "%d", outNumber[1]);
+        sprintf(f, "%d", outNumber[0]);
+        
+        Output_f->addChild(Set_CAnsCreater(n,d,f));
+        
+        //if(f->getString().c_str()[0]=='d') //判斷固定分子還分母 有d是固定分母
+        //  Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
+        //else
+        //  Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
+        
 		Output_f->removeChildByName("ntor");
 	}
 

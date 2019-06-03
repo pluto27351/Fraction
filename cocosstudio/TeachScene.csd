@@ -237,7 +237,7 @@
             <FileData Type="Normal" Path="img/bar.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="numwood" ActionTag="1870126550" Tag="46" IconVisible="False" LeftMargin="-231.0000" RightMargin="1837.0000" TopMargin="159.0336" BottomMargin="206.9664" ctype="SpriteObjectData">
+          <AbstractNodeData Name="numwood" ActionTag="1870126550" Tag="46" IconVisible="False" LeftMargin="-231.0000" RightMargin="1837.0000" TopMargin="159.0337" BottomMargin="206.9664" ctype="SpriteObjectData">
             <Size X="442.0000" Y="1170.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-10.0000" Y="791.9664" />
