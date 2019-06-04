@@ -41,7 +41,7 @@ public:
 	void setRotation(float r);
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
-	int touchesMoved(cocos2d::Point inPos, int id);
+	bool touchesMoved(cocos2d::Point inPos, int id);
 	bool touchesEnded(cocos2d::Point inPos, int id);
 
 	void RotatedBegin(cocos2d::Point inPos, int id);

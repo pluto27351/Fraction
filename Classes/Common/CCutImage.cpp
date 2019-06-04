@@ -8,7 +8,7 @@
 
 #define POS Vec2(500,650)
 
-enum IMG_STATUS { NONE = 0, MOVE = 1, EXIT = 2 };
+//enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
 
 CCutImage::CCutImage(const char *name, float scale,int num) {
 	char picname[20];
@@ -88,7 +88,7 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 		if (img[i].touchesBegin(inPos, id)) {
 			if (rotateImg == NULL) {
 				rotateImg = &img[i];
-				if (rotateId != -1) rotateImg->RotatedBegin(rotatePos, rotateId);  //先點到外 在點到圖上
+				//if (rotateId != -1) rotateImg->RotatedBegin(rotatePos, rotateId);  //先點到外 在點到圖上
 			}
 			int sticky = img[i].ResetSticky();        //重製磁鐵.釋放區域
 			if (sticky != -1) _StickyData[sticky].isSticky = false;
@@ -110,13 +110,12 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 bool CCutImage::touchesMoved(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
 
-	for (int i = 0; i < _n; i++) {                   //當一般點移動
-		int status = img[i].touchesMoved(inPos, id);
-
-		if (status == MOVE)  return true;
-
+	for (int i = 0; i < _n; i++) {                   //當移動or旋轉
+        if( img[i].touchesMoved(inPos, id)) return true;
 	}
-	if (rotateId == id) rotatePos = inPos;
+//    if (rotateId == id) {
+//        rotatePos = inPos;
+//    }
 	return false;
 }
 
@@ -129,7 +128,7 @@ void CCutImage::touchesEnded(cocos2d::Point inPos, int id) {
 			Sticky(&img[i]);  //判斷是否吸上去
 		}
 	}
-	if (rotateId == id)rotateId = -1;
+	//if (rotateId == id)rotateId = -1;
 }
 
 void CCutImage::Sticky(TouchSprite *img) {
@@ -138,7 +137,7 @@ void CCutImage::Sticky(TouchSprite *img) {
 	y = img->getPosition().y - POS.y;
 	d = powf(x, 2) + powf(y, 2);
 	if (d < _StickyRadius) {    //位置靠近磁鐵區域
-		int stickyPos = -1;
+		int stickyNum = -1;
 		float angle = img->getAngle();
 		float preDAngle = 1000, DAngle;
 		for (int i = 0; i < _n; i++) {        //判斷和哪個角度最靠近 
@@ -146,14 +145,14 @@ void CCutImage::Sticky(TouchSprite *img) {
 				DAngle = abs(_StickyData[i].angle - angle);   //算角度差
 				if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料
 					preDAngle = DAngle;
-					stickyPos = i;
+					stickyNum = i;
 				}
 			}
 		}
-		img->SetPosition(_StickyData[stickyPos].pos);       //設定圖片位置與角度
-		img->setRotation(_StickyData[stickyPos].angle);
-		img->setSticky(stickyPos);                          //紀錄區域
-		_StickyData[stickyPos].isSticky = true;
+		img->SetPosition(_StickyData[stickyNum].pos);       //設定圖片位置與角度
+		img->setRotation(_StickyData[stickyNum].angle);
+		img->setSticky(stickyNum);                          //紀錄區域
+		_StickyData[stickyNum].isSticky = true;
 	}
 }
 

@@ -59,20 +59,20 @@ Sprite *TouchSprite::getImg() {
 	return _Pic;
 }
 
-void TouchSprite::ImgRotate(Point touch) {
-	Point _CenterLoc;
-	float ta;
-	float tx, ty;
-	_CenterLoc.x = _Pic->getPosition().x - ImgRadius / 2 * cosf(ANGLE((_fangle + IMG_ANGLE)));
-	_CenterLoc.y = _Pic->getPosition().y - ImgRadius / 2 * sinf(ANGLE((_fangle + IMG_ANGLE)));
-	tx = touch.x - _CenterLoc.x;
-	ty = touch.y - _CenterLoc.y;
-	ta = atanf(ty / tx);
-	ta = RE_ANGLE(ta) + 90;
-	if (tx > 0)ta = ta + 180;
-
-	setRotation(_fangle + ta);
-}
+//void TouchSprite::ImgRotate(Point touch) {
+//    Point _CenterLoc;
+//    float ta;
+//    float tx, ty;
+//    _CenterLoc.x = _Pic->getPosition().x - ImgRadius / 2 * cosf(ANGLE((_fangle + IMG_ANGLE)));
+//    _CenterLoc.y = _Pic->getPosition().y - ImgRadius / 2 * sinf(ANGLE((_fangle + IMG_ANGLE)));
+//    tx = touch.x - _CenterLoc.x;
+//    ty = touch.y - _CenterLoc.y;
+//    ta = atanf(ty / tx);
+//    ta = RE_ANGLE(ta) + 90;
+//    if (tx > 0)ta = ta + 180;
+//
+//    setRotation(_fangle + ta);
+//}
 
 
 bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
@@ -96,32 +96,20 @@ bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 	return false;
 }
 
-int TouchSprite::touchesMoved(cocos2d::Point inPos, int id) {
+bool TouchSprite::touchesMoved(cocos2d::Point inPos, int id) {
 	if (_bRotated) {
 		if (id == touchID[0]) touchPos[0] = inPos;
 		if (id == touchID[1]) touchPos[1] = inPos;
 		RotateMoved();
+        return(true);
 	}
 	else if (_bTouched && touchID[0] == id) {
 		SetPosition(inPos - d);
 		touchPos[0] = inPos;
-		return(1);
+		return(true);
 	}
-	return(0);
-	//    else if (_bTouched && touchID[0] == id) {
-	//        if (!SectorCollision(inPos)) {
-	//            _bTouched = false;
-	//            touchID[0] = -1;
-	//            touchPos[0] = Point(0,0);
-	//            return(2);  //離開移動範圍
-	//        }
-	//        else {
-	//            SetPosition(inPos - d);
-	//            touchPos[0] = inPos;
-	//            return(1);  //移動了
-	//        }
-	//    }
-	//    return(0);   //非移動狀態
+	return(false);
+
 }
 
 
@@ -176,15 +164,13 @@ void TouchSprite::RotateMoved() {
 
 
 void TouchSprite::RotateEnded(int i) {
-	//if(i == 0){
-	//    touchID[0]  = touchID[1];
-	//    touchPos[0] = touchPos[1];
-	//    d = touchPos[0] - getImg()->getPosition();
-	//}
-	for (int k = 0; k < 2; k++) {
-		touchID[k] = -1;
-		touchPos[k] = Point(0, 0);
-	}
+    if(i == 0){
+        touchID[0] =  touchID[1];
+        touchPos[0] = touchPos[1];
+    }
+    touchID[1] = -1;
+    touchPos[1] = Point(0, 0);
+    
 	_bRotated = false;
 
 }
