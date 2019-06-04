@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="u3_2" Type="Node" ID="5b1ccef2-f9b9-451c-ba5c-6bdf4e2e2503" Version="3.10.0.0" />
+  <PropertyGroup Name="u3_1" Type="Node" ID="9d5b834b-4ef5-4059-b4b6-d4a022e18661" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />

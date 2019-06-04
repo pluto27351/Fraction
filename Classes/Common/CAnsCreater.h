@@ -12,7 +12,7 @@ class CAnsCreater : public cocos2d::Node
 {
 private:
 	//char chiness[11][8] = { {"A"},{"B"},{"C"},{"D"},{"E"},{"F"},{"G"},{"H"},{"I"},{"J"},{"K"} };
-	char chiness[11][8] = {{"二"},{"三"},{"四"},{"五"},{"六"},{"七"},{"八"},{"九"},{"十"},{"十一"},{"十二"}};
+	char chiness[12][8] = {{"二"},{"三"},{"四"},{"五"},{"六"},{"七"},{"八"},{"九"},{"十"},{"十一"},{"十二"},{"十三"}};
     Color3B _textColor3B = Color3B(255,0,0);
     Color4B _textColor4B = Color4B(255,0,0,255);
 public:

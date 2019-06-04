@@ -3,31 +3,38 @@
 CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．數字
 	Node * answer;
 
-	int u = uni * 100 + queNo;
+	//int u = uni * 100 + queNo;
 	char name[14];
-	//sprintf(name,"ans/u%d_%d.csb",uni, queNo);
-	switch (u) {
-	case 101:  case 102:  case 103:  case 104:  case 105:  case 106:
-		sprintf(name, "ans/u%d_%d.csb", 1, 1);
-		//sprintf(name,"ans/u%d_%d.csb",uni, 1);
-		answer = CSLoader::createNode("ans/u1_1.csb");
+	sprintf(name,"ans/u%d_%d.csb",uni, queNo);
+	switch (uni) {
+    case 1:
+		//answer = CSLoader::createNode("ans/u1_1.csb");
+        answer = CSLoader::createNode(name);
 		Input_u1(*answer, number);
 		break;
-	case 201:  case 202:  case 203:
-		sprintf(name, "ans/u%d_%d.csb", uni, 1);
+    case 2:
+	//	sprintf(name, "ans/u%d_%d.csb", uni, 1);
+    //  Input_u2_1(*answer, number);
 		answer = CSLoader::createNode(name);
-		Input_u2_1(*answer, number);
+        Input_que(*answer, number);
 		break;
-	case 204:  case 205: case 206:
-		sprintf(name, "ans/u%d_%d.csb", uni, 4);
-		answer = CSLoader::createNode(name);
-		Input_u2_4(*answer, number);
+    case 3:
+		//sprintf(name, "ans/u%d_%d.csb", uni, 4);
+		//answer = CSLoader::createNode(name);
+		//Input_u2_4(*answer, number);
+        answer = CSLoader::createNode(name);
+        Input_que(*answer, number);
 		break;
-	case 207:  case 208:  case 209:  case 210:  case 211:
+    case 4:
 		sprintf(name, "ans/u%d_%d.csb", uni, 7);
 		answer = CSLoader::createNode(name);
 		Input_u2_7(*answer, number);
 		break;
+    case 5:
+        sprintf(name, "ans/u%d_%d.csb", uni, 7);
+        answer = CSLoader::createNode(name);
+        Input_u2_7(*answer, number);
+        break;
 	default:
 		sprintf(name, "ans/u%d_%d.csb", 3, 2);
 		answer = CSLoader::createNode(name);
@@ -282,7 +289,9 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	for (int i = 0; i < data; i++) {
 		sprintf(Input, "C_%d", i + 1);
 		Text* Output_c = (Text*)Q.getChildByName(Input);
-		Output_c->setString(chiness[number - 2]);
+        sprintf(Input, "%d", number);
+        int k = std::atoi(Numerator(Output_c->getString().c_str(), Input));
+		Output_c->setString(chiness[k - 2]);
         Output_c->setTextColor(_textColor4B);
 	}
 	inputData = inputData % 100;

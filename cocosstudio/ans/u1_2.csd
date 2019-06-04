@@ -1,12 +1,12 @@
 <GameFile>
-  <PropertyGroup Name="u1_1" Type="Node" ID="76e1e3e4-8743-4b1c-9704-1ce8000c70ea" Version="3.10.0.0" />
+  <PropertyGroup Name="u1_2" Type="Node" ID="f20c821a-4350-468c-9a98-6ef5a8d48bbb" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="u1" Tag="7" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1695500109" Tag="123" IconVisible="False" LeftMargin="-482.9956" RightMargin="-477.0044" TopMargin="-222.4998" BottomMargin="-222.5002" FontSize="60" LabelText="    分之幾個表示要平分成  等份&#xA;其中的一份就是   個，有   個     &#xA;可以記成   &#xA;  &#xA;所以1杯水 =   杯水" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1695500109" Tag="123" IconVisible="False" LeftMargin="-482.9956" RightMargin="-477.0044" TopMargin="-222.4998" BottomMargin="-222.5002" FontSize="60" LabelText="    分之幾個表示要平分成  等份&#xA;其中的一份就是   個，有   個     &#xA;可以記成   &#xA;  &#xA;所以1個鬆餅 =   個鬆餅" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="960.0000" Y="445.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-2.9956" Y="-0.0002" />
@@ -98,7 +98,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_3" ActionTag="-950939175" IconVisible="True" LeftMargin="-102.6561" RightMargin="102.6561" TopMargin="174.5261" BottomMargin="-174.5261" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_3" ActionTag="-950939175" IconVisible="True" LeftMargin="-41.1911" RightMargin="41.1911" TopMargin="177.6781" BottomMargin="-177.6781" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ntor" ActionTag="253764039" IconVisible="False" LeftMargin="-5.0000" RightMargin="-5.0000" TopMargin="-10.0000" BottomMargin="-10.0000" FontSize="20" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -114,7 +114,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="-102.6561" Y="-174.5261" />
+            <Position X="-41.1911" Y="-177.6781" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
