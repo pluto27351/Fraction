@@ -45,7 +45,9 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_parentLayer->addChild(_ans);
 
 	//設定圖片
-	_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
+	//_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
+    int pic= UNIT_OBJ[_curUnit-1][_curQue-1];
+    _cutImage = new CCutImage(pic, 1.0f,_curNum);
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單
@@ -150,7 +152,10 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     //切塊圖還原
     _parentLayer->removeChild(_cutImage);
     delete _cutImage;
-    _cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
+    //_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
+    int pic= UNIT_OBJ[_curUnit-1][_curQue-1];
+    _cutImage = new CCutImage(pic, 1.0f,_curNum);
+    //_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
     _parentLayer->addChild(_cutImage);
     
     //按鈕關閉隱藏
@@ -201,6 +206,12 @@ bool CQuePanel::touchesBegin(Point inPt, int iId, int iMode)
     
     if(_bnum){
         if ( _numSwitcher.touchesBegin(inPt) )return true; //分母選單
+        else {
+            _bnum = false;
+            _numBtn.setStatus(false);
+            _numSwitcher.setVisible(_bnum);
+            _blackMask->setVisible(_bnum);
+        }
     }
     else{
         if (_cutBtn.touchesBegin(inPt))return true;

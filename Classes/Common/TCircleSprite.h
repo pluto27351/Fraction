@@ -1,11 +1,15 @@
-#ifndef TCircleSprite_h
-#define TCircleSprite_h
+#pragma once
 
 #include "TouchSprite.h"
 
 class TCircleSprite:public TouchSprite{
-        cocos2d::Sprite *_Pic;
+private:
+    bool Collision(Point touch);
     
+    float ImgAngle;
+public:
+    void setImgInfo(const char *Img, float scale,Point pos,float r);
+    void setCollisionInfo(float a);
+    ~TCircleSprite(){};
 };
 
-#endif /* TCircleSprite_h */

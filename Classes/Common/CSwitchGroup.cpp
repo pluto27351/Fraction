@@ -195,6 +195,10 @@ bool CSwitchGroup::touchesBegin(cocos2d::Point inPos)
     if(_selectNumber != -1){
         if (_okBtn->touchesBegin(inPos))return true;
     }
+    
+    auto posInNode = _bg->convertToNodeSpace(inPos);
+    if (Rect(0,0,_bg->getContentSize().width,_bg->getContentSize().height).containsPoint(posInNode)) return true;
+
 
 	return(false);
 }

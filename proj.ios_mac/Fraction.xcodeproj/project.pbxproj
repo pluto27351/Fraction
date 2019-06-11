@@ -59,6 +59,8 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
+		F123F80B22AE50B40087D400 /* TRectSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F123F80922AE50B40087D400 /* TRectSprite.cpp */; };
+		F123F80C22AE50B40087D400 /* TCircleSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F123F80A22AE50B40087D400 /* TCircleSprite.cpp */; };
 		F13EDDF42222CD3C00DD2F00 /* CTeachScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDDD2222CD3B00DD2F00 /* CTeachScene.cpp */; };
 		F13EDDF52222CD3C00DD2F00 /* CQuePanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDDE2222CD3B00DD2F00 /* CQuePanel.cpp */; };
 		F13EDDF62222CD3C00DD2F00 /* CMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE02222CD3B00DD2F00 /* CMenuScene.cpp */; };
@@ -128,6 +130,10 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F123F80722AE50B30087D400 /* TCircleSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCircleSprite.h; sourceTree = "<group>"; };
+		F123F80822AE50B30087D400 /* TRectSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRectSprite.h; sourceTree = "<group>"; };
+		F123F80922AE50B40087D400 /* TRectSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TRectSprite.cpp; sourceTree = "<group>"; };
+		F123F80A22AE50B40087D400 /* TCircleSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TCircleSprite.cpp; sourceTree = "<group>"; };
 		F13EDDDC2222CD3B00DD2F00 /* CTeachScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTeachScene.h; sourceTree = "<group>"; };
 		F13EDDDD2222CD3B00DD2F00 /* CTeachScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTeachScene.cpp; sourceTree = "<group>"; };
 		F13EDDDE2222CD3B00DD2F00 /* CQuePanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CQuePanel.cpp; sourceTree = "<group>"; };
@@ -358,6 +364,10 @@
 		F13EDDE62222CD3C00DD2F00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F123F80A22AE50B40087D400 /* TCircleSprite.cpp */,
+				F123F80722AE50B30087D400 /* TCircleSprite.h */,
+				F123F80922AE50B40087D400 /* TRectSprite.cpp */,
+				F123F80822AE50B30087D400 /* TRectSprite.h */,
 				F13EDDF02222CD3C00DD2F00 /* CAnsCreater.cpp */,
 				F13EDDF22222CD3C00DD2F00 /* CAnsCreater.h */,
 				F13EDDEB2222CD3C00DD2F00 /* CButton.cpp */,
@@ -496,6 +506,8 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				F13EDDFC2222CD3C00DD2F00 /* CCutImage.cpp in Sources */,
 				F13EDDFE2222CD3C00DD2F00 /* CSwitchGroup.cpp in Sources */,
+				F123F80B22AE50B40087D400 /* TRectSprite.cpp in Sources */,
+				F123F80C22AE50B40087D400 /* TCircleSprite.cpp in Sources */,
 				F13EDDF52222CD3C00DD2F00 /* CQuePanel.cpp in Sources */,
 				F13EDDFD2222CD3C00DD2F00 /* CAnsCreater.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,

@@ -10,7 +10,7 @@ USING_NS_CC;
 
 class TouchSprite
 {
-private:
+protected:
 	cocos2d::Sprite *_Pic;
 	cocos2d::Point _SpriteLoc;
 	float _fangle;
@@ -30,15 +30,20 @@ private:
 
 	int _StickyNumber = -1;
 
-	void ImgRotate(Point touch);
 
-	bool SectorCollision(Point touch);
+	//bool SectorCollision(Point touch);
+    virtual bool Collision(Point touch){};
+    
 public:
-	float ImgAngle;
-	float ImgRadius;
+	//float ImgAngle;
+    float ImgRadius;
 
-	void setSectorButtonInfo(const char *Img, float scale);
-	void setRotation(float r);
+	//void setSectorButtonInfo(const char *Img, float scale);
+	//void setRotation(float r);
+    ~TouchSprite(){};
+    
+    virtual void setImgInfo(const char *Img, float scale,Point pos,float r){};
+    virtual void setCollisionInfo(float a){};
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	bool touchesMoved(cocos2d::Point inPos, int id);
@@ -51,7 +56,9 @@ public:
 
 	Sprite *getImg();
 
-	void SetPosition(Point pos);
+	void setPosition(Point pos);
+    void setRotation(float r);
+    
 	Point getPosition() { return _SpriteLoc; }
 	float getAngle() { return (_fangle); }
 	void setSticky(int stickyNumber);

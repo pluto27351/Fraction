@@ -11,7 +11,7 @@
         <iOS_Target Value="Fraction-mobile" />
         <iOS_BundleID Value="iPhone Developer: ntuedtdtea@gmail.com (M25A83ZBL8)" />
         <Platform Value="None" />
-        <RunPlatform Value="None" />
+        <RunPlatform Value="Mac" />
         <FrameworkVersion Value="cocos2d-x-3.10" />
         <IsDebugKeystore Value="True" />
         <EnableSourceMap Value="False" />

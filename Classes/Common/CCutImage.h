@@ -5,11 +5,15 @@
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
 #include "TouchSprite.h"
+#include "TCircleSprite.h"
+#include "TRectSprite.h"
 
 USING_NS_CC;
 
 using namespace cocostudio::timeline;
 using namespace ui;
+
+
 
 struct StickyData  //磁鐵資訊
 {
@@ -21,12 +25,12 @@ struct StickyData  //磁鐵資訊
 class CCutImage : public cocos2d::Node
 {
 private:
-	TouchSprite *img;        //切塊圖片們
+	TouchSprite **img;        //切塊圖片們
 	TouchSprite *rotateImg;  //指定被旋轉圖片
 	Sprite *_fullImg;        //完整圖片
 
 	const char *_name;
-	int _n;                  //數量
+	int _totalPiece,_dividePiece;   //數量
 	float _scale;
 	bool _divided;
 
@@ -39,6 +43,9 @@ private:
 	void Sticky(TouchSprite*);
 public:
 	CCutImage(const char *name, float scale,int num);
+    CCutImage(int picNum,float scale,int num);
+    void CreateImg(float scale,int num);
+    void CreateImg2(float scale,int num);
 	~CCutImage();
 	void divide(bool);
 	bool touchesBegin(cocos2d::Point inPos, int id);

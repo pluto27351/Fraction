@@ -18,8 +18,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="C_1" ActionTag="-1608460685" Tag="97" IconVisible="False" LeftMargin="-324.1436" RightMargin="290.1436" TopMargin="10.4403" BottomMargin="-78.4403" FontSize="60" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="34.0000" Y="68.0000" />
+          <AbstractNodeData Name="C_1" ActionTag="-1608460685" Tag="97" IconVisible="False" LeftMargin="-325.6436" RightMargin="288.6436" TopMargin="10.4403" BottomMargin="-78.4403" FontSize="60" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="37.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-307.1436" Y="-44.4403" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

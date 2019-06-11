@@ -4,12 +4,12 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="ani">
-          <Project Name="Banboo.csd" Type="Node" />
-          <Project Name="Bnn.csd" Type="Node" />
+          <Project Name="banboo.csd" Type="Node" />
+          <Project Name="bnn.csd" Type="Node" />
           <Project Name="Boo.csd" Type="Node" />
           <Project Name="fire.csd" Type="Node" />
-          <Project Name="Nut.csd" Type="Node" />
-          <Project Name="Tree.csd" Type="Node" />
+          <Project Name="nut.csd" Type="Node" />
+          <Project Name="tree.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
