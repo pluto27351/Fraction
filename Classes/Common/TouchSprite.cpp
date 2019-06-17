@@ -86,12 +86,14 @@ bool TouchSprite::touchesMoved(cocos2d::Point inPos, int id) {
 	if (_bRotated) {
 		if (id == touchID[0]) touchPos[0] = inPos;
 		if (id == touchID[1]) touchPos[1] = inPos;
+        CCLOG("rot");
 		RotateMoved();
         return(true);
 	}
 	else if (_bTouched && touchID[0] == id) {
 		setPosition(inPos - d);
 		touchPos[0] = inPos;
+        CCLOG("move");
 		return(true);
 	}
 	return(false);
@@ -101,9 +103,10 @@ bool TouchSprite::touchesMoved(cocos2d::Point inPos, int id) {
 
 bool TouchSprite::touchesEnded(cocos2d::Point inPos, int id) {
 	if (_bRotated) {
-		if (id == touchID[0])RotateEnded(0);
-		else if (id == touchID[1])RotateEnded(1);
-		return false;
+		if (id == touchID[0])RotateEnded(1);      //判斷剩餘的觸碰點是有在物件上
+		else if (id == touchID[1])RotateEnded(0);
+		
+        return !_bTouched;  //若仍在物件上 回傳false 不清除上層rotatrimg變數
 	}
 	else if (_bTouched)
 	{
@@ -145,15 +148,24 @@ void TouchSprite::RotateMoved() {
 	if (tx > 0)ta = ta + 180;
 	setRotation(_fangle + ta - _PreRotate);
 	_PreRotate = ta;
+    
 
 }
 
 
 void TouchSprite::RotateEnded(int i) {
-    if(i == 0){
-        touchID[0] =  touchID[1];
-        touchPos[0] = touchPos[1];
+    if (Collision(touchPos[i])){
+        touchID[0] = touchID[i];
+        touchPos[0] = touchPos[i];
+        d = touchPos[0] - getImg()->getPosition();
+        _bTouched = true;
+    }else {
+        touchID[0] = -1;
+        touchPos[0] = Point(0, 0);
+        d = Point(0, 0);
+        _bTouched = false;
     }
+    
     touchID[1] = -1;
     touchPos[1] = Point(0, 0);
     
