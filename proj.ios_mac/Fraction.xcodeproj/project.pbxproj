@@ -364,10 +364,6 @@
 		F13EDDE62222CD3C00DD2F00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F123F80A22AE50B40087D400 /* TCircleSprite.cpp */,
-				F123F80722AE50B30087D400 /* TCircleSprite.h */,
-				F123F80922AE50B40087D400 /* TRectSprite.cpp */,
-				F123F80822AE50B30087D400 /* TRectSprite.h */,
 				F13EDDF02222CD3C00DD2F00 /* CAnsCreater.cpp */,
 				F13EDDF22222CD3C00DD2F00 /* CAnsCreater.h */,
 				F13EDDEB2222CD3C00DD2F00 /* CButton.cpp */,
@@ -380,6 +376,10 @@
 				F13EDDE72222CD3C00DD2F00 /* CSwitchGroup.h */,
 				F13EDDEE2222CD3C00DD2F00 /* TouchSprite.cpp */,
 				F13EDDEC2222CD3C00DD2F00 /* TouchSprite.h */,
+				F123F80A22AE50B40087D400 /* TCircleSprite.cpp */,
+				F123F80722AE50B30087D400 /* TCircleSprite.h */,
+				F123F80922AE50B40087D400 /* TRectSprite.cpp */,
+				F123F80822AE50B30087D400 /* TRectSprite.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";

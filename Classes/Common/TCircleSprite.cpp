@@ -43,9 +43,11 @@ void TCircleSprite::setImgInfo(const char *Img, float scale,Point pos,float r)
 
 
 
-void TCircleSprite::setCollisionInfo(float a) {
+void TCircleSprite::setCollisionInfo(float totalPiece) {
+    float a = 360 / totalPiece;
     ImgRadius = _Pic->getContentSize().height * _fscale;
     ImgAngle = a;
+    
     float r=_fangle+90;
     Point pos = Point(0.5f * ImgRadius * cosf(ANGLE(r)) + _SpriteLoc.x, 0.5f * ImgRadius * sinf(ANGLE(r)) + _SpriteLoc .y);
     setPosition(pos);

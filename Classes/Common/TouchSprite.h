@@ -8,7 +8,7 @@ using namespace cocos2d::ui;
 
 USING_NS_CC;
 
-class TouchSprite
+class TouchSprite : public Node
 {
 protected:
 	cocos2d::Sprite *_Pic;
@@ -43,7 +43,7 @@ public:
     ~TouchSprite(){};
     
     virtual void setImgInfo(const char *Img, float scale,Point pos,float r){};
-    virtual void setCollisionInfo(float a){};
+    virtual void setCollisionInfo(float totalPiece){};
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	bool touchesMoved(cocos2d::Point inPos, int id);

@@ -69,6 +69,7 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
             break;
         case BANANA:
             _name = "bnn";
+            _cutDir = Vec2(50,0);
             CreateImg2(scale,num);
             break;
         case GRAPE:
@@ -79,6 +80,7 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
             break;
         case NUT:
             _name = "nut";
+            _cutDir = Vec2(50,0);
             CreateImg2(scale,num);
             break;
         case TOMATO:
@@ -92,13 +94,10 @@ void CCutImage::CreateImg2(float scale,int num){
     Point pos;
     sprintf(picname, "ani/%s.csb",_name);
     auto obj = CSLoader::createNode(picname);
-
-    sprintf(picname, "%s_0.png",_name);
-    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-    pos = obj->getChildByName("0")->getPosition()+POS;
-    _fullImg->setPosition(pos);
-    _fullImg->setScale(scale);
-    addChild(_fullImg, BOTTOM_LEVEL);
+    
+    _fullImg = obj;
+    _fullImg ->setPosition(POS);
+    addChild(_fullImg , BOTTOM_LEVEL);
     
     _dividePiece = num;
     _totalPiece = obj->getChildByName("0")->getTag();
@@ -116,7 +115,7 @@ void CCutImage::CreateImg2(float scale,int num){
         
         img[i] = new TRectSprite;
         img[i]->setImgInfo(picname, _scale,pos,angle);
-        img[i]->setCollisionInfo(360 / _totalPiece);
+        img[i]->setCollisionInfo(_totalPiece);
         
         addChild(img[i]->getImg(), BOTTOM_LEVEL);
         
@@ -125,13 +124,54 @@ void CCutImage::CreateImg2(float scale,int num){
         _StickyData[i].pos = img[i]->getPosition();
         _StickyData[i].isSticky = true;
         
-        //img[i]->setVisible(false);
+        img[i]->setVisible(false);
     }
+    
+    setCutPos();
     
     _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
+}
+
+void CCutImage::setCutPos(){
+    int group = _totalPiece / _dividePiece;
+    float y = (_dividePiece-1)/2.0;
+    Vec2 move;
+    
+    if(_dividePiece%2 == 0){
+        for (int i = 0; i < _totalPiece; i++) {
+            int gNum = i / group;
+            move = _cutDir * (gNum - y);
+
+            img[i]->setPosition(img[i]->getPosition() + move);
+            
+            img[i]->setSticky(i);
+            _StickyData[i].pos = img[i]->getPosition();
+            _StickyData[i].isSticky = false;
+            
+        }
+    }else{
+        for (int i = 0; i < _totalPiece; i++) {
+            int gNum = i / group;
+
+            if(gNum < y) move = _cutDir * (gNum - y);
+            else         move = _cutDir * (gNum - y + 1);
+            
+            img[i]->setPosition(img[i]->getPosition() + move);
+            
+            img[i]->setSticky(i);
+            _StickyData[i].pos = img[i]->getPosition();
+            _StickyData[i].isSticky = false;
+            
+        }
+    }
+
+}
+
+void CCutImage::movePieces(cocos2d::Point pos){
+    
 }
 
 void CCutImage::CreateImg(float scale,int num){
@@ -154,7 +194,7 @@ void CCutImage::CreateImg(float scale,int num){
         img[i] = new TCircleSprite;
         float angle = (360 / _totalPiece)*i;
         img[i]->setImgInfo(picname, _scale,POS,angle);
-        img[i]->setCollisionInfo(360 / _totalPiece);
+        img[i]->setCollisionInfo(_totalPiece);
         
         addChild(img[i]->getImg(), BOTTOM_LEVEL);
         
@@ -190,7 +230,8 @@ void CCutImage::divide(bool d) {
         for(int i = 0; i < _totalPiece; i++){
             img[i]->setPosition(_StickyData[i].pos);       //設定圖片位置與角度
             img[i]->setRotation(_StickyData[i].angle);
-            img[i]->setSticky(i);                          //紀錄區域
+            
+            img[i]->setSticky(-1);                          //紀錄區域
             _StickyData[i].isSticky = true;
         }
     }
@@ -209,7 +250,6 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 		if (img[i]->touchesBegin(inPos, id)) {
 			if (rotateImg == NULL) {
 				rotateImg = img[i];
-				//if (rotateId != -1) rotateImg->RotatedBegin(rotatePos, rotateId);  //先點到外 在點到圖上
 			}
 			int sticky = img[i]->ResetSticky();        //重製磁鐵.釋放區域
 			if (sticky != -1) _StickyData[sticky].isSticky = false;
@@ -234,9 +274,6 @@ bool CCutImage::touchesMoved(cocos2d::Point inPos, int id) {
 	for (int i = 0; i < _totalPiece; i++) {                   //當移動or旋轉
         if( img[i]->touchesMoved(inPos, id)) return true;
 	}
-//    if (rotateId == id) {
-//        rotatePos = inPos;
-//    }
 	return false;
 }
 

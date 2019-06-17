@@ -27,8 +27,8 @@ class CCutImage : public cocos2d::Node
 private:
 	TouchSprite **img;        //切塊圖片們
 	TouchSprite *rotateImg;  //指定被旋轉圖片
-	Sprite *_fullImg;        //完整圖片
-
+    Node *_fullImg;          //完整圖片
+    Vec2 _cutDir;
 	const char *_name;
 	int _totalPiece,_dividePiece;   //數量
 	float _scale;
@@ -41,6 +41,8 @@ private:
 	StickyData *_StickyData;    
 	float _StickyRadius;        
 	void Sticky(TouchSprite*);
+    void setCutPos();
+    void movePieces(cocos2d::Point);
 public:
 	CCutImage(const char *name, float scale,int num);
     CCutImage(int picNum,float scale,int num);
