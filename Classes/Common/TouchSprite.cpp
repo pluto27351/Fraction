@@ -6,60 +6,28 @@
 #define ANGLE(a) a*M_PI/180
 #define RE_ANGLE(a) a*180/M_PI
 
-
-//void TouchSprite::setSectorButtonInfo(const char *Img, float scale)
-//{
-//    _Pic = (Sprite *)Sprite::createWithSpriteFrameName(Img);
-//    ImgRadius = _Pic->getContentSize().height * scale;
-//    _Pic->setScale(scale);
-//    _fscale = scale;
-//    _bTouched = false;
-//    _bRotated = false;
-//    _bVisible = _bEnabled = true;
-//}
-
 void TouchSprite::setVisible(bool b){
-    _Pic->setVisible(b);
+    for(int i=0; i<_piece; i++){
+        _Pic[i]->setVisible(b);
+    }
 }
-
-//bool TouchSprite::SectorCollision(Point touch) {
-//    Point _CenterLoc;
-//    float td, ta;
-//    float tx, ty;
-//    _CenterLoc.x = _Pic->getPosition().x - ImgRadius / 2 * cosf(ANGLE((_fangle + IMG_ANGLE)));
-//    _CenterLoc.y = _Pic->getPosition().y - ImgRadius / 2 * sinf(ANGLE((_fangle + IMG_ANGLE)));
-//    tx = touch.x - _CenterLoc.x;
-//    ty = touch.y - _CenterLoc.y;
-//    td = sqrtf(powf(tx, 2) + powf(ty, 2));
-//    ta = atanf(ty / tx);
-//    ta = RE_ANGLE(ta) + 90;
-//    if (tx > 0)ta = ta + 180;
-//    //    if (ta > 360 - ImgAngle / 2)ta -= 360;
-//    float f_min = _fangle - ImgAngle / 2, f_max = _fangle + ImgAngle / 2;
-//    if (td <= ImgRadius) {
-//        if (ta >= f_min && ta <= f_max)return true;
-//        if (f_min < 0 && ta > 360 + f_min)return true;
-//        if (f_max > 360 && ta < f_max - 360)return true;
-//    }
-//    return false;
-//}
 
 void TouchSprite::setRotation(float r) {
     _fangle = r;
     if (_fangle > 360)_fangle -= 360;
     else if (_fangle < 0)_fangle += 360;
-    _Pic->setRotation(-_fangle);
+    
+    _obj->setRotation(-_fangle);
+    //for(int i=0; i<_piece; i++)_Pic[i]->setRotation(-_fangle);
 }
 
 void TouchSprite::setPosition(Point pos) {
-
-	_SpriteLoc = pos;
-	_Pic->setPosition(_SpriteLoc);
+    _SpriteLoc = pos;
+    _obj->setPosition(_SpriteLoc);
+   // for(int i=0; i<_piece; i++)_Pic[i]->setPosition(_SpriteLoc);
 }
 
-Sprite *TouchSprite::getImg() {
-	return _Pic;
-}
+
 
 bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 	if (Collision(inPos) && _bVisible && _bEnabled)
@@ -68,7 +36,8 @@ bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 			_bTouched = true;
 			touchID[0] = id;
 			touchPos[0] = inPos;
-			d = inPos - getImg()->getPosition();
+			d = inPos - getPosition();
+            
 			return true;
 
 		}
@@ -157,7 +126,7 @@ void TouchSprite::RotateEnded(int i) {
     if (Collision(touchPos[i])){
         touchID[0] = touchID[i];
         touchPos[0] = touchPos[i];
-        d = touchPos[0] - getImg()->getPosition();
+        d = touchPos[0] - getPosition();
         _bTouched = true;
     }else {
         touchID[0] = -1;

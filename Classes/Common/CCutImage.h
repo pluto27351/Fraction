@@ -31,7 +31,7 @@ private:
     Vec2 _cutDir;
     int _mode;
 	const char *_name;
-	int _totalPiece,_dividePiece;   //數量
+	int _dividePiece;   //數量
 	float _scale;
 	bool _divided;
 

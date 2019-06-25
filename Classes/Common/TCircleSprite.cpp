@@ -9,8 +9,8 @@ bool TCircleSprite::Collision(Point touch) {
     Point _CenterLoc;
     float td, ta;
     float tx, ty;
-    _CenterLoc.x = _Pic->getPosition().x - ImgRadius / 2 * cosf(ANGLE((_fangle + IMG_ANGLE)));
-    _CenterLoc.y = _Pic->getPosition().y - ImgRadius / 2 * sinf(ANGLE((_fangle + IMG_ANGLE)));
+    _CenterLoc.x = _obj->getPosition().x - ImgRadius / 2 * cosf(ANGLE((_fangle + IMG_ANGLE)));
+    _CenterLoc.y = _obj->getPosition().y - ImgRadius / 2 * sinf(ANGLE((_fangle + IMG_ANGLE)));
     tx = touch.x - _CenterLoc.x;
     ty = touch.y - _CenterLoc.y;
     td = sqrtf(powf(tx, 2) + powf(ty, 2));
@@ -27,13 +27,23 @@ bool TCircleSprite::Collision(Point touch) {
     return false;
 }
 
-void TCircleSprite::setImgInfo(const char *Img, float scale,Point pos,float r)
+void TCircleSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],float r)
 {
-    _Pic = (Sprite *)Sprite::createWithSpriteFrameName(Img);
-    _Pic->setScale(scale);
+    _obj = new Node;
+    
+    _piece = piece;
+    _Pic = new Sprite *[_piece];
+    
+    for(int i=0;i<_piece;i++){
+        _Pic[i] = (Sprite *)Sprite::createWithSpriteFrameName(Img);
+        _Pic[i]->setScale(scale);
+        
+        _obj->addChild(_Pic[i]);
+    }
+
     _fscale = scale;
     
-    setPosition(pos);
+    setPosition(pos[0]);
     setRotation(r);
     
     _bTouched = false;
@@ -45,7 +55,7 @@ void TCircleSprite::setImgInfo(const char *Img, float scale,Point pos,float r)
 
 void TCircleSprite::setCollisionInfo(float totalPiece) {
     float a = 360 / totalPiece;
-    ImgRadius = _Pic->getContentSize().height * _fscale;
+    ImgRadius = _Pic[0]->getContentSize().height * _fscale;
     ImgAngle = a;
     
     float r=_fangle+90;

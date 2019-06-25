@@ -8,14 +8,17 @@ using namespace cocos2d::ui;
 
 USING_NS_CC;
 
-class TouchSprite : public Node
+class TouchSprite
 {
 protected:
-	cocos2d::Sprite *_Pic;
+	cocos2d::Sprite **_Pic;
 	cocos2d::Point _SpriteLoc;
+    Node *_obj;
 	float _fangle;
 	float _fscale;
 
+    int _piece;
+    
 	bool _bTouched;
 	bool _bRotated;
 	bool _bEnabled;
@@ -30,19 +33,14 @@ protected:
 
 	int _StickyNumber = -1;
 
-
-	//bool SectorCollision(Point touch);
     virtual bool Collision(Point touch){};
     
 public:
-	//float ImgAngle;
     float ImgRadius;
 
-	//void setSectorButtonInfo(const char *Img, float scale);
-	//void setRotation(float r);
-    ~TouchSprite(){};
+    virtual ~TouchSprite(){};
     
-    virtual void setImgInfo(const char *Img, float scale,Point pos,float r){};
+    virtual void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r){};
     virtual void setCollisionInfo(float totalPiece){};
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
@@ -54,7 +52,9 @@ public:
 	void RotateEnded(int i);
 
 
-	Sprite *getImg();
+//	Sprite *getImg();
+    Node *getNode(){return _obj;}
+    
 
 	void setPosition(Point pos);
     void setRotation(float r);
