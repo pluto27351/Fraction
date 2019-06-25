@@ -33,8 +33,16 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
         case WATER:
             break;
         case BAMBOO:
+            _name = "banboo";
+            _cutDir = Vec2(0,-50);
+            _mode = 1;
+            CreateImg2(scale,num);
             break;
         case RIBBON:
+            _name = "banboo";
+            _cutDir = Vec2(0,-50);
+            _mode = 2;
+            CreateImg2(scale,num);
             break;
         case DISTANCE:
             break;
@@ -45,10 +53,22 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
             CreateImg2(scale,num);
             break;
         case GRAPE:
+            _name = "bnn";
+            _cutDir = Vec2(50,0);
+            _mode = 2;
+            CreateImg2(scale,num);
             break;
         case FLOWER:
+            _name = "tree";
+            _cutDir = Vec2(50,0);
+            _mode = 1;
+            CreateImg2(scale,num);
             break;
         case BRANCH:
+            _name = "tree";
+            _cutDir = Vec2(50,0);
+            _mode = 2;
+            CreateImg2(scale,num);
             break;
         case NUT:
             _name = "nut";
@@ -57,6 +77,10 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
             CreateImg2(scale,num);
             break;
         case TOMATO:
+            _name = "nut";
+            _cutDir = Vec2(50,0);
+            _mode = 2;
+            CreateImg2(scale,num);
             break;
     }
 
@@ -85,17 +109,22 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     sprintf(picname, "%s_1.png", _name);
     int n=0;
     
+    Point totalPos;
+    float angle = 0;
     for (int i = 0; i <_dividePiece; i++) {
+        totalPos = Point(0,0);
         while((n/gPicec == i)){
             char p[10];  sprintf(p, "1_%d",n);
             pos[n%gPicec] = obj->getChildByName(p)->getPosition();
+            totalPos += pos[n%gPicec];
             n++;
         }
-        float angle = 0;
+        totalPos = totalPos / gPicec;
+        for(int k=0; k<gPicec; k++) pos[k] -= totalPos;
         img[i] = new TRectSprite;
         img[i]->setImgInfo(picname,gPicec, _scale,pos,angle);
         img[i]->setCollisionInfo(_dividePiece);
-        img[i]->setPosition(POS);
+        img[i]->setPosition(POS+totalPos);
         addChild(img[i]->getNode(), BOTTOM_LEVEL);
         
         img[i]->setSticky(i);
@@ -156,31 +185,43 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
 
 
 void CCutImage::setCutPos(){                  //計算切分時位置
+    float n;
     switch(_mode){
         case 0:  //圓形用
             for(int i = 0; i < _dividePiece; i++){
                 img[i]->setPosition(_StickyData[i].pos);
-                img[i]->setRotation(_StickyData[i].angle);
+                //img[i]->setRotation(_StickyData[i].angle);
                 img[i]->setSticky(i);
                 _StickyData[i].isSticky = true;
             }
             break;
+        case 2:
+            n = 360/_dividePiece;
+            for (int i = 0; i < _dividePiece; i++) {
+                Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
+                img[i]->setPosition(POS + move);
+                img[i]->setRotation(_StickyData[i].angle);
+                img[i]->setSticky(-1);
+                _StickyData[i].isSticky = false;
+            }
+            break;
         case 1: //非連續用
-            float y = (_dividePiece - 1) / 2.0;
+            n = (_dividePiece - 1) / 2.0;
             Vec2 move;
             if(_dividePiece % 2 == 0){
                 for (int i = 0; i < _dividePiece; i++) {
                     int gNum = i;
-                    move = _cutDir * (gNum - y);
+                    move = _cutDir * (gNum - n);
                     img[i]->setPosition(_StickyData[i].pos + move);
+                    img[i]->setRotation(_StickyData[i].angle);
                     img[i]->setSticky(-1);
                     _StickyData[i].isSticky = false;
                 }
             }else{
                 for (int i = 0; i < _dividePiece; i++) {
                     int gNum = i ;
-                    if(gNum < y) move = _cutDir * (gNum - y);
-                    else         move = _cutDir * (gNum - y + 1);
+                    if(gNum < n) move = _cutDir * (gNum - n);
+                    else         move = _cutDir * (gNum - n + 1);
                     img[i]->setPosition(_StickyData[i].pos + move);
                     img[i]->setSticky(-1);
                     _StickyData[i].isSticky = false;
