@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="MenuScene" Type="Scene" ID="484b5821-b9ca-4aeb-ad9b-e5a5ba35f169" Version="3.10.0.0" />
+  <PropertyGroup Name="menuscene" Type="Scene" ID="484b5821-b9ca-4aeb-ad9b-e5a5ba35f169" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -91,7 +91,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9523" Y="0.5196" />
             <PreSize X="0.1519" Y="0.1530" />
-            <FileData Type="PlistSubImage" Path="cover_start.png" Plist="img/Fraction_Btn.plist" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

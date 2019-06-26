@@ -32,6 +32,14 @@ void TouchSprite::setImgPandR(int n,Point pos,float r){
     _Pic[n]->setRotation(r);
 }
 
+void TouchSprite::setDividedImg(){
+    float d = _piece /2.0f;
+    for(int i=0;i<_piece;i++){
+        Point pos = Point(50*(i - d),0);
+        _Pic[i]->setPosition(pos);
+        _Pic[i]->setRotation(0);
+    }
+}
 
 bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 	if (Collision(inPos) && _bVisible && _bEnabled)
@@ -41,7 +49,7 @@ bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 			touchID[0] = id;
 			touchPos[0] = inPos;
 			d = inPos - getPosition();
-            
+            setDividedImg();
 			return true;
 
 		}
@@ -59,14 +67,12 @@ bool TouchSprite::touchesMoved(cocos2d::Point inPos, int id) {
 	if (_bRotated) {
 		if (id == touchID[0]) touchPos[0] = inPos;
 		if (id == touchID[1]) touchPos[1] = inPos;
-        CCLOG("rot");
 		RotateMoved();
         return(true);
 	}
 	else if (_bTouched && touchID[0] == id) {
 		setPosition(inPos - d);
 		touchPos[0] = inPos;
-        CCLOG("move");
 		return(true);
 	}
 	return(false);

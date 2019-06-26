@@ -26,14 +26,16 @@ bool CHomeScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	//Size size;
 
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/homescene.plist");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plis");
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/scene101.plist");
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/homescene.plist");
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plis");
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/scene101.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_menu.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
     auto rootNode = CSLoader::createNode("homescene.csb");
     addChild(rootNode);
     
 	auto _BtnLoc = rootNode->getChildByName("startBtn")->getPosition();
-	_startBtn.setButtonInfo("cover_start.png", "cover_start_clik.png", *this, _BtnLoc, 1);
+	_startBtn.setButtonInfo("next_R.png", "next_R_click.png", *this, _BtnLoc, 1);
 	rootNode->removeChildByName("startBtn");
 
     _BtnLoc = rootNode->getChildByName("Boo")->getPosition();
@@ -109,8 +111,10 @@ CHomeScene::~CHomeScene()
 {
 	this->removeAllChildren();
 
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/homescene.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Btn.plist");
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/scene101.plist");
+//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/homescene.plist");
+//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Btn.plist");
+//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/scene101.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Fraction_menu.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

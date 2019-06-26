@@ -25,8 +25,9 @@ bool CMenuScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size size;
 
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_menu.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
 	auto rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
 
@@ -55,7 +56,7 @@ bool CMenuScene::init()
 
 	pt = rootNode->getChildByName("gobtn")->getPosition();
 	scale = rootNode->getChildByName("gobtn")->getScale();
-	_goBtn.setButtonInfo("cover_start.png", "cover_start_clik.png", *this, pt, 3);
+	_goBtn.setButtonInfo("next_R.png", "next_R_click.png", *this, pt, 3);
 	_goBtn.setScale(scale);
 	_goBtn.setVisible(false);
 	rootNode->removeChildByName("gobtn");
@@ -131,6 +132,7 @@ CMenuScene::~CMenuScene()
 	this->removeAllChildren();
 	for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
 
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

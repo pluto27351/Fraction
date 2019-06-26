@@ -40,12 +40,12 @@ CCutImage::CCutImage(int picNum, float scale,int num)
     
     switch (picNum) {
         case PANCAKE:
-            _name = "stuff_muffin";
+            _name = "pancake";
             _mode = 0;
             CreateImg(scale,num);
             break;
         case PAPER:
-            _name = "bnn";
+            _name = "banana";
             _cutDir = Vec2(50,0);
             _mode = 3;
             CreateImg2(scale,num);
@@ -57,43 +57,43 @@ CCutImage::CCutImage(int picNum, float scale,int num)
             CreateImg2(scale,num);
             break;
         case BAMBOO:
-            _name = "banboo";
+            _name = "grape";
             _cutDir = Vec2(0,-50);
             _mode = 1;
             CreateImg2(scale,num);
             break;
         case RIBBON:
-            _name = "banboo";
+            _name = "grape";
             _cutDir = Vec2(0,-50);
             _mode = 2;
             CreateImg2(scale,num);
             break;
         case DISTANCE:
-            _name = "tree";
+            _name = "banana";
             _cutDir = Vec2(50,0);
             _mode = 3;
             CreateImg2(scale,num);
             break;
         case BANANA:
-            _name = "bnn";
+            _name = "banana";
             _cutDir = Vec2(50,0);
             _mode = 1;
             CreateImg2(scale,num);
             break;
         case GRAPE:
-            _name = "bnn";
+            _name = "banana";
             _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,num);
             break;
         case FLOWER:
-            _name = "tree";
+            _name = "branch";
             _cutDir = Vec2(50,0);
             _mode = 1;
             CreateImg2(scale,num);
             break;
         case BRANCH:
-            _name = "tree";
+            _name = "branch";
             _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,num);
@@ -111,28 +111,24 @@ CCutImage::CCutImage(int picNum, float scale,int num)
             CreateImg2(scale,num);
             break;
     }
+    
 
 }
 
 void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     char picname[20];
-    sprintf(picname, "%s_0.png",_name);
-    
-//    _fullImg[0] = obj;
-//    _fullImg ->setPosition(POS);
-//    addChild(_fullImg , BOTTOM_LEVEL);
     for(int i=0;i<2;i++){
+        sprintf(picname, "%s_%d.png",_name,i);
         _fullImg[i] = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         _fullImg[i]->setPosition(POS);
         _fullImg[i]->setScale(scale);
         addChild(_fullImg[i], BOTTOM_LEVEL);
     }
-    _fullImg[1]->setVisible(false);
-    _fullImg[1]->setGLProgramState(grayGLProgrameState);
+    _fullImg[0]->setVisible(false);
+   // _fullImg[0]->setGLProgramState(grayGLProgrameState);
     
     sprintf(picname, "ani/%s.csb",_name);
     auto obj = CSLoader::createNode(picname);
-    
     _dividePiece = num;
     _scale = scale;
     _divided = false;
@@ -144,7 +140,7 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     img = new TouchSprite*[_dividePiece];
     _StickyData = new StickyData[_dividePiece];
 
-    sprintf(picname, "%s_1.png", _name);
+    sprintf(picname, "%s_2.png", _name);
     int n=0;
     Point totalPos;
     
@@ -157,6 +153,7 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
             _StickyData[i]._imgPos[k] = obj->getChildByName(p)->getPosition();
             _StickyData[i]._imgAngle[k] =obj->getChildByName(p)->getRotation();
             totalPos += _StickyData[i]._imgPos[k];
+            removeChild(obj->getChildByName(p));
             n++;
         }
         totalPos = totalPos / gPicec;
@@ -181,25 +178,27 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
+    
+    
 }
 
 void CCutImage::CreateImg(float scale,int num){  // 圓形
     char picname[20];
-    sprintf(picname, "%s.png",_name);
     for(int i=0;i<2;i++){
+        sprintf(picname, "%s_%d.png",_name,i);
         _fullImg[i] = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         _fullImg[i]->setPosition(POS);
         _fullImg[i]->setScale(scale);
         addChild(_fullImg[i], BOTTOM_LEVEL);
     }
-    _fullImg[1]->setVisible(false);
-    _fullImg[1]->setGLProgramState(grayGLProgrameState);
+    _fullImg[0]->setVisible(false);
+    //_fullImg[0]->setGLProgramState(grayGLProgrameState);
     
     _dividePiece = num;
     _scale = scale;
     _divided = false;
     
-    sprintf(picname, "%s%d.png", _name, _dividePiece);
+    sprintf(picname, "%s_%d.png", _name, _dividePiece);
 
     img = new TouchSprite*[_dividePiece];
     _StickyData = new StickyData[_dividePiece];
@@ -232,6 +231,7 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
 
 void CCutImage::setCutPos(){                  //計算切分時位置
     float n;
+    Vec2 move;
     switch(_mode){
         case 0:  //圓形用
             for(int i = 0; i < _dividePiece; i++){
@@ -241,20 +241,9 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 _StickyData[i].isSticky = true;
             }
             break;
-        case 2:
-            n = 360/_dividePiece;
-            for (int i = 0; i < _dividePiece; i++) {
-                Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
-                img[i]->setPosition(POS + move);
-                img[i]->setRotation(_StickyData[i]._NodeAngle);
-                img[i]->setSticky(-1);
-                _StickyData[i].isSticky = false;
-            }
-            break;
-        case 1: //非連續用
+        case 1: //非連續用-位移切法
             n = (_dividePiece - 1) / 2.0;
-            Vec2 move;
-            if(_dividePiece % 2 == 0){
+            if(_dividePiece % 2 == 0){                      //切偶數組
                 for (int i = 0; i < _dividePiece; i++) {
                     int gNum = i;
                     move = _cutDir * (gNum - n);
@@ -262,8 +251,9 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                     img[i]->setRotation(_StickyData[i]._NodeAngle);
                     img[i]->setSticky(-1);
                     _StickyData[i].isSticky = false;
+                    img[i]->setDividedImg();
                 }
-            }else{
+            }else{                                          //切奇數組
                 for (int i = 0; i < _dividePiece; i++) {
                     int gNum = i ;
                     if(gNum < n) move = _cutDir * (gNum - n);
@@ -271,7 +261,31 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                     img[i]->setPosition(_StickyData[i]._NodePos + move);
                     img[i]->setSticky(-1);
                     _StickyData[i].isSticky = false;
+                    img[i]->setDividedImg();
                 }
+            }
+            break;
+        case 2: //非連續用-圓形切法
+            n = 360/_dividePiece;
+            for (int i = 0; i < _dividePiece; i++) {
+                Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
+                img[i]->setPosition(POS + move);
+                img[i]->setRotation(_StickyData[i]._NodeAngle);
+                img[i]->setSticky(-1);
+                _StickyData[i].isSticky = false;
+                img[i]->setDividedImg();
+            }
+            break;
+        case 3:
+            float d = (_dividePiece-1) /2.0f;
+            int n = 80 *img[0]->getPieceAmount();
+            for (int i = 0; i < _dividePiece; i++) {
+                Point pos = Point(n*(i - d),0);
+                img[i]->setPosition(pos + POS);
+                img[i]->setRotation(0);
+                img[i]->setSticky(-1);
+                _StickyData[i].isSticky = false;
+                img[i]->setDividedImg();
             }
             break;
     }
@@ -287,8 +301,8 @@ void CCutImage::divide(bool d) {
         //_fullImg->setOpacity(255);
         //_fullImg->setGLProgramState(colorGLProgrameState);
     }
-    _fullImg[0]->setVisible(!d);
-    _fullImg[1]->setVisible(d);
+    _fullImg[1]->setVisible(!d);
+    _fullImg[0]->setVisible(d);
     
     setCutPos();
     for(int i = 0; i < _dividePiece; i++){

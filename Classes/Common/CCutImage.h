@@ -42,13 +42,15 @@ private:
 	TouchSprite **img;        //切塊圖片們
 	TouchSprite *rotateImg;  //指定被旋轉圖片
     Sprite *_fullImg[2];          //完整圖片
+    
+    float _scale;
     Vec2 _cutDir;
     int _mode;
+    bool _divided;
+    
 	const char *_name;
-	int _dividePiece;   //數量
-	float _scale;
-	bool _divided;
-
+	int _dividePiece;        //切幾組
+	
 	int touchedAmount;       //觸控點數量
 	Point rotatePos;
 	int rotateId;

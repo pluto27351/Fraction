@@ -40,7 +40,7 @@ void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	//
 	Sprite *pBtn = (Sprite *)rootNode.getChildByName("hand");
 	Point pt = pBtn->getPosition();
 	auto s = pBtn->getScale();
-	_toolBtn[hand].setButtonInfo("Q_tool hand.png", "Q_tool hand.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[hand].setButtonInfo("tool_hand.png", "tool_hand_click.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[hand].setStatus(true);
 	_toolBtn[hand].setScale(s);
 	rootNode.removeChildByName("hand");
@@ -48,28 +48,28 @@ void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	//
 	pBtn = (Sprite *)rootNode.getChildByName("pen_red");
 	pt = pBtn->getPosition();
 	s = pBtn->getScale();
-	_toolBtn[redpen].setButtonInfo("Q_tool Red.png", "Q_tool Red.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[redpen].setButtonInfo("tool_red.png", "tool_red_click.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[redpen].setScale(s);
 	rootNode.removeChildByName("pen_red");
 
 	pBtn = (Sprite *)rootNode.getChildByName("pen_black");
 	pt = pBtn->getPosition();
 	s = pBtn->getScale();
-	_toolBtn[blackpen].setButtonInfo("Q_tool Black.png", "Q_tool Black.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[blackpen].setButtonInfo("tool_black.png", "tool_black_click.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[blackpen].setScale(s);
 	rootNode.removeChildByName("pen_black");
 
 	pBtn = (Sprite *)rootNode.getChildByName("pen_blue");
 	pt = pBtn->getPosition();
 	s = pBtn->getScale();
-	_toolBtn[bluepen].setButtonInfo("Q_tool Blue.png", "Q_tool Blue.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[bluepen].setButtonInfo("tool_blue.png", "tool_blue_click.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[bluepen].setScale(s);
 	rootNode.removeChildByName("pen_blue");
 
 	pBtn = (Sprite *)rootNode.getChildByName("erease");
 	pt = pBtn->getPosition();
 	s = pBtn->getScale();
-	_toolBtn[eraser].setButtonInfo("Q_tool eraser.png", "Q_tool eraser.png", parent, pt, INTERFACE_LEVEL);
+	_toolBtn[eraser].setButtonInfo("tool_eraser.png", "tool_eraser_click.png", parent, pt, INTERFACE_LEVEL);
 	_toolBtn[eraser].setScale(s);
 	rootNode.removeChildByName("erease");
 
@@ -77,7 +77,7 @@ void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	//
     pBtn = (Sprite *)rootNode.getChildByName("eraser_all");
     pt = pBtn->getPosition();
     s = pBtn->getScale();
-    _eraserAllBtn.setButtonInfo("Q_tool erase all.png", "Q_tool erase all.png", parent, pt, INTERFACE_LEVEL);
+    _eraserAllBtn.setButtonInfo("tool_clear.png", "tool_clear_click.png", parent, pt, INTERFACE_LEVEL);
     _eraserAllBtn.setScale(s);
     rootNode.removeChildByName("eraser_all");
     
@@ -85,7 +85,7 @@ void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	//
     pBtn = (Sprite *)rootNode.getChildByName("reset");
     pt = pBtn->getPosition();
 	s = pBtn->getScale();
-    _clearAllBtn.setButtonInfo("Q_tool Reset.png", "Q_tool Reset_hover.png", parent, pt, INTERFACE_LEVEL);
+    _clearAllBtn.setButtonInfo("tool_reset.png", "tool_reset_click.png", parent, pt, INTERFACE_LEVEL);
 	_clearAllBtn.setScale(s);
     rootNode.removeChildByName("reset");
 

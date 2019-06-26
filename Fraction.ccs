@@ -4,12 +4,16 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="ani">
+          <Project Name="banana.csd" Type="Node" />
           <Project Name="banboo.csd" Type="Node" />
-          <Project Name="bnn.csd" Type="Node" />
           <Project Name="Boo.csd" Type="Node" />
+          <Project Name="branch.csd" Type="Node" />
           <Project Name="fire.csd" Type="Node" />
+          <Project Name="flower.csd" Type="Node" />
+          <Project Name="grape.csd" Type="Node" />
           <Project Name="nut.csd" Type="Node" />
-          <Project Name="tree.csd" Type="Node" />
+          <Project Name="road.csd" Type="Node" />
+          <Project Name="tomato.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -65,149 +69,7 @@
           <PlistImageFile Name="Ch_story.png" Key="Ch_story.png" />
           <PlistImageFile Name="Ch_story_hover.png" Key="Ch_story_hover.png" />
         </PlistImageFolder>
-        <PlistImageFolder Image="fraction_tea.png" PListFile="fraction_tea.plist" Name=".fraction_tea_PList.Dir">
-          <PlistImageFile Name="0_Banboo.png" Key="0_Banboo.png" />
-          <PlistImageFile Name="Background.jpg" Key="Background.jpg" />
-          <PlistImageFile Name="Q_10.png" Key="Q_10.png" />
-          <PlistImageFile Name="Q_11.png" Key="Q_11.png" />
-          <PlistImageFile Name="Q_12.png" Key="Q_12.png" />
-          <PlistImageFile Name="Q_2.png" Key="Q_2.png" />
-          <PlistImageFile Name="Q_3.png" Key="Q_3.png" />
-          <PlistImageFile Name="Q_4.png" Key="Q_4.png" />
-          <PlistImageFile Name="Q_5.png" Key="Q_5.png" />
-          <PlistImageFile Name="Q_6.png" Key="Q_6.png" />
-          <PlistImageFile Name="Q_7.png" Key="Q_7.png" />
-          <PlistImageFile Name="Q_8.png" Key="Q_8.png" />
-          <PlistImageFile Name="Q_9.png" Key="Q_9.png" />
-          <PlistImageFile Name="Q_Answer.png" Key="Q_Answer.png" />
-          <PlistImageFile Name="Q_Answer_hover.png" Key="Q_Answer_hover.png" />
-          <PlistImageFile Name="Q_back.png" Key="Q_back.png" />
-          <PlistImageFile Name="Q_backcolor.png" Key="Q_backcolor.png" />
-          <PlistImageFile Name="Q_cut.png" Key="Q_cut.png" />
-          <PlistImageFile Name="Q_grass.png" Key="Q_grass.png" />
-          <PlistImageFile Name="Q_home.png" Key="Q_home.png" />
-          <PlistImageFile Name="Q_home_hover.png" Key="Q_home_hover.png" />
-          <PlistImageFile Name="Q_leaf.png" Key="Q_leaf.png" />
-          <PlistImageFile Name="Q_next.png" Key="Q_next.png" />
-          <PlistImageFile Name="Q_OK.png" Key="Q_OK.png" />
-          <PlistImageFile Name="Q_okay.png" Key="Q_okay.png" />
-          <PlistImageFile Name="Q_Rock.png" Key="Q_Rock.png" />
-          <PlistImageFile Name="Q_tool Black.png" Key="Q_tool Black.png" />
-          <PlistImageFile Name="Q_tool Blue.png" Key="Q_tool Blue.png" />
-          <PlistImageFile Name="Q_tool erase all.png" Key="Q_tool erase all.png" />
-          <PlistImageFile Name="Q_tool eraser.png" Key="Q_tool eraser.png" />
-          <PlistImageFile Name="Q_tool hand.png" Key="Q_tool hand.png" />
-          <PlistImageFile Name="Q_tool pic.png" Key="Q_tool pic.png" />
-          <PlistImageFile Name="Q_tool pic_hover.png" Key="Q_tool pic_hover.png" />
-          <PlistImageFile Name="Q_tool Red.png" Key="Q_tool Red.png" />
-          <PlistImageFile Name="Q_tool Reset.png" Key="Q_tool Reset.png" />
-          <PlistImageFile Name="Q_tool Reset_hover.png" Key="Q_tool Reset_hover.png" />
-          <PlistImageFile Name="Q_tool.png" Key="Q_tool.png" />
-          <PlistImageFile Name="Q_top tree.png" Key="Q_top tree.png" />
-          <PlistImageFile Name="Q_tree Left.png" Key="Q_tree Left.png" />
-          <PlistImageFile Name="Q_tree Right.png" Key="Q_tree Right.png" />
-          <PlistImageFile Name="Q_wood.png" Key="Q_wood.png" />
-        </PlistImageFolder>
-        <PlistImageFolder Image="fraction_teaobj.png" PListFile="fraction_teaobj.plist" Name=".fraction_teaobj_PList.Dir">
-          <PlistImageFile Name="banboo_1.png" Key="banboo_1.png" />
-          <PlistImageFile Name="bnn_0.png" Key="bnn_0.png" />
-          <PlistImageFile Name="bnn_1.png" Key="bnn_1.png" />
-          <PlistImageFile Name="nut_0.png" Key="nut_0.png" />
-          <PlistImageFile Name="nut_1.png" Key="nut_1.png" />
-          <PlistImageFile Name="stuff_muffin.png" Key="stuff_muffin.png" />
-          <PlistImageFile Name="stuff_muffin10.png" Key="stuff_muffin10.png" />
-          <PlistImageFile Name="stuff_muffin12.png" Key="stuff_muffin12.png" />
-          <PlistImageFile Name="stuff_muffin2.png" Key="stuff_muffin2.png" />
-          <PlistImageFile Name="stuff_muffin3.png" Key="stuff_muffin3.png" />
-          <PlistImageFile Name="stuff_muffin4.png" Key="stuff_muffin4.png" />
-          <PlistImageFile Name="stuff_muffin5.png" Key="stuff_muffin5.png" />
-          <PlistImageFile Name="stuff_muffin6.png" Key="stuff_muffin6.png" />
-          <PlistImageFile Name="stuff_muffin8.png" Key="stuff_muffin8.png" />
-          <PlistImageFile Name="tree_0.png" Key="tree_0.png" />
-          <PlistImageFile Name="tree_1.png" Key="tree_1.png" />
-        </PlistImageFolder>
         <Folder Name="img">
-          <PlistImageFolder Image="Fraction_Btn.png" PListFile="Fraction_Btn.plist" Name=".Fraction_Btn_PList.Dir">
-            <PlistImageFile Name="blue.png" Key="blue.png" />
-            <PlistImageFile Name="bt_01.png" Key="bt_01.png" />
-            <PlistImageFile Name="bt_01_hover.png" Key="bt_01_hover.png" />
-            <PlistImageFile Name="bt_02.png" Key="bt_02.png" />
-            <PlistImageFile Name="bt_02_hover.png" Key="bt_02_hover.png" />
-            <PlistImageFile Name="bt_03.png" Key="bt_03.png" />
-            <PlistImageFile Name="bt_03_hover.png" Key="bt_03_hover.png" />
-            <PlistImageFile Name="bt_04.png" Key="bt_04.png" />
-            <PlistImageFile Name="bt_04_hover.png" Key="bt_04_hover.png" />
-            <PlistImageFile Name="bt_05.png" Key="bt_05.png" />
-            <PlistImageFile Name="bt_05_hover.png" Key="bt_05_hover.png" />
-            <PlistImageFile Name="cover_start.png" Key="cover_start.png" />
-            <PlistImageFile Name="cover_start_clik.png" Key="cover_start_clik.png" />
-            <PlistImageFile Name="erease.png" Key="erease.png" />
-            <PlistImageFile Name="green.png" Key="green.png" />
-            <PlistImageFile Name="red.png" Key="red.png" />
-            <PlistImageFile Name="reset.png" Key="reset.png" />
-            <PlistImageFile Name="select.png" Key="select.png" />
-            <PlistImageFile Name="topic1_number.png" Key="topic1_number.png" />
-            <PlistImageFile Name="topic1_number_back.png" Key="topic1_number_back.png" />
-            <PlistImageFile Name="topic1_number02.png" Key="topic1_number02.png" />
-            <PlistImageFile Name="topic1_number03.png" Key="topic1_number03.png" />
-            <PlistImageFile Name="topic1_number04.png" Key="topic1_number04.png" />
-            <PlistImageFile Name="topic1_number05.png" Key="topic1_number05.png" />
-            <PlistImageFile Name="topic1_number06.png" Key="topic1_number06.png" />
-            <PlistImageFile Name="topic1_number07.png" Key="topic1_number07.png" />
-            <PlistImageFile Name="topic1_number08.png" Key="topic1_number08.png" />
-            <PlistImageFile Name="topic1_number09.png" Key="topic1_number09.png" />
-            <PlistImageFile Name="topic1_number10.png" Key="topic1_number10.png" />
-            <PlistImageFile Name="topic1_number11.png" Key="topic1_number11.png" />
-            <PlistImageFile Name="topic1_number12.png" Key="topic1_number12.png" />
-            <PlistImageFile Name="topic1_OK.png" Key="topic1_OK.png" />
-          </PlistImageFolder>
-          <PlistImageFolder Image="Fraction_Wood.png" PListFile="Fraction_Wood.plist" Name=".Fraction_Wood_PList.Dir">
-            <PlistImageFile Name="topic1_wood_01.png" Key="topic1_wood_01.png" />
-            <PlistImageFile Name="topic1_wood_02.png" Key="topic1_wood_02.png" />
-            <PlistImageFile Name="topic1_wood_04.png" Key="topic1_wood_04.png" />
-            <PlistImageFile Name="topic1_wood_06.png" Key="topic1_wood_06.png" />
-            <PlistImageFile Name="topic1_wood_08.png" Key="topic1_wood_08.png" />
-            <PlistImageFile Name="topic1_wood_12.png" Key="topic1_wood_12.png" />
-          </PlistImageFolder>
-          <PlistImageFolder Image="handdrawing.png" PListFile="handdrawing.plist" Name=".handdrawing_PList.Dir">
-            <PlistImageFile Name="brush.png" Key="brush.png" />
-            <PlistImageFile Name="clearall_nl.png" Key="clearall_nl.png" />
-            <PlistImageFile Name="clearall_off.png" Key="clearall_off.png" />
-            <PlistImageFile Name="clearall_on.png" Key="clearall_on.png" />
-            <PlistImageFile Name="colorb_nl.png" Key="colorb_nl.png" />
-            <PlistImageFile Name="colorb_on.png" Key="colorb_on.png" />
-            <PlistImageFile Name="colorg_nl.png" Key="colorg_nl.png" />
-            <PlistImageFile Name="colorg_on.png" Key="colorg_on.png" />
-            <PlistImageFile Name="colork_nl.png" Key="colork_nl.png" />
-            <PlistImageFile Name="colork_on.png" Key="colork_on.png" />
-            <PlistImageFile Name="colorr_nl.png" Key="colorr_nl.png" />
-            <PlistImageFile Name="colorr_on.png" Key="colorr_on.png" />
-            <PlistImageFile Name="colory_nl.png" Key="colory_nl.png" />
-            <PlistImageFile Name="colory_on.png" Key="colory_on.png" />
-            <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
-            <PlistImageFile Name="eraser_off.png" Key="eraser_off.png" />
-            <PlistImageFile Name="eraser_on.png" Key="eraser_on.png" />
-            <PlistImageFile Name="hand_off.png" Key="hand_off.png" />
-            <PlistImageFile Name="hand_on.png" Key="hand_on.png" />
-            <PlistImageFile Name="pen_off.png" Key="pen_off.png" />
-            <PlistImageFile Name="pen_on.png" Key="pen_on.png" />
-          </PlistImageFolder>
-          <PlistImageFolder Image="quecontrol.png" PListFile="quecontrol.plist" Name=".quecontrol_PList.Dir">
-            <PlistImageFile Name="answer_off.png" Key="answer_off.png" />
-            <PlistImageFile Name="answer_on.png" Key="answer_on.png" />
-            <PlistImageFile Name="equal_off.png" Key="equal_off.png" />
-            <PlistImageFile Name="equal_on.png" Key="equal_on.png" />
-            <PlistImageFile Name="example_off.png" Key="example_off.png" />
-            <PlistImageFile Name="example_on.png" Key="example_on.png" />
-            <PlistImageFile Name="menu_off.png" Key="menu_off.png" />
-            <PlistImageFile Name="menu_on.png" Key="menu_on.png" />
-            <PlistImageFile Name="nextque_off.png" Key="nextque_off.png" />
-            <PlistImageFile Name="nextque_on.png" Key="nextque_on.png" />
-            <PlistImageFile Name="prevque_off.png" Key="prevque_off.png" />
-            <PlistImageFile Name="prevque_on.png" Key="prevque_on.png" />
-            <PlistImageFile Name="reset_off.png" Key="reset_off.png" />
-            <PlistImageFile Name="reset_on.png" Key="reset_on.png" />
-          </PlistImageFolder>
           <PlistImageFolder Image="scene101.png" PListFile="scene101.plist" Name=".scene101_PList.Dir">
             <PlistImageFile Name="bean01.png" Key="bean01.png" />
             <PlistImageFile Name="bean02.png" Key="bean02.png" />
@@ -284,12 +146,120 @@
             <PlistImageFile Name="trishadow.png" Key="trishadow.png" />
             <PlistImageFile Name="w_bg.png" Key="w_bg.png" />
           </PlistImageFolder>
+          <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
+            <PlistImageFile Name="ans.png" Key="ans.png" />
+            <PlistImageFile Name="ans_click.png" Key="ans_click.png" />
+            <PlistImageFile Name="background.jpg" Key="background.jpg" />
+            <PlistImageFile Name="banana_0.png" Key="banana_0.png" />
+            <PlistImageFile Name="banana_1.png" Key="banana_1.png" />
+            <PlistImageFile Name="branch_0.png" Key="branch_0.png" />
+            <PlistImageFile Name="branch_1.png" Key="branch_1.png" />
+            <PlistImageFile Name="branch_2.png" Key="branch_2.png" />
+            <PlistImageFile Name="flower_0.png" Key="flower_0.png" />
+            <PlistImageFile Name="flower_1.png" Key="flower_1.png" />
+            <PlistImageFile Name="flower_2.png" Key="flower_2.png" />
+            <PlistImageFile Name="grape_0.png" Key="grape_0.png" />
+            <PlistImageFile Name="grape_1.png" Key="grape_1.png" />
+            <PlistImageFile Name="grape_2.png" Key="grape_2.png" />
+            <PlistImageFile Name="home.png" Key="home.png" />
+            <PlistImageFile Name="home_click.png" Key="home_click.png" />
+            <PlistImageFile Name="n-10.png" Key="n-10.png" />
+            <PlistImageFile Name="n-10_G.png" Key="n-10_G.png" />
+            <PlistImageFile Name="n-10_no.png" Key="n-10_no.png" />
+            <PlistImageFile Name="n-11.png" Key="n-11.png" />
+            <PlistImageFile Name="n-11_G.png" Key="n-11_G.png" />
+            <PlistImageFile Name="n-11_no.png" Key="n-11_no.png" />
+            <PlistImageFile Name="n-12.png" Key="n-12.png" />
+            <PlistImageFile Name="n-12_G.png" Key="n-12_G.png" />
+            <PlistImageFile Name="n-12_no.png" Key="n-12_no.png" />
+            <PlistImageFile Name="n-2.png" Key="n-2.png" />
+            <PlistImageFile Name="n-2_G.png" Key="n-2_G.png" />
+            <PlistImageFile Name="n-2_no.png" Key="n-2_no.png" />
+            <PlistImageFile Name="n-3.png" Key="n-3.png" />
+            <PlistImageFile Name="n-3_G.png" Key="n-3_G.png" />
+            <PlistImageFile Name="n-3_no.png" Key="n-3_no.png" />
+            <PlistImageFile Name="n-4.png" Key="n-4.png" />
+            <PlistImageFile Name="n-4_G.png" Key="n-4_G.png" />
+            <PlistImageFile Name="n-4_no.png" Key="n-4_no.png" />
+            <PlistImageFile Name="n-5.png" Key="n-5.png" />
+            <PlistImageFile Name="n-5_G.png" Key="n-5_G.png" />
+            <PlistImageFile Name="n-5_no.png" Key="n-5_no.png" />
+            <PlistImageFile Name="n-6.png" Key="n-6.png" />
+            <PlistImageFile Name="n-6_G.png" Key="n-6_G.png" />
+            <PlistImageFile Name="n-6_no.png" Key="n-6_no.png" />
+            <PlistImageFile Name="n-7.png" Key="n-7.png" />
+            <PlistImageFile Name="n-7_G.png" Key="n-7_G.png" />
+            <PlistImageFile Name="n-7_no.png" Key="n-7_no.png" />
+            <PlistImageFile Name="n-8.png" Key="n-8.png" />
+            <PlistImageFile Name="n-8_G.png" Key="n-8_G.png" />
+            <PlistImageFile Name="n-8_no.png" Key="n-8_no.png" />
+            <PlistImageFile Name="n-9.png" Key="n-9.png" />
+            <PlistImageFile Name="n-9_G.png" Key="n-9_G.png" />
+            <PlistImageFile Name="n-9_no.png" Key="n-9_no.png" />
+            <PlistImageFile Name="next_L.png" Key="next_L.png" />
+            <PlistImageFile Name="next_L_click.png" Key="next_L_click.png" />
+            <PlistImageFile Name="next_R.png" Key="next_R.png" />
+            <PlistImageFile Name="next_R_click.png" Key="next_R_click.png" />
+            <PlistImageFile Name="nut_0.png" Key="nut_0.png" />
+            <PlistImageFile Name="nut_1.png" Key="nut_1.png" />
+            <PlistImageFile Name="nut_2.png" Key="nut_2.png" />
+            <PlistImageFile Name="pancake_0.png" Key="pancake_0.png" />
+            <PlistImageFile Name="pancake_1.png" Key="pancake_1.png" />
+            <PlistImageFile Name="pancake_10.png" Key="pancake_10.png" />
+            <PlistImageFile Name="pancake_11.png" Key="pancake_11.png" />
+            <PlistImageFile Name="pancake_12.png" Key="pancake_12.png" />
+            <PlistImageFile Name="pancake_2.png" Key="pancake_2.png" />
+            <PlistImageFile Name="pancake_3.png" Key="pancake_3.png" />
+            <PlistImageFile Name="pancake_4.png" Key="pancake_4.png" />
+            <PlistImageFile Name="pancake_5.png" Key="pancake_5.png" />
+            <PlistImageFile Name="pancake_6.png" Key="pancake_6.png" />
+            <PlistImageFile Name="pancake_7.png" Key="pancake_7.png" />
+            <PlistImageFile Name="pancake_8.png" Key="pancake_8.png" />
+            <PlistImageFile Name="pancake_9.png" Key="pancake_9.png" />
+            <PlistImageFile Name="road_0.png" Key="road_0.png" />
+            <PlistImageFile Name="road_1.png" Key="road_1.png" />
+            <PlistImageFile Name="road_2.png" Key="road_2.png" />
+            <PlistImageFile Name="tomato_0.png" Key="tomato_0.png" />
+            <PlistImageFile Name="tomato_1.png" Key="tomato_1.png" />
+            <PlistImageFile Name="tomato_2.png" Key="tomato_2.png" />
+            <PlistImageFile Name="tool_black.png" Key="tool_black.png" />
+            <PlistImageFile Name="tool_black_click.png" Key="tool_black_click.png" />
+            <PlistImageFile Name="tool_blue.png" Key="tool_blue.png" />
+            <PlistImageFile Name="tool_blue_click.png" Key="tool_blue_click.png" />
+            <PlistImageFile Name="tool_clear.png" Key="tool_clear.png" />
+            <PlistImageFile Name="tool_clear_click.png" Key="tool_clear_click.png" />
+            <PlistImageFile Name="tool_cut.png" Key="tool_cut.png" />
+            <PlistImageFile Name="tool_cut_click.png" Key="tool_cut_click.png" />
+            <PlistImageFile Name="tool_eraser.png" Key="tool_eraser.png" />
+            <PlistImageFile Name="tool_eraser_click.png" Key="tool_eraser_click.png" />
+            <PlistImageFile Name="tool_hand.png" Key="tool_hand.png" />
+            <PlistImageFile Name="tool_hand_click.png" Key="tool_hand_click.png" />
+            <PlistImageFile Name="tool_number.png" Key="tool_number.png" />
+            <PlistImageFile Name="tool_number_click.png" Key="tool_number_click.png" />
+            <PlistImageFile Name="tool_red.png" Key="tool_red.png" />
+            <PlistImageFile Name="tool_red_click.png" Key="tool_red_click.png" />
+            <PlistImageFile Name="tool_reset.png" Key="tool_reset.png" />
+            <PlistImageFile Name="tool_reset_click.png" Key="tool_reset_click.png" />
+            <PlistImageFile Name="white.png" Key="white.png" />
+            <PlistImageFile Name="backcolor.png" Key="backcolor.png" />
+            <PlistImageFile Name="pancake_line.png" Key="pancake_line.png" />
+            <PlistImageFile Name="road_line.png" Key="road_line.png" />
+            <PlistImageFile Name="stuff_muffin10.png" Key="stuff_muffin10.png" />
+            <PlistImageFile Name="stuff_muffin12.png" Key="stuff_muffin12.png" />
+            <PlistImageFile Name="stuff_muffin2.png" Key="stuff_muffin2.png" />
+            <PlistImageFile Name="stuff_muffin3.png" Key="stuff_muffin3.png" />
+            <PlistImageFile Name="stuff_muffin4.png" Key="stuff_muffin4.png" />
+            <PlistImageFile Name="stuff_muffin5.png" Key="stuff_muffin5.png" />
+            <PlistImageFile Name="stuff_muffin6.png" Key="stuff_muffin6.png" />
+            <PlistImageFile Name="stuff_muffin8.png" Key="stuff_muffin8.png" />
+            <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
+            <PlistImageFile Name="brush.png" Key="brush.png" />
+            <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
+          </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="cover_bk.jpg" />
           <Image Name="menu.jpg" />
           <Image Name="story_1.jpg" />
-          <Image Name="topic1_back.png" />
-          <Image Name="topic1_question.png" />
         </Folder>
         <Folder Name="que">
           <Project Name="q1_1.csd" Type="Node" />
@@ -329,8 +299,8 @@
           <Project Name="q3_8.csd" Type="Node" />
           <Project Name="q3_9.csd" Type="Node" />
         </Folder>
-        <Project Name="HomeScene.csd" Type="Scene" />
-        <Project Name="MenuScene.csd" Type="Scene" />
+        <Project Name="homescene.csd" Type="Scene" />
+        <Project Name="menuscene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="TeachScene.csd" Type="Scene" />
       </RootFolder>

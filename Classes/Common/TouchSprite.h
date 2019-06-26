@@ -51,8 +51,6 @@ public:
 	void RotateMoved();
 	void RotateEnded(int i);
 
-
-//	Sprite *getImg();
     Node *getNode(){return _obj;}
     
 
@@ -60,9 +58,12 @@ public:
     void setImgPandR(int n,Point pos,float r);
     void setRotation(float r);
     
+    void setDividedImg();
+    
 	Point getPosition() { return _SpriteLoc; }
 	float getAngle() { return (_fangle); }
 	void setSticky(int stickyNumber);
 	int ResetSticky();
     void setVisible(bool b);
+    int getPieceAmount(){return _piece;}
 };

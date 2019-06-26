@@ -33,7 +33,7 @@ void CSwitch::setButtonInfo(const char *normalImg, const char *selectedImg, cons
     _normalPic = (Sprite *)Sprite::createWithSpriteFrameName(normalImg);
     _selectedPic = (Sprite *)Sprite::createWithSpriteFrameName(selectedImg);
     _enablePic = (Sprite *)Sprite::createWithSpriteFrameName(enableImg);
-    _enablePic->setColor(Color3B::RED);
+    //_enablePic->setColor(Color3B::RED);
     _BtnLoc = locPt;
     _normalPic->setPosition(_BtnLoc); // 設定位置
     _selectedPic->setPosition(_BtnLoc); // 設定位置

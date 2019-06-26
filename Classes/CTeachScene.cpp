@@ -40,9 +40,7 @@ bool CTeachScene::init()
 
 void CTeachScene::setCreate(int unit) 
 {
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/handdrawing.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_tea.plist");
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_teaobj.plist");
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teacher_ui.plist");
 	auto rootNode = CSLoader::createNode("TeachScene.csb");
 	addChild(rootNode);
 
@@ -53,7 +51,7 @@ void CTeachScene::setCreate(int unit)
 	//menubtn
 	auto pt = rootNode->getChildByName("menubtn")->getPosition();
 	auto scale = rootNode->getChildByName("menubtn")->getScale();
-	_menuBtn.setButtonInfo("Q_home.png", "Q_home_hover.png", *this, pt, 1);
+	_menuBtn.setButtonInfo("home.png", "home_click.png", *this, pt, 1);
 	_menuBtn.setScale(scale);
 	rootNode->removeChildByName("menubtn");
 
@@ -147,8 +145,6 @@ CTeachScene::~CTeachScene()
 	delete _queController;
     delete _handDrawing;
 
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/handdrawing.plist");
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_tea.plist");
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_teaobj.plist");
+	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teacher_ui.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

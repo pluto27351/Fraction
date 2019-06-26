@@ -19,6 +19,7 @@ public:
 	CSwitchGroup();
 	~CSwitchGroup();
 	void init(const char *btn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
+    void init(const char *btn, const char *bg, cocos2d::Layer &parent, Node *obj, int level);
 	void setAsColumn();
 	void setScale(float s);
 	void setBgScale(float w,float h=0);

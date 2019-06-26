@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/CMenuScene.cpp"
-            timestampString = "580067335.415439"
+            timestampString = "583240910.73797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "CMenuScene::~CMenuScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/CHomeScene.cpp"
-            timestampString = "580050486.309957"
+            timestampString = "583240910.738037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
             landmarkType = "7">
          </BreakpointContent>

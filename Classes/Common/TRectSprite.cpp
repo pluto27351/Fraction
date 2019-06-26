@@ -10,12 +10,11 @@ bool TRectSprite::Collision(Point touch) {
         auto posInNode = _Pic[i]->convertToNodeSpace(touch);
         if (Rect(0,0,_Pic[i]->getContentSize().width,_Pic[i]->getContentSize().height).containsPoint(posInNode))
         {
-            CCLOG("IN");
             return true;
-        }else{
-            CCLOG("OUT");
-            //return false;
         }
+//      else{
+//            //return false;
+//      }
     }
 }
 

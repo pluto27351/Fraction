@@ -51,15 +51,17 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單
-    auto pt = rootNode.getChildByName("numPic")->getPosition();
-    _numSwitcher.init("Q", "Q_cut.png", parent, pt, SWITCHBOARD_LEVEL);
-    _numSwitcher.setAsColumn();
+   // auto pt = rootNode.getChildByName("numPic")->getPosition();
+    //_numSwitcher.init("n-", "white.png", parent, pt, SWITCHBOARD_LEVEL);
+    auto obj = rootNode.getChildByName("numPic");
+    _numSwitcher.init("n-", "white.png", parent, obj, SWITCHBOARD_LEVEL);
+    //_numSwitcher.setAsColumn();
     _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
     _numSwitcher.setLockNum(_curNum-2,true);
     _numSwitcher.setVisible(false);
     rootNode.removeChildByName("numPic");
     
-    _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("Q_backcolor.png");
+    _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("backcolor.png");
     _blackMask->setPosition(Vec2(1024,768));
     _blackMask->setScale(4);
     _blackMask->setVisible(false);
@@ -78,7 +80,7 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	//前一題
 	auto pt = rootNode.getChildByName("prevbtn")->getPosition();
 	auto scale = rootNode.getChildByName("prevbtn")->getScale();
-	_prevBtn.setButtonInfo("Q_back.png", "Q_back.png", parent, pt, INTERFACE_LEVEL);
+	_prevBtn.setButtonInfo("next_L.png", "next_L_click.png", parent, pt, INTERFACE_LEVEL);
 	_prevBtn.setScale(scale);
 	if (_curQue == 1)_prevBtn.setEnabled(false);
 	rootNode.removeChildByName("prevbtn");
@@ -86,24 +88,24 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	//下一題
 	pt = rootNode.getChildByName("nextbtn")->getPosition();
 	scale = rootNode.getChildByName("nextbtn")->getScale();
-	_nextBtn.setButtonInfo("Q_next.png", "Q_next.png", parent, pt, INTERFACE_LEVEL);
+	_nextBtn.setButtonInfo("next_R.png", "next_R_click.png", parent, pt, INTERFACE_LEVEL);
 	_nextBtn.setScale(scale);
 	if (_curQue == QUEDATA[_curUnit - 1])_nextBtn.setEnabled(false);
 	rootNode.removeChildByName("nextbtn");
 
 	// 設定答案按鈕
     pt = rootNode.getChildByName("answerbtn")->getPosition();
-	_ansBtn.setButtonInfo("Q_Answer.png", "Q_Answer_hover.png", parent, pt, INTERFACE_LEVEL);
+	_ansBtn.setButtonInfo("ans.png", "ans_click.png", parent, pt, INTERFACE_LEVEL);
     rootNode.removeChildByName("answerbtn");
 
 	// 設定選擇分母按鈕
 	pt = rootNode.getChildByName("numbtn")->getPosition();
-	_numBtn.setButtonInfo("Q_leaf.png", "Q_leaf.png", parent, pt, INTERFACE_LEVEL);
+	_numBtn.setButtonInfo("tool_number.png", "tool_number_click.png", parent, pt, INTERFACE_LEVEL);
 	rootNode.removeChildByName("numbtn");
 
 	// 設定切分按鈕
 	pt = rootNode.getChildByName("cut")->getPosition();
-	_cutBtn.setButtonInfo("Q_tool pic.png", "Q_tool pic_hover.png", parent, pt, SWITCHBOARD_LEVEL);
+	_cutBtn.setButtonInfo("tool_cut.png", "tool_cut_click.png", parent, pt, SWITCHBOARD_LEVEL);
 	rootNode.removeChildByName("cut");
 
 
