@@ -1,4 +1,4 @@
-﻿#ifndef __CBUTTON_H__
+#ifndef __CBUTTON_H__
 #define __CBUTTON_H__
 
 #include "cocos2d.h"

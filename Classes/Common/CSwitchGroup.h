@@ -9,7 +9,6 @@ USING_NS_CC;
 class CSwitchGroup {
 private:
 	CSwitch *_numBtn;
-	CButton *_okBtn;
 	Sprite *_bg,*_selectN;
     Point _locPt;
 	Vec2 _halfLength,_okPos,_nPos;
@@ -19,7 +18,7 @@ private:
 public:
 	CSwitchGroup();
 	~CSwitchGroup();
-	void init(const char *btn,const char *Okbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
+	void init(const char *btn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
 	void setAsColumn();
 	void setScale(float s);
 	void setBgScale(float w,float h=0);
@@ -29,6 +28,7 @@ public:
 	void setEnabled(bool bEnable);
 	void setEnabled(int number, bool bEnable);
     void setEnabledBtns(const int data[12],int num=0);
+    void setLockNum(int num,bool lock = true);
 	void setSelectBtn(int number);
     void showSelectNumber(int n,cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
     void setSelectNumber(int);

@@ -1,4 +1,4 @@
-﻿#include "CButton.h"
+#include "CButton.h"
 
 USING_NS_CC;
 

@@ -52,9 +52,10 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 
 	//設定分母選單
     auto pt = rootNode.getChildByName("numPic")->getPosition();
-    _numSwitcher.init("Q", "Q_okay.png", "Q_cut.png", parent, pt, SWITCHBOARD_LEVEL);
+    _numSwitcher.init("Q", "Q_cut.png", parent, pt, SWITCHBOARD_LEVEL);
     _numSwitcher.setAsColumn();
     _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    _numSwitcher.setLockNum(_curNum-2,true);
     _numSwitcher.setVisible(false);
     rootNode.removeChildByName("numPic");
     
@@ -146,6 +147,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     
     //重設分母選單
     _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    _numSwitcher.setLockNum(_curNum-2,true);
     _numSwitcher.setVisible(false);
     
     

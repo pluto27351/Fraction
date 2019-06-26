@@ -9,6 +9,7 @@ class CSwitch
 private:
 	cocos2d::Sprite *_normalPic;
 	cocos2d::Sprite *_selectedPic;
+    cocos2d::Sprite *_enablePic;
 	cocos2d::Size  _BtnSize;
 	cocos2d::Point _BtnLoc;
 	cocos2d::Rect  _BtnRect;
@@ -21,6 +22,7 @@ private:
 
 public:
 	void setButtonInfo(const char *normalImg, const char *selectImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
+    void setButtonInfo(const char *normalImg, const char *selectImg,const char *enableImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
 	bool touchesBegin(cocos2d::Point inPos);
 	bool touchesMoved(cocos2d::Point inPos);
 	bool touchesEnded(cocos2d::Point inPos);
@@ -31,5 +33,6 @@ public:
     Point getPosition(){return _BtnLoc;}
 	void setScale(float fscale);
 	void setTouchScale(float s);
+
 };
 

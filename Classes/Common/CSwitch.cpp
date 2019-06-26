@@ -1,4 +1,4 @@
-﻿#include "CSwitch.h"
+#include "CSwitch.h"
 
 USING_NS_CC;
 
@@ -6,6 +6,7 @@ void CSwitch::setButtonInfo(const char *normalImg, const char *selectedImg, Laye
 {
 	_normalPic = (Sprite *)Sprite::createWithSpriteFrameName(normalImg);
 	_selectedPic = (Sprite *)Sprite::createWithSpriteFrameName(selectedImg);
+    _enablePic = NULL;
 	_BtnLoc = locPt;
 	_normalPic->setPosition(_BtnLoc); // 設定位置
 	_selectedPic->setPosition(_BtnLoc); // 設定位置
@@ -25,6 +26,36 @@ void CSwitch::setButtonInfo(const char *normalImg, const char *selectedImg, Laye
 	_fScale = 1.0f;	_ftouchedScale = 1.15f;
 	_bVisible = _bEnabled = true;
 	_bStatus = false;
+}
+
+void CSwitch::setButtonInfo(const char *normalImg, const char *selectedImg, const char *enableImg, Layer &parent, const cocos2d::Point locPt, int level)
+{
+    _normalPic = (Sprite *)Sprite::createWithSpriteFrameName(normalImg);
+    _selectedPic = (Sprite *)Sprite::createWithSpriteFrameName(selectedImg);
+    _enablePic = (Sprite *)Sprite::createWithSpriteFrameName(enableImg);
+    _enablePic->setColor(Color3B::RED);
+    _BtnLoc = locPt;
+    _normalPic->setPosition(_BtnLoc); // 設定位置
+    _selectedPic->setPosition(_BtnLoc); // 設定位置
+    _enablePic->setPosition(_BtnLoc);
+    _selectedPic->setVisible(false);
+    _selectedPic->setScale(1.15f);
+    _enablePic->setVisible(false);
+    parent.addChild(_normalPic, level);  // 加入目前的 Layer 中 1: Z 軸的層次，越大代表在越上層
+    parent.addChild(_selectedPic, level); // 加入目前的 Layer 中 1: Z 軸的層次，越大代表在越上層
+    parent.addChild(_enablePic, level);
+    
+    // 取得大小
+    _BtnSize = _normalPic->getContentSize();
+    // 設定判斷區域
+    _BtnRect.size = _BtnSize;
+    _BtnRect.origin.x = _BtnLoc.x - _BtnSize.width*0.5f;
+    _BtnRect.origin.y = _BtnLoc.y - _BtnSize.height*0.5f;
+    
+    _bTouched = false;
+    _fScale = 1.0f;    _ftouchedScale = 1.15f;
+    _bVisible = _bEnabled = true;
+    _bStatus = false;
 }
 
 
@@ -60,10 +91,6 @@ bool CSwitch::touchesEnded(cocos2d::Point inPos)
 	{
 		_bTouched = false;
 		_bStatus = !_bStatus;
-		/*_normalPic->setScale(_fScale);
-		_normalPic->setVisible(true);
-		_selectedPic->setVisible(false);*/
-
 		if (_BtnRect.containsPoint(inPos)) return(true);  // 手指頭位置按鈕時，還在該按鈕上
 	}
 	return false;
@@ -74,18 +101,19 @@ void CSwitch::setVisible(bool bVisible)
 {
 	_bVisible = bVisible;
 	if (!_bVisible) {
-			_normalPic->setVisible(false);
-			_selectedPic->setVisible(false);
+        _normalPic->setVisible(false);
+        _selectedPic->setVisible(false);
+        if(_enablePic != NULL)_enablePic->setVisible(false);
 	}
 	else {
-		_normalPic->setVisible(!_bStatus);
 		_selectedPic->setVisible(_bStatus);
+        if(_enablePic != NULL){
+            _normalPic->setVisible(!_bStatus * _bEnabled);
+            _enablePic->setVisible(!_bEnabled);
+        }else {
+            _normalPic->setVisible(!_bStatus);
+        }
 	}
-	/*_normalPic->setVisible(true);
-	_selectedPic->setVisible(false);
-
-	if (!_bVisible) _normalPic->setVisible(false);
-	else _normalPic->setVisible(true);*/
 }
 
 void  CSwitch::setStatus(bool status) {
@@ -103,12 +131,23 @@ void CSwitch::setEnabled(bool bEnable)
 	if (_bEnabled) {
 		_normalPic->setVisible(!_bStatus);
 		_selectedPic->setVisible(_bStatus);
-		_normalPic->setColor(Color3B(255, 255, 255));
+        
+        if(_enablePic != NULL){
+            _enablePic->setVisible(false);
+        }else {
+            _normalPic->setColor(Color3B(255, 255, 255));
+        }
 	}
 	else {
-		_normalPic->setVisible(true);
 		_selectedPic->setVisible(false);
-		_normalPic->setColor(Color3B(50, 50, 50));
+        if(_enablePic != NULL){
+            _normalPic->setVisible(false);
+            _enablePic->setVisible(true);
+        }
+        else{
+            _normalPic->setVisible(true);
+            _normalPic->setColor(Color3B(50, 50, 50));
+        }
 	}
 	
 }
@@ -122,6 +161,7 @@ void CSwitch::setPosition(Vec2 locPt) {
 	_BtnLoc = locPt;
 	_normalPic->setPosition(_BtnLoc); // 設定位置
 	_selectedPic->setPosition(_BtnLoc); // 設定位置
+    if(_enablePic != NULL) _enablePic->setPosition(_BtnLoc);
 	
 	_BtnRect.origin.x = _BtnLoc.x - _BtnSize.width*0.5f;
 	_BtnRect.origin.y = _BtnLoc.y - _BtnSize.height*0.5f;
@@ -137,4 +177,5 @@ void CSwitch::setScale(float fscale)
 	_BtnRect.origin.y = _BtnLoc.y - _BtnRect.size.height*0.5f;
 	_normalPic->setScale(_fScale);
 	_selectedPic->setScale(_fScale*_ftouchedScale);
+    if(_enablePic != NULL) _enablePic->setScale(_fScale);
 }

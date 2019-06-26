@@ -8,10 +8,9 @@ CSwitchGroup::CSwitchGroup(){
 
 CSwitchGroup::~CSwitchGroup() {
 	delete [] _numBtn;
-	delete _okBtn;
 }
 
-void CSwitchGroup::init(const char *btn ,const char *Okbtn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level)
+void CSwitchGroup::init(const char *btn, const char *bg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level)
 {
     _locPt = locPt;
 	_bg = (Sprite *)Sprite::createWithSpriteFrameName(bg);
@@ -27,17 +26,11 @@ void CSwitchGroup::init(const char *btn ,const char *Okbtn, const char *bg, coco
     _okPos.y = _halfLength.y;
     
 	char pic[20];
-
-    _okBtn = new CButton();
-    _okBtn->setButtonInfo(Okbtn,Okbtn, parent, _locPt - _okPos, level);
-    _okBtn->setEnabled(false);
-	
-
 	_numBtn = new CSwitch[11];
 	Vec2 pos = _locPt + _halfLength;
 	for (int i = 0; i < 11; i++) {
 		sprintf(pic, "%s_%d.png", btn, i+2);
-		_numBtn[i].setButtonInfo(pic, pic, parent, pos, level);
+		_numBtn[i].setButtonInfo(pic, pic,pic, parent, pos, level);
 		pos.y -= 85;
 	};
 
@@ -70,8 +63,6 @@ void CSwitchGroup::setAsColumn() {
 	_halfLength = Vec2(-475,70);
 	_okPos = Vec2(0, -50);
 
-	if (_okBtn!= NULL) _okBtn->setPosition(_locPt + _okPos);
-
 	Vec2 pos = _locPt + _halfLength;
 	for (int i = 0; i <11; i++) {
 		_numBtn[i].setPosition(pos);
@@ -94,8 +85,6 @@ void CSwitchGroup::setEnabledBtns(const int data[12], int num)
 }
 
 void CSwitchGroup::setScale(float s) {
-	if (_okBtn != NULL) _okBtn->setScale(s);
-	
 	for (int i = 0; i < 11 ; i++)
 		_numBtn[i].setScale(s);
 }
@@ -116,7 +105,6 @@ void CSwitchGroup::setPosition(Vec2 locPt)
     _locPt = locPt;
 	_bg->setPosition(_locPt );
 
-	if (_okBtn != NULL) _okBtn->setPosition(_locPt  - _okPos);
     if (_showSelectN) _selectN->setPosition(_locPt + _nPos);
     
 	Vec2 pos = _locPt  + _halfLength;
@@ -132,7 +120,6 @@ void CSwitchGroup::move(Vec2 dPt)
     _locPt += dPt;
     _bg->setPosition(_locPt);
     
-    if (_okBtn != NULL) _okBtn->setPosition(_locPt - _okPos);
     if (_showSelectN) _selectN->setPosition(_locPt + _nPos);
     
     for (int i = 0; i < 11; i++) {
@@ -144,16 +131,7 @@ void CSwitchGroup::move(Vec2 dPt)
 
 void CSwitchGroup::setVisible(bool bVis) 
 {
-    if(!bVis){
-        if(_selectNumber != -1){
-            _numBtn[_selectNumber].setStatus(false);
-            _selectNumber = -1;
-        }
-        _okBtn->setEnabled(false);
-    }
-    
 	_bg->setVisible(bVis);
-	if (_okBtn != NULL) _okBtn->setVisible(bVis);
 
 	for (int i = 0; i < 11; i++)
 		_numBtn[i].setVisible(bVis);
@@ -187,14 +165,15 @@ int CSwitchGroup::getSelectNumber() {
 	return _selectNumber;
 }
 
+void CSwitchGroup::setLockNum(int num,bool lock ){
+    _numBtn[num].setStatus(lock);
+}
+
+
 bool CSwitchGroup::touchesBegin(cocos2d::Point inPos)
 {
 	for (int i = 0; i < 11; i++)
 		if (_numBtn[i].touchesBegin(inPos))return true;
-
-    if(_selectNumber != -1){
-        if (_okBtn->touchesBegin(inPos))return true;
-    }
     
     auto posInNode = _bg->convertToNodeSpace(inPos);
     if (Rect(0,0,_bg->getContentSize().width,_bg->getContentSize().height).containsPoint(posInNode)) return true;
@@ -208,27 +187,14 @@ bool CSwitchGroup::touchesMoved(cocos2d::Point inPos)
 	for (int i = 0; i < 11; i++)
 		_numBtn[i].touchesMoved(inPos);
 
-    if(_selectNumber != -1){_okBtn->touchesMoved(inPos);}
-
 	return true;
 }
 
 bool CSwitchGroup::touchesEnded(cocos2d::Point inPos)
 {
-	for (int i = 0; i < 11; i++)
-		if (_numBtn[i].touchesEnded(inPos)) {
-            if(i ==_selectNumber){
-                _selectNumber = -1;
-                _okBtn->setEnabled(false);
-            }
-            else {
-                setSelectBtn(i);
-                _okBtn->setEnabled(true);
-            }
-		}
-
-    if(_selectNumber != -1){
-        if (_okBtn->touchesEnded(inPos)){
+    for (int i = 0; i < 11; i++){
+        if (_numBtn[i].touchesEnded(inPos)) {
+            setSelectBtn(i);
             return true;
         }
     }
