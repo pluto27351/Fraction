@@ -116,12 +116,22 @@ CCutImage::CCutImage(int picNum, float scale,int num)
 
 void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     char picname[20];
+    sprintf(picname, "%s_0.png",_name);
+    
+//    _fullImg[0] = obj;
+//    _fullImg ->setPosition(POS);
+//    addChild(_fullImg , BOTTOM_LEVEL);
+    for(int i=0;i<2;i++){
+        _fullImg[i] = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        _fullImg[i]->setPosition(POS);
+        _fullImg[i]->setScale(scale);
+        addChild(_fullImg[i], BOTTOM_LEVEL);
+    }
+    _fullImg[1]->setVisible(false);
+    _fullImg[1]->setGLProgramState(grayGLProgrameState);
+    
     sprintf(picname, "ani/%s.csb",_name);
     auto obj = CSLoader::createNode(picname);
-    
-    _fullImg = obj;
-    _fullImg ->setPosition(POS);
-    addChild(_fullImg , BOTTOM_LEVEL);
     
     _dividePiece = num;
     _scale = scale;
@@ -176,10 +186,14 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
 void CCutImage::CreateImg(float scale,int num){  // 圓形
     char picname[20];
     sprintf(picname, "%s.png",_name);
-    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-    _fullImg->setPosition(POS);
-    _fullImg->setScale(scale);
-    addChild(_fullImg, BOTTOM_LEVEL);
+    for(int i=0;i<2;i++){
+        _fullImg[i] = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        _fullImg[i]->setPosition(POS);
+        _fullImg[i]->setScale(scale);
+        addChild(_fullImg[i], BOTTOM_LEVEL);
+    }
+    _fullImg[1]->setVisible(false);
+    _fullImg[1]->setGLProgramState(grayGLProgrameState);
     
     _dividePiece = num;
     _scale = scale;
@@ -268,11 +282,13 @@ void CCutImage::divide(bool d) {
     if(d){
         //_fullImg->setOpacity(100);
 
-        _fullImg->setGLProgramState(grayGLProgrameState);
+       // _fullImg->setGLProgramState(grayGLProgrameState);
     }else{
         //_fullImg->setOpacity(255);
-        _fullImg->setGLProgramState(colorGLProgrameState);
+        //_fullImg->setGLProgramState(colorGLProgrameState);
     }
+    _fullImg[0]->setVisible(!d);
+    _fullImg[1]->setVisible(d);
     
     setCutPos();
     for(int i = 0; i < _dividePiece; i++){
