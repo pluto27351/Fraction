@@ -27,7 +27,7 @@ bool TCircleSprite::Collision(Point touch) {
     return false;
 }
 
-void TCircleSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],float r)
+void TCircleSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[])
 {
     _obj = new Node;
     
@@ -44,7 +44,7 @@ void TCircleSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[
     _fscale = scale;
     
     setPosition(pos[0]);
-    setRotation(r);
+    setRotation(r[0]);
     
     _bTouched = false;
     _bRotated = false;

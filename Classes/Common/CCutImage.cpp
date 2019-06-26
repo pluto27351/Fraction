@@ -16,12 +16,28 @@ CCutImage::~CCutImage()
     if (_dividePiece != 0) {
        // for (int i = 0; i < _totalPiece; i++) removeChild(img[i]);
         delete [] img;
+        _StickyData->deleteImgData();
         delete [] _StickyData;
     }
 }
 
-CCutImage::CCutImage(int picNum, float scale,int num) {
+CCutImage::CCutImage(int picNum, float scale,int num)
+{
+    auto fileUtiles = FileUtils::getInstance();
+    auto fragmentGrayFullPath = fileUtiles->fullPathForFilename("shader/gray.fsh");
+    auto fragSource = fileUtiles->getStringFromFile(fragmentGrayFullPath);
+    auto glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+    grayGLProgrameState = GLProgramState::getOrCreateWithGLProgram(glprogram);
+    grayGLProgrameState->retain();
+    
+    fileUtiles = FileUtils::getInstance();
+    fragmentGrayFullPath = fileUtiles->fullPathForFilename("shader/color.fsh");
+    fragSource = fileUtiles->getStringFromFile(fragmentGrayFullPath);
+    glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+    colorGLProgrameState = GLProgramState::getOrCreateWithGLProgram(glprogram);
+    colorGLProgrameState->retain();
 
+    
     switch (picNum) {
         case PANCAKE:
             _name = "stuff_muffin";
@@ -29,8 +45,16 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
             CreateImg(scale,num);
             break;
         case PAPER:
+            _name = "bnn";
+            _cutDir = Vec2(50,0);
+            _mode = 3;
+            CreateImg2(scale,num);
             break;
         case WATER:
+            _name = "nut";
+            _cutDir = Vec2(50,0);
+            _mode = 3;
+            CreateImg2(scale,num);
             break;
         case BAMBOO:
             _name = "banboo";
@@ -45,6 +69,10 @@ CCutImage::CCutImage(int picNum, float scale,int num) {
             CreateImg2(scale,num);
             break;
         case DISTANCE:
+            _name = "tree";
+            _cutDir = Vec2(50,0);
+            _mode = 3;
+            CreateImg2(scale,num);
             break;
         case BANANA:
             _name = "bnn";
@@ -102,37 +130,39 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     int totalPiece = obj->getChildByName("0")->getTag();
 
     int gPicec = totalPiece / _dividePiece;
-    Point *pos = new Point[gPicec];
+
     img = new TouchSprite*[_dividePiece];
     _StickyData = new StickyData[_dividePiece];
 
     sprintf(picname, "%s_1.png", _name);
     int n=0;
-    
     Point totalPos;
-    float angle = 0;
+    
     for (int i = 0; i <_dividePiece; i++) {
+        _StickyData[i].createImgData(gPicec);
         totalPos = Point(0,0);
         while((n/gPicec == i)){
             char p[10];  sprintf(p, "1_%d",n);
-            pos[n%gPicec] = obj->getChildByName(p)->getPosition();
-            totalPos += pos[n%gPicec];
+            int k = n%gPicec;
+            _StickyData[i]._imgPos[k] = obj->getChildByName(p)->getPosition();
+            _StickyData[i]._imgAngle[k] =obj->getChildByName(p)->getRotation();
+            totalPos += _StickyData[i]._imgPos[k];
             n++;
         }
         totalPos = totalPos / gPicec;
-        for(int k=0; k<gPicec; k++) pos[k] -= totalPos;
+        for(int k=0; k<gPicec; k++) _StickyData[i]._imgPos[k] -= totalPos;
+        
         img[i] = new TRectSprite;
-        img[i]->setImgInfo(picname,gPicec, _scale,pos,angle);
+        img[i]->setImgInfo(picname,gPicec, _scale,_StickyData[i]._imgPos,_StickyData[i]._imgAngle);
         img[i]->setCollisionInfo(_dividePiece);
         img[i]->setPosition(POS+totalPos);
-        addChild(img[i]->getNode(), BOTTOM_LEVEL);
-        
         img[i]->setSticky(i);
-        _StickyData[i].angle = angle;
-        _StickyData[i].pos = img[i]->getPosition();
-        _StickyData[i].isSticky = true;
-        
         img[i]->setVisible(false);
+        addChild(img[i]->getNode(), BOTTOM_LEVEL);
+    
+        _StickyData[i]._NodeAngle = 0;
+        _StickyData[i]._NodePos = img[i]->getPosition();
+        _StickyData[i].isSticky = true;
     }
     
     setCutPos();
@@ -159,21 +189,23 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
 
     img = new TouchSprite*[_dividePiece];
     _StickyData = new StickyData[_dividePiece];
+
     for (int i = 0; i < _dividePiece; i++) {
         img[i] = new TCircleSprite;
-        float angle = (360 / _dividePiece)*i;
+        float angle[1] = {(360.0f / _dividePiece)*i};
         Point pos[1] = {POS};
         img[i]->setImgInfo(picname,1, _scale,pos,angle);
         img[i]->setCollisionInfo(_dividePiece);
-        
-        addChild(img[i]->getNode(), BOTTOM_LEVEL);
-        
         img[i]->setSticky(i);
-        _StickyData[i].angle = angle;
-        _StickyData[i].pos = img[i]->getPosition();
-        _StickyData[i].isSticky = true;
-        
         img[i]->setVisible(false);
+        addChild(img[i]->getNode(), BOTTOM_LEVEL);
+
+        _StickyData[i].createImgData(1);
+        _StickyData[i]._NodeAngle = angle[0];
+        _StickyData[i]._NodePos = img[i]->getPosition();
+        _StickyData[i]._imgPos[0] = Point(0,0);
+        _StickyData[i]._imgAngle[0] = 0;
+        _StickyData[i].isSticky = true;
     }
     
     _StickyRadius = powf(img[0]->ImgRadius, 2);
@@ -189,8 +221,8 @@ void CCutImage::setCutPos(){                  //計算切分時位置
     switch(_mode){
         case 0:  //圓形用
             for(int i = 0; i < _dividePiece; i++){
-                img[i]->setPosition(_StickyData[i].pos);
-                //img[i]->setRotation(_StickyData[i].angle);
+                img[i]->setPosition(_StickyData[i]._NodePos);
+                img[i]->setRotation(_StickyData[i]._NodeAngle);
                 img[i]->setSticky(i);
                 _StickyData[i].isSticky = true;
             }
@@ -200,7 +232,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             for (int i = 0; i < _dividePiece; i++) {
                 Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
                 img[i]->setPosition(POS + move);
-                img[i]->setRotation(_StickyData[i].angle);
+                img[i]->setRotation(_StickyData[i]._NodeAngle);
                 img[i]->setSticky(-1);
                 _StickyData[i].isSticky = false;
             }
@@ -212,8 +244,8 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 for (int i = 0; i < _dividePiece; i++) {
                     int gNum = i;
                     move = _cutDir * (gNum - n);
-                    img[i]->setPosition(_StickyData[i].pos + move);
-                    img[i]->setRotation(_StickyData[i].angle);
+                    img[i]->setPosition(_StickyData[i]._NodePos + move);
+                    img[i]->setRotation(_StickyData[i]._NodeAngle);
                     img[i]->setSticky(-1);
                     _StickyData[i].isSticky = false;
                 }
@@ -222,7 +254,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                     int gNum = i ;
                     if(gNum < n) move = _cutDir * (gNum - n);
                     else         move = _cutDir * (gNum - n + 1);
-                    img[i]->setPosition(_StickyData[i].pos + move);
+                    img[i]->setPosition(_StickyData[i]._NodePos + move);
                     img[i]->setSticky(-1);
                     _StickyData[i].isSticky = false;
                 }
@@ -234,9 +266,12 @@ void CCutImage::setCutPos(){                  //計算切分時位置
 
 void CCutImage::divide(bool d) {
     if(d){
-        _fullImg->setOpacity(100);
+        //_fullImg->setOpacity(100);
+
+        _fullImg->setGLProgramState(grayGLProgrameState);
     }else{
-        _fullImg->setOpacity(255);
+        //_fullImg->setOpacity(255);
+        _fullImg->setGLProgramState(colorGLProgrameState);
     }
     
     setCutPos();
@@ -307,15 +342,19 @@ void CCutImage::Sticky(TouchSprite *img) {
 		float preDAngle = 1000, DAngle;
 		for (int i = 0; i < _dividePiece; i++) {        //判斷和哪個角度最靠近
 			if (_StickyData[i].isSticky == false) {
-				DAngle = abs(_StickyData[i].angle - angle);   //算角度差
+				DAngle = abs(_StickyData[i]._NodeAngle - angle);   //算角度差
 				if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料
 					preDAngle = DAngle;
 					stickyNum = i;
 				}
 			}
 		}
-		img->setPosition(_StickyData[stickyNum].pos);       //設定圖片位置與角度
-		img->setRotation(_StickyData[stickyNum].angle);
+        
+        if(stickyNum == -1) return;
+        for(int i=0; i<_StickyData[stickyNum]._num; i++)
+            img->setImgPandR(i, _StickyData[stickyNum]._imgPos[i], _StickyData[stickyNum]._imgAngle[i]);
+		img->setPosition(_StickyData[stickyNum]._NodePos);       //設定圖片位置與角度
+		img->setRotation(_StickyData[stickyNum]._NodeAngle);
 		img->setSticky(stickyNum);                          //紀錄區域
 		_StickyData[stickyNum].isSticky = true;
 	}

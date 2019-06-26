@@ -9,7 +9,7 @@ private:
     float ImgAngle;
     
 public:
-    void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r);
+    void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[]);
     void setCollisionInfo(float totalPiece);
     ~TCircleSprite(){};
 };

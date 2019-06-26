@@ -19,7 +19,7 @@ bool TRectSprite::Collision(Point touch) {
     }
 }
 
-void TRectSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],float r)
+void TRectSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[])
 {
     _obj = new Node;
     
@@ -28,15 +28,15 @@ void TRectSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],
     for(int i=0;i<_piece;i++){
         _Pic[i] = (Sprite *)Sprite::createWithSpriteFrameName(Img);
         _Pic[i]->setScale(scale);
-        Point pp =pos[i];
-        _Pic[i]->setPosition(pp);
+        _Pic[i]->setPosition(pos[i]);
+        _Pic[i]->setRotation(r[i]);
        
         _obj->addChild(_Pic[i]);
     }
     _fscale = scale;
     
    // setPosition(pos);
-    setRotation(r);
+   // setRotation(r);
     
     _bTouched = false;
     _bRotated = false;

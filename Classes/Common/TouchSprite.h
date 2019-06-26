@@ -40,7 +40,7 @@ public:
 
     virtual ~TouchSprite(){};
     
-    virtual void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r){};
+    virtual void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[]){};
     virtual void setCollisionInfo(float totalPiece){};
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
@@ -57,6 +57,7 @@ public:
     
 
 	void setPosition(Point pos);
+    void setImgPandR(int n,Point pos,float r);
     void setRotation(float r);
     
 	Point getPosition() { return _SpriteLoc; }

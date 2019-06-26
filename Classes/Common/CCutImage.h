@@ -17,9 +17,23 @@ using namespace ui;
 
 struct StickyData  //磁鐵資訊
 {
-	float angle;
-	Point pos;
+	float _NodeAngle;
+	Point _NodePos;
+    float *_imgAngle;
+    Point *_imgPos;
+    int _num;
 	bool isSticky = false;
+    
+    void createImgData(int num){
+        _num = num;
+        _imgAngle = new float [num];
+        _imgPos = new Point [num];
+    }
+    
+    void deleteImgData(){
+        delete [] _imgAngle;
+        delete [] _imgPos;
+    }
 };
 
 class CCutImage : public cocos2d::Node
@@ -38,7 +52,9 @@ private:
 	int touchedAmount;       //觸控點數量
 	Point rotatePos;
 	int rotateId;
-
+    
+    GLProgramState *grayGLProgrameState,*colorGLProgrameState;
+    
 	StickyData *_StickyData;    
 	float _StickyRadius;        
 	void Sticky(TouchSprite*);

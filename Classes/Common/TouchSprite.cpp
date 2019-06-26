@@ -27,6 +27,10 @@ void TouchSprite::setPosition(Point pos) {
    // for(int i=0; i<_piece; i++)_Pic[i]->setPosition(_SpriteLoc);
 }
 
+void TouchSprite::setImgPandR(int n,Point pos,float r){
+    _Pic[n]->setPosition(pos);
+    _Pic[n]->setRotation(r);
+}
 
 
 bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
