@@ -41,7 +41,7 @@ CCutImage::CCutImage(int picNum, float scale,int num)
     switch (picNum) {
         case PANCAKE:
             _name = "pancake";
-            _mode = 0;
+            _mode = 0;_hasline = true;
             CreateImg(scale,num);
             break;
         case PAPER:
@@ -202,7 +202,8 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
 
     img = new TouchSprite*[_dividePiece];
     _StickyData = new StickyData[_dividePiece];
-
+    _line = new Sprite*[_dividePiece];
+    float a = 180 / _dividePiece;
     for (int i = 0; i < _dividePiece; i++) {
         img[i] = new TCircleSprite;
         float angle[1] = {(360.0f / _dividePiece)*i};
@@ -219,6 +220,13 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
         _StickyData[i]._imgPos[0] = Point(0,0);
         _StickyData[i]._imgAngle[0] = 0;
         _StickyData[i].isSticky = true;
+        
+        _line[i] = (Sprite *)Sprite::createWithSpriteFrameName("pancake_line.png");
+        _line[i]->setPosition(POS);
+        _line[i]->setScale(scale);
+        _line[i]->setRotation(angle[0]+a);
+        _line[i]->setVisible(false);
+        addChild(_line[i], BOTTOM_LEVEL+1);
     }
     _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
@@ -237,6 +245,8 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 img[i]->setRotation(_StickyData[i]._NodeAngle);
                 img[i]->setSticky(i);
                 _StickyData[i].isSticky = true;
+                
+                _line[i]->setVisible(true);
             }
         }
         break;

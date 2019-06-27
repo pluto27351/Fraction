@@ -33,15 +33,15 @@
             <key>backcolor.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3003,595},{512,384}}</string>
+                <string>{{3003,595},{515,390}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{512,384}}</string>
+                <string>{{0,0},{515,390}}</string>
                 <key>sourceSize</key>
-                <string>{512,384}</string>
+                <string>{515,390}</string>
             </dict>
             <key>background.jpg</key>
             <dict>
@@ -215,7 +215,7 @@
             <key>grape_1.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3515,595},{392,406}}</string>
+                <string>{{3518,595},{392,406}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1318,7 +1318,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:50e2544d387de9f8720cbd287aa15508:c303fe4065ddd92b7cb88c47d6e60395:a0ff510bb331eafa542d6069eac6f213$</string>
+            <string>$TexturePacker:SmartUpdate:fc5b4327865a0d236f9729c8f7039b0f:2f45495f80b08d8fc8156b3714ea37ae:a0ff510bb331eafa542d6069eac6f213$</string>
             <key>textureFileName</key>
             <string>teach_ui.png</string>
         </dict>
