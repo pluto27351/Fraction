@@ -60,6 +60,7 @@ private:
 	StickyData *_StickyData;    
 	float _StickyRadius;        
 	void Sticky(TouchSprite*);
+    void Sticky(TouchSprite*,Point);
     void setCutPos();
 public:
 	CCutImage(const char *name, float scale,int num);

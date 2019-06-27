@@ -66,4 +66,5 @@ public:
 	int ResetSticky();
     void setVisible(bool b);
     int getPieceAmount(){return _piece;}
+    int getPicWidth(){return (_Pic[0]->getContentSize().width);}
 };

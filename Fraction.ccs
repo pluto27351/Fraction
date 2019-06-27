@@ -149,12 +149,16 @@
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
             <PlistImageFile Name="ans_click.png" Key="ans_click.png" />
+            <PlistImageFile Name="backcolor.png" Key="backcolor.png" />
             <PlistImageFile Name="background.jpg" Key="background.jpg" />
             <PlistImageFile Name="banana_0.png" Key="banana_0.png" />
             <PlistImageFile Name="banana_1.png" Key="banana_1.png" />
+            <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
             <PlistImageFile Name="branch_0.png" Key="branch_0.png" />
             <PlistImageFile Name="branch_1.png" Key="branch_1.png" />
             <PlistImageFile Name="branch_2.png" Key="branch_2.png" />
+            <PlistImageFile Name="brush.png" Key="brush.png" />
+            <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
             <PlistImageFile Name="flower_0.png" Key="flower_0.png" />
             <PlistImageFile Name="flower_1.png" Key="flower_1.png" />
             <PlistImageFile Name="flower_2.png" Key="flower_2.png" />
@@ -216,9 +220,11 @@
             <PlistImageFile Name="pancake_7.png" Key="pancake_7.png" />
             <PlistImageFile Name="pancake_8.png" Key="pancake_8.png" />
             <PlistImageFile Name="pancake_9.png" Key="pancake_9.png" />
+            <PlistImageFile Name="pancake_line.png" Key="pancake_line.png" />
             <PlistImageFile Name="road_0.png" Key="road_0.png" />
             <PlistImageFile Name="road_1.png" Key="road_1.png" />
             <PlistImageFile Name="road_2.png" Key="road_2.png" />
+            <PlistImageFile Name="road_line.png" Key="road_line.png" />
             <PlistImageFile Name="tomato_0.png" Key="tomato_0.png" />
             <PlistImageFile Name="tomato_1.png" Key="tomato_1.png" />
             <PlistImageFile Name="tomato_2.png" Key="tomato_2.png" />
@@ -241,20 +247,6 @@
             <PlistImageFile Name="tool_reset.png" Key="tool_reset.png" />
             <PlistImageFile Name="tool_reset_click.png" Key="tool_reset_click.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
-            <PlistImageFile Name="backcolor.png" Key="backcolor.png" />
-            <PlistImageFile Name="pancake_line.png" Key="pancake_line.png" />
-            <PlistImageFile Name="road_line.png" Key="road_line.png" />
-            <PlistImageFile Name="stuff_muffin10.png" Key="stuff_muffin10.png" />
-            <PlistImageFile Name="stuff_muffin12.png" Key="stuff_muffin12.png" />
-            <PlistImageFile Name="stuff_muffin2.png" Key="stuff_muffin2.png" />
-            <PlistImageFile Name="stuff_muffin3.png" Key="stuff_muffin3.png" />
-            <PlistImageFile Name="stuff_muffin4.png" Key="stuff_muffin4.png" />
-            <PlistImageFile Name="stuff_muffin5.png" Key="stuff_muffin5.png" />
-            <PlistImageFile Name="stuff_muffin6.png" Key="stuff_muffin6.png" />
-            <PlistImageFile Name="stuff_muffin8.png" Key="stuff_muffin8.png" />
-            <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
-            <PlistImageFile Name="brush.png" Key="brush.png" />
-            <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="cover_bk.jpg" />
