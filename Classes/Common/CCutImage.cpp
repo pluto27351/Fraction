@@ -6,7 +6,7 @@
 
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
-#define POS Vec2(500,650)
+#define POS Vec2(500,700)
 
 //enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
 enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
@@ -117,14 +117,12 @@ CCutImage::CCutImage(int picNum, float scale,int num)
 
 void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     char picname[20];
-    for(int i=0;i<2;i++){
-        sprintf(picname, "%s_%d.png",_name,i);
-        _fullImg[i] = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        _fullImg[i]->setPosition(POS);
-        _fullImg[i]->setScale(scale);
-        addChild(_fullImg[i], BOTTOM_LEVEL);
-    }
-    _fullImg[0]->setVisible(false);
+    
+    sprintf(picname, "%s_1.png",_name);
+    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+    _fullImg->setPosition(POS);
+    _fullImg->setScale(scale);
+    addChild(_fullImg, BOTTOM_LEVEL);
    // _fullImg[0]->setGLProgramState(grayGLProgrameState);
     
     sprintf(picname, "ani/%s.csb",_name);
@@ -184,14 +182,11 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
 
 void CCutImage::CreateImg(float scale,int num){  // 圓形
     char picname[20];
-    for(int i=0;i<2;i++){
-        sprintf(picname, "%s_%d.png",_name,i);
-        _fullImg[i] = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        _fullImg[i]->setPosition(POS);
-        _fullImg[i]->setScale(scale);
-        addChild(_fullImg[i], BOTTOM_LEVEL);
-    }
-    _fullImg[0]->setVisible(false);
+    sprintf(picname, "%s_1.png",_name);
+    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+    _fullImg->setPosition(POS);
+    _fullImg->setScale(scale);
+    addChild(_fullImg, BOTTOM_LEVEL);
     //_fullImg[0]->setGLProgramState(grayGLProgrameState);
     
     _dividePiece = num;
@@ -245,8 +240,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 img[i]->setRotation(_StickyData[i]._NodeAngle);
                 img[i]->setSticky(i);
                 _StickyData[i].isSticky = true;
-                
-                _line[i]->setVisible(true);
+
             }
         }
         break;
@@ -283,20 +277,20 @@ void CCutImage::setCutPos(){                  //計算切分時位置
 
 void CCutImage::divide(bool d) {
     if(d){
-        //_fullImg->setOpacity(100);
-
-       // _fullImg->setGLProgramState(grayGLProgrameState);
+        setCutPos();
+        _fullImg->setGLProgramState(grayGLProgrameState);
+        _fullImg->setOpacity(100);
     }else{
-        //_fullImg->setOpacity(255);
-        //_fullImg->setGLProgramState(colorGLProgrameState);
+        _fullImg->setOpacity(255);
+        _fullImg->setGLProgramState(colorGLProgrameState);
     }
-    _fullImg[1]->setVisible(!d);
-    _fullImg[0]->setVisible(d);
+   // _fullImg->setVisible(!d);
     
-    setCutPos();
     for(int i = 0; i < _dividePiece; i++){
         img[i]->setVisible(d);
+        if(_hasline) _line[i]->setVisible(d);
     }
+    
     
     _divided = d;
 
@@ -379,8 +373,8 @@ void CCutImage::touchesEnded(cocos2d::Point inPos, int id) {
 //}
 
 void CCutImage::Sticky(TouchSprite *img,Point pt) {
-    auto posInNode = _fullImg[0]->convertToNodeSpace(pt);
-    if (Rect(0,0,_fullImg[0]->getContentSize().width,_fullImg[0]->getContentSize().height).containsPoint(posInNode)) {    //位置靠近磁鐵區域
+    auto posInNode = _fullImg->convertToNodeSpace(pt);
+    if (Rect(0,0,_fullImg->getContentSize().width,_fullImg->getContentSize().height).containsPoint(posInNode)) {    //位置靠近磁鐵區域
         int stickyNum = -1;
         float angle = img->getAngle();
         float preDAngle = 1000, DAngle;

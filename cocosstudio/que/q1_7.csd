@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1393279672" Tag="100" IconVisible="False" LeftMargin="-570.5000" RightMargin="-570.5000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="60" LabelText="7. &#xA;　鹿太太將許多花朵捆成一束，請問一束花和    分之幾束花一樣多?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1141.0000" Y="356.0000" />
+          <AbstractNodeData Name="bg" ActionTag="1393279672" Tag="100" IconVisible="False" LeftMargin="-650.0000" RightMargin="-650.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="72" LabelText="7. 鹿太太將許多花朵捆成一束，請問一束花和    分之幾束花一樣多?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1300.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -18,10 +18,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="C_1" ActionTag="-1882694570" Tag="80" IconVisible="False" LeftMargin="-461.9451" RightMargin="424.9451" TopMargin="7.3190" BottomMargin="-75.3190" FontSize="60" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="37.0000" Y="68.0000" />
+          <AbstractNodeData Name="C_1" ActionTag="-1882694570" Tag="80" IconVisible="False" LeftMargin="-379.3114" RightMargin="341.3114" TopMargin="-54.2355" BottomMargin="-17.7645" FontSize="72" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="38.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-443.4451" Y="-41.3190" />
+            <Position X="-360.3114" Y="18.2355" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />

@@ -41,7 +41,7 @@ class CCutImage : public cocos2d::Node
 private:
 	TouchSprite **img;        //切塊圖片們
 	TouchSprite *rotateImg;  //指定被旋轉圖片
-    Sprite *_fullImg[2];          //完整圖片
+    Sprite *_fullImg;          //完整圖片
     Sprite **_line;
     
     float _scale;
@@ -57,6 +57,8 @@ private:
 	int rotateId;
     
     GLProgramState *grayGLProgrameState,*colorGLProgrameState;
+    
+    GLProgram *shader_program;
     
 	StickyData *_StickyData;    
 	float _StickyRadius;        

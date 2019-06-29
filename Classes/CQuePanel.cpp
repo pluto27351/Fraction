@@ -6,7 +6,7 @@
 #define QUEY_POS 1360
 
 #define ANS_POS Vec2(1450,650)
-#define QUE_POS Vec2(830,1200)
+#define QUE_POS Vec2(1024,1200)
 
 CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 {
@@ -210,7 +210,7 @@ bool CQuePanel::touchesBegin(Point inPt, int iId, int iMode)
     
     if(_bnum){
         if ( _numSwitcher.touchesBegin(inPt) )return true; //分母選單
-        else {
+        else {                                             //點在選單外->關閉選單
             _bnum = false;
             _numBtn.setStatus(false);
             _numSwitcher.setVisible(_bnum);

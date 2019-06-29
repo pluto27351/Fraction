@@ -8,7 +8,7 @@
 bool TRectSprite::Collision(Point touch) {
     for(int i=0;i<_piece;i++){
         auto posInNode = _Pic[i]->convertToNodeSpace(touch);
-        if (Rect(0,0,_Pic[i]->getContentSize().width,_Pic[i]->getContentSize().height).containsPoint(posInNode))
+        if (Rect(0,0,_Pic[i]->getContentSize().width+8,_Pic[i]->getContentSize().height+8).containsPoint(posInNode))
         {
             return true;
         }

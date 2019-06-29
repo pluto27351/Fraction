@@ -33,7 +33,7 @@ void TouchSprite::setImgPandR(int n,Point pos,float r){
 }
 
 void TouchSprite::setDividedImg(){
-    float d = _piece /2.0f;
+    float d = (_piece-1) /2.0f;
     for(int i=0;i<_piece;i++){
         Point pos = Point(50*(i - d),0);
         _Pic[i]->setPosition(pos);

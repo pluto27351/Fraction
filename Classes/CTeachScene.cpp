@@ -82,7 +82,8 @@ void CTeachScene::onTouchesBegan(const std::vector<cocos2d::Touch*> touches, coc
 		bool touchOnEmpty = true;
 
 		touchOnEmpty *= !_queController->touchesBegin(touchLoc, touchId, _toolMode);
-
+        _bBtnLock=_queController->getBoardStatus();
+        
 		if (!_bBtnLock) {
 			touchOnEmpty *= !_menuBtn.touchesBegin(touchLoc);
 			touchOnEmpty *= !_handDrawing->touchesBegin(touchLoc);
@@ -122,8 +123,8 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 		auto touchId = touch->getID();
 			
 		if (_queController->touchesEnded(touchLoc, touchId, _toolMode)) {
-			if (_queController->getBoardStatus())  _bBtnLock = true;
-			else _bBtnLock = false;
+//            if (_queController->getBoardStatus())  _bBtnLock = true;
+//            else _bBtnLock = false;
             
             if(_queController->resetActive())_handDrawing->clearWhiteBoard();
             else if (_queController->cutDown())_handDrawing->changeToHand();
