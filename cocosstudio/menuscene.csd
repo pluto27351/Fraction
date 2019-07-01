@@ -17,7 +17,7 @@
             <FileData Type="PlistSubImage" Path="Ch_Course.jpg" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Ch_cloud" ActionTag="-223908542" Alpha="74" Tag="41" IconVisible="False" LeftMargin="-5.8483" RightMargin="5.8483" TopMargin="-13.7946" BottomMargin="13.7946" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Ch_cloud" ActionTag="-223908542" Alpha="74" Tag="41" IconVisible="False" LeftMargin="-5.8483" RightMargin="5.8484" TopMargin="-13.7947" BottomMargin="13.7946" ctype="SpriteObjectData">
             <Size X="2048.0000" Y="1536.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1018.1517" Y="781.7946" />
@@ -72,7 +72,7 @@
             <FileData Type="PlistSubImage" Path="Ch_02.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_1" ActionTag="-1202152989" Tag="186" IconVisible="False" LeftMargin="314.2646" RightMargin="1155.7354" TopMargin="443.2478" BottomMargin="822.7521" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_1" ActionTag="-1202152989" Tag="186" IconVisible="False" LeftMargin="314.2646" RightMargin="1155.7354" TopMargin="443.2479" BottomMargin="822.7521" ctype="SpriteObjectData">
             <Size X="578.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="603.2646" Y="957.7521" />
@@ -83,15 +83,26 @@
             <FileData Type="PlistSubImage" Path="Ch_01.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gobtn" ActionTag="1917846829" Tag="196" IconVisible="False" LeftMargin="1794.7148" RightMargin="-57.7148" TopMargin="620.4204" BottomMargin="680.5796" ctype="SpriteObjectData">
-            <Size X="311.0000" Y="235.0000" />
+          <AbstractNodeData Name="gobtn" ActionTag="1917846829" Tag="196" IconVisible="False" LeftMargin="1927.2148" RightMargin="74.7852" TopMargin="714.9204" BottomMargin="775.0796" ctype="SpriteObjectData">
+            <Size X="105.0000" Y="124.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1950.2148" Y="798.0796" />
             <Scale ScaleX="0.7000" ScaleY="0.7000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9523" Y="0.5196" />
-            <PreSize X="0.1519" Y="0.1530" />
-            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
+            <PreSize X="0.0225" Y="0.0299" />
+            <FileData Type="PlistSubImage" Path="next_R.png" Plist="img/teach_ui.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="storybtn" ActionTag="-271756054" Tag="71" IconVisible="False" LeftMargin="1846.2754" RightMargin="93.7246" TopMargin="1344.0889" BottomMargin="68.9111" ctype="SpriteObjectData">
+            <Size X="108.0000" Y="123.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1900.2754" Y="130.4111" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9279" Y="0.0849" />
+            <PreSize X="0.0527" Y="0.0801" />
+            <FileData Type="PlistSubImage" Path="ans.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

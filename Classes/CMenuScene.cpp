@@ -1,6 +1,7 @@
 #include "CMenuScene.h"
 //#include "Common/const.h"
 #include "CTeachScene.h"
+#include "CStoryScene.h"
 
 USING_NS_CC;
 
@@ -60,6 +61,13 @@ bool CMenuScene::init()
 	_goBtn.setScale(scale);
 	_goBtn.setVisible(false);
 	rootNode->removeChildByName("gobtn");
+    
+    pt = rootNode->getChildByName("storybtn")->getPosition();
+    scale = rootNode->getChildByName("storybtn")->getScale();
+    _storyBtn.setButtonInfo("ans.png", "ans_click.png", *this, pt, 3);
+    _storyBtn.setScale(scale);
+    rootNode->removeChildByName("storybtn");
+    
 
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
 	_listener1->onTouchBegan = CC_CALLBACK_2(CMenuScene::onTouchBegan, this);		//加入觸碰開始事件
@@ -78,6 +86,10 @@ void CMenuScene::doStep(float dt)  // OnFrameMove
 		this->unscheduleAllCallbacks();
 		Director::getInstance()->runWithScene(CTeachScene::createScene(_unitIdx));
 	}
+    if(storyPressed){
+        this->unscheduleAllCallbacks();
+        Director::getInstance()->runWithScene(CStoryScene::createScene());
+    }
 	
 }
 
@@ -89,6 +101,7 @@ bool  CMenuScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//
 		_unitBtn[i]->touchesBegin(touchLoc);
 	}
 	_goBtn.touchesBegin(touchLoc);
+    _storyBtn.touchesBegin(touchLoc);
 	return true;
 }
 
@@ -100,6 +113,7 @@ void  CMenuScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 		_unitBtn[i]->touchesMoved(touchLoc);
 	}
 	_goBtn.touchesMoved(touchLoc);
+    _storyBtn.touchesMoved(touchLoc);
 }
 
 void  CMenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
@@ -115,6 +129,7 @@ void  CMenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 		}
 	}
 	if (_goBtn.touchesEnded(touchLoc)) goBtnPressed = true;
+    if (_storyBtn.touchesEnded(touchLoc)) storyPressed = true;
 }
 
 void CMenuScene::ShowUnitStory() {

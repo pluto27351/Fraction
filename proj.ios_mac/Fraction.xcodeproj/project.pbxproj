@@ -72,6 +72,7 @@
 		F13EDDFC2222CD3C00DD2F00 /* CCutImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDEF2222CD3C00DD2F00 /* CCutImage.cpp */; };
 		F13EDDFD2222CD3C00DD2F00 /* CAnsCreater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDF02222CD3C00DD2F00 /* CAnsCreater.cpp */; };
 		F13EDDFE2222CD3C00DD2F00 /* CSwitchGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDF12222CD3C00DD2F00 /* CSwitchGroup.cpp */; };
+		F16CE27D22C9FF0500F7A329 /* CStoryScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F16CE27C22C9FF0500F7A329 /* CStoryScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +158,8 @@
 		F13EDDF12222CD3C00DD2F00 /* CSwitchGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CSwitchGroup.cpp; sourceTree = "<group>"; };
 		F13EDDF22222CD3C00DD2F00 /* CAnsCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAnsCreater.h; sourceTree = "<group>"; };
 		F13EDDF32222CD3C00DD2F00 /* CHomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomeScene.h; sourceTree = "<group>"; };
+		F16CE27C22C9FF0500F7A329 /* CStoryScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CStoryScene.cpp; sourceTree = "<group>"; };
+		F16CE27E22C9FF1400F7A329 /* CStoryScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CStoryScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +296,8 @@
 				F13EDDDD2222CD3B00DD2F00 /* CTeachScene.cpp */,
 				F13EDDDC2222CD3B00DD2F00 /* CTeachScene.h */,
 				F13EDDDF2222CD3B00DD2F00 /* Data.h */,
+				F16CE27C22C9FF0500F7A329 /* CStoryScene.cpp */,
+				F16CE27E22C9FF1400F7A329 /* CStoryScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -497,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16CE27D22C9FF0500F7A329 /* CStoryScene.cpp in Sources */,
 				F13EDDFA2222CD3C00DD2F00 /* CButton.cpp in Sources */,
 				F13EDDF82222CD3C00DD2F00 /* CHomeScene.cpp in Sources */,
 				F13EDDFB2222CD3C00DD2F00 /* TouchSprite.cpp in Sources */,

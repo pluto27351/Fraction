@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/CMenuScene.cpp"
-            timestampString = "583240910.73797"
+            timestampString = "583664609.13887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "CMenuScene::~CMenuScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -32,22 +32,6 @@
             startingLineNumber = "104"
             endingLineNumber = "104"
             landmarkName = "CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/Common/TouchSprite.cpp"
-            timestampString = "583663059.70942"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "TouchSprite::setDividedImg()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

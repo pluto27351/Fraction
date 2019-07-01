@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
@@ -11,11 +11,13 @@ class CMenuScene : public cocos2d::Layer
 {
 	CButton *_unitBtn[MAX_UNITS];
 	CButton _goBtn;
+    CButton _storyBtn;
 	Sprite *_story;
 
 	int		_unitIdx;
 	bool goBtnPressed = false;
-
+    bool storyPressed = false;
+    
 	void ShowUnitStory();
 
 public:
