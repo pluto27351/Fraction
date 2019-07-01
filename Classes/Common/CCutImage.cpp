@@ -123,7 +123,6 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     _fullImg->setPosition(POS);
     _fullImg->setScale(scale);
     addChild(_fullImg, BOTTOM_LEVEL);
-   // _fullImg[0]->setGLProgramState(grayGLProgrameState);
     
     sprintf(picname, "ani/%s.csb",_name);
     auto obj = CSLoader::createNode(picname);
@@ -132,7 +131,6 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     _divided = false;
     
     int totalPiece = obj->getChildByName("0")->getTag();
-
     int gPicec = totalPiece / _dividePiece;
 
     img = new TouchSprite*[_dividePiece];
@@ -256,6 +254,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 _StickyData[i].isSticky = false;
                 img[i]->setDividedImg();
             }
+
         }
         break;
         case 2: //非連續用-圓形切法

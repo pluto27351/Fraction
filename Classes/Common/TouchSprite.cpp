@@ -32,13 +32,42 @@ void TouchSprite::setImgPandR(int n,Point pos,float r){
     _Pic[n]->setRotation(r);
 }
 
+//float d = (_piece-1) /2.0f;
+//for(int i=0;i<_piece;i++){
+//    Point pos = Point(50*(i - d),0);
+//    _Pic[i]->setPosition(pos);
+//    _Pic[i]->setRotation(0);
+//}
+
 void TouchSprite::setDividedImg(){
-    float d = (_piece-1) /2.0f;
-    for(int i=0;i<_piece;i++){
-        Point pos = Point(50*(i - d),0);
-        _Pic[i]->setPosition(pos);
-        _Pic[i]->setRotation(0);
+    int g = _piece / 3;
+    int tailamount = _piece % 3;
+    Vec2 size =  _Pic[0]->getContentSize()/3*2;
+
+    int i;
+    for(i = 0; i<g; i++){
+        for(int j=0;j<3;j++){
+            float x = size.x*(j - 1);
+            _Pic[i*3+j]->setPositionX(x);
+            _Pic[i*3+j]->setRotation(0);
+        }
     }
+    
+    float d = (tailamount-1)/2.0 ;
+    for(int j=0;j<tailamount;j++){
+        float x = size.x*(j - d);
+        _Pic[i*3+j]->setPositionX(x);
+        _Pic[i*3+j]->setRotation(0);
+    }
+    
+    if(tailamount != 0) g++;
+    d = (g-1) /2.0f;
+    for(int i=0;i<_piece;i++){
+        int j = i / 3;
+        float y = -70*(j - d);
+        _Pic[i]->setPositionY(y);
+    }
+    
 }
 
 bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
