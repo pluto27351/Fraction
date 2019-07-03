@@ -41,8 +41,11 @@ class CCutImage : public cocos2d::Node
 private:
 	TouchSprite *img;        //切塊圖片們
 	TouchSprite *rotateImg;  //指定被旋轉圖片
-    Sprite *_fullImg;          //完整圖片
+    //Sprite *_fullImg;          //完整圖片
+    std::vector<Sprite*> _fullImg;          //完整圖片
     std::vector<Sprite*> _line;
+    //Node *_fullNode;
+    int _fullAmount;
     
     float _scale;
     Vec2 _cutDir;
@@ -67,11 +70,14 @@ private:
     void setCutPos();
 public:
     ~CCutImage();
-	CCutImage(const char *name, float scale,int num);
-    CCutImage(int picNum,float scale,int num);
+	//CCutImage(const char *name,int NodeAmount float scale,int dividedP);
+    CCutImage(int picNum,int NodeAmount, float scale,int dividedP);
     void CreateImg(float scale,int num);
     void CreateImg2(float scale,int num);
+//    void addNodeIn(cocos2d::Layer &parent);
+//    void romoveChild(cocos2d::Layer &parent);
 	void divide(bool);
+
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	bool touchesMoved(cocos2d::Point inPos, int id);
 	void touchesEnded(cocos2d::Point inPos, int id);

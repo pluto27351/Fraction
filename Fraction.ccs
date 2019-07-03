@@ -14,6 +14,7 @@
           <Project Name="nut.csd" Type="Node" />
           <Project Name="road.csd" Type="Node" />
           <Project Name="tomato.csd" Type="Node" />
+          <Project Name="ribbon.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -151,18 +152,14 @@
             <PlistImageFile Name="ans_click.png" Key="ans_click.png" />
             <PlistImageFile Name="backcolor.png" Key="backcolor.png" />
             <PlistImageFile Name="background.jpg" Key="background.jpg" />
-            <PlistImageFile Name="banana_0.png" Key="banana_0.png" />
             <PlistImageFile Name="banana_1.png" Key="banana_1.png" />
             <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
-            <PlistImageFile Name="branch_0.png" Key="branch_0.png" />
             <PlistImageFile Name="branch_1.png" Key="branch_1.png" />
             <PlistImageFile Name="branch_2.png" Key="branch_2.png" />
             <PlistImageFile Name="brush.png" Key="brush.png" />
             <PlistImageFile Name="eraser_body.png" Key="eraser_body.png" />
-            <PlistImageFile Name="flower_0.png" Key="flower_0.png" />
             <PlistImageFile Name="flower_1.png" Key="flower_1.png" />
             <PlistImageFile Name="flower_2.png" Key="flower_2.png" />
-            <PlistImageFile Name="grape_0.png" Key="grape_0.png" />
             <PlistImageFile Name="grape_1.png" Key="grape_1.png" />
             <PlistImageFile Name="grape_2.png" Key="grape_2.png" />
             <PlistImageFile Name="home.png" Key="home.png" />
@@ -204,10 +201,8 @@
             <PlistImageFile Name="next_L_click.png" Key="next_L_click.png" />
             <PlistImageFile Name="next_R.png" Key="next_R.png" />
             <PlistImageFile Name="next_R_click.png" Key="next_R_click.png" />
-            <PlistImageFile Name="nut_0.png" Key="nut_0.png" />
             <PlistImageFile Name="nut_1.png" Key="nut_1.png" />
             <PlistImageFile Name="nut_2.png" Key="nut_2.png" />
-            <PlistImageFile Name="pancake_0.png" Key="pancake_0.png" />
             <PlistImageFile Name="pancake_1.png" Key="pancake_1.png" />
             <PlistImageFile Name="pancake_10.png" Key="pancake_10.png" />
             <PlistImageFile Name="pancake_11.png" Key="pancake_11.png" />
@@ -221,11 +216,9 @@
             <PlistImageFile Name="pancake_8.png" Key="pancake_8.png" />
             <PlistImageFile Name="pancake_9.png" Key="pancake_9.png" />
             <PlistImageFile Name="pancake_line.png" Key="pancake_line.png" />
-            <PlistImageFile Name="road_0.png" Key="road_0.png" />
             <PlistImageFile Name="road_1.png" Key="road_1.png" />
             <PlistImageFile Name="road_2.png" Key="road_2.png" />
             <PlistImageFile Name="road_line.png" Key="road_line.png" />
-            <PlistImageFile Name="tomato_0.png" Key="tomato_0.png" />
             <PlistImageFile Name="tomato_1.png" Key="tomato_1.png" />
             <PlistImageFile Name="tomato_2.png" Key="tomato_2.png" />
             <PlistImageFile Name="tool_black.png" Key="tool_black.png" />
@@ -247,6 +240,28 @@
             <PlistImageFile Name="tool_reset.png" Key="tool_reset.png" />
             <PlistImageFile Name="tool_reset_click.png" Key="tool_reset_click.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
+            <PlistImageFile Name="banboo_1.png" Key="banboo_1.png" />
+            <PlistImageFile Name="banboo_2.png" Key="banboo_2.png" />
+            <PlistImageFile Name="flower_10.png" Key="flower_10.png" />
+            <PlistImageFile Name="flower_11.png" Key="flower_11.png" />
+            <PlistImageFile Name="flower_3.png" Key="flower_3.png" />
+            <PlistImageFile Name="flower_4.png" Key="flower_4.png" />
+            <PlistImageFile Name="flower_5.png" Key="flower_5.png" />
+            <PlistImageFile Name="flower_6.png" Key="flower_6.png" />
+            <PlistImageFile Name="flower_7.png" Key="flower_7.png" />
+            <PlistImageFile Name="flower_8.png" Key="flower_8.png" />
+            <PlistImageFile Name="flower_9.png" Key="flower_9.png" />
+            <PlistImageFile Name="paper_1.png" Key="paper_1.png" />
+            <PlistImageFile Name="paper_2.png" Key="paper_2.png" />
+            <PlistImageFile Name="paper_3.png" Key="paper_3.png" />
+            <PlistImageFile Name="paper_4.png" Key="paper_4.png" />
+            <PlistImageFile Name="paper_5.png" Key="paper_5.png" />
+            <PlistImageFile Name="ribbon_1.png" Key="ribbon_1.png" />
+            <PlistImageFile Name="ribbon_2.png" Key="ribbon_2.png" />
+            <PlistImageFile Name="ribbon_line.png" Key="ribbon_line.png" />
+            <PlistImageFile Name="water_1.png" Key="water_1.png" />
+            <PlistImageFile Name="water_2.png" Key="water_2.png" />
+            <PlistImageFile Name="water_line.png" Key="water_line.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="cover_bk.jpg" />

@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="branch_0.png" Plist="img/teach_ui.plist" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="1_0" ActionTag="-556803019" Tag="44" RotationSkewX="-10.0349" RotationSkewY="-10.0352" IconVisible="False" LeftMargin="-89.3543" RightMargin="22.3543" TopMargin="-208.1851" BottomMargin="-244.8149" ctype="SpriteObjectData">

@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="143" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="0" ActionTag="377368936" Tag="8" IconVisible="False" LeftMargin="-273.5000" RightMargin="-273.5000" TopMargin="-146.5000" BottomMargin="-146.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="0" ActionTag="377368936" Alpha="119" Tag="8" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
             <Size X="547.0000" Y="293.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="nut_0.png" Plist="img/teach_ui.plist" />
+            <FileData Type="PlistSubImage" Path="nut_1.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="1_0" ActionTag="57689735" Tag="24" IconVisible="False" LeftMargin="-250.8913" RightMargin="158.8913" TopMargin="-80.5411" BottomMargin="-28.4589" ctype="SpriteObjectData">

@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="123" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="0" ActionTag="986867599" Tag="6" IconVisible="False" LeftMargin="-488.5000" RightMargin="-488.5000" TopMargin="-43.0000" BottomMargin="-43.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="0" ActionTag="986867599" Alpha="86" Tag="6" IconVisible="False" LeftMargin="-488.5000" RightMargin="-488.5000" TopMargin="-43.0000" BottomMargin="-43.0000" ctype="SpriteObjectData">
             <Size X="977.0000" Y="86.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="road_0.png" Plist="img/teach_ui.plist" />
+            <FileData Type="PlistSubImage" Path="road_1.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="1_0" ActionTag="626164901" Tag="126" IconVisible="False" LeftMargin="-486.4664" RightMargin="318.4664" TopMargin="-40.6197" BottomMargin="-37.3803" ctype="SpriteObjectData">
