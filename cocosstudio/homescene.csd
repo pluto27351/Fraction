@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" Tag="97" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="cover_bk_3" CanEdit="False" ActionTag="-1489448148" Tag="116" IconVisible="False" ctype="SpriteObjectData">
+          <AbstractNodeData Name="cover_bk_3" ActionTag="-1489448148" Tag="116" IconVisible="False" ctype="SpriteObjectData">
             <Size X="2048.0000" Y="1536.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1024.0000" Y="768.0000" />
@@ -17,14 +17,14 @@
             <FileData Type="Normal" Path="img/cover_bk.jpg" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="startBtn" ActionTag="1972834248" Tag="172" IconVisible="False" LeftMargin="1768.8324" RightMargin="233.1676" TopMargin="1323.9343" BottomMargin="166.0657" ctype="SpriteObjectData">
+          <AbstractNodeData Name="startBtn" ActionTag="1972834248" Tag="172" IconVisible="False" LeftMargin="1739.3324" RightMargin="203.6676" TopMargin="1284.9343" BottomMargin="127.0657" ctype="SpriteObjectData">
             <Size X="105.0000" Y="124.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1791.8324" Y="189.0657" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8749" Y="0.1231" />
-            <PreSize X="0.0225" Y="0.0299" />
+            <PreSize X="0.0513" Y="0.0807" />
             <FileData Type="PlistSubImage" Path="next_R.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

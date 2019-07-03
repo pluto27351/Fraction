@@ -24,7 +24,7 @@ public:
 	static cocos2d::Scene* createScene();
 
 	~CMenuScene();
-
+    void onExit();
 	virtual bool init();
 	void doStep(float dt);
 

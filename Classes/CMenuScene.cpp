@@ -1,5 +1,4 @@
 #include "CMenuScene.h"
-//#include "Common/const.h"
 #include "CTeachScene.h"
 #include "CStoryScene.h"
 
@@ -22,11 +21,10 @@ bool CMenuScene::init()
 		return false;
 	}
 
-	Size visibleSize = Director::getInstance()->getVisibleSize();
+	//Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	Size size;
 
-	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_menu.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
 	auto rootNode = CSLoader::createNode("menuscene.csb");
@@ -54,6 +52,12 @@ bool CMenuScene::init()
     _unitBtn[1]->setEnabled(true);
     _unitBtn[2]->setEnabled(true);
 	_unitIdx = 0;	// 設定成切換的單元，1 到 5
+    
+    pt = rootNode->getChildByName("storybtn")->getPosition();
+    scale = rootNode->getChildByName("storybtn")->getScale();
+    _storyBtn.setButtonInfo("ans.png", "ans_click.png", *this, pt, 1);
+    _storyBtn.setScale(scale);
+    rootNode->removeChildByName("storybtn");
 
 	pt = rootNode->getChildByName("gobtn")->getPosition();
 	scale = rootNode->getChildByName("gobtn")->getScale();
@@ -62,11 +66,7 @@ bool CMenuScene::init()
 	_goBtn.setVisible(false);
 	rootNode->removeChildByName("gobtn");
     
-    pt = rootNode->getChildByName("storybtn")->getPosition();
-    scale = rootNode->getChildByName("storybtn")->getScale();
-    _storyBtn.setButtonInfo("ans.png", "ans_click.png", *this, pt, 3);
-    _storyBtn.setScale(scale);
-    rootNode->removeChildByName("storybtn");
+
     
 
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
@@ -84,11 +84,19 @@ void CMenuScene::doStep(float dt)  // OnFrameMove
 {
 	if (goBtnPressed) {
 		this->unscheduleAllCallbacks();
-		Director::getInstance()->runWithScene(CTeachScene::createScene(_unitIdx));
+        this->removeAllChildren();
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+		Director::getInstance()->replaceScene(CTeachScene::createScene(_unitIdx));
 	}
     if(storyPressed){
         this->unscheduleAllCallbacks();
-        Director::getInstance()->runWithScene(CStoryScene::createScene());
+        this->removeAllChildren();
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+        Director::getInstance()->replaceScene(CStoryScene::createScene());
     }
 	
 }
@@ -144,10 +152,21 @@ void CMenuScene::ShowUnitStory() {
 
 CMenuScene::~CMenuScene()
 {
-	this->removeAllChildren();
+    CCLOG("delete menuScene1");
+	
 	for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
 
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
-	Director::getInstance()->getTextureCache()->removeUnusedTextures();
+
+}
+
+
+void CMenuScene::onExit()
+{
+//    CCLOG("delete menuScene2");
+//    this->removeAllChildren();
+//    for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
+//
+//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
+//   // SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+//    Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

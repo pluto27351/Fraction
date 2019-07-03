@@ -22,13 +22,9 @@ bool CHomeScene::init()
 		return false;
 	}
 
-	Size visibleSize = Director::getInstance()->getVisibleSize();
+	//Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-	//Size size;
-
-	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/homescene.plist");
-	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plis");
-	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/scene101.plist");
+    
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_menu.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
     auto rootNode = CSLoader::createNode("homescene.csb");
@@ -71,7 +67,7 @@ void CHomeScene::doStep(float dt)  // OnFrameMove
 	if (_bToMenuScene) {
 		this->unscheduleAllCallbacks();
 		auto scene = TransitionMoveInR::create(0.5f, CMenuScene::createScene());
-		Director::getInstance()->runWithScene(scene);
+        Director::getInstance()->replaceScene(scene);
 	}
 }
 
@@ -104,17 +100,25 @@ void  CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 
 	if (_startBtn.touchesEnded(touchLoc)) _bToMenuScene = true;
 
-
 }
 
 CHomeScene::~CHomeScene()
 {
+    CCLOG("delete homeScene1");
 	this->removeAllChildren();
-
-//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/homescene.plist");
-//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/Fraction_Btn.plist");
-//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/scene101.plist");
+    
     SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Fraction_menu.plist");
     SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
+}
+
+
+void CHomeScene::onExit()
+{
+//    CCLOG("delete homeScene2");
+//    this->removeAllChildren();
+//    
+//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Fraction_menu.plist");
+//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+//    Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }

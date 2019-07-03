@@ -294,8 +294,8 @@
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
-        <Project Name="TeachScene.csd" Type="Scene" />
         <Project Name="storyscene.csd" Type="Scene" />
+        <Project Name="TeachScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

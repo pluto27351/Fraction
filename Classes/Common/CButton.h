@@ -21,6 +21,7 @@ private:
 	bool _bVisible; // 是否顯示
 
 public:
+    ~CButton(){};
 	void setButtonInfo(const char *normalImg, const char *touchedImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
 	bool touchesBegin(cocos2d::Point inPos);
 	bool touchesMoved(cocos2d::Point inPos);

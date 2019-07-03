@@ -6,6 +6,10 @@
 #define ANGLE(a) a*M_PI/180
 #define RE_ANGLE(a) a*180/M_PI
 
+TouchSprite::~TouchSprite(){
+    CCLOG("delete TouchSprite");    
+}
+
 void TouchSprite::setVisible(bool b){
     for(int i=0; i<_piece; i++){
         _Pic[i]->setVisible(b);

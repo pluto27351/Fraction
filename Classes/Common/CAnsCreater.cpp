@@ -1,5 +1,9 @@
 #include "CAnsCreater.h"
 
+CAnsCreater::~CAnsCreater(){
+    CCLOG(" delete CAnsCreater");
+}
+
 CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．數字
 	Node * answer;
 

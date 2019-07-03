@@ -32,6 +32,7 @@ protected:
 
 	void SetPen(Color3B color);
 	void SwitchButton(int btn);
+    int i=0;
 public:
 	static CDrawingPanel *create();		// 建立物件的實體
 	static CDrawingPanel *getInstance();	// 取得 CDrawingPanel 的實體
@@ -49,5 +50,5 @@ public:
 	bool touchesEnded(Point inPt);
 	void doStep(float dt);
 	CDrawingPanel();
-
+    ~CDrawingPanel();
 };

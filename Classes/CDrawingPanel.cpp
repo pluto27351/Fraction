@@ -5,6 +5,12 @@
 
 CDrawingPanel* CDrawingPanel::_pHandDrawing = nullptr;
 
+CDrawingPanel::~CDrawingPanel(){
+    _penBrushList.clear();
+    _eraserBrushList.clear();
+    _pHandDrawing = nullptr;
+}
+
 CDrawingPanel *CDrawingPanel::create()
 { // 建立物件的實體
 
@@ -37,6 +43,7 @@ CDrawingPanel *CDrawingPanel::getInstance()
 
 void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	// 設定初始內容
 {
+    i = 115;
 	Sprite *pBtn = (Sprite *)rootNode.getChildByName("hand");
 	Point pt = pBtn->getPosition();
 	auto s = pBtn->getScale();

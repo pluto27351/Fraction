@@ -11,7 +11,7 @@ USING_NS_CC;
 class TouchSprite
 {
 protected:
-	cocos2d::Sprite **_Pic;
+    std::vector<Sprite*> _Pic;
 	cocos2d::Point _SpriteLoc;
     Node *_obj;
 	float _fangle;
@@ -38,7 +38,7 @@ protected:
 public:
     float ImgRadius;
 
-    virtual ~TouchSprite(){};
+    virtual ~TouchSprite();
     
     virtual void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[]){};
     virtual void setCollisionInfo(float totalPiece){};

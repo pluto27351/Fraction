@@ -8,8 +8,20 @@
 #define ANS_POS Vec2(1450,650)
 #define QUE_POS Vec2(1024,1200)
 
+CQuePanel::~CQuePanel()
+{
+    CCLOG("delete quePanel");
+    if (_cutImage != NULL)delete _cutImage;
+    if (_ans != NULL)delete _ans;
+    if (_que != NULL)delete _que;
+    
+    
+}
+
 CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 {
+    CCLOG("2123");
+    
 	_parentLayer = &parent;
 	_curUnit = iUnitNo;
 	_curQue = 1;  // 預設顯示第一題
@@ -173,15 +185,6 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
 	_bFracBoardOn = false;
 	_bnum = false;
 	
-}
-
-
-CQuePanel::~CQuePanel()
-{
-	if (_cutImage != NULL)delete _cutImage;
-	if (_ans != NULL)delete _ans;
-    if (_que != NULL)delete _que;
-	//Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }
 
 bool CQuePanel::getBoardStatus()

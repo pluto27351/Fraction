@@ -5,6 +5,12 @@
 #define ANGLE(a) a*M_PI/180
 #define RE_ANGLE(a) a*180/M_PI
 
+TCircleSprite::~TCircleSprite(){
+    CCLOG("delete TCircleSprite");
+    _Pic.clear();
+    
+}
+
 bool TCircleSprite::Collision(Point touch) {
     Point _CenterLoc;
     float td, ta;
@@ -30,15 +36,14 @@ bool TCircleSprite::Collision(Point touch) {
 void TCircleSprite::setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[])
 {
     _obj = new Node;
-    
     _piece = piece;
-    _Pic = new Sprite *[_piece];
-    
+
     for(int i=0;i<_piece;i++){
-        _Pic[i] = (Sprite *)Sprite::createWithSpriteFrameName(Img);
-        _Pic[i]->setScale(scale);
+        auto pic = (Sprite *)Sprite::createWithSpriteFrameName(Img);
+        pic->setScale(scale);
+        _obj->addChild(pic);
+        _Pic.push_back(pic);
         
-        _obj->addChild(_Pic[i]);
     }
 
     _fscale = scale;

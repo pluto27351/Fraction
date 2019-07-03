@@ -67,7 +67,11 @@ void CTeachScene::doStep(float dt)  // OnFrameMove
 {
 	if (_bMeunBtnPressed) {
 		this->unscheduleAllCallbacks();
-		Director::getInstance()->runWithScene(CMenuScene::createScene());
+        this->removeAllChildren();
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teacher_ui.plist");
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+        
+		Director::getInstance()->replaceScene(CMenuScene::createScene());
 	}
 
 }
@@ -139,13 +143,10 @@ void  CTeachScene::onTouchesEnded(const std::vector<cocos2d::Touch*> touches, co
 
 CTeachScene::~CTeachScene()
 {
+    CCLOG("delete CTeachScene1");
 	_handDrawing->release();
-    _queController->release();
-    this->removeAllChildren();
-    
-	delete _queController;
-    delete _handDrawing;
+    delete _queController;
 
-	SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teacher_ui.plist");
-	Director::getInstance()->getTextureCache()->removeUnusedTextures();
+    
+
 }

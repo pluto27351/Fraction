@@ -18,6 +18,7 @@ private:
 public:
 	CAnsCreater() {};
 	CAnsCreater(int uni, int queNo, int number);
+    ~CAnsCreater();
 	void queCreater(int uni, int queNo, int number);
 	//各單元答案
 	void Input_u1(cocos2d::Node &Q, int number);

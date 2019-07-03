@@ -24,7 +24,6 @@ bool CStoryScene::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     Size size;
     
-    //SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/Fraction_Btn.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/scene101.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
     auto rootNode = CSLoader::createNode("storyscene.csb");
@@ -75,7 +74,11 @@ void CStoryScene::doStep(float dt)  // OnFrameMove
 {
     if (goBtnPressed) {
         this->unscheduleAllCallbacks();
-        Director::getInstance()->runWithScene(CTeachScene::createScene(_unitIdx));
+        this->removeAllChildren();
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/scene101.plist");
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+        Director::getInstance()->replaceScene(CTeachScene::createScene(_unitIdx));
     }
     
 }
@@ -128,11 +131,9 @@ void CStoryScene::ShowUnitStory() {
 
 CStoryScene::~CStoryScene()
 {
+    CCLOG("delete StoryScene");
     this->removeAllChildren();
     for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
-    
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/scene101.plist");
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
-    Director::getInstance()->getTextureCache()->removeUnusedTextures();
+
 }
 

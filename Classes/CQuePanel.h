@@ -15,7 +15,7 @@
 USING_NS_CC;
 using namespace ui;
 
-class CQuePanel : public Ref
+class CQuePanel
 {
 private:
     bool _bFracBoardOn;    // 顯示平分選單

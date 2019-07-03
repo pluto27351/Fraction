@@ -21,6 +21,7 @@ private:
 	bool _bStatus;
 
 public:
+    ~CSwitch(){};
 	void setButtonInfo(const char *normalImg, const char *selectImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
     void setButtonInfo(const char *normalImg, const char *selectImg,const char *enableImg, cocos2d::Layer &parent, const cocos2d::Point locPt, int level);
 	bool touchesBegin(cocos2d::Point inPos);

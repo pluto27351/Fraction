@@ -74,57 +74,57 @@
             <FileData Type="PlistSubImage" Path="next_R.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_1" ActionTag="-751662614" Tag="72" IconVisible="False" LeftMargin="-61.0617" RightMargin="1531.0618" TopMargin="1211.9309" BottomMargin="54.0692" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_1" ActionTag="-751662614" Tag="72" IconVisible="False" LeftMargin="-70.0486" RightMargin="1540.0486" TopMargin="1211.9308" BottomMargin="54.0692" ctype="SpriteObjectData">
             <Size X="578.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="227.9383" Y="189.0692" />
+            <Position X="218.9514" Y="189.0692" />
             <Scale ScaleX="0.5286" ScaleY="0.5286" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1113" Y="0.1231" />
+            <PrePosition X="0.1069" Y="0.1231" />
             <PreSize X="0.2822" Y="0.1758" />
             <FileData Type="PlistSubImage" Path="Ch_01.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_2" ActionTag="-1297875468" Tag="73" IconVisible="False" LeftMargin="337.8372" RightMargin="1132.1628" TopMargin="1211.9309" BottomMargin="54.0692" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_2" ActionTag="-1297875468" Tag="73" IconVisible="False" LeftMargin="328.8500" RightMargin="1141.1499" TopMargin="1211.9308" BottomMargin="54.0692" ctype="SpriteObjectData">
             <Size X="578.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="626.8372" Y="189.0692" />
+            <Position X="617.8500" Y="189.0692" />
             <Scale ScaleX="0.5286" ScaleY="0.5286" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3061" Y="0.1231" />
+            <PrePosition X="0.3017" Y="0.1231" />
             <PreSize X="0.2822" Y="0.1758" />
             <FileData Type="PlistSubImage" Path="Ch_02.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_3" ActionTag="-983981084" Tag="74" IconVisible="False" LeftMargin="736.7383" RightMargin="733.2617" TopMargin="1211.9307" BottomMargin="54.0694" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_3" ActionTag="-983981084" Tag="74" IconVisible="False" LeftMargin="727.7521" RightMargin="742.2478" TopMargin="1211.9307" BottomMargin="54.0694" ctype="SpriteObjectData">
             <Size X="578.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1025.7383" Y="189.0694" />
+            <Position X="1016.7521" Y="189.0694" />
             <Scale ScaleX="0.5286" ScaleY="0.5286" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5008" Y="0.1231" />
+            <PrePosition X="0.4965" Y="0.1231" />
             <PreSize X="0.2822" Y="0.1758" />
             <FileData Type="PlistSubImage" Path="Ch_03.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_4" ActionTag="-878332282" Tag="75" IconVisible="False" LeftMargin="1135.6394" RightMargin="334.3606" TopMargin="1211.9309" BottomMargin="54.0692" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_4" ActionTag="-878332282" Tag="75" IconVisible="False" LeftMargin="1126.6528" RightMargin="343.3472" TopMargin="1211.9308" BottomMargin="54.0692" ctype="SpriteObjectData">
             <Size X="578.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1424.6394" Y="189.0692" />
+            <Position X="1415.6528" Y="189.0692" />
             <Scale ScaleX="0.5286" ScaleY="0.5286" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6956" Y="0.1231" />
+            <PrePosition X="0.6912" Y="0.1231" />
             <PreSize X="0.2822" Y="0.1758" />
             <FileData Type="PlistSubImage" Path="Ch_04.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_5" ActionTag="1839495782" Tag="76" IconVisible="False" LeftMargin="1534.5293" RightMargin="-64.5293" TopMargin="1211.9309" BottomMargin="54.0692" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_5" ActionTag="1839495782" Tag="76" IconVisible="False" LeftMargin="1525.5425" RightMargin="-55.5425" TopMargin="1211.9308" BottomMargin="54.0692" ctype="SpriteObjectData">
             <Size X="578.0000" Y="270.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1823.5293" Y="189.0692" />
+            <Position X="1814.5425" Y="189.0692" />
             <Scale ScaleX="0.5286" ScaleY="0.5286" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8904" Y="0.1231" />
+            <PrePosition X="0.8860" Y="0.1231" />
             <PreSize X="0.2822" Y="0.1758" />
             <FileData Type="PlistSubImage" Path="Ch_05.png" Plist="fraction_menu.plist" />
             <BlendFunc Src="1" Dst="771" />
