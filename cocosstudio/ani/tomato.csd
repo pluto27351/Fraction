@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="93" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="0" ActionTag="1897654789" Alpha="115" Tag="12" IconVisible="False" LeftMargin="-23.0000" RightMargin="-23.0000" TopMargin="-23.0000" BottomMargin="-23.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="0" ActionTag="1897654789" Alpha="115" Tag="12" IconVisible="False" LeftMargin="-270.5000" RightMargin="-270.5000" TopMargin="-156.5000" BottomMargin="-156.5000" ctype="SpriteObjectData">
             <Size X="541.0000" Y="313.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -116,7 +116,7 @@
             <FileData Type="PlistSubImage" Path="tomato_2.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="1_5." ActionTag="-1556775769" Alpha="251" Tag="105" IconVisible="False" LeftMargin="-78.8515" RightMargin="-3.1485" TopMargin="-15.1460" BottomMargin="-94.8540" ctype="SpriteObjectData">
+          <AbstractNodeData Name="1_5" ActionTag="-1556775769" Alpha="251" Tag="105" IconVisible="False" LeftMargin="-78.8515" RightMargin="-3.1485" TopMargin="-15.1460" BottomMargin="-94.8540" ctype="SpriteObjectData">
             <Size X="82.0000" Y="110.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-37.8515" Y="-39.8540" />

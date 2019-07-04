@@ -135,9 +135,21 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
+        sprintf(picname, "%s_1.png",_name);
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        fi->setPosition(POS + POSD*k);
+        fi->setScale(scale);
+        addChild(fi, BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
+        
         sprintf(picname, "%s_2.png", _name);
         int n=0;
         Point totalPos;
+        
+        //    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        //    _fullImg->setPosition(POS);
+        //    _fullImg->setScale(scale);
+        //    addChild(_fullImg, BOTTOM_LEVEL);
         
         for (int i = 0; i <_dividePiece; i++) {
             int number = k*_dividePiece+i;
@@ -153,7 +165,9 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
                 n++;
             }
             totalPos = totalPos / gPicec;
-            for(int v=0; v<gPicec; k++) _StickyData[number]._imgPos[v] -= totalPos;
+            for(int v=0; v<gPicec; v++) {
+                _StickyData[number]._imgPos[v] -= totalPos;
+            }
             
            // img[i] = new TRectSprite;
             img[number].setImgInfo(picname,gPicec, _scale,_StickyData[number]._imgPos,_StickyData[number]._imgAngle);
@@ -167,21 +181,10 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
             _StickyData[number]._NodePos = img[number].getPosition();
             _StickyData[number].isSticky = true;
         }
-        
-        sprintf(picname, "%s_1.png",_name);
-        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(Vec2(0,0));
-        fi->setScale(scale);
-        addChild(fi, BOTTOM_LEVEL);
-        _fullImg.push_back(fi);
-        
-        //    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        //    _fullImg->setPosition(POS);
-        //    _fullImg->setScale(scale);
-        //    addChild(_fullImg, BOTTOM_LEVEL);
+    
     }
     
-    setCutPos();
+   // setCutPos();
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
@@ -290,7 +293,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 for (int i = 0; i < _dividePiece; i++) {
                     int number = k*_dividePiece +i;
                     Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
-                    img[number].setPosition(move + POS + POSD*i);
+                    img[number].setPosition(move + POS + POSD*k);
                     img[number].setRotation(_StickyData[number]._NodeAngle);
                     img[number].setSticky(-1);
                     _StickyData[number].isSticky = false;
@@ -410,7 +413,7 @@ void CCutImage::Sticky(TouchSprite *img,Point pt) {
             int stickyNum = -1;
             float angle = img->getAngle();
             float preDAngle = 1000, DAngle;
-            for (int i = _fullAmount; i < _dividePiece+_fullAmount; i++) {        //判斷和哪個角度最靠近
+            for (int i = k; i < _dividePiece*(k+1); i++) {        //判斷和哪個角度最靠近
                 if (_StickyData[i].isSticky == false) {
                     DAngle = abs(_StickyData[i]._NodeAngle - angle);   //算角度差
                     if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料

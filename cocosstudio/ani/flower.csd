@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="78" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="0" ActionTag="2124558893" Alpha="92" Tag="10" IconVisible="False" LeftMargin="-153.5000" RightMargin="-153.5000" TopMargin="-261.5000" BottomMargin="-261.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="0" ActionTag="2124558893" Alpha="92" Tag="12" IconVisible="False" LeftMargin="-153.5000" RightMargin="-153.5000" TopMargin="-261.5000" BottomMargin="-261.5000" ctype="SpriteObjectData">
             <Size X="307.0000" Y="523.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -120,6 +120,28 @@
             <Size X="128.0000" Y="492.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-17.9620" Y="16.8242" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="flower_11.png" Plist="img/teach_ui.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="1_10" ActionTag="1794106553" Tag="37" IconVisible="False" LeftMargin="119.0380" RightMargin="-247.0380" TopMargin="-227.8242" BottomMargin="-264.1758" ctype="SpriteObjectData">
+            <Size X="128.0000" Y="492.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="183.0380" Y="-18.1758" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="PlistSubImage" Path="flower_11.png" Plist="img/teach_ui.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="1_11" ActionTag="901554992" Tag="38" IconVisible="False" LeftMargin="175.0380" RightMargin="-303.0380" TopMargin="-216.8242" BottomMargin="-275.1758" ctype="SpriteObjectData">
+            <Size X="128.0000" Y="492.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="239.0380" Y="-29.1758" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
