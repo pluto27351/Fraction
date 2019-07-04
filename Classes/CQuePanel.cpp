@@ -5,8 +5,8 @@
 #define QUEX_POS 1024
 #define QUEY_POS 1360
 
-#define ANS_POS Vec2(1450,650)
-#define QUE_POS Vec2(1024,1200)
+#define ANS_POS Vec2(1450,750)
+#define QUE_POS Vec2(1024,1250)
 
 CQuePanel::~CQuePanel()
 {
@@ -59,7 +59,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	//設定圖片
 	//_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
     int pic= UNIT_OBJ[_curUnit-1][_curQue-1];
-    _cutImage = new CCutImage(pic,1, 1.0f,_curNum);
+    _cutImage = new CCutImage(pic,2, 1.0f,_curNum);
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單

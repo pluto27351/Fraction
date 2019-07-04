@@ -6,8 +6,8 @@
 
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
-#define POS Vec2(500,700)
-#define POSD Vec2(50,0)
+#define POS Vec2(500,750)
+#define POSD Vec2(650,0)
 
 //enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
 enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
@@ -217,21 +217,22 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
 
         float a = 180 / _dividePiece;
         for (int i = 0; i < _dividePiece; i++) {
+            int number = k*_dividePiece+i;
             //img[i] = new TCircleSprite;
             float angle[1] = {(360.0f / _dividePiece)*i};
             Point pos[1] = {POS + POSD*k};
-            img[i].setImgInfo(picname,1, _scale,pos,angle);
-            img[i].setCollisionInfo(_dividePiece);
-            img[i].setSticky(i);
-            img[i].setVisible(false);
-            addChild(img[i].getNode(), BOTTOM_LEVEL);
+            img[number].setImgInfo(picname,1, _scale,pos,angle);
+            img[number].setCollisionInfo(_dividePiece);
+            img[number].setSticky(number);
+            img[number].setVisible(false);
+            addChild(img[number].getNode(), BOTTOM_LEVEL);
             
-            _StickyData[i].createImgData(1);
-            _StickyData[i]._NodeAngle = angle[0];
-            _StickyData[i]._NodePos = img[i].getPosition();
-            _StickyData[i]._imgPos[0] = Point(0,0);
-            _StickyData[i]._imgAngle[0] = 0;
-            _StickyData[i].isSticky = true;
+            _StickyData[number].createImgData(1);
+            _StickyData[number]._NodeAngle = angle[0];
+            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._imgPos[0] = Point(0,0);
+            _StickyData[number]._imgAngle[0] = 0;
+            _StickyData[number].isSticky = true;
             
             auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
             line->setPosition(POS + POSD*k);
@@ -262,7 +263,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                     int number = k*_dividePiece +i;
                     img[number].setPosition(_StickyData[number]._NodePos);
                     img[number].setRotation(_StickyData[number]._NodeAngle);
-                    img[number].setSticky(i);
+                    img[number].setSticky(number);
                     _StickyData[number].isSticky = true;
                     
                 }
@@ -334,7 +335,7 @@ void CCutImage::divide(bool d) {
 bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
 
-	for (int i = 0; i < _dividePiece ; i++) {
+	for (int i = 0; i < _dividePiece*_fullAmount ; i++) {
 		if (img[i].touchesBegin(inPos, id)) {
 			if (rotateImg == NULL) {
 				rotateImg = &img[i];
@@ -359,7 +360,7 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 bool CCutImage::touchesMoved(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
 
-	for (int i = 0; i < _dividePiece; i++) {                   //當移動or旋轉
+	for (int i = 0; i < _dividePiece*_fullAmount; i++) {                   //當移動or旋轉
         if( img[i].touchesMoved(inPos, id)) return true;
 	}
 	return false;
@@ -369,7 +370,7 @@ bool CCutImage::touchesMoved(cocos2d::Point inPos, int id) {
 void CCutImage::touchesEnded(cocos2d::Point inPos, int id) {
 	if (!_divided)return;
 
-	for (int i = 0; i < _dividePiece; i++) {
+	for (int i = 0; i < _dividePiece*_fullAmount; i++) {
 		if (img[i].touchesEnded(inPos, id)) {
 			if (rotateImg == &img[i]) rotateImg = NULL;
 			Sticky(&img[i],inPos);  //判斷是否吸上去
