@@ -40,7 +40,7 @@ public:
 
     virtual ~TouchSprite();
     
-    virtual void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[]){};
+    virtual void setImgInfo(const char *Img,int piece,Point pos[],float r[]){};
     virtual void setCollisionInfo(float totalPiece){};
 
 	bool touchesBegin(cocos2d::Point inPos, int id);

@@ -171,7 +171,7 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
             }
             
            // img[i] = new TRectSprite;
-            img[number].setImgInfo(picname,gPicec, _scale,_StickyData[number]._imgPos,_StickyData[number]._imgAngle);
+            img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle);
             img[number].setCollisionInfo(_dividePiece);
             img[number].setPosition(POS + POSD*k + totalPos);
             img[number].setSticky(number);
@@ -222,7 +222,7 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
             //img[i] = new TCircleSprite;
             float angle[1] = {(360.0f / _dividePiece)*i};
             Point pos[1] = {POS + POSD*k};
-            img[number].setImgInfo(picname,1, _scale,pos,angle);
+            img[number].setImgInfo(picname,1,pos,angle);
             img[number].setCollisionInfo(_dividePiece);
             img[number].setSticky(number);
             img[number].setVisible(false);

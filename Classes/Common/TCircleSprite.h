@@ -10,7 +10,7 @@ private:
     
 public:
     ~TCircleSprite();
-    void setImgInfo(const char *Img,int piece, float scale,Point pos[],float r[]);
+    void setImgInfo(const char *Img,int piece,Point pos[],float r[]);
     void setCollisionInfo(float totalPiece);
 
 };

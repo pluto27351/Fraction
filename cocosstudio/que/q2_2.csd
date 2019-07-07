@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="149036304" Tag="1" IconVisible="False" LeftMargin="-650.0000" RightMargin="-650.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="72" LabelText="2. 請問一堆橡樹果實又    堆果實，合起來和幾堆果實一樣多? 請用帶分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1300.0000" Y="356.0000" />
+          <AbstractNodeData Name="bg" ActionTag="149036304" Tag="1" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="72" LabelText="2. 請問一堆橡樹果實又    堆果實，合起來和幾堆果實一樣多? 請用帶分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1280.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -18,7 +18,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="185.4628" RightMargin="-185.4628" TopMargin="-126.5985" BottomMargin="126.5985" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="196.4634" RightMargin="-196.4634" TopMargin="-126.5985" BottomMargin="126.5985" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-7.5000" RightMargin="-7.5000" TopMargin="-16.0000" BottomMargin="-16.0000" FontSize="32" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -34,7 +34,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="185.4628" Y="126.5985" />
+            <Position X="196.4634" Y="126.5985" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

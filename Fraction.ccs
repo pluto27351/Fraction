@@ -12,6 +12,7 @@
           <Project Name="flower.csd" Type="Node" />
           <Project Name="grape.csd" Type="Node" />
           <Project Name="nut.csd" Type="Node" />
+          <Project Name="paper.csd" Type="Node" />
           <Project Name="ribbon.csd" Type="Node" />
           <Project Name="road.csd" Type="Node" />
           <Project Name="tomato.csd" Type="Node" />
@@ -55,18 +56,18 @@
           <Project Name="u3_9.csd" Type="Node" />
         </Folder>
         <PlistImageFolder Image="fraction_menu.png" PListFile="fraction_menu.plist" Name=".fraction_menu_PList.Dir">
-          <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />
           <PlistImageFile Name="Ch_01-click.png" Key="Ch_01-click.png" />
-          <PlistImageFile Name="Ch_02.png" Key="Ch_02.png" />
+          <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />
           <PlistImageFile Name="Ch_02-click.png" Key="Ch_02-click.png" />
-          <PlistImageFile Name="Ch_03.png" Key="Ch_03.png" />
+          <PlistImageFile Name="Ch_02.png" Key="Ch_02.png" />
           <PlistImageFile Name="Ch_03-click.png" Key="Ch_03-click.png" />
-          <PlistImageFile Name="Ch_04.png" Key="Ch_04.png" />
+          <PlistImageFile Name="Ch_03.png" Key="Ch_03.png" />
           <PlistImageFile Name="Ch_04-click.png" Key="Ch_04-click.png" />
-          <PlistImageFile Name="Ch_05.png" Key="Ch_05.png" />
+          <PlistImageFile Name="Ch_04.png" Key="Ch_04.png" />
           <PlistImageFile Name="Ch_05-click.png" Key="Ch_05-click.png" />
-          <PlistImageFile Name="Ch_cloud.png" Key="Ch_cloud.png" />
+          <PlistImageFile Name="Ch_05.png" Key="Ch_05.png" />
           <PlistImageFile Name="Ch_Course.jpg" Key="Ch_Course.jpg" />
+          <PlistImageFile Name="Ch_cloud.png" Key="Ch_cloud.png" />
           <PlistImageFile Name="Ch_story.png" Key="Ch_story.png" />
           <PlistImageFile Name="Ch_story_hover.png" Key="Ch_story_hover.png" />
         </PlistImageFolder>
@@ -135,17 +136,23 @@
             <PlistImageFile Name="flame2_12.png" Key="flame2_12.png" />
             <PlistImageFile Name="flame2_13.png" Key="flame2_13.png" />
             <PlistImageFile Name="scoretable.png" Key="scoretable.png" />
-            <PlistImageFile Name="sliderball.png" Key="sliderball.png" />
-            <PlistImageFile Name="sliderballnormal.png" Key="sliderballnormal.png" />
-            <PlistImageFile Name="sliderballpressed.png" Key="sliderballpressed.png" />
             <PlistImageFile Name="sliderProgress.png" Key="sliderProgress.png" />
             <PlistImageFile Name="sliderProgress2.png" Key="sliderProgress2.png" />
             <PlistImageFile Name="sliderTrack.png" Key="sliderTrack.png" />
+            <PlistImageFile Name="sliderball.png" Key="sliderball.png" />
+            <PlistImageFile Name="sliderballnormal.png" Key="sliderballnormal.png" />
+            <PlistImageFile Name="sliderballpressed.png" Key="sliderballpressed.png" />
             <PlistImageFile Name="sr_f_triangle.png" Key="sr_f_triangle.png" />
             <PlistImageFile Name="triblock.png" Key="triblock.png" />
             <PlistImageFile Name="triouter.png" Key="triouter.png" />
             <PlistImageFile Name="trishadow.png" Key="trishadow.png" />
             <PlistImageFile Name="w_bg.png" Key="w_bg.png" />
+          </PlistImageFolder>
+          <PlistImageFolder Image="teach_scene.png" PListFile="teach_scene.plist" Name=".teach_scene_PList.Dir">
+            <PlistImageFile Name="main.png" Key="main.png" />
+            <PlistImageFile Name="main_nut.png" Key="main_nut.png" />
+            <PlistImageFile Name="main_start.png" Key="main_start.png" />
+            <PlistImageFile Name="main_start_click.png" Key="main_start_click.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
@@ -156,6 +163,7 @@
             <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
             <PlistImageFile Name="banboo_1.png" Key="banboo_1.png" />
             <PlistImageFile Name="banboo_2.png" Key="banboo_2.png" />
+            <PlistImageFile Name="banboo_line.png" Key="banboo_line.png" />
             <PlistImageFile Name="branch_1.png" Key="branch_1.png" />
             <PlistImageFile Name="branch_2.png" Key="branch_2.png" />
             <PlistImageFile Name="brush.png" Key="brush.png" />
@@ -163,6 +171,8 @@
             <PlistImageFile Name="flower_1.png" Key="flower_1.png" />
             <PlistImageFile Name="flower_10.png" Key="flower_10.png" />
             <PlistImageFile Name="flower_11.png" Key="flower_11.png" />
+            <PlistImageFile Name="flower_12.png" Key="flower_12.png" />
+            <PlistImageFile Name="flower_13.png" Key="flower_13.png" />
             <PlistImageFile Name="flower_2.png" Key="flower_2.png" />
             <PlistImageFile Name="flower_3.png" Key="flower_3.png" />
             <PlistImageFile Name="flower_4.png" Key="flower_4.png" />
@@ -232,6 +242,7 @@
             <PlistImageFile Name="paper_3.png" Key="paper_3.png" />
             <PlistImageFile Name="paper_4.png" Key="paper_4.png" />
             <PlistImageFile Name="paper_5.png" Key="paper_5.png" />
+            <PlistImageFile Name="paper_6.png" Key="paper_6.png" />
             <PlistImageFile Name="ribbon_1.png" Key="ribbon_1.png" />
             <PlistImageFile Name="ribbon_2.png" Key="ribbon_2.png" />
             <PlistImageFile Name="ribbon_line.png" Key="ribbon_line.png" />
@@ -305,9 +316,14 @@
           <Project Name="q3_7.csd" Type="Node" />
           <Project Name="q3_8.csd" Type="Node" />
           <Project Name="q3_9.csd" Type="Node" />
+          <Project Name="q4_1.csd" Type="Node" />
+          <Project Name="q4_2.csd" Type="Node" />
+          <Project Name="q5_1.csd" Type="Node" />
+          <Project Name="q5_2.csd" Type="Node" />
         </Folder>
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />
+        <Project Name="MeunScene.csd" Type="Scene" />
         <TTF Name="monospacemal.ttf" />
         <Project Name="storyscene.csd" Type="Scene" />
         <Project Name="TeachScene.csd" Type="Scene" />

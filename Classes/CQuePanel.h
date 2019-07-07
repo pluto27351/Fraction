@@ -27,7 +27,7 @@ private:
     int _curUnit;  //單元
     int _curQue; //題號
     int _curNum; //數字
-    
+    int _curPicAmount;
     CButton _prevBtn, _nextBtn;
     CSwitch _ansBtn,_numBtn,_cutBtn;
     CSwitchGroup _numSwitcher; //,_cutSwitcher;

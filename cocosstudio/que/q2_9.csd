@@ -6,8 +6,8 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-650.0000" RightMargin="-650.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="72" LabelText="9. 請問一杯水又    杯水，合起來和幾杯水一樣多? 請用假分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1300.0000" Y="356.0000" />
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="72" LabelText="9. 請問一杯水又    杯水，合起來和幾杯水一樣多? 請用假分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1280.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
