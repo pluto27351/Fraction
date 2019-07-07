@@ -33,21 +33,19 @@ bool TCircleSprite::Collision(Point touch) {
     return false;
 }
 
-void TCircleSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[])
+void TCircleSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale)
 {
     _obj = new Node;
     _piece = piece;
 
     for(int i=0;i<_piece;i++){
         auto pic = (Sprite *)Sprite::createWithSpriteFrameName(Img);
-        pic->setScale(1);
+        pic->setScale(scale.x, scale.y);
         _obj->addChild(pic);
         _Pic.push_back(pic);
         
     }
 
-    _fscale = 1;
-    
     setPosition(pos[0]);
     setRotation(r[0]);
     
@@ -60,7 +58,7 @@ void TCircleSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[])
 
 void TCircleSprite::setCollisionInfo(float totalPiece) {
     float a = 360 / totalPiece;
-    ImgRadius = _Pic[0]->getContentSize().height * _fscale;
+    ImgRadius = _Pic[0]->getContentSize().height * _Pic[0]->getScaleY();
     ImgAngle = a;
     
     float r=_fangle+90;

@@ -48,7 +48,6 @@ private:
     int _fullAmount;
     
     float _scale;
-    Vec2 _cutDir;
     int _mode;
     bool _divided;
     bool _hasline = false;
@@ -70,12 +69,12 @@ private:
     void setCutPos();
 public:
     ~CCutImage();
-	//CCutImage(const char *name,int NodeAmount float scale,int dividedP);
+
     CCutImage(int picNum,int NodeAmount, float scale,int dividedP);
     void CreateImg(float scale,int num);
     void CreateImg2(float scale,int num);
-//    void addNodeIn(cocos2d::Layer &parent);
-//    void romoveChild(cocos2d::Layer &parent);
+    void CreateImg3(float scale,int num);
+    void CreateImg4(float scale,int num);
 	void divide(bool);
 
 	bool touchesBegin(cocos2d::Point inPos, int id);

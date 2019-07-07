@@ -51,73 +51,191 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case PAPER:
             _name = "pancake";
-            _cutDir = Vec2(50,0);
             _mode = 0;
             CreateImg(scale,dividedP);
             break;
         case WATER:
-            _name = "banana";
-            _cutDir = Vec2(50,0);
+            _name = "water";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateImg3(scale,dividedP);
             break;
         case BAMBOO:
             _name = "nut";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case RIBBON:
             _name = "flower";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case DISTANCE:
             _name = "road";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case BANANA:
             _name = "banana";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case GRAPE:
             _name = "grape";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case FLOWER:
             _name = "flower";
-            _cutDir = Vec2(50,0);
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateImg4(scale,dividedP);
             break;
         case BRANCH:
             _name = "branch";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case NUT:
             _name = "nut";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
         case TOMATO:
             _name = "tomato";
-            _cutDir = Vec2(50,0);
             _mode = 2;
             CreateImg2(scale,dividedP);
             break;
     }
     
+}
 
+void CCutImage::CreateImg4(float scale,int num){   //非連續物件
+    char picname[20];
+    
+    sprintf(picname, "ani/%s.csb",_name);
+    auto obj = CSLoader::createNode(picname);
+    _dividePiece = num;
+    _scale = scale;
+    _divided = false;
+    
+    int totalPiece = obj->getChildByName("0")->getTag();
+    int gPicec = totalPiece / _dividePiece;
+    img = new TRectSprite[_dividePiece * _fullAmount];
+    _StickyData = new StickyData[_dividePiece * _fullAmount];
+    
+    for(int k=0;k<_fullAmount;k++){
+        sprintf(picname, "%s_1.png",_name);
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        fi->setPosition(POS + POSD*k);
+        fi->setScale(scale);
+        addChild(fi, BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
+        
+        int n=0;
+        Point totalPos;
+        
+        for (int i = 0; i <_dividePiece; i++) {
+            int number = k*_dividePiece+i;
+            _StickyData[number].createImgData(gPicec);
+            totalPos = Point(0,0);
+            while((n/gPicec == i)){
+                char p[10];  sprintf(p, "1_%d",n);
+                int v = n%gPicec;
+                auto asdf =obj->getChildByName(p)->getPosition();
+                _StickyData[number]._imgPos[v] = asdf;
+                _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
+                totalPos += _StickyData[number]._imgPos[v];
+                n++;
+            }
+            totalPos = totalPos / gPicec;
+            for(int v=0; v<gPicec; v++) {
+                _StickyData[number]._imgPos[v] -= totalPos;
+            }
+            
+            img[number].setImgInfo_flower(i,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
+            img[number].setCollisionInfo(_dividePiece);
+            img[number].setPosition(POS + POSD*k + totalPos);
+            img[number].setSticky(number);
+            img[number].setVisible(false);
+            addChild(img[number].getNode(), BOTTOM_LEVEL+2);
+            
+            _StickyData[number]._NodeAngle = 0;
+            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number].isSticky = true;
+        }
+        
+    }
+    
+    _StickyRadius = powf(img[0].ImgRadius, 2);
+    touchedAmount = 0; //被點擊的數量
+    rotateImg = NULL;
+    rotateId = -1;
+    
+    
+}
+
+void CCutImage::CreateImg3(float scale,int num){  // 圓形
+    char picname[20];
+    
+    _dividePiece = num;
+    _scale = scale;
+    _divided = false;
+    
+    img = new TRectSprite[_dividePiece * _fullAmount];
+    _StickyData = new StickyData[_dividePiece * _fullAmount];
+    
+    for(int k=0;k<_fullAmount;k++){
+        
+        sprintf(picname, "%s_1.png",_name);
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        fi->setPosition(POS+POSD*k);
+        fi->setScale(scale);
+        addChild(fi,BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
+        
+        sprintf(picname, "%s_2.png", _name);
+        
+        Point pos[1] = {Point(0,0)};
+        float angle[1] = {0};
+        float center = (_dividePiece-1)/2;
+        Vec2 PicScale = Vec2(1,1.0/_dividePiece);
+        float height = 200*PicScale.y;
+
+        for (int i = 0; i < _dividePiece; i++) {
+            int number = k*_dividePiece+i;
+            Point move = Point(0,(i - center)*height);
+            img[number].setImgInfo(picname,1,pos,angle,PicScale);
+            img[number].setCollisionInfo(_dividePiece);
+            img[number].setPosition(POS + POSD*k+move);
+            img[number].setSticky(number);
+            //img[number].setVisible(false);
+            addChild(img[number].getNode(), BOTTOM_LEVEL+1);
+            
+    
+            
+            _StickyData[number].createImgData(1);
+            _StickyData[number]._NodeAngle = angle[0];
+            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._imgPos[0] = Point(0,0);
+            _StickyData[number]._imgAngle[0] = 0;
+            _StickyData[number].isSticky = true;
+            
+//            auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
+//            line->setPosition(POS + POSD*k);
+//            line->setScale(scale);
+//            line->setRotation(angle[0]+a);
+//            line->setVisible(false);
+//            addChild(line, BOTTOM_LEVEL+2);
+//            _line.push_back(line);
+            
+        }
+        
+        
+    }
+    
+    _StickyRadius = powf(img[0].ImgRadius, 2);
+    touchedAmount = 0; //被點擊的數量
+    rotateImg = NULL;
+    rotateId = -1;
 }
 
 void CCutImage::CreateImg2(float scale,int num){   //非連續物件
@@ -146,10 +264,6 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
         int n=0;
         Point totalPos;
         
-        //    _fullImg = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        //    _fullImg->setPosition(POS);
-        //    _fullImg->setScale(scale);
-        //    addChild(_fullImg, BOTTOM_LEVEL);
         
         for (int i = 0; i <_dividePiece; i++) {
             int number = k*_dividePiece+i;
@@ -162,16 +276,14 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
                 _StickyData[number]._imgPos[v] = asdf;
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
                 totalPos += _StickyData[number]._imgPos[v];
-               // removeChild(obj->getChildByName(p));
                 n++;
             }
             totalPos = totalPos / gPicec;
             for(int v=0; v<gPicec; v++) {
                 _StickyData[number]._imgPos[v] -= totalPos;
             }
-            
-           // img[i] = new TRectSprite;
-            img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle);
+ 
+            img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
             img[number].setPosition(POS + POSD*k + totalPos);
             img[number].setSticky(number);
@@ -184,8 +296,6 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
         }
     
     }
-    
-   // setCutPos();
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
@@ -219,10 +329,9 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
         float a = 180 / _dividePiece;
         for (int i = 0; i < _dividePiece; i++) {
             int number = k*_dividePiece+i;
-            //img[i] = new TCircleSprite;
             float angle[1] = {(360.0f / _dividePiece)*i};
             Point pos[1] = {POS + POSD*k};
-            img[number].setImgInfo(picname,1,pos,angle);
+            img[number].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
             img[number].setSticky(number);
             img[number].setVisible(false);

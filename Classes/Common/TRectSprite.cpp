@@ -14,44 +14,58 @@ TRectSprite::~TRectSprite(){
 bool TRectSprite::Collision(Point touch) {
     for(int i=0;i<_piece;i++){
         auto posInNode = _Pic[i]->convertToNodeSpace(touch);
-        if (Rect(0,0,_Pic[i]->getContentSize().width+8,_Pic[i]->getContentSize().height+8).containsPoint(posInNode))
+        float w = _Pic[i]->getContentSize().width * _Pic[i]->getScaleX();
+        float h = _Pic[i]->getContentSize().height * _Pic[i]->getScaleY();
+        if (Rect(0,0,w+8,h+8).containsPoint(posInNode))
         {
             return true;
         }
-//      else{
-//            //return false;
-//      }
     }
 }
 
-void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[])
+void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale)
 {
     _obj = new Node;
     _piece = piece;
     
     for(int i=0;i<_piece;i++){
         auto pic = (Sprite *)Sprite::createWithSpriteFrameName(Img);
-        pic->setScale(1);
+        pic->setScale(scale.x,scale.y);
         _obj->addChild(pic);
         _Pic.push_back(pic);
         
     }
-    
-    _fscale = 1;
-    
-   // setPosition(pos);
-   // setRotation(r);
+
     
     _bTouched = false;
     _bRotated = false;
     _bVisible = _bEnabled = true;
 }
 
+void TRectSprite::setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2 scale)
+{
+    _obj = new Node;
+    _piece = piece;
+    char picname[20];
+    
+    for(int i=0;i<_piece;i++){
+        sprintf(picname, "flower_%d.png",num*piece + i +2);
+        auto pic = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        pic->setScale(scale.x,scale.y);
+        _obj->addChild(pic);
+        _Pic.push_back(pic);
+        
+    }
+
+    _bTouched = false;
+    _bRotated = false;
+    _bVisible = _bEnabled = true;
+}
 
 
 void TRectSprite::setCollisionInfo(float totalPiece) {
     float a = 360/ totalPiece;
-    ImgRadius = _Pic[0]->getContentSize().height * _fscale;
+    ImgRadius = _Pic[0]->getContentSize().height * _Pic[0]->getScaleY();
 
 
 }
