@@ -153,12 +153,13 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
         
         for (int i = 0; i <_dividePiece; i++) {
             int number = k*_dividePiece+i;
-            _StickyData[i].createImgData(gPicec);
+            _StickyData[number].createImgData(gPicec);
             totalPos = Point(0,0);
             while((n/gPicec == i)){
                 char p[10];  sprintf(p, "1_%d",n);
                 int v = n%gPicec;
-                _StickyData[number]._imgPos[v] = obj->getChildByName(p)->getPosition();
+                auto asdf =obj->getChildByName(p)->getPosition();
+                _StickyData[number]._imgPos[v] = asdf;
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
                 totalPos += _StickyData[number]._imgPos[v];
                // removeChild(obj->getChildByName(p));
@@ -175,7 +176,7 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
             img[number].setPosition(POS + POSD*k + totalPos);
             img[number].setSticky(number);
             img[number].setVisible(false);
-            addChild(img[number].getNode(), BOTTOM_LEVEL);
+            addChild(img[number].getNode(), BOTTOM_LEVEL+2);
         
             _StickyData[number]._NodeAngle = 0;
             _StickyData[number]._NodePos = img[number].getPosition();
@@ -225,7 +226,7 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
             img[number].setCollisionInfo(_dividePiece);
             img[number].setSticky(number);
             img[number].setVisible(false);
-            addChild(img[number].getNode(), BOTTOM_LEVEL);
+            addChild(img[number].getNode(), BOTTOM_LEVEL+1);
             
             _StickyData[number].createImgData(1);
             _StickyData[number]._NodeAngle = angle[0];
@@ -239,7 +240,7 @@ void CCutImage::CreateImg(float scale,int num){  // 圓形
             line->setScale(scale);
             line->setRotation(angle[0]+a);
             line->setVisible(false);
-            addChild(line, BOTTOM_LEVEL+1);
+            addChild(line, BOTTOM_LEVEL+2);
             _line.push_back(line);
             
         }
@@ -414,7 +415,7 @@ void CCutImage::Sticky(TouchSprite *img,Point pt) {
             int stickyNum = -1;
             float angle = img->getAngle();
             float preDAngle = 1000, DAngle;
-            for (int i = k; i < _dividePiece*(k+1); i++) {        //判斷和哪個角度最靠近
+            for (int i = k*_dividePiece; i < _dividePiece*(k+1); i++) {        //判斷和哪個角度最靠近
                 if (_StickyData[i].isSticky == false) {
                     DAngle = abs(_StickyData[i]._NodeAngle - angle);   //算角度差
                     if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料

@@ -25,5 +25,18 @@
         <LastRunType Value="Mac" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="ani/banboo.csd" />
+          <FilePathData Path="ani/banana.csd" />
+          <FilePathData Path="ani/flower.csd" />
+          <FilePathData Path="ani/tomato.csd" />
+          <FilePathData Path="TeachScene.csd" />
+          <FilePathData Path="storyscene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="storyscene.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

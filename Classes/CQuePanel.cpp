@@ -170,7 +170,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     delete _cutImage;
     //_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
     int pic= UNIT_OBJ[_curUnit-1][_curQue-1];
-    _cutImage = new CCutImage(pic,1, 1.0f,_curNum);
+    _cutImage = new CCutImage(pic,2, 1.0f,_curNum);
     //_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
     _parentLayer->addChild(_cutImage);
     
