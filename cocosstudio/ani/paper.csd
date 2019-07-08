@@ -17,7 +17,7 @@
             <FileData Type="PlistSubImage" Path="paper_1.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="2" Visible="False" ActionTag="-352928999" Tag="112" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="2" Visible="False" ActionTag="-352928999" Tag="2" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="1981961597" Tag="107" IconVisible="False" LeftMargin="-243.3008" RightMargin="-9.6992" TopMargin="-241.6888" BottomMargin="-243.3112" ctype="SpriteObjectData">
@@ -50,7 +50,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="3" Visible="False" ActionTag="-2080331175" Tag="114" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="3" Visible="False" ActionTag="-2080331175" Tag="3" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="-1025903688" Tag="118" IconVisible="False" LeftMargin="-240.4999" RightMargin="-240.5001" TopMargin="-237.2462" BottomMargin="66.2462" ctype="SpriteObjectData">
@@ -94,7 +94,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="4" Visible="False" ActionTag="-1867856019" Tag="115" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="4" Visible="False" ActionTag="-1867856019" Tag="4" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="-571020845" Tag="121" IconVisible="False" LeftMargin="-242.2593" RightMargin="-10.7407" TopMargin="-234.2586" BottomMargin="-10.7414" ctype="SpriteObjectData">
@@ -149,7 +149,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="6" Visible="False" ActionTag="281717854" Tag="116" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="6" Visible="False" ActionTag="281717854" Tag="6" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="-830012424" Tag="125" IconVisible="False" LeftMargin="-241.6412" RightMargin="-11.3588" TopMargin="-236.9139" BottomMargin="66.9139" ctype="SpriteObjectData">
@@ -226,7 +226,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="8" ActionTag="1446647166" Tag="117" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="8" ActionTag="1446647166" Tag="8" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="-1086541773" Tag="131" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-235.4110" BottomMargin="106.4110" ctype="SpriteObjectData">

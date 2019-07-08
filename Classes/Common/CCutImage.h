@@ -74,6 +74,7 @@ public:
     void CreatePancake(float scale,int num);
     void CreateNormalImg(float scale,int num);
     void CreateFlower(float scale,int num);
+    void CreatePaper(float scale,int num);
     void CreateWater(float scale,int num);
 	void divide(bool);
 

@@ -50,9 +50,9 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             CreatePancake(scale,dividedP);
             break;
         case PAPER:
-            _name = "pancake";
-            _mode = 0;
-            CreatePancake(scale,dividedP);
+            _name = "paper";
+            _mode = 2;
+            CreatePaper(scale,dividedP);
             break;
         case WATER:
             _name = "water";
@@ -105,6 +105,64 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             CreateNormalImg(scale,dividedP);
             break;
     }
+    
+}
+
+void CCutImage::CreatePaper(float scale,int num){   //紙
+    char picname[20];
+    char pp[5];
+    _dividePiece = num;
+    _scale = scale;
+    _divided = false;
+    
+    sprintf(picname, "ani/%s.csb",_name);
+    sprintf(pp, "%d",_dividePiece);
+    auto obj = CSLoader::createNode(picname)->getChildByName(pp);
+
+    
+    int totalPiece = obj->getTag();
+    int gPicec = totalPiece / _dividePiece;
+    img = new TRectSprite[_dividePiece * _fullAmount];
+    _StickyData = new StickyData[_dividePiece * _fullAmount];
+
+    for(int k=0;k<_fullAmount;k++){
+        sprintf(picname, "%s_1.png",_name);
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        fi->setPosition(POS + POSD*k);
+        fi->setScale(scale);
+        addChild(fi, BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
+        
+        sprintf(picname, "%s_%d.png", _name,_dividePiece);
+        int n=0;
+        for (int i = 0; i <_dividePiece; i++) {
+            int number = k*_dividePiece+i;
+            _StickyData[number].createImgData(gPicec);
+            while((n/gPicec == i)){
+                char p[10];  sprintf(p, "1_%d",n);
+                int v = n%gPicec;
+                _StickyData[number]._imgPos[v] = obj->getChildByName(p)->getPosition();
+                _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
+                n++;
+            }
+            img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
+            img[number].setCollisionInfo(_dividePiece);
+            img[number].setPosition(POS + POSD*k);
+            img[number].setSticky(number);
+            img[number].setVisible(false);
+            addChild(img[number].getNode(), BOTTOM_LEVEL+2);
+            
+            _StickyData[number]._NodeAngle = 0;
+            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number].isSticky = true;
+        }
+    }
+    
+    _StickyRadius = powf(img[0].ImgRadius, 2);
+    touchedAmount = 0; //被點擊的數量
+    rotateImg = NULL;
+    rotateId = -1;
+    
     
 }
 
@@ -282,8 +340,6 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
-    
-    
 }
 
 void CCutImage::CreatePancake(float scale,int num){  // 圓形
