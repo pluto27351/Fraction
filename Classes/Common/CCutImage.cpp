@@ -47,68 +47,68 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
         case PANCAKE:
             _name = "pancake";
             _mode = 0;_hasline = true;
-            CreateImg(scale,dividedP);
+            CreatePancake(scale,dividedP);
             break;
         case PAPER:
             _name = "pancake";
             _mode = 0;
-            CreateImg(scale,dividedP);
+            CreatePancake(scale,dividedP);
             break;
         case WATER:
             _name = "water";
             _mode = 2;
-            CreateImg3(scale,dividedP);
+            CreateWater(scale,dividedP);
             break;
         case BAMBOO:
             _name = "nut";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case RIBBON:
-            _name = "flower";
+            _name = "ribbon";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case DISTANCE:
             _name = "road";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case BANANA:
             _name = "banana";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case GRAPE:
             _name = "grape";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case FLOWER:
             _name = "flower";
             _mode = 2;
-            CreateImg4(scale,dividedP);
+            CreateFlower(scale,dividedP);
             break;
         case BRANCH:
             _name = "branch";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case NUT:
             _name = "nut";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
         case TOMATO:
             _name = "tomato";
             _mode = 2;
-            CreateImg2(scale,dividedP);
+            CreateNormalImg(scale,dividedP);
             break;
     }
     
 }
 
-void CCutImage::CreateImg4(float scale,int num){   //非連續物件
+void CCutImage::CreateFlower(float scale,int num){   //花
     char picname[20];
     
     sprintf(picname, "ani/%s.csb",_name);
@@ -173,7 +173,7 @@ void CCutImage::CreateImg4(float scale,int num){   //非連續物件
     
 }
 
-void CCutImage::CreateImg3(float scale,int num){  // 圓形
+void CCutImage::CreateWater(float scale,int num){  // 水
     char picname[20];
     
     _dividePiece = num;
@@ -238,7 +238,7 @@ void CCutImage::CreateImg3(float scale,int num){  // 圓形
     rotateId = -1;
 }
 
-void CCutImage::CreateImg2(float scale,int num){   //非連續物件
+void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
     char picname[20];
     
     sprintf(picname, "ani/%s.csb",_name);
@@ -305,7 +305,7 @@ void CCutImage::CreateImg2(float scale,int num){   //非連續物件
     
 }
 
-void CCutImage::CreateImg(float scale,int num){  // 圓形
+void CCutImage::CreatePancake(float scale,int num){  // 圓形
     char picname[20];
     
     _dividePiece = num;

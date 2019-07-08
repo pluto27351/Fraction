@@ -71,10 +71,10 @@ public:
     ~CCutImage();
 
     CCutImage(int picNum,int NodeAmount, float scale,int dividedP);
-    void CreateImg(float scale,int num);
-    void CreateImg2(float scale,int num);
-    void CreateImg3(float scale,int num);
-    void CreateImg4(float scale,int num);
+    void CreatePancake(float scale,int num);
+    void CreateNormalImg(float scale,int num);
+    void CreateFlower(float scale,int num);
+    void CreateWater(float scale,int num);
 	void divide(bool);
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
