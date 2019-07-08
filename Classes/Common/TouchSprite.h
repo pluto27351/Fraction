@@ -15,9 +15,9 @@ protected:
 	cocos2d::Point _SpriteLoc;
     Node *_obj;
 	float _fangle;
-	float _fscale;
 
     int _piece;
+    int _cutMode;
     
 	bool _bTouched;
 	bool _bRotated;
@@ -60,6 +60,8 @@ public:
     void setRotation(float r);
     
     void setDividedImg();
+    void normalDivide();
+    void SameHeightDivide();
     
 	Point getPosition() { return _SpriteLoc; }
 	float getAngle() { return (_fangle); }

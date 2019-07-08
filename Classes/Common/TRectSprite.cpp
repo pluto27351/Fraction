@@ -25,12 +25,15 @@ bool TRectSprite::Collision(Point touch) {
 
 void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale)
 {
+    _cutMode = 0;
     _obj = new Node;
     _piece = piece;
     
     for(int i=0;i<_piece;i++){
         auto pic = (Sprite *)Sprite::createWithSpriteFrameName(Img);
         pic->setScale(scale.x,scale.y);
+        pic->setPosition(pos[i]);
+        pic->setRotation(r[i]);
         _obj->addChild(pic);
         _Pic.push_back(pic);
         
@@ -44,6 +47,7 @@ void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec
 
 void TRectSprite::setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2 scale)
 {
+    _cutMode = 1;
     _obj = new Node;
     _piece = piece;
     char picname[20];
@@ -52,6 +56,8 @@ void TRectSprite::setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2
         sprintf(picname, "flower_%d.png",num*piece + i +2);
         auto pic = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         pic->setScale(scale.x,scale.y);
+        pic->setPosition(pos[i]);
+        pic->setRotation(r[i]);
         _obj->addChild(pic);
         _Pic.push_back(pic);
         

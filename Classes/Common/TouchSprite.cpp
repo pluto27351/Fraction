@@ -36,12 +36,23 @@ void TouchSprite::setImgPandR(int n,Point pos,float r){
 
 
 void TouchSprite::setDividedImg(){
+    switch (_cutMode) {
+        case 0:
+            normalDivide();
+            break;
+        case 1:
+            SameHeightDivide();
+            break;
+    }
+
+}
+void TouchSprite::normalDivide(){
     int g = _piece / 3;
     int tailamount = _piece % 3;
     Vec2 size =  _Pic[0]->getContentSize()/3*2;
-
+    
     int i;
-    for(i = 0; i<g; i++){
+    for(i = 0; i<g; i++){                  //3個一組
         for(int j=0;j<3;j++){
             float x = size.x*(j - 1);
             _Pic[i*3+j]->setPositionX(x);
@@ -49,7 +60,7 @@ void TouchSprite::setDividedImg(){
         }
     }
     
-    float d = (tailamount-1)/2.0 ;
+    float d = (tailamount-1)/2.0 ;       //尾數部分
     for(int j=0;j<tailamount;j++){
         float x = size.x*(j - d);
         _Pic[i*3+j]->setPositionX(x);
@@ -62,6 +73,49 @@ void TouchSprite::setDividedImg(){
         int j = i / 3;
         float y = -70*(j - d);
         _Pic[i]->setPositionY(y);
+    }
+    
+}
+
+
+void TouchSprite::SameHeightDivide(){
+    int line = _piece / 3;
+    int tailamount = _piece % 3;
+    Vec2 size =  _Pic[0]->getContentSize()/3*2;
+    
+    std::vector<float> linetall;
+    
+    int i;
+    for(i = 0; i<line; i++){                  //3個一組
+        float tall =0;
+        for(int j=0;j<3;j++){
+            float x = size.x*(j - 1);
+            _Pic[i*3+j]->setPositionX(x);
+            _Pic[i*3+j]->setRotation(0);
+            tall += _Pic[i*3+j]->getContentSize().height/2;
+        }
+        linetall.push_back(tall/3);
+    }
+    
+    float d = (tailamount-1)/2.0 ;       //尾數部分
+    float tall =0;
+    for(int j=0;j<tailamount;j++){
+        float x = size.x*(j - d);
+        _Pic[i*3+j]->setPositionX(x);
+        _Pic[i*3+j]->setRotation(0);
+        tall += _Pic[i*3+j]->getContentSize().height/2;
+    }
+    linetall.push_back(tall/tailamount);
+    
+    if(tailamount != 0) line++;
+    d = (line-1) /2.0f;
+    for(int i=0;i<_piece;i++){
+        int j = i / 3;
+        float y = -90*(j - d);
+        float dy =_Pic[i]->getContentSize().height/2;
+        
+        dy = 150 - dy;
+        _Pic[i]->setPositionY(y + dy);
     }
     
 }

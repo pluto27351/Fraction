@@ -136,24 +136,17 @@ void CCutImage::CreateFlower(float scale,int num){   //花
         for (int i = 0; i <_dividePiece; i++) {
             int number = k*_dividePiece+i;
             _StickyData[number].createImgData(gPicec);
-            totalPos = Point(0,0);
             while((n/gPicec == i)){
                 char p[10];  sprintf(p, "1_%d",n);
                 int v = n%gPicec;
-                auto asdf =obj->getChildByName(p)->getPosition();
-                _StickyData[number]._imgPos[v] = asdf;
+                _StickyData[number]._imgPos[v] = obj->getChildByName(p)->getPosition();
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
-                totalPos += _StickyData[number]._imgPos[v];
                 n++;
             }
-            totalPos = totalPos / gPicec;
-            for(int v=0; v<gPicec; v++) {
-                _StickyData[number]._imgPos[v] -= totalPos;
-            }
-            
+
             img[number].setImgInfo_flower(i,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k + totalPos);
+            img[number].setPosition(POS + POSD*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+2);
@@ -262,30 +255,19 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
         
         sprintf(picname, "%s_2.png", _name);
         int n=0;
-        Point totalPos;
-        
-        
         for (int i = 0; i <_dividePiece; i++) {
             int number = k*_dividePiece+i;
             _StickyData[number].createImgData(gPicec);
-            totalPos = Point(0,0);
             while((n/gPicec == i)){
                 char p[10];  sprintf(p, "1_%d",n);
                 int v = n%gPicec;
-                auto asdf =obj->getChildByName(p)->getPosition();
-                _StickyData[number]._imgPos[v] = asdf;
+                _StickyData[number]._imgPos[v] = obj->getChildByName(p)->getPosition();
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
-                totalPos += _StickyData[number]._imgPos[v];
                 n++;
             }
-            totalPos = totalPos / gPicec;
-            for(int v=0; v<gPicec; v++) {
-                _StickyData[number]._imgPos[v] -= totalPos;
-            }
- 
             img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k + totalPos);
+            img[number].setPosition(POS + POSD*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+2);
@@ -294,7 +276,6 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
             _StickyData[number]._NodePos = img[number].getPosition();
             _StickyData[number].isSticky = true;
         }
-    
     }
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
@@ -316,16 +297,14 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
-
-        sprintf(picname, "%s_1.png",_name);
+        sprintf(picname, "%s_1.png",_name);                               //底圖
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(POS+POSD*k);
         fi->setScale(scale);
         addChild(fi,BOTTOM_LEVEL);
         _fullImg.push_back(fi);
         
-        sprintf(picname, "%s_%d.png", _name, _dividePiece);
-
+        sprintf(picname, "%s_%d.png", _name, _dividePiece);              //切分圖
         float a = 180 / _dividePiece;
         for (int i = 0; i < _dividePiece; i++) {
             int number = k*_dividePiece+i;
@@ -380,23 +359,6 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             }
         }
         break;
-//        case 1: //非連續用-位移切法
-//        {
-//            float d = (_dividePiece-1) /2.0f;
-//            int n = img[0].getPieceAmount();
-//            n = MIN(n, 3);
-//            n *= 95;
-//            for (int i = 0; i < _dividePiece; i++) {
-//                Point pos = Point(n*(i - d),0);
-//                img[i].setPosition(pos + POS);
-//                img[i].setRotation(0);
-//                img[i].setSticky(-1);
-//                _StickyData[i].isSticky = false;
-//                img[i].setDividedImg();
-//            }
-//
-//        }
-//        break;
         case 2: //非連續用-圓形切法
         {
             float n = 360/_dividePiece;
