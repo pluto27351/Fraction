@@ -10,7 +10,7 @@
 #define ERASER_MODE  3
 
 //每單元題目數量
-const int QUEDATA[5] = { 12,12,12,3,2 };
+const int QUEDATA[5] = { 12,12,12,2,2 };
 
 //              0       1     2     3      4       5       6      7     8      9    10    11
 //enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
@@ -71,10 +71,9 @@ const int UNIT_3[12][12] = {
     { 5, 2, 3, 4, 6, 12, 0, 0, 0, 0, 0, 0 },
     { 3, 2, 4, 8, 0, 0, 0, 0, 0, 0, 0, 0 }};
 
-const int UNIT_4[3][12] = {
+const int UNIT_4[2][12] = {
 	{ 7, 2, 3, 4, 5, 6, 8, 10, 0, 0, 0, 0 },
-	{ 5, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0 },
-	{ 7, 2, 3, 4, 5, 6, 8, 10, 0, 0, 0, 0 } };
+	{ 5, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0 }};
 
 const int UNIT_5[2][12] = {
 	{ 7, 2, 3, 4, 5, 6, 8, 10, 0, 0, 0, 0 },

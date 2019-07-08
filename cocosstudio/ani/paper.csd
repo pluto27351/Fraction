@@ -149,7 +149,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="6" Visible="False" ActionTag="281717854" Tag="6" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="6" ActionTag="281717854" Tag="6" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="-830012424" Tag="125" IconVisible="False" LeftMargin="-241.6412" RightMargin="-11.3588" TopMargin="-236.9139" BottomMargin="66.9139" ctype="SpriteObjectData">
@@ -160,7 +160,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_5.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="1_1" ActionTag="-792104578" Tag="126" IconVisible="False" LeftMargin="-241.6412" RightMargin="-11.3588" TopMargin="-83.9444" BottomMargin="-86.0556" ctype="SpriteObjectData">
@@ -171,7 +171,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_5.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="1_2" ActionTag="-1609473008" Tag="127" IconVisible="False" LeftMargin="-241.6412" RightMargin="-11.3588" TopMargin="68.9132" BottomMargin="-238.9132" ctype="SpriteObjectData">
@@ -182,7 +182,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_5.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="1_3" ActionTag="1372173868" Tag="128" IconVisible="False" LeftMargin="-11.2418" RightMargin="-241.7582" TopMargin="-236.9700" BottomMargin="66.9700" ctype="SpriteObjectData">
@@ -193,7 +193,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_5.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="1_4" ActionTag="-938323353" Tag="129" IconVisible="False" LeftMargin="-11.2418" RightMargin="-241.7582" TopMargin="-84.0002" BottomMargin="-85.9998" ctype="SpriteObjectData">
@@ -204,7 +204,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_5.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="1_5" ActionTag="-775800843" Tag="130" IconVisible="False" LeftMargin="-11.2418" RightMargin="-241.7582" TopMargin="68.8575" BottomMargin="-238.8575" ctype="SpriteObjectData">
@@ -215,7 +215,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_5.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -226,10 +226,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="8" ActionTag="1446647166" Tag="8" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="8" Visible="False" ActionTag="1446647166" Tag="8" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="1_0" ActionTag="-1086541773" Tag="131" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-235.4110" BottomMargin="106.4110" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_0" ActionTag="-1086541773" Tag="131" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-255.9110" BottomMargin="85.9110" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="170.9110" />
@@ -237,10 +237,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_1" ActionTag="-52718296" Tag="132" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-119.5457" BottomMargin="-9.4543" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_1" ActionTag="-52718296" Tag="132" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-140.0457" BottomMargin="-29.9543" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="55.0457" />
@@ -248,10 +248,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_2" ActionTag="989383989" Tag="133" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-4.9600" BottomMargin="-124.0400" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_2" ActionTag="989383989" Tag="133" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-25.4600" BottomMargin="-144.5400" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="-59.5400" />
@@ -259,10 +259,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_3" ActionTag="1455297407" Tag="134" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="110.4098" BottomMargin="-239.4098" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_3" ActionTag="1455297407" Tag="134" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="89.9098" BottomMargin="-259.9098" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="-174.9098" />
@@ -270,10 +270,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_4" ActionTag="-1905539093" Tag="135" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-235.4110" BottomMargin="106.4110" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_4" ActionTag="-1905539093" Tag="135" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-255.9110" BottomMargin="85.9110" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1456" Y="170.9110" />
@@ -281,10 +281,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_5" ActionTag="-789698699" Tag="136" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-119.5458" BottomMargin="-9.4542" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_5" ActionTag="-789698699" Tag="136" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-140.0458" BottomMargin="-29.9542" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1456" Y="55.0458" />
@@ -292,10 +292,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_6" ActionTag="1225644095" Tag="137" IconVisible="False" LeftMargin="-11.3545" RightMargin="-241.6455" TopMargin="-4.9600" BottomMargin="-124.0400" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_6" ActionTag="1225644095" Tag="137" IconVisible="False" LeftMargin="-11.3545" RightMargin="-241.6455" TopMargin="-25.4600" BottomMargin="-144.5400" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1455" Y="-59.5400" />
@@ -303,10 +303,10 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_7" ActionTag="606777296" Tag="138" IconVisible="False" LeftMargin="-11.3546" RightMargin="-241.6454" TopMargin="110.4098" BottomMargin="-239.4098" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_7" ActionTag="606777296" Tag="138" IconVisible="False" LeftMargin="-11.3546" RightMargin="-241.6454" TopMargin="89.9098" BottomMargin="-259.9098" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1454" Y="-174.9098" />
@@ -314,7 +314,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="paper_6.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>

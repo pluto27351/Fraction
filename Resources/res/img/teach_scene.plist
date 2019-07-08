@@ -7,7 +7,7 @@
             <key>main.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,625},{2731,1536}}</string>
+                <string>{{0,449},{2731,1536}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,28 +33,28 @@
             <key>main_start.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{369,0},{768,625}}</string>
+                <string>{{369,0},{524,449}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{768,625}}</string>
+                <string>{{0,0},{524,449}}</string>
                 <key>sourceSize</key>
-                <string>{768,625}</string>
+                <string>{524,449}</string>
             </dict>
             <key>main_start_click.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1137,0},{768,625}}</string>
+                <string>{{893,0},{524,439}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{768,625}}</string>
+                <string>{{0,0},{524,439}}</string>
                 <key>sourceSize</key>
-                <string>{768,625}</string>
+                <string>{524,439}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -68,9 +68,9 @@
             <key>realTextureFileName</key>
             <string>teach_scene.png</string>
             <key>size</key>
-            <string>{4096,4096}</string>
+            <string>{4096,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:662165924ed2dce9788ff1ff62ca55ad:bdffd9fdce01b2b2bc577452993769d0:ff5ae691f8e7334ac456bb95a8b33c1d$</string>
+            <string>$TexturePacker:SmartUpdate:a8b078a32b48be6ec2bce3ec35c33e31:ecff38985a7bcd5006be4dc413859c69:ff5ae691f8e7334ac456bb95a8b33c1d$</string>
             <key>textureFileName</key>
             <string>teach_scene.png</string>
         </dict>

@@ -45,12 +45,12 @@ bool CMenuScene::init()
 		_unitBtn[i] = new CButton();
 		_unitBtn[i]->setButtonInfo(normalName, touchedName, *this, pt, 1);
 		_unitBtn[i]->setScale(scale);
-		_unitBtn[i]->setEnabled(false);
+		_unitBtn[i]->setEnabled(true);
 		rootNode->removeChildByName(spriteName);
 	}
-    _unitBtn[0]->setEnabled(true);
-    _unitBtn[1]->setEnabled(true);
-    _unitBtn[2]->setEnabled(true);
+//    _unitBtn[0]->setEnabled(true);
+//    _unitBtn[1]->setEnabled(true);
+//    _unitBtn[2]->setEnabled(true);
 	_unitIdx = 0;	// 設定成切換的單元，1 到 5
     
     pt = rootNode->getChildByName("storybtn")->getPosition();

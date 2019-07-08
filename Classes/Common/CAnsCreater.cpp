@@ -16,33 +16,9 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
         answer = CSLoader::createNode(name);
 		Input_u1(*answer, number);
 		break;
-    case 2:
-	//	sprintf(name, "ans/u%d_%d.csb", uni, 1);
-    //  Input_u2_1(*answer, number);
-		answer = CSLoader::createNode(name);
-        Input_que(*answer, number);
-		break;
-    case 3:
-		//sprintf(name, "ans/u%d_%d.csb", uni, 4);
-		//answer = CSLoader::createNode(name);
-		//Input_u2_4(*answer, number);
-        answer = CSLoader::createNode(name);
-        Input_que(*answer, number);
-		break;
-    case 4:
-		sprintf(name, "ans/u%d_%d.csb", uni, 7);
-		answer = CSLoader::createNode(name);
-		Input_u2_7(*answer, number);
-		break;
-    case 5:
-        sprintf(name, "ans/u%d_%d.csb", uni, 7);
-        answer = CSLoader::createNode(name);
-        Input_u2_7(*answer, number);
-        break;
 	default:
-		sprintf(name, "ans/u%d_%d.csb", 3, 2);
-		answer = CSLoader::createNode(name);
-		Input_u2_7(*answer, number);
+        answer = CSLoader::createNode(name);
+        Input_que(*answer, number);
 		break;
 	}
 	//answer->setPosition(Point(1024, 700));

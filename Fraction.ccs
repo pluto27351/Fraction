@@ -54,6 +54,10 @@
           <Project Name="u3_7.csd" Type="Node" />
           <Project Name="u3_8.csd" Type="Node" />
           <Project Name="u3_9.csd" Type="Node" />
+          <Project Name="u4_1.csd" Type="Node" />
+          <Project Name="u4_2.csd" Type="Node" />
+          <Project Name="u5_1.csd" Type="Node" />
+          <Project Name="u5_2.csd" Type="Node" />
         </Folder>
         <PlistImageFolder Image="fraction_menu.png" PListFile="fraction_menu.plist" Name=".fraction_menu_PList.Dir">
           <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />
@@ -241,7 +245,6 @@
             <PlistImageFile Name="paper_2.png" Key="paper_2.png" />
             <PlistImageFile Name="paper_3.png" Key="paper_3.png" />
             <PlistImageFile Name="paper_4.png" Key="paper_4.png" />
-            <PlistImageFile Name="paper_5.png" Key="paper_5.png" />
             <PlistImageFile Name="paper_6.png" Key="paper_6.png" />
             <PlistImageFile Name="ribbon_1.png" Key="ribbon_1.png" />
             <PlistImageFile Name="ribbon_2.png" Key="ribbon_2.png" />
@@ -273,6 +276,8 @@
             <PlistImageFile Name="water_2.png" Key="water_2.png" />
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
+            <PlistImageFile Name="paper_8.png" Key="paper_8.png" />
+            <PlistImageFile Name="water_0.png" Key="water_0.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="cover_bk.jpg" />
