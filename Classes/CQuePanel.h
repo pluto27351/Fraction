@@ -28,13 +28,15 @@ private:
     int _curQue; //題號
     int _curNum; //數字
     int _curPicAmount;
+    int _objNum;
+    
     CButton _prevBtn, _nextBtn;
     CSwitch _ansBtn,_numBtn,_cutBtn;
     CSwitchGroup _numSwitcher; //,_cutSwitcher;
     CCutImage *_cutImage;
     CAnsCreater *_ans,*_que;
     Sprite *_blackMask;
-    const int(*equalData)[12];
+
     
     Layer *_parentLayer;
 public:

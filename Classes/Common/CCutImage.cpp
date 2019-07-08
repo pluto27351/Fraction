@@ -60,7 +60,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             CreateWater(scale,dividedP);
             break;
         case BAMBOO:
-            _name = "nut";
+            _name = "banboo";
             _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;

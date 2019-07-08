@@ -26,24 +26,32 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_curUnit = iUnitNo;
 	_curQue = 1;  // 預設顯示第一題
 
-	//獲取題目分母資訊
-	switch (_curUnit){
-		case 1:
-			equalData = UNIT_1;  break;
-		case 2:
-			equalData = UNIT_2;  break;
-		case 3:
-			equalData = UNIT_3;  break;
-		case 4:
-			equalData = UNIT_4;  break;
-		case 5:
-			equalData = UNIT_5;  break;
-	}
-
-	//隨幾取分母
-	int num = (rand() % equalData[_curQue - 1][0]) + 1;
-	_curNum = equalData[_curQue - 1][num];
-
+//    //獲取題目分母資訊
+//    switch (_curUnit){
+//        case 1:
+//            equalData = UNIT_1;  break;
+//        case 2:
+//            equalData = UNIT_2;  break;
+//        case 3:
+//            equalData = UNIT_3;  break;
+//        case 4:
+//            equalData = UNIT_4;  break;
+//        case 5:
+//            equalData = UNIT_5;  break;
+//    }
+//
+//    //隨幾取分母
+//    int num = (rand() % equalData[_curQue - 1][0]) + 1;
+//    _curNum = equalData[_curQue - 1][num];
+    
+    
+    //獲取題目分母資訊
+    //隨幾取分母
+    _objNum = UNIT_OBJ[_curUnit-1][_curQue-1];
+    int num = (rand() % PIECE[_objNum][0]) + 1;
+    _curNum = PIECE[_objNum][num];
+    _curPicAmount = 1;
+    
 	//設定題目
 	_que = new CAnsCreater();
 	_que->queCreater(_curUnit, _curQue, _curNum);
@@ -57,9 +65,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_parentLayer->addChild(_ans);
 
 	//設定圖片
-    _curPicAmount = 1;
-    int pic= UNIT_OBJ[_curUnit-1][_curQue-1];
-    _cutImage = new CCutImage(pic,_curPicAmount, 1.0f,_curNum);
+    _cutImage = new CCutImage(_objNum ,_curPicAmount, 1.0f,_curNum);
 	_parentLayer->addChild(_cutImage);
 
 	//設定分母選單
@@ -68,7 +74,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
     auto obj = rootNode.getChildByName("numPic");
     _numSwitcher.init("n-", "white.png", parent, obj, SWITCHBOARD_LEVEL);
     //_numSwitcher.setAsColumn();
-    _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    _numSwitcher.setEnabledBtns(PIECE[_objNum], _curNum);
     _numSwitcher.setLockNum(_curNum-2,true);
     _numSwitcher.setVisible(false);
     rootNode.removeChildByName("numPic");
@@ -128,14 +134,16 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
 	//題號有改變  改變分母
 	if (que != 0) {  
 		_curQue += que;
-		if (_curQue < 1) _curQue = QUEDATA[_curUnit - 1];            //避免超過範圍１～最後一題
+		if (_curQue < 1) _curQue = QUEDATA[_curUnit - 1];         //避免超過範圍１～最後一題
 		else if (_curQue > QUEDATA[_curUnit - 1]) _curQue = 1;
+        
+        _objNum = UNIT_OBJ[_curUnit-1][_curQue-1];
         
         //隨機取分母
         do {
-            num = (rand() % equalData[_curQue - 1][0]) + 1;
-            num = equalData[_curQue - 1][num];
-        } while (num == _curNum && equalData[_curQue - 1][0] != 1);
+            num = (rand() % PIECE[_objNum][0]) + 1;
+            num = PIECE[_objNum][num];
+        } while (num == _curNum && PIECE[_objNum][0] != 1);
 
 	}
 
@@ -160,7 +168,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     }
     
     //重設分母選單
-    _numSwitcher.setEnabledBtns(equalData[_curQue-1], _curNum);
+    _numSwitcher.setEnabledBtns(PIECE[_objNum], _curNum);
     _numSwitcher.setLockNum(_curNum-2,true);
     _numSwitcher.setVisible(false);
     
@@ -168,10 +176,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     //切塊圖還原
     _parentLayer->removeChild(_cutImage);
     delete _cutImage;
-    //_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
-    int pic= UNIT_OBJ[_curUnit-1][_curQue-1];
-    _cutImage = new CCutImage(pic,_curPicAmount, 1.0f,_curNum);
-    //_cutImage = new CCutImage("stuff_muffin", 1.0f,_curNum);
+    _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum);
     _parentLayer->addChild(_cutImage);
     
     //按鈕關閉隱藏
