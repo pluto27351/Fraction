@@ -22,13 +22,11 @@ void TouchSprite::setRotation(float r) {
     else if (_fangle < 0)_fangle += 360;
     
     _obj->setRotation(-_fangle);
-    //for(int i=0; i<_piece; i++)_Pic[i]->setRotation(-_fangle);
 }
 
 void TouchSprite::setPosition(Point pos) {
     _SpriteLoc = pos;
     _obj->setPosition(_SpriteLoc);
-   // for(int i=0; i<_piece; i++)_Pic[i]->setPosition(_SpriteLoc);
 }
 
 void TouchSprite::setImgPandR(int n,Point pos,float r){
@@ -36,12 +34,6 @@ void TouchSprite::setImgPandR(int n,Point pos,float r){
     _Pic[n]->setRotation(r);
 }
 
-//float d = (_piece-1) /2.0f;
-//for(int i=0;i<_piece;i++){
-//    Point pos = Point(50*(i - d),0);
-//    _Pic[i]->setPosition(pos);
-//    _Pic[i]->setRotation(0);
-//}
 
 void TouchSprite::setDividedImg(){
     int g = _piece / 3;

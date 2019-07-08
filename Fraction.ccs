@@ -56,18 +56,18 @@
           <Project Name="u3_9.csd" Type="Node" />
         </Folder>
         <PlistImageFolder Image="fraction_menu.png" PListFile="fraction_menu.plist" Name=".fraction_menu_PList.Dir">
-          <PlistImageFile Name="Ch_01-click.png" Key="Ch_01-click.png" />
           <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />
-          <PlistImageFile Name="Ch_02-click.png" Key="Ch_02-click.png" />
+          <PlistImageFile Name="Ch_01-click.png" Key="Ch_01-click.png" />
           <PlistImageFile Name="Ch_02.png" Key="Ch_02.png" />
-          <PlistImageFile Name="Ch_03-click.png" Key="Ch_03-click.png" />
+          <PlistImageFile Name="Ch_02-click.png" Key="Ch_02-click.png" />
           <PlistImageFile Name="Ch_03.png" Key="Ch_03.png" />
-          <PlistImageFile Name="Ch_04-click.png" Key="Ch_04-click.png" />
+          <PlistImageFile Name="Ch_03-click.png" Key="Ch_03-click.png" />
           <PlistImageFile Name="Ch_04.png" Key="Ch_04.png" />
-          <PlistImageFile Name="Ch_05-click.png" Key="Ch_05-click.png" />
+          <PlistImageFile Name="Ch_04-click.png" Key="Ch_04-click.png" />
           <PlistImageFile Name="Ch_05.png" Key="Ch_05.png" />
-          <PlistImageFile Name="Ch_Course.jpg" Key="Ch_Course.jpg" />
+          <PlistImageFile Name="Ch_05-click.png" Key="Ch_05-click.png" />
           <PlistImageFile Name="Ch_cloud.png" Key="Ch_cloud.png" />
+          <PlistImageFile Name="Ch_Course.jpg" Key="Ch_Course.jpg" />
           <PlistImageFile Name="Ch_story.png" Key="Ch_story.png" />
           <PlistImageFile Name="Ch_story_hover.png" Key="Ch_story_hover.png" />
         </PlistImageFolder>
@@ -136,12 +136,12 @@
             <PlistImageFile Name="flame2_12.png" Key="flame2_12.png" />
             <PlistImageFile Name="flame2_13.png" Key="flame2_13.png" />
             <PlistImageFile Name="scoretable.png" Key="scoretable.png" />
-            <PlistImageFile Name="sliderProgress.png" Key="sliderProgress.png" />
-            <PlistImageFile Name="sliderProgress2.png" Key="sliderProgress2.png" />
-            <PlistImageFile Name="sliderTrack.png" Key="sliderTrack.png" />
             <PlistImageFile Name="sliderball.png" Key="sliderball.png" />
             <PlistImageFile Name="sliderballnormal.png" Key="sliderballnormal.png" />
             <PlistImageFile Name="sliderballpressed.png" Key="sliderballpressed.png" />
+            <PlistImageFile Name="sliderProgress.png" Key="sliderProgress.png" />
+            <PlistImageFile Name="sliderProgress2.png" Key="sliderProgress2.png" />
+            <PlistImageFile Name="sliderTrack.png" Key="sliderTrack.png" />
             <PlistImageFile Name="sr_f_triangle.png" Key="sr_f_triangle.png" />
             <PlistImageFile Name="triblock.png" Key="triblock.png" />
             <PlistImageFile Name="triouter.png" Key="triouter.png" />

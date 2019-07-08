@@ -25,13 +25,13 @@ bool CHomeScene::init()
 	//Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Fraction_menu.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_scene.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
     auto rootNode = CSLoader::createNode("homescene.csb");
     addChild(rootNode);
     
 	auto _BtnLoc = rootNode->getChildByName("startBtn")->getPosition();
-	_startBtn.setButtonInfo("next_R.png", "next_R_click.png", *this, _BtnLoc, 1);
+	_startBtn.setButtonInfo("main_start.png", "main_start_click.png", *this, _BtnLoc, 1);
 	rootNode->removeChildByName("startBtn");
 
     _BtnLoc = rootNode->getChildByName("Boo")->getPosition();
@@ -107,7 +107,7 @@ CHomeScene::~CHomeScene()
     CCLOG("delete homeScene1");
 	this->removeAllChildren();
     
-    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Fraction_menu.plist");
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
     SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
 	Director::getInstance()->getTextureCache()->removeUnusedTextures();
 }
