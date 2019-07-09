@@ -156,7 +156,7 @@
             <PlistImageFile Name="main.png" Key="main.png" />
             <PlistImageFile Name="main_nut.png" Key="main_nut.png" />
             <PlistImageFile Name="main_start.png" Key="main_start.png" />
-            <PlistImageFile Name="main_start_click.png" Key="main_start_click.png" />
+            <PlistImageFile Name="main_start_click2.png" Key="main_start_click2.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
@@ -246,6 +246,7 @@
             <PlistImageFile Name="paper_3.png" Key="paper_3.png" />
             <PlistImageFile Name="paper_4.png" Key="paper_4.png" />
             <PlistImageFile Name="paper_6.png" Key="paper_6.png" />
+            <PlistImageFile Name="paper_8.png" Key="paper_8.png" />
             <PlistImageFile Name="ribbon_1.png" Key="ribbon_1.png" />
             <PlistImageFile Name="ribbon_2.png" Key="ribbon_2.png" />
             <PlistImageFile Name="ribbon_line.png" Key="ribbon_line.png" />
@@ -272,12 +273,15 @@
             <PlistImageFile Name="tool_red_click.png" Key="tool_red_click.png" />
             <PlistImageFile Name="tool_reset.png" Key="tool_reset.png" />
             <PlistImageFile Name="tool_reset_click.png" Key="tool_reset_click.png" />
+            <PlistImageFile Name="water_0.png" Key="water_0.png" />
             <PlistImageFile Name="water_1.png" Key="water_1.png" />
             <PlistImageFile Name="water_2.png" Key="water_2.png" />
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
-            <PlistImageFile Name="paper_8.png" Key="paper_8.png" />
-            <PlistImageFile Name="water_0.png" Key="water_0.png" />
+            <PlistImageFile Name="length_0.png" Key="length_0.png" />
+            <PlistImageFile Name="length_1.png" Key="length_1.png" />
+            <PlistImageFile Name="length_2.png" Key="length_2.png" />
+            <PlistImageFile Name="banboo_big.png" Key="banboo_big.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="cover_bk.jpg" />

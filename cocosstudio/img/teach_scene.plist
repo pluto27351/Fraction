@@ -43,7 +43,7 @@
                 <key>sourceSize</key>
                 <string>{524,449}</string>
             </dict>
-            <key>main_start_click.png</key>
+            <key>main_start_click2.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{893,0},{524,439}}</string>
@@ -70,7 +70,7 @@
             <key>size</key>
             <string>{4096,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a8b078a32b48be6ec2bce3ec35c33e31:ecff38985a7bcd5006be4dc413859c69:ff5ae691f8e7334ac456bb95a8b33c1d$</string>
+            <string>$TexturePacker:SmartUpdate:f65936cab8a6782bd2f55d44a8c36a94:c09a6a0f2b2de10cea583c8070820844:ff5ae691f8e7334ac456bb95a8b33c1d$</string>
             <key>textureFileName</key>
             <string>teach_scene.png</string>
         </dict>
