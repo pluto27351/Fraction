@@ -30,6 +30,8 @@ private:
     int _curPicAmount;
     int _objNum;
     
+    int _c,_b; //第五章用的倍數與分子
+    
     CButton _prevBtn, _nextBtn;
     CSwitch _ansBtn,_numBtn,_cutBtn;
     CSwitchGroup _numSwitcher; //,_cutSwitcher;

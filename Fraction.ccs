@@ -58,6 +58,7 @@
           <Project Name="u4_2.csd" Type="Node" />
           <Project Name="u5_1.csd" Type="Node" />
           <Project Name="u5_2.csd" Type="Node" />
+          <Project Name="u5_3.csd" Type="Node" />
         </Folder>
         <PlistImageFolder Image="fraction_menu.png" PListFile="fraction_menu.plist" Name=".fraction_menu_PList.Dir">
           <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />
@@ -329,6 +330,7 @@
           <Project Name="q4_2.csd" Type="Node" />
           <Project Name="q5_1.csd" Type="Node" />
           <Project Name="q5_2.csd" Type="Node" />
+          <Project Name="q5_3.csd" Type="Node" />
         </Folder>
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />

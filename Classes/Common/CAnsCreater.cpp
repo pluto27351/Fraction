@@ -26,6 +26,23 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
 	addChild(answer);
 }
 
+CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) { //單元．題目．數字
+    Node * answer;
+    
+    char name[14];
+    sprintf(name,"ans/u%d_%d.csb",uni, queNo);
+    answer = CSLoader::createNode(name);
+    //分數
+    Node *Output_f = (Node *)answer->getChildByName("F_1");
+    Text *ntor = (Text *)Output_f->getChildByName("ntor");
+    char bc[5],aa[5];
+    sprintf(bc,"%d",b*c);
+    sprintf(aa,"%d",number);
+    Output_f->addChild(Set_CAnsCreater(bc,aa,""));  //分子.分母.帶分數
+    Output_f->removeChildByName("ntor");
+    addChild(answer);
+}
+
 void CAnsCreater::Input_u1(Node &Q, int number) {
 	char Input[5];
 	char fn[3];
@@ -247,14 +264,36 @@ cocos2d::Node * CAnsCreater::CAnsCreaterOperation(int n) {
 
 //生成題目
 void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目．數字
-	Node * answer;
-
 	char name[14];
     sprintf(name, "que/q%d_%d.csb", uni, queNo);
 	auto queNode = CSLoader::createNode(name);
 	Input_que(*queNode, number);
 	
 	addChild(queNode);
+}
+//生成題目
+void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3.5-4 特殊需求
+    char name[14];
+    sprintf(name, "que/q%d_%d.csb", uni, queNo);
+    auto queNode = CSLoader::createNode(name);
+    
+    char Input[5];
+    //數字
+    Text *Output_n = (Text *)queNode->getChildByName("N_1");
+    sprintf(Input, "%d", c);
+    Output_n->setString(Input);
+    Output_n->setTextColor(_textColor4B);
+
+    //分數
+    Node *Output_f = (Node *)queNode->getChildByName("F_1");
+    Text *ntor = (Text *)Output_f->getChildByName("ntor");
+    char bb[5],aa[5];
+    sprintf(bb,"%d",b);
+    sprintf(aa,"%d",number);
+    Output_f->addChild(Set_CAnsCreater(bb,aa,""));  //分子.分母.帶分數
+    Output_f->removeChildByName("ntor");
+    
+    addChild(queNode);
 }
 
 void CAnsCreater::Input_que(Node &Q, int number) {
@@ -313,13 +352,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
         
         Output_f->addChild(Set_CAnsCreater(n,d,f));
         
-        //if(f->getString().c_str()[0]=='d') //判斷固定分子還分母 有d是固定分母
-        //  Output_f->addChild(Set_CAnsCreater(Input, Numerator(f->getString().c_str(), Input), fn));
-        //else
-        //  Output_f->addChild(Set_CAnsCreater(Numerator(f->getString().c_str(), Input), Input, fn));
-        
 		Output_f->removeChildByName("ntor");
 	}
 
 }
-

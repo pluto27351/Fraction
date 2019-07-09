@@ -26,27 +26,61 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 
     //獲取題目分母資訊
     //隨幾取分母
+    srand(time(NULL));
     _objNum = UNIT_OBJ[_curUnit-1][_curQue-1];
     int num = (rand() % PIECE[_objNum][0]) + 1;
     _curNum = PIECE[_objNum][num];
+    
+	
+    if(_curUnit == 5 && (_curQue == 3||_curQue == 4)){
+        int k = 0;
+        do {
+            _c = rand()%6;
+            _b= rand()%5;
+            k = UNIT5[_curNum-2][_c][_b];  //數字都從2開始 a.c.b
+            _c+=2;_b+=2;
+        }while (k == 1);
+        
+        //設定題目
+        _que = new CAnsCreater();
+        _que->queCreater(_curUnit, _curQue, _curNum,_c,_b);
+        _que->setPosition(QUE_POS);
+        _parentLayer->addChild(_que);
+        
+        //設定答案
+        _ans = new CAnsCreater(_curUnit, _curQue, _curNum,_c,_b);
+        _ans->setPosition(ANS_POS);
+        _ans->setVisible(false);
+        _parentLayer->addChild(_ans,1);
+        
+        //設定圖片
+        _curPicAmount = 1;
+        if(_curNum < _c * _b) _curPicAmount = 2;
+    }else{
+        //設定題目
+        _que = new CAnsCreater();
+        _que->queCreater(_curUnit, _curQue, _curNum);
+        _que->setPosition(QUE_POS);
+        _parentLayer->addChild(_que);
+        
+        //設定答案
+        _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
+        _ans->setPosition(ANS_POS);
+        _ans->setVisible(false);
+        _parentLayer->addChild(_ans,1);
+        
+        //設定圖片
+        _curPicAmount = 1;
+        if(_curUnit == 4) {
+            _curPicAmount = 2;
+        }
 
-	//設定題目
-	_que = new CAnsCreater();
-	_que->queCreater(_curUnit, _curQue, _curNum);
-	_que->setPosition(QUE_POS);
-	_parentLayer->addChild(_que);
+    }
 
-	//設定答案
-	_ans = new CAnsCreater(_curUnit, _curQue, _curNum);
-	_ans->setPosition(ANS_POS);
-	_ans->setVisible(false);
-	_parentLayer->addChild(_ans);
-
-	//設定圖片
-    if(_curUnit == 4) _curPicAmount = 2;
-    else    _curPicAmount = 1;
-    _cutImage = new CCutImage(_objNum ,_curPicAmount, 1.0f,_curNum);  //這邊要改
-	_parentLayer->addChild(_cutImage);
+    //設定圖片
+    _cutImage = new CCutImage(_objNum ,_curPicAmount, 1.0f,_curNum); //第四章可能會要改
+    _parentLayer->addChild(_cutImage);
+    
 
 	//設定分母選單
     auto obj = rootNode.getChildByName("numPic");
@@ -128,20 +162,49 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     if (num != 0) {
         _curNum = num;
         
-        //重設答案
-        _parentLayer->removeChild(_ans);  delete _ans;
-        _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
-        _ans->setPosition(ANS_POS);
-        _ans->setVisible(false);
-        _parentLayer->addChild(_ans);
-        
-        //重設題目
-        _parentLayer->removeChild(_que);  delete _que;
-        _que = new CAnsCreater();
-        _que->queCreater(_curUnit, _curQue, _curNum);
-        _que->setPosition(QUE_POS);
-        _parentLayer->addChild(_que);
-        
+        if(_curUnit == 5 && (_curQue == 3||_curQue == 4)){
+            int k = 0;
+            do {
+                _c = rand()%6;
+                _b= rand()%5;
+                k = UNIT5[_curNum-2][_c][_b];  //數字都從2開始 a.c.b
+                _c+=2;_b+=2;
+            }while (k == 1);
+            
+            //設定題目
+            _parentLayer->removeChild(_que);  delete _que;
+            _que = new CAnsCreater();
+            _que->queCreater(_curUnit, _curQue, _curNum,_c,_b);
+            _que->setPosition(QUE_POS);
+            _parentLayer->addChild(_que);
+            
+            //設定答案
+            _parentLayer->removeChild(_ans);  delete _ans;
+            _ans = new CAnsCreater(_curUnit, _curQue, _curNum,_c,_b);
+            _ans->setPosition(ANS_POS);
+            _ans->setVisible(false);
+            _parentLayer->addChild(_ans,1);
+            
+            //設定圖片
+            _curPicAmount = 1;
+            if(_curNum < _c * _b) _curPicAmount = 2;
+        }else{
+            //重設答案
+            _parentLayer->removeChild(_ans);  delete _ans;
+            _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
+            _ans->setPosition(ANS_POS);
+            _ans->setVisible(false);
+            _parentLayer->addChild(_ans);
+            
+            //重設題目
+            _parentLayer->removeChild(_que);  delete _que;
+            _que = new CAnsCreater();
+            _que->queCreater(_curUnit, _curQue, _curNum);
+            _que->setPosition(QUE_POS);
+            _parentLayer->addChild(_que);
+            _curPicAmount = 1;
+            if(_curQue == 4)_curPicAmount = 2;
+        }
     }
     
     //重設分母選單
