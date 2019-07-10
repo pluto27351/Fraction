@@ -156,7 +156,7 @@ void TouchSprite::longPicDivide(){
     
     for(int i = 0; i<_piece; i++){
         Point pos =Point(width*(i-d),0);
-        _Pic[i]->setPosition(pos);ß
+        _Pic[i]->setPosition(pos);
         _Pic[i]->setRotation(0);
     }
     
