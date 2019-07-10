@@ -15,7 +15,7 @@
 CCutImage::~CCutImage()
 {
     if (_dividePiece != 0) {
-        CCLOG("delete cutimg");
+    //    CCLOG("delete cutimg");
        // removeAllChildren();
         //for (int i = 0; i < _dividePiece; i++) delete img[i];
         _StickyData->deleteImgData();
@@ -56,7 +56,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case WATER:
             _name = "water";
-            _mode = 2;
+            _mode = 3;
             CreateWater(scale,dividedP);
             break;
         case BAMBOO:
@@ -240,7 +240,6 @@ void CCutImage::CreateWater(float scale,int num){  // 水
     _StickyData = new StickyData[_dividePiece * _fullAmount];
     
     for(int k=0;k<_fullAmount;k++){
-        
         sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(POS+POSD*k);
@@ -258,20 +257,19 @@ void CCutImage::CreateWater(float scale,int num){  // 水
 
         for (int i = 0; i < _dividePiece; i++) {
             int number = k*_dividePiece+i;
-            Point move = Point(0,(i - center)*height);
-            img[number].setImgInfo(picname,1,pos,angle,PicScale);
+            img[number].setImgInfo_water(pos,angle,PicScale);
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k+move);
+            img[number].setPosition(POS + POSD*k);
             img[number].setSticky(number);
-            //img[number].setVisible(false);
+            img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+1);
             
-    
-            
+            float y= img[number].getPicHeight(i) * (i+0.5f);
+            Point move = Point(0,-100+y);
             _StickyData[number].createImgData(1);
             _StickyData[number]._NodeAngle = angle[0];
             _StickyData[number]._NodePos = img[number].getPosition();
-            _StickyData[number]._imgPos[0] = Point(0,0);
+            _StickyData[number]._imgPos[0] = move;
             _StickyData[number]._imgAngle[0] = 0;
             _StickyData[number].isSticky = true;
             
@@ -420,7 +418,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             }
         }
         break;
-        case 2: //非連續用-圓形切法
+        default: //非連續用-圓形切法
         {
             float n = 360/_dividePiece;
             for(int k=0;k<_fullAmount;k++){
@@ -467,24 +465,37 @@ void CCutImage::divide(bool d) {
 
 bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
-
-	for (int i = 0; i < _dividePiece*_fullAmount ; i++) {
-		if (img[i].touchesBegin(inPos, id)) {
-			if (rotateImg == NULL) {
-				rotateImg = &img[i];
-			}
-			int sticky = img[i].ResetSticky();        //重製磁鐵.釋放區域
-			if (sticky != -1) _StickyData[sticky].isSticky = false;
-
-			return true;
-		}
-	}
-
-	if (rotateImg != NULL) {
-		rotateImg->RotatedBegin(inPos, id); 
-		return true;
-	}
-
+    for (int i = 0; i < _dividePiece*_fullAmount ; i++) {
+        if (img[i].touchesBegin(inPos, id)) {
+            if (rotateImg == NULL) {
+                rotateImg = &img[i];
+            }
+            int sticky = img[i].ResetSticky();        //重製磁鐵.釋放區域
+            if (sticky != -1) {
+                _StickyData[sticky].isSticky = false;
+                
+                if(_mode == 3){
+                    int max = (sticky ) / _dividePiece + 1;
+                    CCLOG("touch %d", sticky);
+                    for(int kk = sticky+1;kk < max * _dividePiece ; kk++ ){
+                        if(!_StickyData[kk].isSticky)return true;
+                        int number =_StickyData[kk]._num;
+                        img[number].downOneFloor();
+                        _StickyData[kk-1].setSticky(number);
+                        _StickyData[kk].isSticky = false;
+                        CCLOG("sticky = %d , now %d down",kk,number);
+                    }
+                }
+            }
+            return true;
+        }
+    }
+    
+    if (rotateImg != NULL) {
+        rotateImg->RotatedBegin(inPos, id);
+        return true;
+    }
+    
 	
 	return false;
 
@@ -506,41 +517,13 @@ void CCutImage::touchesEnded(cocos2d::Point inPos, int id) {
 	for (int i = 0; i < _dividePiece*_fullAmount; i++) {
 		if (img[i].touchesEnded(inPos, id)) {
 			if (rotateImg == &img[i]) rotateImg = NULL;
-			Sticky(&img[i],inPos);  //判斷是否吸上去
+			Sticky(&img[i],i,inPos);  //判斷是否吸上去
 		}
 	}
 }
 
-//void CCutImage::Sticky(TouchSprite *img) {
-//    float x, y, d;
-//    x = img->getPosition().x - POS.x;
-//    y = img->getPosition().y - POS.y;
-//    d = powf(x, 2) + powf(y, 2);
-//    if (d < _StickyRadius) {    //位置靠近磁鐵區域
-//        int stickyNum = -1;
-//        float angle = img->getAngle();
-//        float preDAngle = 1000, DAngle;
-//        for (int i = 0; i < _dividePiece; i++) {        //判斷和哪個角度最靠近
-//            if (_StickyData[i].isSticky == false) {
-//                DAngle = abs(_StickyData[i]._NodeAngle - angle);   //算角度差
-//                if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料
-//                    preDAngle = DAngle;
-//                    stickyNum = i;
-//                }
-//            }
-//        }
-//
-//        if(stickyNum == -1) return;
-//        for(int i=0; i<_StickyData[stickyNum]._num; i++)
-//            img->setImgPandR(i, _StickyData[stickyNum]._imgPos[i], _StickyData[stickyNum]._imgAngle[i]);
-//        img->setPosition(_StickyData[stickyNum]._NodePos);       //設定圖片位置與角度
-//        img->setRotation(_StickyData[stickyNum]._NodeAngle);
-//        img->setSticky(stickyNum);                          //紀錄區域
-//        _StickyData[stickyNum].isSticky = true;
-//    }
-//}
 
-void CCutImage::Sticky(TouchSprite *img,Point pt) {
+void CCutImage::Sticky(TouchSprite *img,int number,Point pt) {
     for(int k=0;k < _fullAmount; k++){
         auto posInNode = _fullImg[k]->convertToNodeSpace(pt);   //位置靠近磁鐵區域
         if (Rect(0,0,_fullImg[k]->getContentSize().width,_fullImg[k]->getContentSize().height).containsPoint(posInNode)) {
@@ -558,13 +541,12 @@ void CCutImage::Sticky(TouchSprite *img,Point pt) {
             }
             
             if(stickyNum == -1) return;
-            for(int i=0; i<_StickyData[stickyNum]._num; i++){
-                img->setImgPandR(i, _StickyData[stickyNum]._imgPos[i], _StickyData[stickyNum]._imgAngle[i]);
-            }
+            img->setImgPandR(_StickyData[stickyNum]._imgPos, _StickyData[stickyNum]._imgAngle,stickyNum);
             img->setPosition(_StickyData[stickyNum]._NodePos);       //設定圖片位置與角度
             img->setRotation(_StickyData[stickyNum]._NodeAngle);
             img->setSticky(stickyNum);                          //紀錄區域
-            _StickyData[stickyNum].isSticky = true;
+            _StickyData[stickyNum].setSticky(number);
+            CCLOG("stick %d = %d",stickyNum,number);
         }
     }
     

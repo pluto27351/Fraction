@@ -7,7 +7,7 @@
 #define RE_ANGLE(a) a*180/M_PI
 
 TouchSprite::~TouchSprite(){
-    CCLOG("delete TouchSprite");    
+   // CCLOG("delete TouchSprite");    
 }
 
 void TouchSprite::setVisible(bool b){
@@ -32,6 +32,22 @@ void TouchSprite::setPosition(Point pos) {
 void TouchSprite::setImgPandR(int n,Point pos,float r){
     _Pic[n]->setPosition(pos);
     _Pic[n]->setRotation(r);
+
+}
+void TouchSprite::setImgPandR(Point pos[],float r[],int z){
+    if(_cutMode == 2){
+        _Pic[0]->setPosition(pos[0]); 
+        _Pic[0]->setRotation(r[0]);
+        _Pic[1]->setPosition(Vec2(0,0));
+        _Pic[1]->setRotation(r[0]);
+        
+    }else{
+        for(int i=0;i<_piece;i++){
+            _Pic[i]->setPosition(pos[i]);
+            _Pic[i]->setRotation(r[i]);
+        }
+    }
+    
 }
 
 
@@ -41,11 +57,15 @@ void TouchSprite::setDividedImg(){
             normalDivide();
             break;
         case 1:
-            SameHeightDivide();
+            sameHeightDivide();
             break;
+        case 2:
+            waterDivide();
     }
 
 }
+
+
 void TouchSprite::normalDivide(){
     int g = _piece / 3;
     int tailamount = _piece % 3;
@@ -78,7 +98,7 @@ void TouchSprite::normalDivide(){
 }
 
 
-void TouchSprite::SameHeightDivide(){
+void TouchSprite::sameHeightDivide(){
     int line = _piece / 3;
     int tailamount = _piece % 3;
     Vec2 size =  _Pic[0]->getContentSize()/3*2;
@@ -118,6 +138,19 @@ void TouchSprite::SameHeightDivide(){
         _Pic[i]->setPositionY(y + dy);
     }
     
+}
+
+void TouchSprite::waterDivide(){
+    float y = _Pic[0]->getContentSize().height*_Pic[0]->getScaleY() /2;
+    _Pic[0]->setPosition(Vec2(0,-100+y));
+    _Pic[1]->setPosition(Vec2(0,0));
+}
+
+void TouchSprite::downOneFloor(){
+    float y = _Pic[0]->getContentSize().height*_Pic[0]->getScaleY();
+    Vec2 pos =_Pic[0]->getPosition();
+    _Pic[0]->setPosition(pos - Vec2(0,y));
+    _StickyNumber-=1;
 }
 
 bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {

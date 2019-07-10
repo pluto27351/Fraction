@@ -30,6 +30,11 @@ struct StickyData  //磁鐵資訊
         _imgPos = new Point [num];
     }
     
+    void setSticky(int num){
+        _num = num;
+        isSticky = true;
+    }
+    
     void deleteImgData(){
         delete [] _imgAngle;
         delete [] _imgPos;
@@ -64,8 +69,7 @@ private:
     
 	StickyData *_StickyData;    
 	float _StickyRadius;        
-	void Sticky(TouchSprite*);
-    void Sticky(TouchSprite*,Point);
+    void Sticky(TouchSprite*,int,Point);
     void setCutPos();
 public:
     ~CCutImage();

@@ -203,7 +203,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
             _que->setPosition(QUE_POS);
             _parentLayer->addChild(_que);
             _curPicAmount = 1;
-            if(_curQue == 4)_curPicAmount = 2;
+            if(_curUnit == 4)_curPicAmount = 2;
         }
     }
     

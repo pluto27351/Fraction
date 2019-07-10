@@ -42,6 +42,7 @@ public:
     
     virtual void setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale){};
     virtual void setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2 scale){};
+    virtual void setImgInfo_water(Point pos[],float r[],Vec2 scale){};
     virtual void setCollisionInfo(float totalPiece){};
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
@@ -54,19 +55,25 @@ public:
 
     Node *getNode(){return _obj;}
     
-
 	void setPosition(Point pos);
     void setImgPandR(int n,Point pos,float r);
+    void setImgPandR(Point pos[],float r[],int z);
     void setRotation(float r);
     
     void setDividedImg();
     void normalDivide();
-    void SameHeightDivide();
+    void sameHeightDivide();
+    void waterDivide();
+    
+    void downOneFloor();
     
 	Point getPosition() { return _SpriteLoc; }
+    float getPicHeight(int n){ return ((_Pic[0]->getContentSize().height-15) * _Pic[0]->getScaleY());}
 	float getAngle() { return (_fangle); }
+    
 	void setSticky(int stickyNumber);
 	int ResetSticky();
+    int getSticky(){return _StickyNumber;}
     void setVisible(bool b);
     int getPieceAmount(){return _piece;}
     int getPicWidth(){return (_Pic[0]->getContentSize().width);}
