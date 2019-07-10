@@ -168,6 +168,7 @@
             <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
             <PlistImageFile Name="banboo_1.png" Key="banboo_1.png" />
             <PlistImageFile Name="banboo_2.png" Key="banboo_2.png" />
+            <PlistImageFile Name="banboo_big.png" Key="banboo_big.png" />
             <PlistImageFile Name="banboo_line.png" Key="banboo_line.png" />
             <PlistImageFile Name="branch_1.png" Key="branch_1.png" />
             <PlistImageFile Name="branch_2.png" Key="branch_2.png" />
@@ -190,6 +191,9 @@
             <PlistImageFile Name="grape_2.png" Key="grape_2.png" />
             <PlistImageFile Name="home.png" Key="home.png" />
             <PlistImageFile Name="home_click.png" Key="home_click.png" />
+            <PlistImageFile Name="length_0.png" Key="length_0.png" />
+            <PlistImageFile Name="length_1.png" Key="length_1.png" />
+            <PlistImageFile Name="length_2.png" Key="length_2.png" />
             <PlistImageFile Name="n-10.png" Key="n-10.png" />
             <PlistImageFile Name="n-10_G.png" Key="n-10_G.png" />
             <PlistImageFile Name="n-10_no.png" Key="n-10_no.png" />
@@ -279,10 +283,6 @@
             <PlistImageFile Name="water_2.png" Key="water_2.png" />
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
-            <PlistImageFile Name="length_0.png" Key="length_0.png" />
-            <PlistImageFile Name="length_1.png" Key="length_1.png" />
-            <PlistImageFile Name="length_2.png" Key="length_2.png" />
-            <PlistImageFile Name="banboo_big.png" Key="banboo_big.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
           <Image Name="cover_bk.jpg" />
@@ -332,6 +332,7 @@
           <Project Name="q5_2.csd" Type="Node" />
           <Project Name="q5_3.csd" Type="Node" />
         </Folder>
+        <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />
         <Project Name="MeunScene.csd" Type="Scene" />
