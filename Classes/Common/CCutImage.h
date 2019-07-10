@@ -81,7 +81,8 @@ public:
     void CreatePaper(float scale,int num);
     void CreateWater(float scale,int num);
 	void divide(bool);
-
+    void setCutmode(int);
+    
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	bool touchesMoved(cocos2d::Point inPos, int id);
 	void touchesEnded(cocos2d::Point inPos, int id);

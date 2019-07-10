@@ -35,7 +35,6 @@ bool TCircleSprite::Collision(Point touch) {
 
 void TCircleSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale)
 {
-    _cutMode = 0;
     _obj = new Node;
     _piece = piece;
 

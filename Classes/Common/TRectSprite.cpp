@@ -25,7 +25,6 @@ bool TRectSprite::Collision(Point touch) {
 
 void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale)
 {
-    _cutMode = 0;
     _obj = new Node;
     _piece = piece;
     
@@ -47,7 +46,6 @@ void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec
 
 void TRectSprite::setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2 scale)
 {
-    _cutMode = 1;
     _obj = new Node;
     _piece = piece;
     char picname[20];
@@ -70,7 +68,6 @@ void TRectSprite::setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2
 
 void TRectSprite::setImgInfo_water(Point pos[],float r[],Vec2 scale)
 {
-    _cutMode = 2;
     _obj = new Node;
     _piece = 2;
     char picname[20];

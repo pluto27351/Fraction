@@ -17,7 +17,7 @@ protected:
 	float _fangle;
 
     int _piece;
-    int _cutMode;
+    int _cutMode = 0;
     
 	bool _bTouched;
 	bool _bRotated;
@@ -59,11 +59,13 @@ public:
     void setImgPandR(int n,Point pos,float r);
     void setImgPandR(Point pos[],float r[],int z);
     void setRotation(float r);
+    void setCutmode(int n){_cutMode = n;}
     
     void setDividedImg();
     void normalDivide();
     void sameHeightDivide();
     void waterDivide();
+    void longPicDivide();
     
     void downOneFloor();
     

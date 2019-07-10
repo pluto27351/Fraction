@@ -53,14 +53,18 @@ void TouchSprite::setImgPandR(Point pos[],float r[],int z){
 
 void TouchSprite::setDividedImg(){
     switch (_cutMode) {
-        case 0:
+        case 0:              //normal
             normalDivide();
             break;
-        case 1:
+        case 1:             //flower
             sameHeightDivide();
             break;
-        case 2:
+        case 2:            //water
             waterDivide();
+            break;
+        case 3:            //long pic
+            longPicDivide();
+            break;
     }
 
 }
@@ -144,6 +148,19 @@ void TouchSprite::waterDivide(){
     float y = _Pic[0]->getContentSize().height*_Pic[0]->getScaleY() /2;
     _Pic[0]->setPosition(Vec2(0,-100+y));
     _Pic[1]->setPosition(Vec2(0,0));
+}
+
+void TouchSprite::longPicDivide(){
+    float width = _Pic[0]->getContentSize().width-10;
+    float d = (_piece -1) /2.0f;
+    
+    for(int i = 0; i<_piece; i++){
+        Point pos =Point(width*(i-d),0);
+        _Pic[i]->setPosition(pos);ß
+        _Pic[i]->setRotation(0);
+    }
+    
+    
 }
 
 void TouchSprite::downOneFloor(){

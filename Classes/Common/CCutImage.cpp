@@ -12,6 +12,8 @@
 ////enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
 //enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
 
+enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};
+
 CCutImage::~CCutImage()
 {
     if (_dividePiece != 0) {
@@ -58,21 +60,25 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _name = "water";
             _mode = 3;
             CreateWater(scale,dividedP);
+            setCutmode(WATERPIC);
             break;
         case BAMBOO:
             _name = "banboo";
-            _mode = 2;
+            _mode = 1;
             CreateNormalImg(scale,dividedP);
+            setCutmode(LONGPIC);
             break;
         case RIBBON:
             _name = "ribbon";
-            _mode = 2;
+            _mode = 1;
             CreateNormalImg(scale,dividedP);
+            setCutmode(LONGPIC);
             break;
         case DISTANCE:
             _name = "road";
-            _mode = 2;
+            _mode = 1;
             CreateNormalImg(scale,dividedP);
+            setCutmode(LONGPIC);
             break;
         case BANANA:
             _name = "banana";
@@ -88,6 +94,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _name = "flower";
             _mode = 2;
             CreateFlower(scale,dividedP);
+            setCutmode(SAMEHEIGHT);
             break;
         case BRANCH:
             _name = "branch";
@@ -111,6 +118,12 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
     }
     
+}
+
+void CCutImage::setCutmode(int m){
+    for(int i=0;i<_dividePiece * _fullAmount;i++){
+        img[i].setCutmode(m);
+    }
 }
 
 void CCutImage::CreatePaper(float scale,int num){   //紙
