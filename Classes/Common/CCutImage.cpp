@@ -9,8 +9,8 @@
 #define POS Vec2(500,750)
 #define POSD Vec2(650,0)
 
-//enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
-enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
+////enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
+//enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
 
 CCutImage::~CCutImage()
 {
@@ -103,6 +103,11 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _name = "tomato";
             _mode = 2;
             CreateNormalImg(scale,dividedP);
+            break;
+        case BIGBAMBOO:
+            _name = "banboo";
+//            _mode = 2;
+//            CreateNormalImg(scale,dividedP);
             break;
     }
     

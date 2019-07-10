@@ -39,7 +39,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
             _b= rand()%5;
             k = UNIT5[_curNum-2][_c][_b];  //數字都從2開始 a.c.b
             _c+=2;_b+=2;
-        }while (k == 1);
+        }while (k == 0);
         
         //設定題目
         _que = new CAnsCreater();
@@ -169,7 +169,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
                 _b= rand()%5;
                 k = UNIT5[_curNum-2][_c][_b];  //數字都從2開始 a.c.b
                 _c+=2;_b+=2;
-            }while (k == 1);
+            }while (k == 0);
             
             //設定題目
             _parentLayer->removeChild(_que);  delete _que;
