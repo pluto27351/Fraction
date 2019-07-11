@@ -1,33 +1,23 @@
 <GameFile>
-  <PropertyGroup Name="u5_3" Type="Node" ID="ba445021-2d5e-4872-8b0f-78ddcabb9ccb" Version="3.10.0.0" />
+  <PropertyGroup Name="u5_3" Type="Node" ID="4e0905fe-c8ea-4702-ab55-4e8f92f25aa9" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="u1" Tag="7" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1695500109" Tag="1" IconVisible="False" LeftMargin="-99.4956" RightMargin="-93.5044" TopMargin="-38.7008" BottomMargin="-42.2992" FontSize="72" LabelText="答 :    " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="193.0000" Y="81.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-2.9956" Y="-1.7992" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="F_1" CanEdit="False" ActionTag="1276126937" Tag="6" IconVisible="True" LeftMargin="70.0000" RightMargin="-70.0000" TopMargin="1.0524" BottomMargin="-1.0524" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="1276126937" IconVisible="True" LeftMargin="70.0000" RightMargin="-70.0000" TopMargin="1.0524" BottomMargin="-1.0524" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="-1839086129" Tag="-1" IconVisible="False" LeftMargin="-26.5000" RightMargin="-26.5000" TopMargin="-11.5000" BottomMargin="-11.5000" FontSize="20" LabelText="=F%6" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="53.0000" Y="23.0000" />
+              <AbstractNodeData Name="ntor" ActionTag="-1839086129" IconVisible="False" LeftMargin="-17.0000" RightMargin="-17.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="34.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
+                <FontResource Type="Normal" Path="HanyiSentyTang.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -38,6 +28,18 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="bg" ActionTag="937551134" Tag="588" IconVisible="False" LeftMargin="-141.4956" RightMargin="-135.5044" TopMargin="-56.7008" BottomMargin="-60.2992" FontSize="100" LabelText="答 :    " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="277.0000" Y="117.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-2.9956" Y="-1.7992" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="0" G="0" B="0" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="HanyiSentyTang.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

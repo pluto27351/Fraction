@@ -67,8 +67,17 @@
           <Project Name="u4_8.csd" Type="Node" />
           <Project Name="u4_9.csd" Type="Node" />
           <Project Name="u5_1.csd" Type="Node" />
+          <Project Name="u5_10.csd" Type="Node" />
+          <Project Name="u5_11.csd" Type="Node" />
+          <Project Name="u5_12.csd" Type="Node" />
           <Project Name="u5_2.csd" Type="Node" />
           <Project Name="u5_3.csd" Type="Node" />
+          <Project Name="u5_4.csd" Type="Node" />
+          <Project Name="u5_5.csd" Type="Node" />
+          <Project Name="u5_6.csd" Type="Node" />
+          <Project Name="u5_7.csd" Type="Node" />
+          <Project Name="u5_8.csd" Type="Node" />
+          <Project Name="u5_9.csd" Type="Node" />
         </Folder>
         <PlistImageFolder Image="fraction_menu.png" PListFile="fraction_menu.plist" Name=".fraction_menu_PList.Dir">
           <PlistImageFile Name="Ch_01.png" Key="Ch_01.png" />

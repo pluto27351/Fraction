@@ -9,6 +9,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
 
 	//int u = uni * 100 + queNo;
 	char name[14];
+    
 	sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     answer = CSLoader::createNode(name);
     Input_ans(*answer, number);

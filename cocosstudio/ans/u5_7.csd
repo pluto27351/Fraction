@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="u5_1" Type="Node" ID="bdf0e6e4-51e7-4afc-97eb-0b6eee409dcf" Version="3.10.0.0" />
+  <PropertyGroup Name="u5_7" Type="Node" ID="d438b8b9-20d6-4e02-990e-9e346c7f8e04" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -9,8 +9,8 @@
           <AbstractNodeData Name="F_1" ActionTag="1276126937" IconVisible="True" LeftMargin="70.0000" RightMargin="-70.0000" TopMargin="1.0524" BottomMargin="-1.0524" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="-1839086129" IconVisible="False" LeftMargin="-13.0000" RightMargin="-13.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="26.0000" Y="70.0000" />
+              <AbstractNodeData Name="ntor" ActionTag="-1839086129" IconVisible="False" LeftMargin="-12.0000" RightMargin="-12.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="24.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -29,7 +29,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg" ActionTag="937551134" Tag="1" IconVisible="False" LeftMargin="-141.4956" RightMargin="-135.5044" TopMargin="-56.7008" BottomMargin="-60.2992" FontSize="100" LabelText="答 :    " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="937551134" Tag="588" IconVisible="False" LeftMargin="-141.4956" RightMargin="-135.5044" TopMargin="-56.7008" BottomMargin="-60.2992" FontSize="100" LabelText="答 :    " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="277.0000" Y="117.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-2.9956" Y="-1.7992" />
