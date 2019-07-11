@@ -55,7 +55,17 @@
           <Project Name="u3_8.csd" Type="Node" />
           <Project Name="u3_9.csd" Type="Node" />
           <Project Name="u4_1.csd" Type="Node" />
+          <Project Name="u4_10.csd" Type="Node" />
+          <Project Name="u4_11.csd" Type="Node" />
+          <Project Name="u4_12.csd" Type="Node" />
           <Project Name="u4_2.csd" Type="Node" />
+          <Project Name="u4_3.csd" Type="Node" />
+          <Project Name="u4_4.csd" Type="Node" />
+          <Project Name="u4_5.csd" Type="Node" />
+          <Project Name="u4_6.csd" Type="Node" />
+          <Project Name="u4_7.csd" Type="Node" />
+          <Project Name="u4_8.csd" Type="Node" />
+          <Project Name="u4_9.csd" Type="Node" />
           <Project Name="u5_1.csd" Type="Node" />
           <Project Name="u5_2.csd" Type="Node" />
           <Project Name="u5_3.csd" Type="Node" />
@@ -327,10 +337,29 @@
           <Project Name="q3_8.csd" Type="Node" />
           <Project Name="q3_9.csd" Type="Node" />
           <Project Name="q4_1.csd" Type="Node" />
+          <Project Name="q4_10.csd" Type="Node" />
+          <Project Name="q4_11.csd" Type="Node" />
+          <Project Name="q4_12.csd" Type="Node" />
           <Project Name="q4_2.csd" Type="Node" />
+          <Project Name="q4_3.csd" Type="Node" />
+          <Project Name="q4_4.csd" Type="Node" />
+          <Project Name="q4_5.csd" Type="Node" />
+          <Project Name="q4_6.csd" Type="Node" />
+          <Project Name="q4_7.csd" Type="Node" />
+          <Project Name="q4_8.csd" Type="Node" />
+          <Project Name="q4_9.csd" Type="Node" />
           <Project Name="q5_1.csd" Type="Node" />
+          <Project Name="q5_10.csd" Type="Node" />
+          <Project Name="q5_11.csd" Type="Node" />
+          <Project Name="q5_12.csd" Type="Node" />
           <Project Name="q5_2.csd" Type="Node" />
           <Project Name="q5_3.csd" Type="Node" />
+          <Project Name="q5_4.csd" Type="Node" />
+          <Project Name="q5_5.csd" Type="Node" />
+          <Project Name="q5_6.csd" Type="Node" />
+          <Project Name="q5_7.csd" Type="Node" />
+          <Project Name="q5_8.csd" Type="Node" />
+          <Project Name="q5_9.csd" Type="Node" />
         </Folder>
         <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="homescene.csd" Type="Scene" />

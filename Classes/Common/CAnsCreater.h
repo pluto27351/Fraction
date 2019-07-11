@@ -23,11 +23,7 @@ public:
     ~CAnsCreater();
 
 	//答案生成
-	void Input_u1(cocos2d::Node &Q, int number);
-	void Input_u2_1(cocos2d::Node &Q, int number);
-	void Input_u2_4(cocos2d::Node &Q, int number);
-	void Input_u2_7(cocos2d::Node &Q, int number);
-	void Input_u3_2(cocos2d::Node &Q, int number);
+	void Input_ans(cocos2d::Node &Q, int number);
 
     //題目生成
     void queCreater(int uni, int queNo, int number);

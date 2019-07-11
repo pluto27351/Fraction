@@ -10,19 +10,19 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
 	//int u = uni * 100 + queNo;
 	char name[14];
 	sprintf(name,"ans/u%d_%d.csb",uni, queNo);
-	switch (uni) {
-    case 1:
-		//answer = CSLoader::createNode("ans/u1_1.csb");
-        answer = CSLoader::createNode(name);
-		Input_u1(*answer, number);
-		break;
-	default:
-        answer = CSLoader::createNode(name);
-        Input_que(*answer, number);
-		break;
-	}
-	//answer->setPosition(Point(1024, 700));
-	// answer->setPosition(Point(480,320));
+    answer = CSLoader::createNode(name);
+    Input_ans(*answer, number);
+    
+//    switch (uni) {
+//    case 1:
+//        answer = CSLoader::createNode(name);
+//        Input_u1(*answer, number);
+//        break;
+//    default:
+//        answer = CSLoader::createNode(name);
+//        Input_que(*answer, number);
+//        break;
+//    }
 	addChild(answer);
 }
 
@@ -43,75 +43,67 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) { //單元�
     addChild(answer);
 }
 
-void CAnsCreater::Input_u1(Node &Q, int number) {
-	char Input[5];
-	char fn[3];
-	//取得擺放位子
-	//國字
-	Text* Output_c = (Text*)Q.getChildByName("C_1");
-	Output_c->setString(chiness[number - 2]);
-    Output_c->setTextColor(_textColor4B);
-	//數字
-	for (int i = 0; i < 2; i++) {
-		sprintf(Input, "N_%d", i + 1);
-		Text *Output_n = (Text *)Q.getChildByName(Input);
-		sprintf(Input, "%d", number);
-		Output_n->setString(Input);
-        Output_n->setTextColor(_textColor4B);
-	}
+//void CAnsCreater::Input_u1(Node &Q, int number) {
+//    char Input[5];
+//    char fn[3];
+//    //取得擺放位子
+//    //國字
+//    Text* Output_c = (Text*)Q.getChildByName("C_1");
+//    Output_c->setString(chiness[number - 2]);
+//    Output_c->setTextColor(_textColor4B);
+//    //數字
+//    for (int i = 0; i < 2; i++) {
+//        sprintf(Input, "N_%d", i + 1);
+//        Text *Output_n = (Text *)Q.getChildByName(Input);
+//        sprintf(Input, "%d", number);
+//        Output_n->setString(Input);
+//        Output_n->setTextColor(_textColor4B);
+//    }
+//
+//    //分數
+//    for (int i = 0; i < 3; i++) {
+//        sprintf(Input, "F_%d", i + 1);
+//        Node *Output_f = (Node *)Q.getChildByName(Input);
+//        Text *c = (Text *)Output_f->getChildByName("ntor");
+//        sprintf(Input, "%d", number);
+//        sprintf(fn, "%d", c->getTag());
+//        Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, fn));
+//        Output_f->removeChildByName("ntor");
+//    }
+//
+//    //運算式
+//    Node *Output_af = Q.getChildByName("AF_1");
+//    Output_af->addChild(CAnsCreaterOperation(number));
+//}
 
-	//分數
-	for (int i = 0; i < 3; i++) {
-		sprintf(Input, "F_%d", i + 1);
-		Node *Output_f = (Node *)Q.getChildByName(Input);
-		Text *c = (Text *)Output_f->getChildByName("ntor");
-		sprintf(Input, "%d", number);
-		sprintf(fn, "%d", c->getTag());
-		Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, fn));
-		Output_f->removeChildByName("ntor");
-	}
-
-	//運算式
-	Node *Output_af = Q.getChildByName("AF_1");
-	Output_af->addChild(CAnsCreaterOperation(number));
-}
-
-void CAnsCreater::Input_u2_1(Node &Q, int number) {
-	char Input[5];
-	char fn[3];
-	//取得擺放位子
-	//國字
-	Text* Output_c = (Text*)Q.getChildByName("C_1");
-	Output_c->setString(chiness[number - 2]);
-    Output_c->setTextColor(_textColor4B);
-    
-	//分數
-	for (int i = 0; i < 2; i++) {
-		sprintf(Input, "F_%d", i + 1);
-		Node *Output_f = (Node *)Q.getChildByName(Input);
-		Text *c = (Text *)Output_f->getChildByName("ntor");
-		sprintf(Input, "%d", number);
-		sprintf(fn, "%d", c->getTag());
-		Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, fn));
-		Output_f->removeChildByName("ntor");
-	}
-	for (int i = 2; i < 4; i++) {
-		sprintf(Input, "F_%d", i + 1);
-		Node *Output_f = (Node *)Q.getChildByName(Input);
-		Text *c = (Text *)Output_f->getChildByName("ntor");
-		sprintf(Input, "%d", number);
-		Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, "1"));
-		Output_f->removeChildByName("ntor");
-	}
-}
-
-void CAnsCreater::Input_u2_4(Node &Q, int number) {
-
-}
-
-void CAnsCreater::Input_u2_7(Node &Q, int number) {
-
-}
+//void CAnsCreater::Input_u2_1(Node &Q, int number) {
+//    char Input[5];
+//    char fn[3];
+//    //取得擺放位子
+//    //國字
+//    Text* Output_c = (Text*)Q.getChildByName("C_1");
+//    Output_c->setString(chiness[number - 2]);
+//    Output_c->setTextColor(_textColor4B);
+//
+//    //分數
+//    for (int i = 0; i < 2; i++) {
+//        sprintf(Input, "F_%d", i + 1);
+//        Node *Output_f = (Node *)Q.getChildByName(Input);
+//        Text *c = (Text *)Output_f->getChildByName("ntor");
+//        sprintf(Input, "%d", number);
+//        sprintf(fn, "%d", c->getTag());
+//        Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, fn));
+//        Output_f->removeChildByName("ntor");
+//    }
+//    for (int i = 2; i < 4; i++) {
+//        sprintf(Input, "F_%d", i + 1);
+//        Node *Output_f = (Node *)Q.getChildByName(Input);
+//        Text *c = (Text *)Output_f->getChildByName("ntor");
+//        sprintf(Input, "%d", number);
+//        Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, "1"));
+//        Output_f->removeChildByName("ntor");
+//    }
+//}
 
 
 char * CAnsCreater::Numerator(const char *c, const char *number) {
@@ -271,6 +263,7 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目
 	
 	addChild(queNode);
 }
+
 //生成題目
 void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3.5-4 特殊需求
     char name[14];
@@ -354,5 +347,39 @@ void CAnsCreater::Input_que(Node &Q, int number) {
         
 		Output_f->removeChildByName("ntor");
 	}
+
+}
+
+
+void CAnsCreater::Input_ans(Node &Q, int number) {
+    char Input[5];
+    char fn[3];
+    int inputData,data;
+    
+    //分數
+    Node *Output_f = (Node *)Q.getChildByName("F_1");
+    Text *ntor = (Text *)Output_f->getChildByName("ntor");
+        
+    int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};  //帶分／分母／分子
+    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
+        
+    if(outNumber[0] != -1){  //一般情況判斷分子
+        sprintf(Input, "%d", number);
+        outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
+    }
+    else {  // 特殊情況(帶分數設定為-1) 假分數轉帶分數時用(應該僅第三章答案部分會用到)
+        outNumber[0] = number / outNumber[1];
+        outNumber[2] = number % outNumber[1];
+    }
+    char n[4],d[4],f[4];
+    sprintf(n, "%d", outNumber[2]);
+    sprintf(d, "%d", outNumber[1]);
+    sprintf(f, "%d", outNumber[0]);
+    
+    auto ans =Set_CAnsCreater(n,d,f);
+    ans->setPosition(Vec2(40,0));
+    Output_f->addChild(ans);
+    
+    Output_f->removeChildByName("ntor");
 
 }
