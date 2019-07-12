@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="2" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="100" LabelText="11. 一堆水梨有11顆，請問   堆水梨比   堆水梨少了幾分之幾?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="2" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="100" LabelText="11. 一堆蘋果有11顆，請問   堆蘋果比   堆蘋果少了幾分之幾?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1280.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position Y="-0.0001" />

@@ -115,6 +115,11 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
+        case APPLE:
+            _name = "apple";
+            _mode = 2;
+            CreateNormalImg(scale,dividedP);
+            break;
         case BIGBAMBOO:
             _name = "banboo";
 //            _mode = 2;

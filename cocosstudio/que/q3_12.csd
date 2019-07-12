@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-586.6295" RightMargin="-693.3705" TopMargin="-177.4530" BottomMargin="-89.5470" IsCustomSize="True" FontSize="100" LabelText="12. 請問    捆捆樹枝和幾分之幾捆樹枝一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-177.4530" BottomMargin="-89.5470" IsCustomSize="True" FontSize="100" LabelText="12. 請問    捆捆樹枝和幾分之幾捆樹枝一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1280.0000" Y="267.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="53.3705" Y="43.9530" />
+            <Position Y="43.9530" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
@@ -18,7 +18,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="-2013530149" Tag="7" IconVisible="True" LeftMargin="-174.1918" RightMargin="174.1918" TopMargin="-121.6826" BottomMargin="121.6826" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-2013530149" Tag="7" IconVisible="True" LeftMargin="-226.8535" RightMargin="226.8535" TopMargin="-126.0712" BottomMargin="126.0712" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-17.0000" RightMargin="-17.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -35,7 +35,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="-174.1918" Y="121.6826" />
+            <Position X="-226.8535" Y="126.0712" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

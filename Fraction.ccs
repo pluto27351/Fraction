@@ -14,8 +14,9 @@
           <Project Name="paper.csd" Type="Node" />
           <Project Name="ribbon.csd" Type="Node" />
           <Project Name="road.csd" Type="Node" />
-          <Project Name="tomato.csd" Type="Node" />
           <Project Name="story.csd" Type="Node" />
+          <Project Name="tomato.csd" Type="Node" />
+          <Project Name="apple.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -108,9 +109,6 @@
             <PlistImageFile Name="channel_5_click.png" Key="channel_5_click.png" />
             <PlistImageFile Name="channel_who.png" Key="channel_who.png" />
             <PlistImageFile Name="channel_who2.png" Key="channel_who2.png" />
-            <PlistImageFile Name="main_nut.png" Key="main_nut.png" />
-            <PlistImageFile Name="main_start.png" Key="main_start.png" />
-            <PlistImageFile Name="main_start_click2.png" Key="main_start_click2.png" />
             <PlistImageFile Name="character_1.png" Key="character_1.png" />
             <PlistImageFile Name="character_1_click.png" Key="character_1_click.png" />
             <PlistImageFile Name="character_2.png" Key="character_2.png" />
@@ -121,6 +119,9 @@
             <PlistImageFile Name="character_4_click.png" Key="character_4_click.png" />
             <PlistImageFile Name="character_5.png" Key="character_5.png" />
             <PlistImageFile Name="character_5_click.png" Key="character_5_click.png" />
+            <PlistImageFile Name="main_nut.png" Key="main_nut.png" />
+            <PlistImageFile Name="main_start.png" Key="main_start.png" />
+            <PlistImageFile Name="main_start_click2.png" Key="main_start_click2.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
@@ -301,8 +302,8 @@
           <Project Name="q4_8.csd" Type="Node" />
           <Project Name="q4_9.csd" Type="Node" />
           <Project Name="q5_1.csd" Type="Node" />
-          <Project Name="q5_11.csd" Type="Node" />
           <Project Name="q5_10.csd" Type="Node" />
+          <Project Name="q5_11.csd" Type="Node" />
           <Project Name="q5_12.csd" Type="Node" />
           <Project Name="q5_2.csd" Type="Node" />
           <Project Name="q5_3.csd" Type="Node" />
@@ -310,8 +311,8 @@
           <Project Name="q5_5.csd" Type="Node" />
           <Project Name="q5_6.csd" Type="Node" />
           <Project Name="q5_7.csd" Type="Node" />
-          <Project Name="q5_9.csd" Type="Node" />
           <Project Name="q5_8.csd" Type="Node" />
+          <Project Name="q5_9.csd" Type="Node" />
         </Folder>
         <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="homescene.csd" Type="Scene" />

@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="100" LabelText="11. 請問    堆水梨和幾分之幾堆水梨一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0002" BottomMargin="-177.9998" IsCustomSize="True" FontSize="100" LabelText="11. 請問    堆蘋果和幾分之幾堆蘋果一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1280.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position Y="0.0002" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
