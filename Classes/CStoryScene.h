@@ -10,13 +10,16 @@
 class CStoryScene : public cocos2d::Layer
 {
     CButton *_unitBtn[MAX_UNITS];
-    CButton _goBtn;
-    Sprite *_story;
+    //CButton _goBtn;
+    std::vector<Node *>_story;
     
     int  _unitIdx;
     bool goBtnPressed = false;
     
-    void ShowUnitStory();
+    bool _bstory;
+    int _storyNum,_maxstory;
+    
+    void ShowUnitStory(int i);
     
 public:
     static cocos2d::Scene* createScene();

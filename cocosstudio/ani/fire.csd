@@ -4,30 +4,14 @@
     <Content>
       <Animation Duration="35" Speed="1.0000">
         <Timeline ActionTag="480549908" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_06.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="5" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_07.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="10" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_08.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="15" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_09.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="20" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_10.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="25" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_11.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="30" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_12.png" Plist="img/scene101.plist" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="35" Tween="False">
-            <TextureFile Type="PlistSubImage" Path="flame2_06.png" Plist="img/scene101.plist" />
-          </TextureFrame>
+          <TextureFrame FrameIndex="0" Tween="False" />
+          <TextureFrame FrameIndex="5" Tween="False" />
+          <TextureFrame FrameIndex="10" Tween="False" />
+          <TextureFrame FrameIndex="15" Tween="False" />
+          <TextureFrame FrameIndex="20" Tween="False" />
+          <TextureFrame FrameIndex="25" Tween="False" />
+          <TextureFrame FrameIndex="30" Tween="False" />
+          <TextureFrame FrameIndex="35" Tween="False" />
         </Timeline>
       </Animation>
       <ObjectData Name="Node" Tag="191" ctype="GameNodeObjectData">
@@ -41,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="PlistSubImage" Path="flame2_06.png" Plist="img/scene101.plist" />
+            <FileData Type="Default" Path="Default/Sprite.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

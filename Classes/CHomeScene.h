@@ -15,9 +15,10 @@ class CHomeScene : public cocos2d::Layer
 	float _fTotalTime;
 	bool   _bToMenuScene;
 
-	CButton _startBtn,_Boo;
-	Node *_BooAct;
-	ActionTimeline *_BooActTime;
+    CButton _startBtn;
+    //CButton _Boo;
+	//Node *_BooAct;
+	//ActionTimeline *_BooActTime;
 
 public:
 	static cocos2d::Scene* createScene();
