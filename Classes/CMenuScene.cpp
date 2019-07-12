@@ -27,6 +27,7 @@ bool CMenuScene::init()
 
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fraction_menu.plist");
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_ui.plist");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_scene.plist");
 	auto rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
 
@@ -38,8 +39,8 @@ bool CMenuScene::init()
 	{
 		sprintf(spriteName, "levelbtn_%d", i + 1);
 		auto spt = (Sprite*)rootNode->getChildByName(spriteName);
-		sprintf(normalName, "Ch_%02d.png", i + 1);
-		sprintf(touchedName, "Ch_%02d-click.png", i + 1);
+		sprintf(normalName, "channel_%d.png", i + 1);
+		sprintf(touchedName, "channel_%d_click.png", i + 1);
 		pt = spt->getPosition();
 		scale = spt->getScale();
 		_unitBtn[i] = new CButton();
@@ -55,7 +56,7 @@ bool CMenuScene::init()
     
     pt = rootNode->getChildByName("storybtn")->getPosition();
     scale = rootNode->getChildByName("storybtn")->getScale();
-    _storyBtn.setButtonInfo("ans.png", "ans_click.png", *this, pt, 1);
+    _storyBtn.setButtonInfo("channel_who.png", "channel_who2.png", *this, pt, 1);
     _storyBtn.setScale(scale);
     rootNode->removeChildByName("storybtn");
 
@@ -87,6 +88,7 @@ void CMenuScene::doStep(float dt)  // OnFrameMove
         this->removeAllChildren();
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
         Director::getInstance()->getTextureCache()->removeUnusedTextures();
 		Director::getInstance()->replaceScene(CTeachScene::createScene(_unitIdx));
 	}
@@ -95,6 +97,7 @@ void CMenuScene::doStep(float dt)  // OnFrameMove
         this->removeAllChildren();
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("fraction_menu.plist");
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
         Director::getInstance()->getTextureCache()->removeUnusedTextures();
         Director::getInstance()->replaceScene(CStoryScene::createScene());
     }

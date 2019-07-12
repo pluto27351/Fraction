@@ -6,15 +6,15 @@
       <ObjectData Name="Scene" Tag="97" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="cover_bk_3" ActionTag="-1489448148" Tag="116" IconVisible="False" LeftMargin="-341.5000" RightMargin="-341.5000" ctype="SpriteObjectData">
-            <Size X="2731.0000" Y="1536.0000" />
+          <AbstractNodeData Name="cover_bk_3" ActionTag="-1489448148" Tag="116" IconVisible="False" LeftMargin="1001.0000" RightMargin="1001.0000" TopMargin="745.0000" BottomMargin="745.0000" ctype="SpriteObjectData">
+            <Size X="2771.0000" Y="1568.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1024.0000" Y="768.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.3335" Y="1.0000" />
-            <FileData Type="PlistSubImage" Path="main.png" Plist="img/teach_scene.plist" />
+            <PreSize X="0.0225" Y="0.0299" />
+            <FileData Type="PlistSubImage" Path="zbg_main.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="startBtn" ActionTag="1972834248" Tag="172" IconVisible="False" LeftMargin="1430.7026" RightMargin="93.2974" TopMargin="1065.2428" BottomMargin="21.7572" ctype="SpriteObjectData">
