@@ -21,8 +21,8 @@
           <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="-15.4199" RightMargin="15.4199" TopMargin="-122.6283" BottomMargin="122.6283" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-12.5000" RightMargin="-12.5000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="7" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="25.0000" Y="70.0000" />
+              <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-13.5000" RightMargin="-13.5000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="4" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="27.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />

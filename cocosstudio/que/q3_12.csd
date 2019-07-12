@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-586.6295" RightMargin="-693.3705" TopMargin="-177.4530" BottomMargin="-89.5470" IsCustomSize="True" FontSize="100" LabelText="12. 請問    堆水捆樹枝和幾分之幾捆樹枝一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-586.6295" RightMargin="-693.3705" TopMargin="-177.4530" BottomMargin="-89.5470" IsCustomSize="True" FontSize="100" LabelText="12. 請問    捆捆樹枝和幾分之幾捆樹枝一樣？" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1280.0000" Y="267.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="53.3705" Y="43.9530" />

@@ -30,7 +30,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="1110855134" Tag="37" IconVisible="False" LeftMargin="298.9283" RightMargin="-352.9283" TopMargin="-177.3534" BottomMargin="60.3534" FontSize="100" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="C_2" ActionTag="1110855134" Tag="37" IconVisible="False" LeftMargin="298.9283" RightMargin="-352.9283" TopMargin="-177.3534" BottomMargin="60.3534" FontSize="100" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="54.0000" Y="117.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="325.9283" Y="118.8534" />

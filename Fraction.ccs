@@ -10,7 +10,7 @@
           <Project Name="fire.csd" Type="Node" />
           <Project Name="flower.csd" Type="Node" />
           <Project Name="grape.csd" Type="Node" />
-          <Project Name="nut.csd.csd" Type="Node" />
+          <Project Name="nut.csd" Type="Node" />
           <Project Name="paper.csd" Type="Node" />
           <Project Name="ribbon.csd" Type="Node" />
           <Project Name="road.csd" Type="Node" />
@@ -301,8 +301,8 @@
           <Project Name="q4_8.csd" Type="Node" />
           <Project Name="q4_9.csd" Type="Node" />
           <Project Name="q5_1.csd" Type="Node" />
-          <Project Name="q5_10.csd" Type="Node" />
           <Project Name="q5_11.csd" Type="Node" />
+          <Project Name="q5_10.csd" Type="Node" />
           <Project Name="q5_12.csd" Type="Node" />
           <Project Name="q5_2.csd" Type="Node" />
           <Project Name="q5_3.csd" Type="Node" />
@@ -310,8 +310,8 @@
           <Project Name="q5_5.csd" Type="Node" />
           <Project Name="q5_6.csd" Type="Node" />
           <Project Name="q5_7.csd" Type="Node" />
-          <Project Name="q5_8.csd" Type="Node" />
           <Project Name="q5_9.csd" Type="Node" />
+          <Project Name="q5_8.csd" Type="Node" />
         </Folder>
         <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="homescene.csd" Type="Scene" />

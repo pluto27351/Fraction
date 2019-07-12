@@ -2,11 +2,11 @@
 #include "CQuePanel.h"
 #include "cocostudio/CocoStudio.h"
 
-#define QUEX_POS 1024
-#define QUEY_POS 1360
+//#define QUEX_POS 1024
+//#define QUEY_POS 1360
 
-#define ANS_POS Vec2(1450,750)
 #define QUE_POS Vec2(1024,1250)
+#define ANS_POS Vec2(1600,500)
 
 CQuePanel::~CQuePanel()
 {

@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-1051658776" Tag="10" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="100" LabelText="3. 一串香蕉有7根，請問一串又    根合起來和幾串香蕉一樣多? 請用帶分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1051658776" Tag="10" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="100" LabelText="3. 一串香蕉有8根，請問一串又    根合起來和幾串香蕉一樣多? 請用帶分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1280.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

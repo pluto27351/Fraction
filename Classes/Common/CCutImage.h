@@ -46,12 +46,11 @@ class CCutImage : public cocos2d::Node
 private:
 	TouchSprite *img;        //切塊圖片們
 	TouchSprite *rotateImg;  //指定被旋轉圖片
-    //Sprite *_fullImg;          //完整圖片
     std::vector<Sprite*> _fullImg;          //完整圖片
     std::vector<Sprite*> _line;
-    //Node *_fullNode;
     int _fullAmount;
     
+    Vec2 _pos,_dPos;
     float _scale;
     int _mode;
     bool _divided;

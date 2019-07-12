@@ -309,6 +309,7 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 	}
 	inputData = inputData % 100;
 
+    
 	//數字
 	data = inputData / 10;
 	for (int i = 0; i < data; i++) {

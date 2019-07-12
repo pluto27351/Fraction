@@ -9,9 +9,6 @@
 #define POS Vec2(500,750)
 #define POSD Vec2(650,0)
 
-////enum IMG_STATUS { NONE = 0, MOVE = 1, ROT = 2, EXIT = 3 };
-//enum Object{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO};
-
 enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};
 
 CCutImage::~CCutImage()
@@ -45,6 +42,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
 
     _fullAmount = NodeAmount;
     
+    _pos = POS; _dPos = POSD;
     switch (picNum) {
         case PANCAKE:
             _name = "pancake";
@@ -65,18 +63,24 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
         case BAMBOO:
             _name = "banboo";
             _mode = 1;
+            _pos = Vec2(700,950);
+            _dPos = Vec2(0,-200);
             CreateNormalImg(scale,dividedP);
             setCutmode(LONGPIC);
             break;
         case RIBBON:
             _name = "ribbon";
             _mode = 1;
+            _pos = Vec2(700,950);
+            _dPos = Vec2(0,-200);
             CreateNormalImg(scale,dividedP);
             setCutmode(LONGPIC);
             break;
         case DISTANCE:
             _name = "road";
             _mode = 1;
+            _pos = Vec2(700,950);
+            _dPos = Vec2(0,-200);
             CreateNormalImg(scale,dividedP);
             setCutmode(LONGPIC);
             break;
@@ -146,7 +150,7 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
     for(int k=0;k<_fullAmount;k++){
         sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(POS + POSD*k);
+        fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
         addChild(fi, BOTTOM_LEVEL);
         _fullImg.push_back(fi);
@@ -165,7 +169,7 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
             }
             img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k);
+            img[number].setPosition(_pos + _dPos*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+2);
@@ -201,7 +205,7 @@ void CCutImage::CreateFlower(float scale,int num){   //花
     for(int k=0;k<_fullAmount;k++){
         sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(POS + POSD*k);
+        fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
         addChild(fi, BOTTOM_LEVEL);
         _fullImg.push_back(fi);
@@ -222,7 +226,7 @@ void CCutImage::CreateFlower(float scale,int num){   //花
 
             img[number].setImgInfo_flower(i,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k);
+            img[number].setPosition(_pos + _dPos*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+2);
@@ -272,7 +276,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             int number = k*_dividePiece+i;
             img[number].setImgInfo_water(pos,angle,PicScale);
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k);
+            img[number].setPosition(_pos + _dPos*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+1);
@@ -287,7 +291,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             _StickyData[number].isSticky = true;
             
 //            auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
-//            line->setPosition(POS + POSD*k);
+//            line->setPosition(_pos + _dPos*k);
 //            line->setScale(scale);
 //            line->setRotation(angle[0]+a);
 //            line->setVisible(false);
@@ -322,7 +326,7 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
     for(int k=0;k<_fullAmount;k++){
         sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(POS + POSD*k);
+        fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
         addChild(fi, BOTTOM_LEVEL);
         _fullImg.push_back(fi);
@@ -341,7 +345,7 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
             }
             img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(POS + POSD*k);
+            img[number].setPosition(_pos + _dPos*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+2);
@@ -381,7 +385,7 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
         for (int i = 0; i < _dividePiece; i++) {
             int number = k*_dividePiece+i;
             float angle[1] = {(360.0f / _dividePiece)*i};
-            Point pos[1] = {POS + POSD*k};
+            Point pos[1] = {_pos + _dPos*k};
             img[number].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
             img[number].setCollisionInfo(_dividePiece);
             img[number].setSticky(number);
@@ -396,7 +400,7 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
             _StickyData[number].isSticky = true;
             
             auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
-            line->setPosition(POS + POSD*k);
+            line->setPosition(_pos + _dPos*k);
             line->setScale(scale);
             line->setRotation(angle[0]+a);
             line->setVisible(false);
@@ -438,7 +442,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 for (int i = 0; i < _dividePiece; i++) {
                     int number = k*_dividePiece +i;
                     Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
-                    img[number].setPosition(move + POS + POSD*k);
+                    img[number].setPosition(move + _pos + _dPos*k);
                     img[number].setRotation(_StickyData[number]._NodeAngle);
                     img[number].setSticky(-1);
                     _StickyData[number].isSticky = false;
