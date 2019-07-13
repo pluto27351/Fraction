@@ -6,11 +6,11 @@
       <ObjectData Name="u1" Tag="7" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="F_1" ActionTag="-357921673" IconVisible="True" LeftMargin="63.5710" RightMargin="-63.5710" TopMargin="-1.3374" BottomMargin="1.3374" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-357921673" Tag="8" IconVisible="True" LeftMargin="63.5710" RightMargin="-63.5710" TopMargin="-1.3374" BottomMargin="1.3374" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="2005385292" Tag="1" IconVisible="False" LeftMargin="-13.0000" RightMargin="-13.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="26.0000" Y="70.0000" />
+              <AbstractNodeData Name="ntor" ActionTag="2005385292" Tag="-1" IconVisible="False" LeftMargin="-17.0000" RightMargin="-17.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="34.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />

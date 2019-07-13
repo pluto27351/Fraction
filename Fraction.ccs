@@ -4,6 +4,7 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="ani">
+          <Project Name="apple.csd" Type="Node" />
           <Project Name="banana.csd" Type="Node" />
           <Project Name="banboo.csd" Type="Node" />
           <Project Name="branch.csd" Type="Node" />
@@ -16,7 +17,6 @@
           <Project Name="road.csd" Type="Node" />
           <Project Name="story.csd" Type="Node" />
           <Project Name="tomato.csd" Type="Node" />
-          <Project Name="apple.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />

@@ -24,7 +24,7 @@ public:
 
 	//答案生成
 	void Input_ans(cocos2d::Node &Q, int number);
-
+    void Input_ans2(cocos2d::Node &Q, int number);  //第二章3.5.8.11暫時用
     //題目生成
     void queCreater(int uni, int queNo, int number);
     void queCreater(int uni, int queNo, int number,int c,int b); //第五章特殊需求

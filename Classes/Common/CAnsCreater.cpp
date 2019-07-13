@@ -12,7 +12,8 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
     
 	sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     answer = CSLoader::createNode(name);
-    Input_ans(*answer, number);
+    if(uni != 2)Input_ans(*answer, number);
+    else Input_ans2(*answer, number);
     
 //    switch (uni) {
 //    case 1:
@@ -363,7 +364,6 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     Text *ntor = (Text *)Output_f->getChildByName("ntor");
         
     int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};  //帶分／分母／分子
-    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
         
     if(outNumber[0] != -1){  //一般情況判斷分子
         sprintf(Input, "%d", number);
@@ -373,6 +373,10 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
         outNumber[0] = number / outNumber[1];
         outNumber[2] = number % outNumber[1];
     }
+    
+    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
+    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 ㄋ分母也為０;
+    
     char n[4],d[4],f[4];
     sprintf(n, "%d", outNumber[2]);
     sprintf(d, "%d", outNumber[1]);
@@ -384,4 +388,40 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     
     Output_f->removeChildByName("ntor");
 
+}
+
+void CAnsCreater::Input_ans2(Node &Q, int number) {
+    char Input[5];
+    char fn[3];
+    int inputData,data;
+    
+    //分數
+    Node *Output_f = (Node *)Q.getChildByName("F_1");
+    Text *ntor = (Text *)Output_f->getChildByName("ntor");
+    
+    int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};  //帶分／分母／分子
+    
+    if(outNumber[0] != -1){  //一般情況判斷分子
+        sprintf(Input, "%d", number);
+        outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
+    }
+    else {  // 特殊情況(帶分數設定為-1) 假分數轉帶分數時用(應該僅第三章答案部分會用到)
+        outNumber[0] = number / outNumber[1] +1;
+        outNumber[2] = number % outNumber[1];
+    }
+    
+    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
+    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 ㄋ分母也為０;
+    
+    char n[4],d[4],f[4];
+    sprintf(n, "%d", outNumber[2]);
+    sprintf(d, "%d", outNumber[1]);
+    sprintf(f, "%d", outNumber[0]);
+    
+    auto ans =Set_CAnsCreater(n,d,f);
+    ans->setPosition(Vec2(40,0));
+    Output_f->addChild(ans);
+    
+    Output_f->removeChildByName("ntor");
+    
 }
