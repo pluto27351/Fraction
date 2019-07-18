@@ -10,10 +10,9 @@
 class CMenuScene : public cocos2d::Layer
 {
 	CButton *_unitBtn[MAX_UNITS];
-	//CButton _goBtn;
     CButton _storyBtn;
-    std::vector<Node *>_story;
-
+    std::vector<Sprite *>_storyPic;
+    
 	int	_unitIdx;
 	bool goBtnPressed = false;
     bool storyPressed = false;

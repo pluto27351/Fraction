@@ -10,8 +10,7 @@
 class CStoryScene : public cocos2d::Layer
 {
     CButton *_unitBtn[MAX_UNITS];
-    //CButton _goBtn;
-    std::vector<Node *>_story;
+    std::vector<Sprite *>_storyPic;
     
     int  _unitIdx;
     bool goBtnPressed = false;

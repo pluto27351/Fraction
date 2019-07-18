@@ -15,7 +15,6 @@
           <Project Name="paper.csd" Type="Node" />
           <Project Name="ribbon.csd" Type="Node" />
           <Project Name="road.csd" Type="Node" />
-          <Project Name="story.csd" Type="Node" />
           <Project Name="tomato.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
@@ -87,7 +86,7 @@
             <Image Name="bg_story.png" />
             <Image Name="story_1_1.png" />
             <Image Name="story_1_2.png" />
-            <Image Name="story_2.png" />
+            <Image Name="story_2_1.png" />
             <Image Name="story_3_1.png" />
             <Image Name="story_3_2.png" />
             <Image Name="story_3_3.png" />

@@ -9,6 +9,9 @@
 #define PEN_MODE     2
 #define ERASER_MODE  3
 
+//每單元故事數量
+const int STORYDATA[5] = {2,1,3,2,2};
+
 //每單元題目數量
 const int QUEDATA[5] = { 12,12,12,12,12 };
 

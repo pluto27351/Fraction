@@ -99,11 +99,11 @@ void  CStoryScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) 
 void  CStoryScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件
 {
     if(_bstory){
-        _story[_storyNum]->setVisible(false);
+        _storyPic[_storyNum]->setVisible(false);
         _storyNum+=1;
         
         if(_storyNum == _maxstory) goBtnPressed = true;
-        else _story[_storyNum]->setVisible(true);
+        else _storyPic[_storyNum]->setVisible(true);
         return;
     }
     
@@ -119,21 +119,17 @@ void  CStoryScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) 
 }
 
 void CStoryScene::ShowUnitStory(int i) {
-    char spriteName[10];
-    auto story = CSLoader::createNode("ani/story.csb");
-    sprintf(spriteName, "story_%d", i);
-    auto storyPics = story->getChildByName(spriteName);
-    _maxstory = storyPics->getTag();
-    
-    for(int k=0; k<_maxstory; k++){
-        sprintf(spriteName, "%d", k);
-        Node *storyPic = storyPics->getChildByName(spriteName);
-        storyPic->setPosition(Vec2(1024,768));
-        storyPic->setVisible(false);
-        this->addChild(storyPic, 2);
-        _story.push_back(storyPic);
+    char spriteName[30];
+    _maxstory = STORYDATA[i-1];
+    for(int k=1; k<=_maxstory; k++){
+        sprintf(spriteName, "img/story/story_%d_%d.png", i,k);
+        auto sPic = (Sprite *)Sprite::create(spriteName);
+        sPic->setPosition(Vec2(1024,768));
+        sPic->setVisible(false);
+        this->addChild(sPic, 2);
+        _storyPic.push_back(sPic);
     }
-    _story[0]->setVisible(true);
+    _storyPic[0]->setVisible(true);
     _storyNum = 0;
     _bstory = true;
 }
