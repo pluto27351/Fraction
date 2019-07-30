@@ -30,8 +30,6 @@ private:
     int _curPicAmount;
     int _objNum;
     
-    int _c,_b; //第五章用的倍數與分子
-    
     const int *switchdata;
     
     CButton _prevBtn, _nextBtn;
@@ -49,6 +47,7 @@ public:
     
     void setQue(int k);
     void setQue_picline();
+    void setQue_multiple();
     void setQue_line();
 
 	// touch 事件

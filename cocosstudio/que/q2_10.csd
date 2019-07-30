@@ -6,36 +6,36 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="100" LabelText="10. 請問一公里又    公里，合起來和幾公里一樣遠? 請用假分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="1280.0000" Y="356.0000" />
+          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="80" LabelText="10. 請問一公里又    公里，合起來和幾公里一樣遠? 請用假分數來回答" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="1400.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="HanyiSentyTang.ttf" Plist="" />
+            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="118.2977" RightMargin="-118.2977" TopMargin="-125.2290" BottomMargin="125.2290" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="28.2385" RightMargin="-28.2385" TopMargin="-121.1359" BottomMargin="121.1359" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-13.0000" RightMargin="-13.0000" TopMargin="-35.0000" BottomMargin="-35.0000" FontSize="60" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="26.0000" Y="70.0000" />
+              <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-15.5000" RightMargin="-15.5000" TopMargin="-44.5000" BottomMargin="-44.5000" FontSize="60" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="31.0000" Y="89.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="0" B="0" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FontResource Type="Normal" Path="HanyiSentyTang.ttf" Plist="" />
+                <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="118.2977" Y="125.2290" />
+            <Position X="28.2385" Y="121.1359" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

@@ -267,7 +267,7 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目
 }
 
 //生成題目
-void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3.5-4 特殊需求
+void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3.5-4.5-6 特殊需求
     char name[14];
     sprintf(name, "que/q%d_%d.csb", uni, queNo);
     auto queNode = CSLoader::createNode(name);

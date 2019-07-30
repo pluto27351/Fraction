@@ -428,6 +428,7 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
 
 
 void CCutImage::setCutPos(){                  //計算切分時位置
+    _mode = 2;
     switch(_mode){
         case 0:  //圓形用
         {
@@ -443,6 +444,8 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             }
         }
         break;
+        case 2:
+            break;
         default: //非連續用-圓形切法
         {
             float n = 360/_dividePiece;
@@ -458,6 +461,7 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                 }
             }
         }
+
         break;
     }
     

@@ -22,7 +22,7 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 {
 	_parentLayer = &parent;
 	_curUnit = iUnitNo;
-	_curQue = 1;  // 預設顯示第一題
+	_curQue = 0;  // 預設顯示第一題
     _curNum = -1;
     _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
     
@@ -31,36 +31,38 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
     _numSwitcher.init("n-", "white.png", parent, obj, SWITCHBOARD_LEVEL);
     rootNode.removeChildByName("numPic");
 
-    int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
-    int cate = queCate%100;
-    int cate_data = queCate/100-1;
-    switch (cate) {
-        case 3:                                 //比例題 chap5-3.4.6
-            switchdata = PIECE[_curNum];
-            setQue_picline();
-            break;
-        case 5:                                 //線段題 chap3-6
-            switchdata = PIECE[_curNum];
-            setQue_line();
-            break;
-        case 11:                                //分子題1 chap2-3.5.811
-            switchdata = PIECE_U2[cate_data];
-            setQue(cate);
-            break;
-        case 12:                                //分子題2 chap3-7~12
-            switchdata = PIECE_U3[cate_data];
-            setQue(cate);
-            break;
-        case 2:                                 //變量題 chap4-7~12
-            switchdata = PIECE_U4[cate_data];
-            setQue(cate);
-            break;
-        case 1:                                 //一般題
-        case 4:                                 //倍數題 chap5-2.5.7.8.9.10
-            switchdata = PIECE[_objNum];
-            setQue(cate);
-            break;
-    }
+//    int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
+//    int cate = queCate%100;
+//    int cate_data = queCate/100-1;
+//    switch (cate) {
+//        case 1:                                 //一般題
+//            switchdata = PIECE[_objNum];
+//            setQue(cate);
+//            break;
+//        case 2:                                 //變量題 chap4-7~12
+//            switchdata = PIECE_U4[cate_data];
+//            setQue(cate);
+//            break;
+//        case 3:                                 //比例題 chap5-3.4.6
+//            switchdata = PIECE[_curNum];
+//            setQue_picline();
+//            break;
+//        case 4:                                 //倍數題 chap5-2.5.7.8.9.10
+//            switchdata = PIECE[_objNum];
+//            setQue_multiple();
+//        case 5:                                 //線段題 chap3-6
+//            switchdata = PIECE[_curNum];
+//            setQue_line();
+//            break;
+//        case 11:                                //分子題1 chap2-3.5.811
+//            switchdata = PIECE_U2[cate_data];
+//            setQue(cate);
+//            break;
+//        case 12:                                //分子題2 chap3-7~12
+//            switchdata = PIECE_U3[cate_data];
+//            setQue(cate);
+//            break;
+//    }
 
     _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("backcolor.png");
     _blackMask->setPosition(Vec2(1024,768));
@@ -75,6 +77,11 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	_bAnswer = false;
 	_bnum = false;
     _bResetActive = false;
+    
+    _ans = NULL;
+    _que = NULL;
+    _cutImage = NULL;
+    reset(1);
 }
 
 void CQuePanel::setQue(int k) {
@@ -111,7 +118,7 @@ void CQuePanel::setQue(int k) {
     
     //設定圖片
     _curPicAmount = 1;
-    if (_curUnit == 4 ) _curPicAmount = 2;
+    if (_curUnit == 4 || _curUnit == 3) _curPicAmount = 2;
 
     if(k == 11 ||k == 12){
         _curPicAmount = 2;
@@ -133,6 +140,7 @@ void CQuePanel::setQue_picline() {
     }
 
     int k = 0;
+    int _c = 0,_b = 0;
     do {
         _c = rand() % 6;
         _b = rand() % 5;
@@ -152,8 +160,6 @@ void CQuePanel::setQue_picline() {
     _ans->setVisible(false);
     _parentLayer->addChild(_ans, 1);
     
-
-    
     _numSwitcher.setEnabledBtns(PIECE[0], _curNum);
     _numSwitcher.setLockNum(_curNum - 2, true);
     _numSwitcher.setVisible(false);
@@ -161,6 +167,45 @@ void CQuePanel::setQue_picline() {
     //設定圖片
     _curPicAmount = 1;
     if (_curNum < _c * _b) _curPicAmount = 2;
+    _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum);
+    _parentLayer->addChild(_cutImage);
+}
+
+void CQuePanel::setQue_multiple() {
+    if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+    }
+    int que_b = UNIT5_b[_curQue-1];
+    int _c =0,ans_b = 0;
+    do {
+        int k = (2 * _curNum) / que_b;
+        _c = rand() % k+2;
+        ans_b = _c * que_b;
+        
+    } while (ans_b >= 2*_curNum);    //分母太小會沒有數字c出
+    
+    if(ans_b > _curNum) _curPicAmount = 2;
+    else _curPicAmount = 2;
+    
+    //設定題目
+    _que = new CAnsCreater();
+    _que->queCreater(_curUnit, _curQue, _curNum, _c, que_b);
+    _que->setPosition(QUE_POS);
+    _parentLayer->addChild(_que);
+    
+    //設定答案
+    _ans = new CAnsCreater(_curUnit, _curQue, _curNum, _c, que_b);
+    _ans->setPosition(ANS_POS);
+    _ans->setVisible(false);
+    _parentLayer->addChild(_ans, 1);
+    
+    _numSwitcher.setEnabledBtns(PIECE[0], _curNum);
+    _numSwitcher.setLockNum(_curNum - 2, true);
+    _numSwitcher.setVisible(false);
+    
+    //設定圖片
     _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum);
     _parentLayer->addChild(_cutImage);
 }
@@ -222,9 +267,9 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
 	}
 
     //重設答案     //重設題目      //切塊圖還原
-    _parentLayer->removeChild(_ans);  delete _ans;
-    _parentLayer->removeChild(_que);  delete _que;
-    _parentLayer->removeChild(_cutImage); delete _cutImage;
+    if(_ans != NULL) {_parentLayer->removeChild(_ans);  delete _ans;}
+    if(_que != NULL) {_parentLayer->removeChild(_que);  delete _que;}
+    if(_cutImage != NULL) {_parentLayer->removeChild(_cutImage); delete _cutImage;}
     
     _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
     
@@ -232,10 +277,21 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     int cate = queCate%100;
     int cate_data = queCate/100-1;
     switch (cate) {
+        case 1:                                 //一般題
+            switchdata = PIECE[_objNum];
+            setQue(cate);
+            break;
+        case 2:                                 //變量題 chap4-7~12
+            switchdata = PIECE_U4[cate_data];
+            setQue(cate);
+            break;
         case 3:                                 //比例題 chap5-3.4.6
             switchdata = PIECE[_curNum];
             setQue_picline();
             break;
+        case 4:                                 //倍數題 chap5-2.5.7.8.9.10
+            switchdata = PIECE[_objNum];
+            setQue_multiple();
         case 5:                                 //線段題 chap3-6
             switchdata = PIECE[_curNum];
             setQue_line();
@@ -246,15 +302,6 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
             break;
         case 12:                                //分子題2 chap3-7~12
             switchdata = PIECE_U3[cate_data];
-            setQue(cate);
-            break;
-        case 2:                                 //變量題 chap4-7~12
-            switchdata = PIECE_U4[cate_data];
-            setQue(cate);
-            break;
-        case 1:                                 //一般題
-        case 4:                                 //倍數題 chap5-2.5.7.8.9.10
-            switchdata = PIECE[_objNum];
             setQue(cate);
             break;
     }
