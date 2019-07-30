@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" Tag="99" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="BG" CanEdit="False" Visible="False" ActionTag="-337020712" Tag="170" IconVisible="False" LeftMargin="-329.2799" RightMargin="-353.7202" TopMargin="0.5068" BottomMargin="-0.5068" ctype="SpriteObjectData">
+          <AbstractNodeData Name="BG" ActionTag="-337020712" Tag="170" IconVisible="False" LeftMargin="-329.2799" RightMargin="-353.7202" TopMargin="0.5068" BottomMargin="-0.5068" ctype="SpriteObjectData">
             <Size X="2731.0000" Y="1536.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1036.2201" Y="767.4932" />
@@ -50,7 +50,7 @@
             <FileData Type="PlistSubImage" Path="tool_number.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="hand" ActionTag="-2004158781" Tag="160" IconVisible="False" LeftMargin="344.5157" RightMargin="1589.4843" TopMargin="1254.9672" BottomMargin="109.0328" ctype="SpriteObjectData">
+          <AbstractNodeData Name="hand" ActionTag="-2004158781" Tag="160" IconVisible="False" LeftMargin="344.5157" RightMargin="1589.4844" TopMargin="1254.9672" BottomMargin="109.0328" ctype="SpriteObjectData">
             <Size X="114.0000" Y="172.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="401.5157" Y="195.0328" />
@@ -94,7 +94,7 @@
             <FileData Type="PlistSubImage" Path="tool_clear.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pen_blue" ActionTag="1592401302" Tag="164" IconVisible="False" LeftMargin="619.9619" RightMargin="1348.0381" TopMargin="1211.6053" BottomMargin="108.3947" ctype="SpriteObjectData">
+          <AbstractNodeData Name="pen_blue" ActionTag="1592401302" Tag="164" IconVisible="False" LeftMargin="619.9619" RightMargin="1348.0381" TopMargin="1211.6052" BottomMargin="108.3947" ctype="SpriteObjectData">
             <Size X="80.0000" Y="216.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="659.9619" Y="216.3947" />

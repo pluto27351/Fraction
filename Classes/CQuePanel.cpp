@@ -5,7 +5,7 @@
 //#define QUEX_POS 1024
 //#define QUEY_POS 1360
 
-#define QUE_POS Vec2(1024,1285)
+#define QUE_POS Vec2(1024,1295)
 #define ANS_POS Vec2(1600,500)
 
 CQuePanel::~CQuePanel()
