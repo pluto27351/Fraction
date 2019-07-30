@@ -6,8 +6,8 @@
 
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
-#define POS Vec2(500,750)
-#define POSD Vec2(650,0)
+#define POS Vec2(400,950)   //500,950
+#define POSD Vec2(0,-450)    //0,-450 ３大概
 
 enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};
 
@@ -198,11 +198,13 @@ void CCutImage::CreateFlower(float scale,int num){   //花
     
     sprintf(picname, "ani/%s.csb",_name);
     auto obj = CSLoader::createNode(picname);
-    _dividePiece = num;
+    int totalPiece = obj->getChildByName("0")->getTag();
+    if(num == -1)_dividePiece = totalPiece;
+    else _dividePiece = num;
     _scale = scale;
     _divided = false;
     
-    int totalPiece = obj->getChildByName("0")->getTag();
+
     int gPicec = totalPiece / _dividePiece;
     img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
@@ -319,11 +321,12 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
     
     sprintf(picname, "ani/%s.csb",_name);
     auto obj = CSLoader::createNode(picname);
-    _dividePiece = num;
+    int totalPiece = obj->getChildByName("0")->getTag();
+    if(num == -1)_dividePiece = totalPiece;
+    else _dividePiece = num;
     _scale = scale;
     _divided = false;
-    
-    int totalPiece = obj->getChildByName("0")->getTag();
+
     int gPicec = totalPiece / _dividePiece;
     img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];

@@ -32,6 +32,8 @@ private:
     
     int _c,_b; //第五章用的倍數與分子
     
+    const int *switchdata;
+    
     CButton _prevBtn, _nextBtn;
     CSwitch _ansBtn,_numBtn,_cutBtn;
     CSwitchGroup _numSwitcher; //,_cutSwitcher;
@@ -44,6 +46,10 @@ private:
 public:
 	CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent);
 	~CQuePanel();
+    
+    void setQue(int k);
+    void setQue_picline();
+    void setQue_line();
 
 	// touch 事件
 	bool touchesBegin(Point inPt, int iId, int iMode);

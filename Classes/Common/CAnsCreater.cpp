@@ -362,8 +362,10 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     //分數
     Node *Output_f = (Node *)Q.getChildByName("F_1");
     Text *ntor = (Text *)Output_f->getChildByName("ntor");
-        
-    int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};  //帶分／分母／分子
+    
+    outNumber[0] = ntor->getTag();    //帶分／分母／分子
+    outNumber[1] = Output_f->getTag();
+    outNumber[2] = 0;
         
     if(outNumber[0] != -1){  //一般情況判斷分子
         sprintf(Input, "%d", number);
@@ -399,7 +401,9 @@ void CAnsCreater::Input_ans2(Node &Q, int number) {
     Node *Output_f = (Node *)Q.getChildByName("F_1");
     Text *ntor = (Text *)Output_f->getChildByName("ntor");
     
-    int outNumber[3] = {ntor->getTag(),Output_f->getTag(),0};  //帶分／分母／分子
+    outNumber[0] = ntor->getTag();    //帶分／分母／分子
+    outNumber[1] = Output_f->getTag();
+    outNumber[2] = 0;
     
     if(outNumber[0] != -1){  //一般情況判斷分子
         sprintf(Input, "%d", number);
@@ -411,7 +415,7 @@ void CAnsCreater::Input_ans2(Node &Q, int number) {
     }
     
     if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
-    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 ㄋ分母也為０;
+    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 分母也為０;
     
     char n[4],d[4],f[4];
     sprintf(n, "%d", outNumber[2]);

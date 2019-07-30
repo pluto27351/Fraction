@@ -73,7 +73,7 @@ private:
 public:
     ~CCutImage();
 
-    CCutImage(int picNum,int NodeAmount, float scale,int dividedP);
+    CCutImage(int picNum,int NodeAmount, float scale,int dividedP = -1);
     void CreatePancake(float scale,int num);
     void CreateNormalImg(float scale,int num);
     void CreateFlower(float scale,int num);

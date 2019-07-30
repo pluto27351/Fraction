@@ -17,7 +17,7 @@
             <FileData Type="PlistSubImage" Path="banboo_2.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="1_1" ActionTag="1988120742" Tag="131" IconVisible="False" LeftMargin="-546.9388" RightMargin="426.9389" TopMargin="-68.0698" BottomMargin="-65.9302" ctype="SpriteObjectData">
+          <AbstractNodeData Name="1_1" ActionTag="1988120742" Tag="131" IconVisible="False" LeftMargin="-546.9389" RightMargin="426.9389" TopMargin="-68.0698" BottomMargin="-65.9302" ctype="SpriteObjectData">
             <Size X="120.0000" Y="134.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-486.9389" Y="1.0698" />
@@ -138,7 +138,7 @@
             <FileData Type="PlistSubImage" Path="banboo_2.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="0" CanEdit="False" ActionTag="909053565" Alpha="85" Tag="12" IconVisible="False" LeftMargin="-657.5000" RightMargin="-657.5000" TopMargin="-68.5000" BottomMargin="-68.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="0" ActionTag="909053565" Alpha="85" Tag="12" IconVisible="False" LeftMargin="-657.5000" RightMargin="-657.5000" TopMargin="-68.5000" BottomMargin="-68.5000" ctype="SpriteObjectData">
             <Size X="1315.0000" Y="137.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

@@ -15,6 +15,7 @@ private:
 	char chiness[12][8] = {{"二"},{"三"},{"四"},{"五"},{"六"},{"七"},{"八"},{"九"},{"十"},{"十一"},{"十二"},{"十三"}};
     Color3B _textColor3B = Color3B(255,0,0);
     Color4B _textColor4B = Color4B(255,0,0,255);
+    int outNumber[3]; //帶分／分母／分子
     
 public:
 	CAnsCreater() {};
@@ -35,4 +36,5 @@ public:
 	cocos2d::Node * Set_CAnsCreater(const char *numerator, const char *denominator, const char *front); //生成分數
 	cocos2d::Node * CAnsCreaterOperation(int n);
 
+    int getA(){return outNumber[1];}
 };
