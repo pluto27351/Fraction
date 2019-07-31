@@ -46,34 +46,34 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
     if(_fullAmount == 1)_pos = POS_1;
     else _pos = POS_2;
     _dPos = POSD;
+    _mode = 1;
     switch (picNum) {
         case PANCAKE:
+            _mode = 0;
             _name = "pancake";
-            _mode = 0;_hasline = true;
+            _hasline = true;
             CreatePancake(scale,dividedP);
             break;
         case PAPER:
             _name = "paper";
-            _mode = 2;
             CreatePaper(scale,dividedP);
             break;
         case WATER:
-            _name = "water";
             _mode = 3;
+            _name = "water";
             CreateWater(scale,dividedP);
             setCutmode(WATERPIC);
             break;
         case BAMBOO:
             _name = "banboo";
-            _mode = 1;
             _pos = Vec2(700,950);
             _dPos = Vec2(0,-200);
+            _hasline = true;
             CreateNormalImg(scale,dividedP);
             setCutmode(LONGPIC);
             break;
         case RIBBON:
             _name = "ribbon";
-            _mode = 1;
             _pos = Vec2(700,950);
             _dPos = Vec2(0,-200);
             CreateNormalImg(scale,dividedP);
@@ -81,7 +81,6 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case DISTANCE:
             _name = "road";
-            _mode = 1;
             _pos = Vec2(700,950);
             _dPos = Vec2(0,-200);
             CreateNormalImg(scale,dividedP);
@@ -89,38 +88,31 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case BANANA:
             _name = "banana";
-            _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
         case GRAPE:
             _name = "grape";
-            _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
         case FLOWER:
             _name = "flower";
-            _mode = 2;
             CreateFlower(scale,dividedP);
             setCutmode(SAMEHEIGHT);
             break;
         case BRANCH:
             _name = "branch";
-            _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
         case NUT:
             _name = "nut";
-            _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
         case TOMATO:
             _name = "tomato";
-            _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
         case APPLE:
             _name = "apple";
-            _mode = 2;
             CreateNormalImg(scale,dividedP);
             break;
         case BIGBAMBOO:
@@ -291,7 +283,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             img[number].setVisible(false);
             addChild(img[number].getNode(), BOTTOM_LEVEL+1);
             
-            float y= img[number].getPicHeight(i) * (i+0.5f);
+            float y= img[number].getPicHeight() * (i+0.5f);
             Point move = Point(0,-100+y);
             _StickyData[number].createImgData(1);
             _StickyData[number]._NodeAngle = angle[0];
@@ -364,8 +356,23 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
             _StickyData[number]._NodeAngle = 0;
             _StickyData[number]._NodePos = img[number].getPosition();
             _StickyData[number].isSticky = true;
+            
+            if(_hasline){
+                if(i!=0){
+                    char line_name[20];  sprintf(line_name, "%s_line.png",_name);
+                    auto line = Sprite::createWithSpriteFrameName(line_name);
+                    Vec2 linepos = img[number].getPosition() + *_StickyData[number]._imgPos + Vec2(0,img[number].getPicWidth()/2);  //位置要修
+                    line->setPosition(linepos);
+                    line->setScale(scale);
+                    line->setRotation(0);
+                    line->setVisible(false);
+                    addChild(line, BOTTOM_LEVEL+2);
+                    _line.push_back(line);
+                }
+            }
         }
     }
+    
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
@@ -494,9 +501,12 @@ void CCutImage::divide(bool d) {
     
     for(int i = 0; i < _dividePiece*_fullAmount; i++){
         img[i].setVisible(d);
-        if(_hasline) _line[i]->setVisible(d);
+        
     }
     
+    if(_hasline) {
+        for(int i=0;i<_line.size();i++)_line[i]->setVisible(d);
+    }
     
     _divided = d;
 
@@ -512,17 +522,14 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
                 rotateImg = &img[i];
             }
             int sticky = img[i].ResetSticky();        //重製磁鐵.釋放區域
-            CCLOG("touch on NO.%d pic " ,sticky);
             if (sticky != -1) {
                 _StickyData[sticky].isSticky = false;
                 
                 if(_mode == 3){                       //水的特殊需求 移開時其他往下一層
                     int max = (sticky ) / _dividePiece + 1;
-                    CCLOG("max = %d " ,max);
                     for(int kk = sticky+1;kk < max * _dividePiece ; kk++ ){
                         if(!_StickyData[kk].isSticky)return true;
                         int number =_StickyData[kk]._num;
-                        CCLOG("NO.%d down floor %d -> %d ",number,kk,kk-1);
                         img[number].downOneFloor();
                         _StickyData[kk-1].setSticky(number);
                         _StickyData[kk].isSticky = false;

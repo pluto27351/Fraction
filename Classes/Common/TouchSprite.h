@@ -70,7 +70,8 @@ public:
     void downOneFloor();
     
 	Point getPosition() { return _SpriteLoc; }
-    float getPicHeight(int n){ return ((_Pic[0]->getContentSize().height-15) * _Pic[0]->getScaleY());}
+    float getPicHeight(){ return ((_Pic[0]->getContentSize().height-15) * _Pic[0]->getScaleY());} //水用的高
+    float getPicWidth(){return (_Pic[0]->getContentSize().width);}//一般的寬
 	float getAngle() { return (_fangle); }
     
 	void setSticky(int stickyNumber);
@@ -78,5 +79,5 @@ public:
     int getSticky(){return _StickyNumber;}
     void setVisible(bool b);
     int getPieceAmount(){return _piece;}
-    int getPicWidth(){return (_Pic[0]->getContentSize().width);}
+
 };
