@@ -118,10 +118,9 @@ void CQuePanel::setQue(int k) {
     
     //設定圖片
     _curPicAmount = 1;
-    if (_curUnit == 4 || _curUnit == 3) _curPicAmount = 2;
+    if (_curUnit == 4 || _curUnit == 3 ||_curUnit == 2) _curPicAmount = 2;
 
     if(k == 11 ||k == 12){
-        _curPicAmount = 2;
         int a= _ans->getA();
         _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,a);
     }else{
@@ -286,7 +285,7 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
             setQue(cate);
             break;
         case 3:                                 //比例題 chap5-3.4.6
-            switchdata = PIECE[_curNum];
+            switchdata = PIECE[_objNum];
             setQue_picline();
             break;
         case 4:                                 //倍數題 chap5-2.5.7.8.9.10

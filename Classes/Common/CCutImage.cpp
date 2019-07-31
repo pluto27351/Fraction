@@ -6,7 +6,8 @@
 
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
-#define POS Vec2(400,950)   //500,950
+#define POS_1 Vec2(400,800)   //500,950
+#define POS_2 Vec2(400,975)
 #define POSD Vec2(0,-450)    //0,-450 ３大概
 
 enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};
@@ -42,7 +43,9 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
 
     _fullAmount = NodeAmount;
     
-    _pos = POS; _dPos = POSD;
+    if(_fullAmount == 1)_pos = POS_1;
+    else _pos = POS_2;
+    _dPos = POSD;
     switch (picNum) {
         case PANCAKE:
             _name = "pancake";
@@ -266,7 +269,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
     for(int k=0;k<_fullAmount;k++){
         sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(POS+POSD*k);
+        fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
         addChild(fi,BOTTOM_LEVEL);
         _fullImg.push_back(fi);
@@ -383,7 +386,7 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
     for(int k=0;k<_fullAmount;k++){
         sprintf(picname, "%s_1.png",_name);                               //底圖
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(POS+POSD*k);
+        fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
         addChild(fi,BOTTOM_LEVEL);
         _fullImg.push_back(fi);
