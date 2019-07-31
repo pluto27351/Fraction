@@ -25,6 +25,13 @@ void CButton::setButtonInfo(const char *normalImg, const char *touchedImg, Layer
 	_bVisible = _bEnabled = true;
 }
 
+void CButton::setZ(int i)
+{
+    _normalPic->setZOrder(i);
+    _touchedPic->setZOrder(i);
+
+}
+
 bool CButton::touchesBegin(cocos2d::Point inPos)
 {
 	if (_BtnRect.containsPoint(inPos) && _bVisible && _bEnabled)

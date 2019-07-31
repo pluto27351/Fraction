@@ -2,6 +2,9 @@
 #include "Data.h"
 
 #define BRUSH_SIZE 0.35f
+#define color_red Color3B(197,95,80)
+#define color_blue Color3B(50,88,169)
+#define color_black Color3B(84,84,84)
 
 CDrawingPanel* CDrawingPanel::_pHandDrawing = nullptr;
 
@@ -96,9 +99,9 @@ void  CDrawingPanel::initDrawingPanel(Node &rootNode, cocos2d::Layer &parent)	//
 	_clearAllBtn.setScale(s);
     rootNode.removeChildByName("reset");
 
-	_lineColor = _defaultColor[red] = Color3B(250, 0, 0);
-	_defaultColor[black] = Color3B(  0, 0, 0);   
-	_defaultColor[blue] = Color3B(  0, 0, 250);
+	_lineColor = _defaultColor[red] = color_red;
+	_defaultColor[black] = color_black;
+	_defaultColor[blue] = color_blue;
 
 	_toolMode = HAND_MODE;
 

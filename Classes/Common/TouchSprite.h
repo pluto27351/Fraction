@@ -57,7 +57,7 @@ public:
     
 	void setPosition(Point pos);
     void setImgPandR(int n,Point pos,float r);
-    void setImgPandR(Point pos[],float r[],int z);
+    void setImgPandR(Point pos[],float r[]);
     void setRotation(float r);
     void setCutmode(int n){_cutMode = n;}
     

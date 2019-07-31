@@ -34,7 +34,7 @@ void TouchSprite::setImgPandR(int n,Point pos,float r){
     _Pic[n]->setRotation(r);
 
 }
-void TouchSprite::setImgPandR(Point pos[],float r[],int z){
+void TouchSprite::setImgPandR(Point pos[],float r[]){
     if(_cutMode == 2){
         _Pic[0]->setPosition(pos[0]); 
         _Pic[0]->setRotation(r[0]);
@@ -177,7 +177,7 @@ bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 			_bTouched = true;
 			touchID[0] = id;
 			touchPos[0] = inPos;
-			d = inPos - getPosition();
+            d = Vec2(0,0);
             setDividedImg();
 			return true;
 

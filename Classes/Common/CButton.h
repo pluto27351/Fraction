@@ -32,6 +32,7 @@ public:
 	void setPosition(Vec2 locPt);
 	void setScale(float fscale);
 	void setTouchScale(float s);
+    void setZ(int i);
 };
 
 
