@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="9. 一個盤子上有12顆葡萄，一天可以吃掉   盤葡萄，請問2天共可以吃掉幾分之幾盤葡萄?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="9. 一個盤子上有12顆葡萄，一天可以吃掉   盤葡萄，請問   天共可以吃掉幾分之幾盤葡萄?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1400.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position Y="-0.0001" />
@@ -40,6 +40,18 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="MN_1" ActionTag="705613655" Tag="104" IconVisible="False" LeftMargin="-241.2896" RightMargin="206.2896" TopMargin="-70.5161" BottomMargin="-33.4839" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="35.0000" Y="104.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-223.7896" Y="18.5161" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="0" B="0" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

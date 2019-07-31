@@ -29,6 +29,7 @@ private:
     int _curNum; //數字
     int _curPicAmount;
     int _objNum;
+    int _c=-1; //第５章倍數
     
     const int *switchdata;
     

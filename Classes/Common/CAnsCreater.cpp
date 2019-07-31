@@ -271,10 +271,19 @@ void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3
     char name[14];
     sprintf(name, "que/q%d_%d.csb", uni, queNo);
     auto queNode = CSLoader::createNode(name);
-    
+    int inputData = queNode->getChildByName("bg")->getTag();
     char Input[5];
+    
     //數字
-    Text *Output_n = (Text *)queNode->getChildByName("N_1");
+    if(inputData != 0){
+        Text *Output_n = (Text *)queNode->getChildByName("N_1");
+        sprintf(Input, "%d", number);
+        Output_n->setString(Input);
+        Output_n->setTextColor(_textColor4B);
+    }
+
+    //倍數
+    Text *Output_n = (Text *)queNode->getChildByName("MN_1");
     sprintf(Input, "%d", c);
     Output_n->setString(Input);
     Output_n->setTextColor(_textColor4B);

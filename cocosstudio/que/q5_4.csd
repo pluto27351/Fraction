@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="11" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="4. 一天走   公里，請問   天共走了幾公里? " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="4. 一天走   公里，請問   天共走了幾公里? " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1400.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position Y="-0.0001" />
@@ -41,10 +41,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="-240452453" Tag="258" IconVisible="False" LeftMargin="114.5004" RightMargin="-149.5004" TopMargin="-178.5870" BottomMargin="74.5870" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="MN_1" ActionTag="-240452453" Tag="258" IconVisible="False" LeftMargin="108.0793" RightMargin="-143.0793" TopMargin="-178.5865" BottomMargin="74.5865" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="35.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="132.0004" Y="126.5870" />
+            <Position X="125.5793" Y="126.5865" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />

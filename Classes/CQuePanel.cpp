@@ -176,14 +176,17 @@ void CQuePanel::setQue_multiple() {
         int num = (rand() % switchdata[0]) + 1;
         _curNum = switchdata[num];
     }
-    int que_b = UNIT5_b[_curQue-1];
-    int _c =0,ans_b = 0;
+    int que_b = switchdata[11];
+    int c = 0,ans_b = 0;
+    int k = (2 * _curNum) / que_b;  //取上限 ２倍分母/分子 ＝ 倍數上限
+    bool b;
     do {
-        int k = (2 * _curNum) / que_b;
-        _c = rand() % k+2;
-        ans_b = _c * que_b;
-        
-    } while (ans_b >= 2*_curNum);    //分母太小會沒有數字c出
+        c = (rand() % k)+1; //隨機取倍數 <上限
+        if(k == 2) {c = k; _c =-1;}
+    } while ((c == 1 || c == _c));    //分母太小會沒有數字c出
+
+    _c =c;
+    ans_b = _c * que_b;
     
     if(ans_b > _curNum) _curPicAmount = 2;
     else _curPicAmount = 2;
@@ -200,7 +203,7 @@ void CQuePanel::setQue_multiple() {
     _ans->setVisible(false);
     _parentLayer->addChild(_ans, 1);
     
-    _numSwitcher.setEnabledBtns(PIECE[0], _curNum);
+    _numSwitcher.setEnabledBtns(switchdata, _curNum);
     _numSwitcher.setLockNum(_curNum - 2, true);
     _numSwitcher.setVisible(false);
     
@@ -288,8 +291,8 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
             switchdata = PIECE[_objNum];
             setQue_picline();
             break;
-        case 4:                                 //倍數題 chap5-2.5.7.8.9.10
-            switchdata = PIECE[_objNum];
+        case 4:                                 //倍數題 chap5-其他題
+            switchdata = PIECE_U5[_curQue-1];
             setQue_multiple();
         case 5:                                 //線段題 chap3-6
             switchdata = PIECE[_curNum];

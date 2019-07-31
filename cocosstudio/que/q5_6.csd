@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="1" IconVisible="False" LeftMargin="-698.3777" RightMargin="-701.6223" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="6. 一條緞帶長   公尺，請問   條緞帶有幾分之幾公尺?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" IconVisible="False" LeftMargin="-698.3777" RightMargin="-701.6223" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="6. 一條緞帶長   公尺，請問   條緞帶有幾分之幾公尺?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1400.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1.6223" Y="-0.0001" />
@@ -41,10 +41,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="1792706119" Tag="135" IconVisible="False" LeftMargin="256.3737" RightMargin="-291.3737" TopMargin="-180.9621" BottomMargin="76.9621" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="MN_1" ActionTag="1792706119" Tag="135" IconVisible="False" LeftMargin="249.9517" RightMargin="-284.9517" TopMargin="-175.8248" BottomMargin="71.8248" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="35.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="273.8737" Y="128.9621" />
+            <Position X="267.4517" Y="123.8248" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />

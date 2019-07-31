@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" Tag="11" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="1. 小寶一天喝   杯的水，請問   天共喝了幾分之幾杯的水?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-177.9999" BottomMargin="-178.0001" IsCustomSize="True" FontSize="70" LabelText="1. 小寶一天喝   杯的水，請問   天共喝了幾分之幾杯的水?" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1400.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position Y="-0.0001" />
@@ -41,10 +41,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="-913366554" Tag="140" IconVisible="False" LeftMargin="322.6314" RightMargin="-357.6314" TopMargin="-180.9611" BottomMargin="76.9611" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="MN_1" ActionTag="-913366554" Tag="140" IconVisible="False" LeftMargin="317.4937" RightMargin="-352.4937" TopMargin="-178.3916" BottomMargin="74.3916" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="35.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="340.1314" Y="128.9611" />
+            <Position X="334.9937" Y="126.3916" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />
