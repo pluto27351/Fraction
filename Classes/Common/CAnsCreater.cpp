@@ -173,27 +173,31 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 	float scale = 0.5f;
 	for (int i = 0; numerator[i] != NULL; scale += 0.5f, i++);
 	auto fn = (Node *)Node::create(); //最後的回傳-分數的形狀
-	Sprite *bar;
-	auto Ntor = cocos2d::ui::Text::create(); //分子
-	auto Dtor = cocos2d::ui::Text::create(); //分母
+    
+    if(*numerator != '0'){
+        Sprite *bar;
+        auto Ntor = cocos2d::ui::Text::create(); //分子
+        auto Dtor = cocos2d::ui::Text::create(); //分母
+        
+        bar = (Sprite *)Sprite::create("img/bar.png");
+        bar->setScale(6 * scale, 5);
+        bar->setColor(_textColor3B);
+        
+        Ntor->setFontSize(50);
+        Ntor->setString(numerator);
+        Ntor->setPosition(Point(0, 30));
+        Ntor->setTextColor(_textColor4B);
+        
+        Dtor->setFontSize(50);
+        Dtor->setString(denominator);
+        Dtor->setPosition(Point(0, -30));
+        Dtor->setTextColor(_textColor4B);
+        
+        fn->addChild(bar);
+        fn->addChild(Ntor);
+        fn->addChild(Dtor);
+    }
 
-	bar = (Sprite *)Sprite::create("img/bar.png");
-	bar->setScale(6 * scale, 5);
-    bar->setColor(_textColor3B);
-
-	Ntor->setFontSize(50);
-	Ntor->setString(numerator);
-	Ntor->setPosition(Point(0, 30));
-	Ntor->setTextColor(_textColor4B);
-
-	Dtor->setFontSize(50);
-	Dtor->setString(denominator);
-	Dtor->setPosition(Point(0, -30));
-	Dtor->setTextColor(_textColor4B);
-
-	fn->addChild(bar);
-	fn->addChild(Ntor);
-	fn->addChild(Dtor);
 
 	for (int i = 0; front[i] != NULL && front[i] != '0'; i++) {
 		auto Ftor = cocos2d::ui::Text::create();
