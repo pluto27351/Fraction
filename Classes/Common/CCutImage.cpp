@@ -76,6 +76,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _name = "ribbon";
             _pos = Vec2(700,950);
             _dPos = Vec2(0,-200);
+            _hasline = true;
             CreateNormalImg(scale,dividedP);
             setCutmode(LONGPIC);
             break;
@@ -83,6 +84,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _name = "road";
             _pos = Vec2(700,950);
             _dPos = Vec2(0,-200);
+            _hasline = true;
             CreateNormalImg(scale,dividedP);
             setCutmode(LONGPIC);
             break;
@@ -357,18 +359,27 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
             _StickyData[number]._NodePos = img[number].getPosition();
             _StickyData[number].isSticky = true;
             
-            if(_hasline){
-                if(i!=0){
-                    char line_name[20];  sprintf(line_name, "%s_line.png",_name);
-                    auto line = Sprite::createWithSpriteFrameName(line_name);
-                    Vec2 linepos = img[number].getPosition() + *_StickyData[number]._imgPos + Vec2(0,img[number].getPicWidth()/2);  //位置要修
-                    line->setPosition(linepos);
-                    line->setScale(scale);
-                    line->setRotation(0);
-                    line->setVisible(false);
-                    addChild(line, BOTTOM_LEVEL+2);
-                    _line.push_back(line);
-                }
+        }
+    }
+    
+    if(_hasline){
+        Vec2 dmove = Vec2(img[0].getPicWidth(),0);
+        int n_line =_dividePiece-1;
+        float c_center = (n_line-1) /2.0f;
+        
+        for(int k=0;k<_fullAmount;k++){
+            Vec2 centerPos =_pos + _dPos*k;
+            for (int i = 0; i <n_line; i++) {
+                char line_name[20];  sprintf(line_name, "%s_line.png",_name);
+                auto line = Sprite::createWithSpriteFrameName(line_name);
+                Vec2 m = (i- c_center) * dmove;
+                CCLOG("move = %f,%f",m.x,m.y);
+                line->setPosition(centerPos + m);
+                line->setScale(scale);
+                line->setRotation(0);
+                line->setVisible(false);
+                addChild(line, BOTTOM_LEVEL+2);
+                _line.push_back(line);
             }
         }
     }
@@ -473,7 +484,6 @@ void CCutImage::setCutPos(){                  //計算切分時位置
                     img[number].setImgPandR(_StickyData[number]._imgPos, _StickyData[number]._imgAngle);
                     img[number].setPosition(_StickyData[number]._NodePos);       //設定圖片位置與角度
                     img[number].setRotation(_StickyData[number]._NodeAngle);
-                    CCLOG("NO.%d  pos = %f,%f",number,_StickyData[number]._imgPos->x,_StickyData[number]._imgPos->y);
                     img[number].setSticky(number);                          //紀錄區域
                     _StickyData[number].setSticky(number);
                 }

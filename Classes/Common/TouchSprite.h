@@ -71,7 +71,7 @@ public:
     
 	Point getPosition() { return _SpriteLoc; }
     float getPicHeight(){ return ((_Pic[0]->getContentSize().height-15) * _Pic[0]->getScaleY());} //水用的高
-    float getPicWidth(){return (_Pic[0]->getContentSize().width);}//一般的寬
+    float getPicWidth();//一般的寬
 	float getAngle() { return (_fangle); }
     
 	void setSticky(int stickyNumber);

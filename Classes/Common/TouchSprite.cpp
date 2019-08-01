@@ -291,3 +291,10 @@ int TouchSprite::ResetSticky() {
 	_StickyNumber = -1;
 	return sticky;
 }
+
+
+float TouchSprite::getPicWidth(){
+    float w =(_Pic[0]->getContentSize().width-10) * _piece;
+    CCLOG("width = %f",w);
+    return (w);
+}//一般的寬
