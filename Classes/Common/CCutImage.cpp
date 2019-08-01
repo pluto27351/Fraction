@@ -61,6 +61,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
         case WATER:
             _mode = 3;
             _name = "water";
+            _hasline = true;
             CreateWater(scale,dividedP);
             setCutmode(WATERPIC);
             break;
@@ -275,7 +276,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
         float center = (_dividePiece-1)/2;
         Vec2 PicScale = Vec2(1,1.0/_dividePiece);
         float height = 200*PicScale.y;
-
+        
         for (int i = 0; i < _dividePiece; i++) {
             int number = k*_dividePiece+i;
             img[number].setImgInfo_water(pos,angle,PicScale);
@@ -294,17 +295,35 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             _StickyData[number]._imgAngle[0] = 0;
             _StickyData[number].isSticky = true;
             
-//            auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
+//            auto line = Sprite::createWithSpriteFrameName("water_line.png");
 //            line->setPosition(_pos + _dPos*k);
 //            line->setScale(scale);
-//            line->setRotation(angle[0]+a);
+//            line->setRotation(0);
 //            line->setVisible(false);
 //            addChild(line, BOTTOM_LEVEL+2);
 //            _line.push_back(line);
-            
+//
         }
+    }
+    
+    if(_hasline){
+        Vec2 dmove = Vec2(0,img[0].getPicHeight());
+        int n_line =_dividePiece;
+        float c_center = (n_line-1) /2.0f;
         
-        
+        for(int k=0;k<_fullAmount;k++){
+            Vec2 centerPos =_pos + _dPos*k +Vec2(-46,(dmove.y+7)/2);
+            for (int i = 0; i <n_line; i++) {
+                auto line = Sprite::createWithSpriteFrameName("water_line.png");
+                Vec2 m = (i- c_center) * dmove;
+                line->setPosition(centerPos + m);
+                line->setScale(scale);
+                line->setRotation(0);
+                line->setVisible(false);
+                addChild(line, BOTTOM_LEVEL+2);
+                _line.push_back(line);
+            }
+        }
     }
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
@@ -373,7 +392,6 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
                 char line_name[20];  sprintf(line_name, "%s_line.png",_name);
                 auto line = Sprite::createWithSpriteFrameName(line_name);
                 Vec2 m = (i- c_center) * dmove;
-                CCLOG("move = %f,%f",m.x,m.y);
                 line->setPosition(centerPos + m);
                 line->setScale(scale);
                 line->setRotation(0);
@@ -539,6 +557,7 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
                     int max = (sticky ) / _dividePiece + 1;
                     for(int kk = sticky+1;kk < max * _dividePiece ; kk++ ){
                         if(!_StickyData[kk].isSticky)return true;
+                        CCLOG("NO.%d down  max = %d",kk,max * _dividePiece);
                         int number =_StickyData[kk]._num;
                         img[number].downOneFloor();
                         _StickyData[kk-1].setSticky(number);

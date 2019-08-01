@@ -164,7 +164,7 @@ void TouchSprite::longPicDivide(){
 }
 
 void TouchSprite::downOneFloor(){
-    float y = _Pic[0]->getContentSize().height*_Pic[0]->getScaleY();
+    float y = (_Pic[0]->getContentSize().height - 10)*_Pic[0]->getScaleY();
     Vec2 pos =_Pic[0]->getPosition();
     _Pic[0]->setPosition(pos - Vec2(0,y));
     _StickyNumber-=1;
@@ -297,4 +297,4 @@ float TouchSprite::getPicWidth(){
     float w =(_Pic[0]->getContentSize().width-10) * _piece;
     CCLOG("width = %f",w);
     return (w);
-}//一般的寬
+}
