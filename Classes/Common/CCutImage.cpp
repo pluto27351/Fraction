@@ -119,11 +119,34 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _name = "apple";
             CreateNormalImg(scale,dividedP);
             break;
+    }
+    
+}
+
+CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
+{
+    auto fileUtiles = FileUtils::getInstance();
+    auto fragmentGrayFullPath = fileUtiles->fullPathForFilename("shader/gray.fsh");
+    auto fragSource = fileUtiles->getStringFromFile(fragmentGrayFullPath);
+    auto glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+    grayGLProgrameState = GLProgramState::getOrCreateWithGLProgram(glprogram);
+    grayGLProgrameState->retain();
+    
+    fileUtiles = FileUtils::getInstance();
+    fragmentGrayFullPath = fileUtiles->fullPathForFilename("shader/color.fsh");
+    fragSource = fileUtiles->getStringFromFile(fragmentGrayFullPath);
+    glprogram = GLProgram::createWithByteArrays(ccPositionTextureColor_noMVP_vert, fragSource.c_str());
+    colorGLProgrameState = GLProgramState::getOrCreateWithGLProgram(glprogram);
+    colorGLProgrameState->retain();
+    
+    _fullAmount = 1;
+
+    switch (picNum) {
         case BIGBAMBOO:
             _name = "banboo_big";
             _pos = Vec2(200,1050);
             _dPos = Vec2(210,0);
-            CreatelinePic(scale,dividedP);
+            CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
     }
     
@@ -135,7 +158,7 @@ void CCutImage::setCutmode(int m){
     }
 }
 
-void CCutImage::CreatelinePic(float scale,int num){   //線段＋圖片
+void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段＋圖片
     char picname[20];
     
     _dividePiece = num;
@@ -144,45 +167,53 @@ void CCutImage::CreatelinePic(float scale,int num){   //線段＋圖片
     
     img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
+        
+    sprintf(picname, "%s.png", _name);              //切分圖
+    for (int i = 0; i < _dividePiece; i++) {
+        float angle[1] = {0};
+        Point pos[1] = {_pos + _dPos*i};
+        img[i].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
+        img[i].setCollisionInfo(_dividePiece);
+        img[i].setSticky(i);
+        img[i].setVisible(true);
+        addChild(img[i].getNode(), BOTTOM_LEVEL+1);
+        
+        _StickyData[i].createImgData(1);
+        _StickyData[i]._NodeAngle = angle[0];
+        _StickyData[i]._NodePos = img[i].getPosition();
+        _StickyData[i]._imgPos[0] = pos[0];
+        _StickyData[i]._imgAngle[0] = 0;
+        _StickyData[i].isSticky = true;
+    }
     
-    for(int k=0;k<_fullAmount;k++){
-        sprintf(picname, "length_0.png",_name);                                 //底圖->改線段！！！
-        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-        fi->setPosition(_pos + Vec2(0,-100));
-        fi->setScale(scale);
-        addChild(fi,BOTTOM_LEVEL);
-        _fullImg.push_back(fi);
-        
-    //    float center = (_dividePiece-1)/2.0f;
-        sprintf(picname, "%s.png", _name);              //切分圖
-        for (int i = 0; i < _dividePiece; i++) {
-            int number = k*_dividePiece+i;
-            float angle[1] = {0};
-            Point pos[1] = {_pos + _dPos*i};
-            img[number].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
-            img[number].setCollisionInfo(_dividePiece);
-            img[number].setSticky(number);
-            img[number].setVisible(true);
-            addChild(img[number].getNode(), BOTTOM_LEVEL+1);
-            
-            _StickyData[number].createImgData(1);
-            _StickyData[number]._NodeAngle = angle[0];
-            _StickyData[number]._NodePos = img[number].getPosition();
-            _StickyData[number]._imgPos[0] = pos[0];
-            _StickyData[number]._imgAngle[0] = 0;
-            _StickyData[number].isSticky = true;
-//
-//            auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
-//            line->setPosition(_pos + _dPos*k);
-//            line->setScale(scale);
-//            line->setRotation(angle[0]+a);
-//            line->setVisible(false);
-//            addChild(line, BOTTOM_LEVEL+2);
-//            _line.push_back(line);
-            
-        }
-        
-        
+    Vec2 initPos = _pos - _dPos / 2 +Vec2(0,-100);
+    Vec2 movePos = _dPos / b;
+    int line_max = b*c/a + 1;
+    
+    sprintf(picname, "length_0.png",_name);                                 //底圖->改線段！！！
+    auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+    if(line_max == 1){
+        fi->setPosition(Vec2(450,950));
+        fi->setScaleX(scale*0.5f);
+    }
+    else {
+        fi->setPosition(Vec2(850,950));
+        fi->setScaleX(scale);
+    }
+    addChild(fi,BOTTOM_LEVEL);
+    _fullImg.push_back(fi);
+    
+    line_max *=a;
+    for(int i=0;i<line_max+1;i++){
+        Sprite *line;
+        if(i % a == 0)line = Sprite::createWithSpriteFrameName("length_1.png");
+        else line = Sprite::createWithSpriteFrameName("length_2.png");
+        line->setPosition(initPos + movePos*i);
+        line->setScale(scale);
+        line->setRotation(0);
+        line->setVisible(true);
+        addChild(line, BOTTOM_LEVEL+2);
+        _line.push_back(line);
     }
     
     _StickyRadius = powf(img[0].ImgRadius, 2);

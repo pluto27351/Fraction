@@ -74,12 +74,13 @@ public:
     ~CCutImage();
 
     CCutImage(int picNum,int NodeAmount, float scale,int dividedP = -1);
+    CCutImage(int picNum,float scale,int dividedP,int a,int b);
     void CreatePancake(float scale,int num);
     void CreateNormalImg(float scale,int num);
     void CreateFlower(float scale,int num);
     void CreatePaper(float scale,int num);
     void CreateWater(float scale,int num);
-    void CreatelinePic(float scale,int num);
+    void CreatelinePic(float scale,int num,int a,int b,int c);
     
 	void divide(bool);
     void setCutmode(int);

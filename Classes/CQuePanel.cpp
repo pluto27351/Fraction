@@ -198,7 +198,7 @@ void CQuePanel::setQue_picline() {  //chap5-3.4.6
     //設定圖片
 //    _curPicAmount = 1;
 //    if (_curNum < _c * _b) _curPicAmount = 2;
-    _cutImage = new CCutImage(_objNum,1, 1.0f,_c);
+    _cutImage = new CCutImage(_objNum, 1.0f,_c,_curNum,_b);
     _parentLayer->addChild(_cutImage);
 }
 
