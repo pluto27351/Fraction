@@ -31,7 +31,7 @@ bool CHomeScene::init()
     addChild(rootNode);
     
 	auto _BtnLoc = rootNode->getChildByName("startBtn")->getPosition();
-	_startBtn.setButtonInfo("main_start.png", "main_start_click2.png", *this, _BtnLoc, 1);
+	_startBtn.setButtonInfo("main_start.png", "main_start_click.png", *this, _BtnLoc, 1);
 	rootNode->removeChildByName("startBtn");
 
 //    _BtnLoc = rootNode->getChildByName("Boo")->getPosition();

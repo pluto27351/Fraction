@@ -82,7 +82,7 @@
         <Folder Name="img">
           <Folder Name="story">
             <Image Name="bg_main.png" />
-            <Image Name="bg_menu.PNG" />
+            <Image Name="bg_menu.png" />
             <Image Name="bg_story.png" />
             <Image Name="story_1_1.png" />
             <Image Name="story_1_2.png" />
@@ -120,7 +120,7 @@
             <PlistImageFile Name="character_5_click.png" Key="character_5_click.png" />
             <PlistImageFile Name="main_nut.png" Key="main_nut.png" />
             <PlistImageFile Name="main_start.png" Key="main_start.png" />
-            <PlistImageFile Name="main_start_click2.png" Key="main_start_click2.png" />
+            <PlistImageFile Name="main_start_click.png" Key="main_start_click.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
@@ -157,8 +157,6 @@
             <PlistImageFile Name="home.png" Key="home.png" />
             <PlistImageFile Name="home_click.png" Key="home_click.png" />
             <PlistImageFile Name="length_0.png" Key="length_0.png" />
-            <PlistImageFile Name="length_1.png" Key="length_1.png" />
-            <PlistImageFile Name="length_2.png" Key="length_2.png" />
             <PlistImageFile Name="n-10.png" Key="n-10.png" />
             <PlistImageFile Name="n-10_G.png" Key="n-10_G.png" />
             <PlistImageFile Name="n-10_no.png" Key="n-10_no.png" />
@@ -249,6 +247,17 @@
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
             <PlistImageFile Name="length_big.png" Key="length_big.png" />
+            <PlistImageFile Name="length_b0.png" Key="length_b0.png" />
+            <PlistImageFile Name="length_b1.png" Key="length_b1.png" />
+            <PlistImageFile Name="length_b2.png" Key="length_b2.png" />
+            <PlistImageFile Name="big_touch.png" Key="big_touch.png" />
+            <PlistImageFile Name="length_1.png" Key="length_1.png" />
+            <PlistImageFile Name="length_2.png" Key="length_2.png" />
+            <PlistImageFile Name="nut_3.png" Key="nut_3.png" />
+            <PlistImageFile Name="nut_4.png" Key="nut_4.png" />
+            <PlistImageFile Name="nut_6.png" Key="nut_6.png" />
+            <PlistImageFile Name="nut_8.png" Key="nut_8.png" />
+            <PlistImageFile Name="nut_9.png" Key="nut_9.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
         </Folder>

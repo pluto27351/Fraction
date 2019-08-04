@@ -140,11 +140,10 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
     colorGLProgrameState->retain();
     
     _fullAmount = 1;
-
     switch (picNum) {
         case BIGBAMBOO:
             _name = "banboo_big";
-            _pos = Vec2(200,1050);
+            _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
@@ -161,7 +160,9 @@ void CCutImage::setCutmode(int m){
 void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段＋圖片
     char picname[20];
     
-    _dividePiece = num;
+    _dividePiece = 1;
+    _fullAmount = num;
+    
     _scale = scale;
     _divided = false;
     
@@ -169,13 +170,13 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     _StickyData = new StickyData[_dividePiece * _fullAmount];
         
     sprintf(picname, "%s.png", _name);              //切分圖
-    for (int i = 0; i < _dividePiece; i++) {
+    for (int i = 0; i < _fullAmount; i++) {
         float angle[1] = {0};
         Point pos[1] = {_pos + _dPos*i};
         img[i].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
-        img[i].setCollisionInfo(_dividePiece);
+        img[i].setCollisionInfo(_fullAmount);
         img[i].setSticky(i);
-        img[i].setVisible(true);
+        img[i].setVisible(false);
         addChild(img[i].getNode(), BOTTOM_LEVEL+1);
         
         _StickyData[i].createImgData(1);
@@ -184,9 +185,14 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
         _StickyData[i]._imgPos[0] = pos[0];
         _StickyData[i]._imgAngle[0] = 0;
         _StickyData[i].isSticky = true;
+        
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        fi->setPosition(pos[0]);
+        addChild(fi,BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
     }
     
-    Vec2 initPos = _pos - _dPos / 2 +Vec2(0,-100);
+    Vec2 initPos = _pos - _dPos / 2 +Vec2(0,-120);
     Vec2 movePos = _dPos / b;
     int line_max = (b*c)>a?2:1;
     Vec2 length[3];
@@ -195,7 +201,8 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     for(int i=0;i<(line_max*a)+1;i++){
         Sprite *line;
         if(i % a == 0){
-            line = Sprite::createWithSpriteFrameName("length_1.png");
+            sprintf(picname, "length_b%d.png", i/a);
+            line = Sprite::createWithSpriteFrameName(picname);
             length[l] = initPos + movePos*i;
         }
         else line = Sprite::createWithSpriteFrameName("length_2.png");
@@ -210,11 +217,11 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     movePos = movePos*a;
     initPos += movePos /2;
     for(int i=0;i<line_max;i++){          //底圖->改線段！！！
-        auto fi = (Sprite *)Sprite::createWithSpriteFrameName("length_big.png");
-        fi->setScaleX((float)a / b);
-        fi->setPosition(initPos + movePos*i);
-        addChild(fi,BOTTOM_LEVEL);
-        _fullImg.push_back(fi);
+        auto line = (Sprite *)Sprite::createWithSpriteFrameName("length_big.png");
+        line->setScaleX((float)a / b);
+        line->setPosition(initPos + movePos*i);
+        addChild(line,BOTTOM_LEVEL);
+        _line.push_back(line);
     }
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
@@ -585,9 +592,11 @@ void CCutImage::setCutPos(){                  //計算切分時位置
 }
 
 void CCutImage::divide(bool d) {
-    if(d){
+    _divided = d;
+    
+    if(_divided){
         setCutPos();
-        for(int i=0; i<_fullAmount; i++){
+        for(int i=0; i<_fullImg.size(); i++){
             _fullImg[i]->setGLProgramState(grayGLProgrameState);
             _fullImg[i]->setOpacity(100);
         }
@@ -600,16 +609,11 @@ void CCutImage::divide(bool d) {
     
     for(int i = 0; i < _dividePiece*_fullAmount; i++){
         img[i].setVisible(d);
-        
     }
     
     if(_hasline) {
         for(int i=0;i<_line.size();i++)_line[i]->setVisible(d);
     }
-    
-    _divided = d;
-
-
 }
 
 bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
