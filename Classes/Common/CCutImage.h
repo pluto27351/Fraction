@@ -79,6 +79,8 @@ public:
     void CreateFlower(float scale,int num);
     void CreatePaper(float scale,int num);
     void CreateWater(float scale,int num);
+    void CreatelinePic(float scale,int num);
+    
 	void divide(bool);
     void setCutmode(int);
     

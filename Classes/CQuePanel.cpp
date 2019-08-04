@@ -31,39 +31,6 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
     _numSwitcher.init("n-", "white.png", parent, obj, SWITCHBOARD_LEVEL);
     rootNode.removeChildByName("numPic");
 
-//    int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
-//    int cate = queCate%100;
-//    int cate_data = queCate/100-1;
-//    switch (cate) {
-//        case 1:                                 //一般題
-//            switchdata = PIECE[_objNum];
-//            setQue(cate);
-//            break;
-//        case 2:                                 //變量題 chap4-7~12
-//            switchdata = PIECE_U4[cate_data];
-//            setQue(cate);
-//            break;
-//        case 3:                                 //比例題 chap5-3.4.6
-//            switchdata = PIECE[_curNum];
-//            setQue_picline();
-//            break;
-//        case 4:                                 //倍數題 chap5-2.5.7.8.9.10
-//            switchdata = PIECE[_objNum];
-//            setQue_multiple();
-//        case 5:                                 //線段題 chap3-6
-//            switchdata = PIECE[_curNum];
-//            setQue_line();
-//            break;
-//        case 11:                                //分子題1 chap2-3.5.811
-//            switchdata = PIECE_U2[cate_data];
-//            setQue(cate);
-//            break;
-//        case 12:                                //分子題2 chap3-7~12
-//            switchdata = PIECE_U3[cate_data];
-//            setQue(cate);
-//            break;
-//    }
-
     _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("backcolor.png");
     _blackMask->setPosition(Vec2(1024,768));
     _blackMask->setScale(4);
@@ -73,15 +40,79 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
 	//按鈕設定
 	setBtn(rootNode, parent);
     
-	_bDivided = false;	// 預設沒有平分
-	_bAnswer = false;
-	_bnum = false;
-    _bResetActive = false;
-    
+    //出題
     _ans = NULL;
     _que = NULL;
     _cutImage = NULL;
     reset(1);
+    
+
+
+}
+
+void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / num = 數字 (0=自己)
+{
+    if(num!= 0) _curNum = num;
+    if (que != 0) {
+        _curQue += que;
+        if (_curQue < 1) _curQue = QUEDATA[_curUnit - 1];         //避免超過範圍１～最後一題
+        else if (_curQue > QUEDATA[_curUnit - 1]) _curQue = 1;
+        _curNum = -1;
+    }
+    
+    //重設答案     //重設題目      //切塊圖還原
+    if(_ans != NULL) {_parentLayer->removeChild(_ans);  delete _ans;}
+    if(_que != NULL) {_parentLayer->removeChild(_que);  delete _que;}
+    if(_cutImage != NULL) {_parentLayer->removeChild(_cutImage); delete _cutImage;}
+    
+    _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
+    
+    int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
+    int cate = queCate%100;
+    int cate_data = queCate/100-1;
+    switch (cate) {
+        case 1:                                 //一般題
+            switchdata = PIECE[_objNum];
+            setQue(cate);
+            break;
+        case 2:                                 //變量題 chap4-7~12
+            switchdata = PIECE_U4[cate_data];
+            setQue(cate);
+            break;
+        case 3:                                 //比例題 chap5-3.4.6
+            switchdata = PIECE_U5[_curQue-1];
+            setQue_picline();
+            break;
+        case 4:                                 //倍數題 chap5-其他題
+            switchdata = PIECE_U5[_curQue-1];
+            setQue_multiple();
+        case 5:                                 //線段題 chap3-6
+            switchdata = PIECE[_curNum];
+            setQue_line();
+            break;
+        case 11:                                //分子題1 chap2-3.5.8.11
+            switchdata = PIECE_U2[cate_data];
+            setQue(cate);
+            break;
+        case 12:                                //分子題2 chap3-7~12
+            switchdata = PIECE_U3[cate_data];
+            setQue(cate);
+            break;
+    }
+    
+    
+    //按鈕關閉隱藏
+    _ansBtn.setStatus(false);
+    _numBtn.setStatus(false);
+    _cutBtn.setStatus(false);
+    
+    _blackMask->setVisible(false);
+    _bDivided = false;
+    _bAnswer = false;
+    _bFracBoardOn = false;
+    _bnum = false;
+    _bResetActive = false;
+    
 }
 
 void CQuePanel::setQue(int k) {
@@ -131,7 +162,7 @@ void CQuePanel::setQue(int k) {
 }
 
 
-void CQuePanel::setQue_picline() {
+void CQuePanel::setQue_picline() {  //chap5-3.4.6
     if(_curNum == -1){
         srand(time(NULL));
         int num = (rand() % switchdata[0]) + 1;
@@ -143,8 +174,8 @@ void CQuePanel::setQue_picline() {
     do {
         _c = rand() % 6;
         _b = rand() % 5;
-        k = UNIT5[_curNum - 2][_c][_b];  //數字都從2開始 a.c.b
-        _c += 2; _b += 2;
+        k = UNIT5[_curNum - 2][_c][_b];  //_curNum = 2~6 , _c = 0~5  , _b = 0~4
+        _c += 2; _b += 1;
     } while (k == 0);
     
     //設定題目
@@ -159,18 +190,19 @@ void CQuePanel::setQue_picline() {
     _ans->setVisible(false);
     _parentLayer->addChild(_ans, 1);
     
-    _numSwitcher.setEnabledBtns(PIECE[0], _curNum);
+    //設定選單
+    _numSwitcher.setEnabledBtns(switchdata, _curNum);
     _numSwitcher.setLockNum(_curNum - 2, true);
     _numSwitcher.setVisible(false);
     
     //設定圖片
-    _curPicAmount = 1;
-    if (_curNum < _c * _b) _curPicAmount = 2;
-    _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum);
+//    _curPicAmount = 1;
+//    if (_curNum < _c * _b) _curPicAmount = 2;
+    _cutImage = new CCutImage(_objNum,1, 1.0f,_c);
     _parentLayer->addChild(_cutImage);
 }
 
-void CQuePanel::setQue_multiple() {
+void CQuePanel::setQue_multiple() {  //chap5其餘題
     if(_curNum == -1){
         srand(time(NULL));
         int num = (rand() % switchdata[0]) + 1;
@@ -256,70 +288,6 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	rootNode.removeChildByName("cut");
 
 
-}
-
-void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / num = 數字 (0=自己)
-{
-    if(num!= 0) _curNum = num;
-	if (que != 0) {  
-		_curQue += que;
-		if (_curQue < 1) _curQue = QUEDATA[_curUnit - 1];         //避免超過範圍１～最後一題
-		else if (_curQue > QUEDATA[_curUnit - 1]) _curQue = 1;
-        _curNum = -1;
-	}
-
-    //重設答案     //重設題目      //切塊圖還原
-    if(_ans != NULL) {_parentLayer->removeChild(_ans);  delete _ans;}
-    if(_que != NULL) {_parentLayer->removeChild(_que);  delete _que;}
-    if(_cutImage != NULL) {_parentLayer->removeChild(_cutImage); delete _cutImage;}
-    
-    _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
-    
-    int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
-    int cate = queCate%100;
-    int cate_data = queCate/100-1;
-    switch (cate) {
-        case 1:                                 //一般題
-            switchdata = PIECE[_objNum];
-            setQue(cate);
-            break;
-        case 2:                                 //變量題 chap4-7~12
-            switchdata = PIECE_U4[cate_data];
-            setQue(cate);
-            break;
-        case 3:                                 //比例題 chap5-3.4.6
-            switchdata = PIECE[_objNum];
-            setQue_picline();
-            break;
-        case 4:                                 //倍數題 chap5-其他題
-            switchdata = PIECE_U5[_curQue-1];
-            setQue_multiple();
-        case 5:                                 //線段題 chap3-6
-            switchdata = PIECE[_curNum];
-            setQue_line();
-            break;
-        case 11:                                //分子題1 chap2-3.5.811
-            switchdata = PIECE_U2[cate_data];
-            setQue(cate);
-            break;
-        case 12:                                //分子題2 chap3-7~12
-            switchdata = PIECE_U3[cate_data];
-            setQue(cate);
-            break;
-    }
-    
-
-    //按鈕關閉隱藏
-    _ansBtn.setStatus(false);
-    _numBtn.setStatus(false);
-    _cutBtn.setStatus(false);
-
-    _blackMask->setVisible(false);
-	_bDivided = false;
-	_bAnswer = false;
-	_bFracBoardOn = false;
-	_bnum = false;
-	
 }
 
 bool CQuePanel::getBoardStatus()

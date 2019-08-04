@@ -47,6 +47,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
     else _pos = POS_2;
     _dPos = POSD;
     _mode = 1;
+    
     switch (picNum) {
         case PANCAKE:
             _mode = 0;
@@ -119,9 +120,10 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             CreateNormalImg(scale,dividedP);
             break;
         case BIGBAMBOO:
-            _name = "banboo";
-//            _mode = 2;
-//            CreateNormalImg(scale,dividedP);
+            _name = "banboo_big";
+            _pos = Vec2(200,1050);
+            _dPos = Vec2(210,0);
+            CreatelinePic(scale,dividedP);
             break;
     }
     
@@ -132,6 +134,63 @@ void CCutImage::setCutmode(int m){
         img[i].setCutmode(m);
     }
 }
+
+void CCutImage::CreatelinePic(float scale,int num){   //線段＋圖片
+    char picname[20];
+    
+    _dividePiece = num;
+    _scale = scale;
+    _divided = false;
+    
+    img = new TRectSprite[_dividePiece * _fullAmount];
+    _StickyData = new StickyData[_dividePiece * _fullAmount];
+    
+    for(int k=0;k<_fullAmount;k++){
+        sprintf(picname, "length_0.png",_name);                                 //底圖->改線段！！！
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
+        fi->setPosition(_pos + Vec2(0,-100));
+        fi->setScale(scale);
+        addChild(fi,BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
+        
+    //    float center = (_dividePiece-1)/2.0f;
+        sprintf(picname, "%s.png", _name);              //切分圖
+        for (int i = 0; i < _dividePiece; i++) {
+            int number = k*_dividePiece+i;
+            float angle[1] = {0};
+            Point pos[1] = {_pos + _dPos*i};
+            img[number].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
+            img[number].setCollisionInfo(_dividePiece);
+            img[number].setSticky(number);
+            img[number].setVisible(true);
+            addChild(img[number].getNode(), BOTTOM_LEVEL+1);
+            
+            _StickyData[number].createImgData(1);
+            _StickyData[number]._NodeAngle = angle[0];
+            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._imgPos[0] = pos[0];
+            _StickyData[number]._imgAngle[0] = 0;
+            _StickyData[number].isSticky = true;
+//
+//            auto line = Sprite::createWithSpriteFrameName("pancake_line.png");
+//            line->setPosition(_pos + _dPos*k);
+//            line->setScale(scale);
+//            line->setRotation(angle[0]+a);
+//            line->setVisible(false);
+//            addChild(line, BOTTOM_LEVEL+2);
+//            _line.push_back(line);
+            
+        }
+        
+        
+    }
+    
+    _StickyRadius = powf(img[0].ImgRadius, 2);
+    touchedAmount = 0; //被點擊的數量
+    rotateImg = NULL;
+    rotateId = -1;
+}
+
 
 void CCutImage::CreatePaper(float scale,int num){   //紙
     char picname[20];
@@ -295,14 +354,6 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             _StickyData[number]._imgAngle[0] = 0;
             _StickyData[number].isSticky = true;
             
-//            auto line = Sprite::createWithSpriteFrameName("water_line.png");
-//            line->setPosition(_pos + _dPos*k);
-//            line->setScale(scale);
-//            line->setRotation(0);
-//            line->setVisible(false);
-//            addChild(line, BOTTOM_LEVEL+2);
-//            _line.push_back(line);
-//
         }
     }
     
@@ -482,20 +533,8 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             }
         }
         break;
-        default: //非連續用-圓形切法
+        default: //非連續用
         {
-//            float n = 360/_dividePiece;
-//            for(int k=0;k<_fullAmount;k++){
-//                for (int i = 0; i < _dividePiece; i++) {
-//                    int number = k*_dividePiece +i;
-//                    Point move = Point(250 * cosf(ANGLE((n*i))), 250 * sinf(ANGLE((n*i))) );
-//                    img[number].setPosition(move + _pos + _dPos*k);
-//                    img[number].setRotation(_StickyData[number]._NodeAngle);
-//                    img[number].setSticky(-1);
-//                    _StickyData[number].isSticky = false;
-//                    img[number].setDividedImg();
-//                }
-//            }
             for(int k=0; k<_fullAmount; k++){
                 for(int i = 0; i < _dividePiece; i++){
                     int number = k*_dividePiece +i;
