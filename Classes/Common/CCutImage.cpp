@@ -145,7 +145,7 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
         case BIGBAMBOO:
             _name = "banboo_big";
             _pos = Vec2(200,1050);
-            _dPos = Vec2(210,0);
+            _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
     }
@@ -188,25 +188,16 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     
     Vec2 initPos = _pos - _dPos / 2 +Vec2(0,-100);
     Vec2 movePos = _dPos / b;
-    int line_max = b*c/a + 1;
+    int line_max = (b*c)>a?2:1;
+    Vec2 length[3];
+    int l = 0;
     
-    sprintf(picname, "length_0.png",_name);                                 //底圖->改線段！！！
-    auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
-    if(line_max == 1){
-        fi->setPosition(Vec2(450,950));
-        fi->setScaleX(scale*0.5f);
-    }
-    else {
-        fi->setPosition(Vec2(850,950));
-        fi->setScaleX(scale);
-    }
-    addChild(fi,BOTTOM_LEVEL);
-    _fullImg.push_back(fi);
-    
-    line_max *=a;
-    for(int i=0;i<line_max+1;i++){
+    for(int i=0;i<(line_max*a)+1;i++){
         Sprite *line;
-        if(i % a == 0)line = Sprite::createWithSpriteFrameName("length_1.png");
+        if(i % a == 0){
+            line = Sprite::createWithSpriteFrameName("length_1.png");
+            length[l] = initPos + movePos*i;
+        }
         else line = Sprite::createWithSpriteFrameName("length_2.png");
         line->setPosition(initPos + movePos*i);
         line->setScale(scale);
@@ -214,6 +205,16 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
         line->setVisible(true);
         addChild(line, BOTTOM_LEVEL+2);
         _line.push_back(line);
+    }
+    
+    movePos = movePos*a;
+    initPos += movePos /2;
+    for(int i=0;i<line_max;i++){          //底圖->改線段！！！
+        auto fi = (Sprite *)Sprite::createWithSpriteFrameName("length_big.png");
+        fi->setScaleX((float)a / b);
+        fi->setPosition(initPos + movePos*i);
+        addChild(fi,BOTTOM_LEVEL);
+        _fullImg.push_back(fi);
     }
     
     _StickyRadius = powf(img[0].ImgRadius, 2);

@@ -248,6 +248,7 @@
             <PlistImageFile Name="water_2.png" Key="water_2.png" />
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
+            <PlistImageFile Name="length_big.png" Key="length_big.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
         </Folder>
