@@ -68,7 +68,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case BAMBOO:
             _name = "banboo";
-            _pos = Vec2(700,950);
+            _pos = Vec2(800,1100);
             _dPos = Vec2(0,-200);
             _hasline = true;
             CreateNormalImg(scale,dividedP);
@@ -76,7 +76,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case RIBBON:
             _name = "ribbon";
-            _pos = Vec2(700,950);
+            _pos = Vec2(650,1100);
             _dPos = Vec2(0,-200);
             _hasline = true;
             CreateNormalImg(scale,dividedP);
@@ -84,7 +84,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             break;
         case DISTANCE:
             _name = "road";
-            _pos = Vec2(700,950);
+            _pos = Vec2(650,1100);
             _dPos = Vec2(0,-200);
             _hasline = true;
             CreateNormalImg(scale,dividedP);
@@ -142,6 +142,12 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
     _fullAmount = 1;
     switch (picNum) {
         case BIGBAMBOO:
+            _name = "banboo_big";
+            _pos = Vec2(200,1150);
+            _dPos = Vec2(235,0);
+            CreatelinePic(scale,dividedP,a,b,dividedP);
+            break;
+        default:
             _name = "banboo_big";
             _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);

@@ -294,7 +294,7 @@ int TouchSprite::ResetSticky() {
 
 
 float TouchSprite::getPicWidth(){
-    float w =(_Pic[0]->getContentSize().width-10) * _piece;
+    float w =(_Pic[0]->getContentSize().width-7) * _piece;
     CCLOG("width = %f",w);
     return (w);
 }
