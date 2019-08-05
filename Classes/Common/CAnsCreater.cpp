@@ -14,17 +14,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
     answer = CSLoader::createNode(name);
     if(uni != 2)Input_ans(*answer, number);
     else Input_ans2(*answer, number);
-    
-//    switch (uni) {
-//    case 1:
-//        answer = CSLoader::createNode(name);
-//        Input_u1(*answer, number);
-//        break;
-//    default:
-//        answer = CSLoader::createNode(name);
-//        Input_que(*answer, number);
-//        break;
-//    }
+
 	addChild(answer);
 }
 
@@ -45,67 +35,32 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) { //單元�
     addChild(answer);
 }
 
-//void CAnsCreater::Input_u1(Node &Q, int number) {
-//    char Input[5];
-//    char fn[3];
-//    //取得擺放位子
-//    //國字
-//    Text* Output_c = (Text*)Q.getChildByName("C_1");
-//    Output_c->setString(chiness[number - 2]);
-//    Output_c->setTextColor(_textColor4B);
-//    //數字
-//    for (int i = 0; i < 2; i++) {
-//        sprintf(Input, "N_%d", i + 1);
-//        Text *Output_n = (Text *)Q.getChildByName(Input);
-//        sprintf(Input, "%d", number);
-//        Output_n->setString(Input);
-//        Output_n->setTextColor(_textColor4B);
-//    }
-//
-//    //分數
-//    for (int i = 0; i < 3; i++) {
-//        sprintf(Input, "F_%d", i + 1);
-//        Node *Output_f = (Node *)Q.getChildByName(Input);
-//        Text *c = (Text *)Output_f->getChildByName("ntor");
-//        sprintf(Input, "%d", number);
-//        sprintf(fn, "%d", c->getTag());
-//        Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, fn));
-//        Output_f->removeChildByName("ntor");
-//    }
-//
-//    //運算式
-//    Node *Output_af = Q.getChildByName("AF_1");
-//    Output_af->addChild(CAnsCreaterOperation(number));
-//}
+CAnsCreater::CAnsCreater(int number,int q[3]){
+    float xPos = CSLoader::createNode("ani/line.csb")->getChildByName("2")->getPositionX();
+    float yPos = -150;
+    float move = xPos/number;
+    Node *fraction;
+    int up = -1;
+    xPos *= -1;
 
-//void CAnsCreater::Input_u2_1(Node &Q, int number) {
-//    char Input[5];
-//    char fn[3];
-//    //取得擺放位子
-//    //國字
-//    Text* Output_c = (Text*)Q.getChildByName("C_1");
-//    Output_c->setString(chiness[number - 2]);
-//    Output_c->setTextColor(_textColor4B);
-//
-//    //分數
-//    for (int i = 0; i < 2; i++) {
-//        sprintf(Input, "F_%d", i + 1);
-//        Node *Output_f = (Node *)Q.getChildByName(Input);
-//        Text *c = (Text *)Output_f->getChildByName("ntor");
-//        sprintf(Input, "%d", number);
-//        sprintf(fn, "%d", c->getTag());
-//        Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, fn));
-//        Output_f->removeChildByName("ntor");
-//    }
-//    for (int i = 2; i < 4; i++) {
-//        sprintf(Input, "F_%d", i + 1);
-//        Node *Output_f = (Node *)Q.getChildByName(Input);
-//        Text *c = (Text *)Output_f->getChildByName("ntor");
-//        sprintf(Input, "%d", number);
-//        Output_f->addChild(Set_CAnsCreater(Numerator(c->getString().c_str(), Input), Input, "1"));
-//        Output_f->removeChildByName("ntor");
-//    }
-//}
+    for(int i=0;i<(2*number);i++){
+        Sprite *line;
+        char n[4],d[4],f[4];
+        sprintf(n, "%d", i+1);
+        sprintf(d, "%d", number);
+        sprintf(f, "%d", 0);
+        if((i+1) % number == 0){ up =1; }
+
+        if( i == q[0] || i == q[1] || i == q[2] ){
+            fraction = Set_CAnsCreater(n,d,f);
+            fraction->setPosition(Vec2(xPos+move*(i+1),yPos + 100*up));
+            addChild(fraction);
+        }
+        
+        up*=-1;
+        
+    }
+}
 
 
 char * CAnsCreater::Numerator(const char *c, const char *number) {
@@ -169,11 +124,11 @@ char * CAnsCreater::Numerator(const char *c, const char *number) {
 }
 
                                                 // 分子-分母-帶分數
-Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominator, const char *front) {
+Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominator, const char *front,Color3B wcolor) {
 	float scale = 0.5f;
 	for (int i = 0; numerator[i] != NULL; scale += 0.5f, i++);
 	auto fn = (Node *)Node::create(); //最後的回傳-分數的形狀
-    
+    Color4B wcolor4 = Color4B(wcolor.r,wcolor.g,wcolor.b,255);
     if(*numerator != '0'){
         Sprite *bar;
         auto Ntor = cocos2d::ui::Text::create(); //分子
@@ -181,17 +136,17 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
         
         bar = (Sprite *)Sprite::create("img/bar.png");
         bar->setScale(6 * scale, 5);
-        bar->setColor(_textColor3B);
+        bar->setColor(wcolor);
         
         Ntor->setFontSize(50);
         Ntor->setString(numerator);
         Ntor->setPosition(Point(0, 30));
-        Ntor->setTextColor(_textColor4B);
+        Ntor->setTextColor(wcolor4);
         
         Dtor->setFontSize(50);
         Dtor->setString(denominator);
         Dtor->setPosition(Point(0, -30));
-        Dtor->setTextColor(_textColor4B);
+        Dtor->setTextColor(wcolor4);
         
         fn->addChild(bar);
         fn->addChild(Ntor);
@@ -204,7 +159,7 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 		Ftor->setFontSize(50);
 		Ftor->setString(front);
 		Ftor->setPosition(Point(-40, 0));
-		Ftor->setTextColor(_textColor4B);
+		Ftor->setTextColor(wcolor4);
 		fn->addChild(Ftor);
 	}
 	return(fn);
@@ -364,6 +319,46 @@ void CAnsCreater::Input_que(Node &Q, int number) {
 		Output_f->removeChildByName("ntor");
 	}
 
+}
+
+void CAnsCreater::queLineCreater(int number,int q[3]){
+    auto line = CSLoader::createNode("ani/line.csb");
+    float xPos = line->getChildByName("2")->getPositionX();
+    float yPos = -150;
+    line -> setPosition(Vec2(0,yPos));
+    addChild(line);
+    
+    float move = xPos/number;
+    xPos *= -1;
+    Node *fraction;
+    int up = -1;
+    for(int i=0;i<(2*number);i++){
+        Sprite *line;
+        char n[4],d[4],f[4];
+        sprintf(n, "%d", i+1);
+        sprintf(d, "%d", number);
+        sprintf(f, "%d", 0);
+        if((i+1) % number == 0){
+            up =1;
+        }
+        else {
+            line = Sprite::createWithSpriteFrameName("length_2.png");
+            line->setPosition(Vec2(xPos+move*(i+1),yPos));
+            addChild(line);
+        }
+        if( i != q[0] && i != q[1] && i != q[2] ){
+            fraction = Set_CAnsCreater(n,d,f,Color3B::BLACK);
+            fraction->setPosition(Vec2(xPos+move*(i+1),yPos + 100*up));
+            addChild(fraction);
+        }else {
+            auto box = (Sprite *)Sprite::createWithSpriteFrameName("line_box.png");
+            box->setPosition(Vec2(xPos+move*(i+1),yPos + 100*up));
+            addChild(box);
+        }
+
+        up*=-1;
+
+    }
 }
 
 
