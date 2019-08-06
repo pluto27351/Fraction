@@ -100,6 +100,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             break;
         case FLOWER:
             _name = "flower";
+            _mode = 2;
             CreateFlower(scale,dividedP,c);
             setCutmode(SAMEHEIGHT);
             break;
@@ -635,7 +636,8 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
             if (rotateImg == NULL) {
                 rotateImg = &img[i];
             }
-            int sticky = img[i].ResetSticky();        //重製磁鐵.釋放區域
+            if(_mode == 2) return true; //花不用重置
+            int sticky = img[i].ResetSticky();        //重置磁鐵.釋放區域
             if (sticky != -1) {
                 _StickyData[sticky].isSticky = false;
                 
@@ -692,18 +694,22 @@ void CCutImage::Sticky(TouchSprite *img,int number,Point pt) {
         auto posInNode = _fullImg[k]->convertToNodeSpace(pt);   //位置靠近磁鐵區域
         if (Rect(0,0,_fullImg[k]->getContentSize().width,_fullImg[k]->getContentSize().height).containsPoint(posInNode)) {
             int stickyNum = -1;
-            float angle = img->getAngle();
-            float preDAngle = 1000, DAngle;
-            for (int i = k*_dividePiece; i < _dividePiece*(k+1); i++) {        //判斷和哪個角度最靠近
-                if (_StickyData[i].isSticky == false) {
-                    DAngle = abs(_StickyData[i]._NodeAngle - angle);   //算角度差
-                    if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料
-                        preDAngle = DAngle;
-                        stickyNum = i;
+            if(_mode = 2){              //花會回固定位置
+                stickyNum = img->getSticky();
+            }else {
+                float angle = img->getAngle();
+                float preDAngle = 1000, DAngle;
+                for (int i = k*_dividePiece; i < _dividePiece*(k+1); i++) {  //判斷和哪個角度最靠近
+                    if (_StickyData[i].isSticky == false) {
+                        DAngle = abs(_StickyData[i]._NodeAngle - angle);   //算角度差
+                        if (DAngle < preDAngle) {            //如果比上次資料小  紀錄這次資料
+                            preDAngle = DAngle;
+                            stickyNum = i;
+                        }
                     }
                 }
             }
-            
+
             if(stickyNum == -1) return;
             
             img->setImgPandR(_StickyData[stickyNum]._imgPos, _StickyData[stickyNum]._imgAngle);
