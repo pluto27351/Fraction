@@ -57,6 +57,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             break;
         case PAPER:
             _name = "paper";
+            _hasline = true;
             CreatePaper(scale,dividedP);
             break;
         case WATER:
@@ -286,8 +287,44 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
             _StickyData[number]._NodePos = img[number].getPosition();
             _StickyData[number].isSticky = true;
         }
+        
+        Vec2 move = Vec2(0,(_fullImg[0]->getContentSize().height-10));
+        Vec2 cPos = _fullImg[k]->getPosition();
+        if(_dividePiece == 3 ){
+            move.y /= 3;
+            for(int i=0;i<2;i++){
+                auto line = Sprite::createWithSpriteFrameName("paper_line.png");
+                line->setPosition(cPos + move*(i-0.5f));
+                line->setScale(scale);
+                line->setRotation(90);
+                line->setVisible(false);
+                addChild(line, BOTTOM_LEVEL+2);
+                _line.push_back(line);
+            }
+        }else{
+            auto line = Sprite::createWithSpriteFrameName("paper_line.png");
+            line->setPosition(cPos);
+            line->setScale(scale);
+            line->setVisible(false);
+            addChild(line, BOTTOM_LEVEL+2);
+            _line.push_back(line);
+            
+            int nline = (_dividePiece)/2 -1 ;
+            float center = (nline-1) /2.0f;
+            move.y /= (nline+1);
+            for(int i=0;i<nline;i++){
+                auto line = Sprite::createWithSpriteFrameName("paper_line.png");
+                line->setPosition(cPos + move*(i-center));
+                line->setScale(scale);
+                line->setRotation(90);
+                line->setVisible(false);
+                addChild(line, BOTTOM_LEVEL+2);
+                _line.push_back(line);
+            }
+        }
     }
     
+
     _StickyRadius = powf(img[0].ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
@@ -694,7 +731,7 @@ void CCutImage::Sticky(TouchSprite *img,int number,Point pt) {
         auto posInNode = _fullImg[k]->convertToNodeSpace(pt);   //位置靠近磁鐵區域
         if (Rect(0,0,_fullImg[k]->getContentSize().width,_fullImg[k]->getContentSize().height).containsPoint(posInNode)) {
             int stickyNum = -1;
-            if(_mode = 2){              //花會回固定位置
+            if(_mode == 2){              //花會回固定位置
                 stickyNum = img->getSticky();
             }else {
                 float angle = img->getAngle();

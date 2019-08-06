@@ -17,7 +17,7 @@
             <FileData Type="PlistSubImage" Path="paper_1.png" Plist="img/teach_ui.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="2" Visible="False" ActionTag="-352928999" Tag="2" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="2" ActionTag="-352928999" Tag="2" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="1_0" ActionTag="1981961597" Tag="107" IconVisible="False" LeftMargin="-243.3008" RightMargin="-9.6992" TopMargin="-241.6888" BottomMargin="-243.3112" ctype="SpriteObjectData">
@@ -229,7 +229,7 @@
           <AbstractNodeData Name="8" Visible="False" ActionTag="1446647166" Tag="8" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="1_0" ActionTag="-1086541773" Tag="131" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-255.9110" BottomMargin="85.9110" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_0" ActionTag="-1086541773" Tag="131" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-235.4110" BottomMargin="106.4110" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="170.9110" />
@@ -240,7 +240,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_1" ActionTag="-52718296" Tag="132" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-140.0457" BottomMargin="-29.9543" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_1" ActionTag="-52718296" Tag="132" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-119.5457" BottomMargin="-9.4543" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="55.0457" />
@@ -251,7 +251,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_2" ActionTag="989383989" Tag="133" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-25.4600" BottomMargin="-144.5400" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_2" ActionTag="989383989" Tag="133" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="-4.9600" BottomMargin="-124.0400" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="-59.5400" />
@@ -262,7 +262,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_3" ActionTag="1455297407" Tag="134" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="89.9098" BottomMargin="-259.9098" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_3" ActionTag="1455297407" Tag="134" IconVisible="False" LeftMargin="-243.1129" RightMargin="-9.8871" TopMargin="110.4098" BottomMargin="-239.4098" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-116.6129" Y="-174.9098" />
@@ -273,7 +273,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_4" ActionTag="-1905539093" Tag="135" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-255.9110" BottomMargin="85.9110" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_4" ActionTag="-1905539093" Tag="135" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-235.4110" BottomMargin="106.4110" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1456" Y="170.9110" />
@@ -284,7 +284,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_5" ActionTag="-789698699" Tag="136" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-140.0458" BottomMargin="-29.9542" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_5" ActionTag="-789698699" Tag="136" IconVisible="False" LeftMargin="-11.3544" RightMargin="-241.6456" TopMargin="-119.5458" BottomMargin="-9.4542" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1456" Y="55.0458" />
@@ -295,7 +295,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_6" ActionTag="1225644095" Tag="137" IconVisible="False" LeftMargin="-11.3545" RightMargin="-241.6455" TopMargin="-25.4600" BottomMargin="-144.5400" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_6" ActionTag="1225644095" Tag="137" IconVisible="False" LeftMargin="-11.3545" RightMargin="-241.6455" TopMargin="-4.9600" BottomMargin="-124.0400" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1455" Y="-59.5400" />
@@ -306,7 +306,7 @@
                 <FileData Type="PlistSubImage" Path="paper_8.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_7" ActionTag="606777296" Tag="138" IconVisible="False" LeftMargin="-11.3546" RightMargin="-241.6454" TopMargin="89.9098" BottomMargin="-259.9098" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_7" ActionTag="606777296" Tag="138" IconVisible="False" LeftMargin="-11.3546" RightMargin="-241.6454" TopMargin="110.4098" BottomMargin="-239.4098" ctype="SpriteObjectData">
                 <Size X="253.0000" Y="129.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="115.1454" Y="-174.9098" />
