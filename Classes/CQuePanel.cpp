@@ -90,8 +90,8 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
             setQue(cate);
             break;
         case 2:                                 //變量題 chap4-7~12
-            switchdata = PIECE_U4[cate_data];
-            setQue(cate);
+            switchdata = PIECE_U4[_curQue-7];
+            setQue_quantity();
             break;
         case 3:                                 //比例題 chap5-3.4.6
             switchdata = PIECE_U5[_curQue-1];
@@ -127,18 +127,11 @@ void CQuePanel::setQue(int k) {
     }
 
     //設定題目
-    if (k == 4) {   //????
-        _que = new CAnsCreater();
-        _que->queCreater(_curUnit, _curQue, _curNum);
-        _que->setPosition(QUE_POS);
-        _parentLayer->addChild(_que);
-    }
-    else {
-        _que = new CAnsCreater();
-        _que->queCreater(_curUnit, _curQue, _curNum);
-        _que->setPosition(QUE_POS);
-        _parentLayer->addChild(_que);
-    }
+    _que = new CAnsCreater();
+    _que->queCreater(_curUnit, _curQue, _curNum);
+    _que->setPosition(QUE_POS);
+    _parentLayer->addChild(_que);
+    
     
     //設定答案
     _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
@@ -307,7 +300,44 @@ void CQuePanel::setQue_line(){
     _cutImage = NULL;
     _cutBtn.setEnabled(false);
  
+}
 
+void CQuePanel::setQue_quantity() {  //chap5-3.4.6
+    if(_curNum == -1){
+        srand(time(NULL));
+        int num = (rand() % switchdata[0]) + 1;
+        _curNum = switchdata[num];
+    }
+
+    int c,r =UNIT4[_curQue-7][0];
+    do{
+        int k = (rand() % r) +1;
+        c = UNIT4[_curQue-7][k];
+    }while( c % _curNum != 0 || (_curNum <5  && c == _c)) ;
+    _c = c;
+    
+    
+    //設定題目
+    _que = new CAnsCreater();
+    _que->queCreater(_curUnit, _curQue, _curNum, _c);
+    _que->setPosition(QUE_POS);
+    _parentLayer->addChild(_que);
+    
+    //設定答案
+    _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
+    _ans->setPosition(ANS_POS);
+    _ans->setVisible(false);
+    _parentLayer->addChild(_ans, 1);
+    
+    //設定選單
+    _numSwitcher.setEnabledBtns(switchdata, _curNum);
+    _numSwitcher.setLockNum(_curNum - 2, true);
+    _numSwitcher.setVisible(false);
+    
+    //設定圖片
+    _curPicAmount = 1;
+    _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum,_c);
+    _parentLayer->addChild(_cutImage);
 }
 
 

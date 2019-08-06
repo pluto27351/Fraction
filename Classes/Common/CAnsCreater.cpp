@@ -12,8 +12,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
     
 	sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     answer = CSLoader::createNode(name);
-    if(uni != 2)Input_ans(*answer, number);
-    else Input_ans2(*answer, number);
+    Input_ans(*answer, number);
 
 	addChild(answer);
 }
@@ -229,34 +228,57 @@ void CAnsCreater::queCreater(int uni, int queNo, int number) { //單元．題目
 void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3.5-4.5-6 特殊需求
     char name[14];
     sprintf(name, "que/q%d_%d.csb", uni, queNo);
-    auto queNode = CSLoader::createNode(name);
-    int inputData = queNode->getChildByName("bg")->getTag();
+    auto Q = CSLoader::createNode(name);
+    int inputData = Q->getChildByName("bg")->getTag();//百位數表示國字數量 十位數表示數字數量 個位數表示分數數量
     char Input[5];
     
+    //倍數
+    Text *Output_n = (Text *)Q->getChildByName("MN_1");
+    sprintf(Input, "%d", c);
+    Output_n->setString(Input);
+    Output_n->setTextColor(_textColor4B);
+    
+    //國字
+    int data = inputData / 100;
+    for (int i = 0; i < data; i++) {
+        sprintf(Input, "C_%d", i + 1);
+        Text* Output_c = (Text*)Q->getChildByName(Input);
+        sprintf(Input, "%d", number);
+        int k = std::atoi(Numerator(Output_c->getString().c_str(), Input));
+        Output_c->setString(chiness[k - 2]);
+        Output_c->setTextColor(_textColor4B);
+    }
+    inputData = inputData % 100;
+    
     //數字
-    if(inputData != 0){
-        Text *Output_n = (Text *)queNode->getChildByName("N_1");
+    data = inputData / 10;
+    for (int i = 0; i < data; i++) {
+        sprintf(Input, "N_%d", i + 1);
+        Text *Output_n = (Text *)Q->getChildByName(Input);
         sprintf(Input, "%d", number);
         Output_n->setString(Input);
         Output_n->setTextColor(_textColor4B);
     }
-
-    //倍數
-    Text *Output_n = (Text *)queNode->getChildByName("MN_1");
-    sprintf(Input, "%d", c);
-    Output_n->setString(Input);
-    Output_n->setTextColor(_textColor4B);
-
-    //分數
-    Node *Output_f = (Node *)queNode->getChildByName("F_1");
-    Text *ntor = (Text *)Output_f->getChildByName("ntor");
-    char bb[5],aa[5];
-    sprintf(bb,"%d",b);
-    sprintf(aa,"%d",number);
-    Output_f->addChild(Set_CAnsCreater(bb,aa,""));  //分子.分母.帶分數
-    Output_f->removeChildByName("ntor");
+    inputData = inputData % 10;
     
-    addChild(queNode);
+    //分數
+    data = inputData;
+    for (int i = 0; i < data; i++) {
+        sprintf(Input, "F_%d", i + 1);
+        Node *Output_f = (Node *)Q->getChildByName(Input);
+        Text *ntor = (Text *)Output_f->getChildByName("ntor");
+        if(b == -1){  //一般情況判斷分子
+            sprintf(Input, "%d", number);
+            b = std::atoi(Numerator(ntor->getString().c_str(), Input));
+        }
+        char bb[5],aa[5];
+        sprintf(bb,"%d",b);
+        sprintf(aa,"%d",number);
+        Output_f->addChild(Set_CAnsCreater(bb,aa,""));  //分子.分母.帶分數
+        Output_f->removeChildByName("ntor");
+    }
+    
+    addChild(Q);
 }
 
 void CAnsCreater::Input_que(Node &Q, int number) {
@@ -400,40 +422,40 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
 
 }
 
-void CAnsCreater::Input_ans2(Node &Q, int number) {
-    char Input[5];
-    char fn[3];
-    int inputData,data;
-    
-    //分數
-    Node *Output_f = (Node *)Q.getChildByName("F_1");
-    Text *ntor = (Text *)Output_f->getChildByName("ntor");
-    
-    outNumber[0] = ntor->getTag();    //帶分／分母／分子
-    outNumber[1] = Output_f->getTag();
-    outNumber[2] = 0;
-    
-    if(outNumber[0] != -1){  //一般情況判斷分子
-        sprintf(Input, "%d", number);
-        outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
-    }
-    else {  // 特殊情況(帶分數設定為-1) 假分數轉帶分數時用(應該僅第三章答案部分會用到)
-        outNumber[0] = number / outNumber[1] +1;
-        outNumber[2] = number % outNumber[1];
-    }
-    
-    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
-    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 分母也為０;
-    
-    char n[4],d[4],f[4];
-    sprintf(n, "%d", outNumber[2]);
-    sprintf(d, "%d", outNumber[1]);
-    sprintf(f, "%d", outNumber[0]);
-    
-    auto ans =Set_CAnsCreater(n,d,f);
-    ans->setPosition(Vec2(40,0));
-    Output_f->addChild(ans);
-    
-    Output_f->removeChildByName("ntor");
-    
-}
+//void CAnsCreater::Input_ans2(Node &Q, int number) {
+//    char Input[5];
+//    char fn[3];
+//    int inputData,data;
+//    
+//    //分數
+//    Node *Output_f = (Node *)Q.getChildByName("F_1");
+//    Text *ntor = (Text *)Output_f->getChildByName("ntor");
+//    
+//    outNumber[0] = ntor->getTag();    //帶分／分母／分子
+//    outNumber[1] = Output_f->getTag();
+//    outNumber[2] = 0;
+//    
+//    if(outNumber[0] != -1){  //一般情況判斷分子
+//        sprintf(Input, "%d", number);
+//        outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
+//    }
+//    else {  // 特殊情況(帶分數設定為-1) 假分數轉帶分數時用(應該僅第三章答案部分會用到)
+//        outNumber[0] = number / outNumber[1] +1;
+//        outNumber[2] = number % outNumber[1];
+//    }
+//    
+//    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
+//    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 分母也為０;
+//    
+//    char n[4],d[4],f[4];
+//    sprintf(n, "%d", outNumber[2]);
+//    sprintf(d, "%d", outNumber[1]);
+//    sprintf(f, "%d", outNumber[0]);
+//    
+//    auto ans =Set_CAnsCreater(n,d,f);
+//    ans->setPosition(Vec2(40,0));
+//    Output_f->addChild(ans);
+//    
+//    Output_f->removeChildByName("ntor");
+//    
+//}

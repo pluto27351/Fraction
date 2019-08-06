@@ -25,7 +25,7 @@ CCutImage::~CCutImage()
     }
 }
 
-CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
+CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
 {
     auto fileUtiles = FileUtils::getInstance();
     auto fragmentGrayFullPath = fileUtiles->fullPathForFilename("shader/gray.fsh");
@@ -71,7 +71,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _pos = Vec2(800,1100);
             _dPos = Vec2(0,-200);
             _hasline = true;
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             setCutmode(LONGPIC);
             break;
         case RIBBON:
@@ -79,7 +79,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _pos = Vec2(650,1100);
             _dPos = Vec2(0,-200);
             _hasline = true;
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             setCutmode(LONGPIC);
             break;
         case DISTANCE:
@@ -87,37 +87,37 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP)
             _pos = Vec2(650,1100);
             _dPos = Vec2(0,-200);
             _hasline = true;
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             setCutmode(LONGPIC);
             break;
         case BANANA:
             _name = "banana";
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             break;
         case GRAPE:
             _name = "grape";
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             break;
         case FLOWER:
             _name = "flower";
-            CreateFlower(scale,dividedP);
+            CreateFlower(scale,dividedP,c);
             setCutmode(SAMEHEIGHT);
             break;
         case BRANCH:
             _name = "branch";
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             break;
         case NUT:
             _name = "nut";
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             break;
         case TOMATO:
             _name = "tomato";
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             break;
         case APPLE:
             _name = "apple";
-            CreateNormalImg(scale,dividedP);
+            CreateNormalImg(scale,dividedP,c);
             break;
     }
     
@@ -295,7 +295,7 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
     
 }
 
-void CCutImage::CreateFlower(float scale,int num){   //花
+void CCutImage::CreateFlower(float scale,int num,int c){   //花
     char picname[20];
     
     sprintf(picname, "ani/%s.csb",_name);
@@ -428,11 +428,12 @@ void CCutImage::CreateWater(float scale,int num){  // 水
     rotateId = -1;
 }
 
-void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
-    char picname[20];
+void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
+    char picname[20],child[10];
     
     sprintf(picname, "ani/%s.csb",_name);
-    auto obj = CSLoader::createNode(picname);
+    sprintf(child, "%d",c);
+    auto obj = CSLoader::createNode(picname)->getChildByName(child);
     int totalPiece = obj->getChildByName("0")->getTag();
     if(num == -1)_dividePiece = totalPiece;
     else _dividePiece = num;
@@ -444,7 +445,8 @@ void CCutImage::CreateNormalImg(float scale,int num){   //非連續物件
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
-        sprintf(picname, "%s_1.png",_name);
+        if(c != 0)sprintf(picname, "%s_%d.png",_name,totalPiece);
+        else sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);

@@ -8,7 +8,6 @@
           <Project Name="banana.csd" Type="Node" />
           <Project Name="banboo.csd" Type="Node" />
           <Project Name="branch.csd" Type="Node" />
-          <Project Name="fire.csd" Type="Node" />
           <Project Name="flower.csd" Type="Node" />
           <Project Name="grape.csd" Type="Node" />
           <Project Name="line.csd" Type="Node" />
@@ -164,6 +163,7 @@
             <PlistImageFile Name="length_b1.png" Key="length_b1.png" />
             <PlistImageFile Name="length_b2.png" Key="length_b2.png" />
             <PlistImageFile Name="length_big.png" Key="length_big.png" />
+            <PlistImageFile Name="line_box.png" Key="line_box.png" />
             <PlistImageFile Name="n-10.png" Key="n-10.png" />
             <PlistImageFile Name="n-10_G.png" Key="n-10_G.png" />
             <PlistImageFile Name="n-10_no.png" Key="n-10_no.png" />
@@ -259,7 +259,6 @@
             <PlistImageFile Name="water_2.png" Key="water_2.png" />
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
-            <PlistImageFile Name="line_box.png" Key="line_box.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
         </Folder>

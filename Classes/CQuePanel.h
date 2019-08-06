@@ -50,6 +50,7 @@ public:
     void setQue_picline();
     void setQue_multiple();
     void setQue_line();
+    void setQue_quantity();
 
 	// touch 事件
 	bool touchesBegin(Point inPt, int iId, int iMode);
