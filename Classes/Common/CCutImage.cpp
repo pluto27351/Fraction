@@ -296,10 +296,11 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
 }
 
 void CCutImage::CreateFlower(float scale,int num,int c){   //花
-    char picname[20];
+    char picname[20],child[10];
     
     sprintf(picname, "ani/%s.csb",_name);
-    auto obj = CSLoader::createNode(picname);
+    sprintf(child, "%d",c);
+    auto obj = CSLoader::createNode(picname)->getChildByName(child);
     int totalPiece = obj->getChildByName("0")->getTag();
     if(num == -1)_dividePiece = totalPiece;
     else _dividePiece = num;
@@ -312,7 +313,8 @@ void CCutImage::CreateFlower(float scale,int num,int c){   //花
     _StickyData = new StickyData[_dividePiece * _fullAmount];
     
     for(int k=0;k<_fullAmount;k++){
-        sprintf(picname, "%s_1.png",_name);
+        if(c != 0)sprintf(picname, "%s_%d.png",_name,totalPiece);
+        else sprintf(picname, "%s_1.png",_name);  //歹改改改改改改改！！！！
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
@@ -446,7 +448,7 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
 
     for(int k=0;k<_fullAmount;k++){
         if(c != 0)sprintf(picname, "%s_%d.png",_name,totalPiece);
-        else sprintf(picname, "%s_1.png",_name);
+        else sprintf(picname, "%s_1.png",_name);    //為節省圖片這之後就不了劉上面那行？？ ex nut_2 = nut_8
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);

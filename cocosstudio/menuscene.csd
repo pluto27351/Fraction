@@ -17,68 +17,68 @@
             <FileData Type="Normal" Path="img/story/bg_menu.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_5" ActionTag="-378452805" Tag="39" IconVisible="False" LeftMargin="1122.7024" RightMargin="266.2976" TopMargin="831.1364" BottomMargin="453.8636" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_5" ActionTag="-378452805" Tag="39" IconVisible="False" LeftMargin="1178.3660" RightMargin="210.6340" TopMargin="843.7921" BottomMargin="441.2079" ctype="SpriteObjectData">
             <Size X="659.0000" Y="251.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1452.2024" Y="579.3636" />
+            <Position X="1507.8660" Y="566.7079" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7091" Y="0.3772" />
+            <PrePosition X="0.7363" Y="0.3690" />
             <PreSize X="0.3218" Y="0.1634" />
             <FileData Type="PlistSubImage" Path="channel_5.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_4" ActionTag="-1760646640" Tag="38" IconVisible="False" LeftMargin="680.2454" RightMargin="768.7546" TopMargin="783.3672" BottomMargin="535.6328" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_4" ActionTag="-1760646640" Tag="38" IconVisible="False" LeftMargin="690.3691" RightMargin="758.6309" TopMargin="750.4633" BottomMargin="568.5367" ctype="SpriteObjectData">
             <Size X="599.0000" Y="217.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="979.7454" Y="644.1328" />
+            <Position X="989.8691" Y="677.0367" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4784" Y="0.4194" />
+            <PrePosition X="0.4833" Y="0.4408" />
             <PreSize X="0.2925" Y="0.1413" />
             <FileData Type="PlistSubImage" Path="channel_4.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_3" ActionTag="-982153176" Tag="37" IconVisible="False" LeftMargin="831.8171" RightMargin="619.1829" TopMargin="436.2236" BottomMargin="826.7764" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_3" ActionTag="-982153176" Tag="37" IconVisible="False" LeftMargin="847.0010" RightMargin="603.9990" TopMargin="431.1622" BottomMargin="831.8378" ctype="SpriteObjectData">
             <Size X="597.0000" Y="273.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1130.3171" Y="963.2764" />
+            <Position X="1145.5010" Y="968.3378" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5519" Y="0.6271" />
+            <PrePosition X="0.5593" Y="0.6304" />
             <PreSize X="0.2915" Y="0.1777" />
             <FileData Type="PlistSubImage" Path="channel_3.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_2" ActionTag="980091546" Tag="36" IconVisible="False" LeftMargin="1258.3936" RightMargin="236.6064" TopMargin="173.1592" BottomMargin="1065.8408" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_2" ActionTag="980091546" Tag="36" IconVisible="False" LeftMargin="1293.8223" RightMargin="201.1777" TopMargin="175.6909" BottomMargin="1063.3091" ctype="SpriteObjectData">
             <Size X="553.0000" Y="297.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1534.8936" Y="1214.3408" />
+            <Position X="1570.3223" Y="1211.8091" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7495" Y="0.7906" />
+            <PrePosition X="0.7668" Y="0.7889" />
             <PreSize X="0.2700" Y="0.1934" />
             <FileData Type="PlistSubImage" Path="channel_2.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_1" ActionTag="-1202152989" Tag="186" IconVisible="False" LeftMargin="740.6129" RightMargin="808.3871" TopMargin="91.1340" BottomMargin="1190.8660" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_1" ActionTag="-1202152989" Tag="186" IconVisible="False" LeftMargin="725.4237" RightMargin="823.5763" TopMargin="116.4480" BottomMargin="1165.5520" ctype="SpriteObjectData">
             <Size X="499.0000" Y="254.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="990.1129" Y="1317.8660" />
+            <Position X="974.9237" Y="1292.5520" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4835" Y="0.8580" />
+            <PrePosition X="0.4760" Y="0.8415" />
             <PreSize X="0.2437" Y="0.1654" />
             <FileData Type="PlistSubImage" Path="channel_1.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="storybtn" ActionTag="-271756054" Tag="71" IconVisible="False" LeftMargin="12.5798" RightMargin="1400.4202" TopMargin="914.8185" BottomMargin="187.1815" ctype="SpriteObjectData">
+          <AbstractNodeData Name="storybtn" ActionTag="-271756054" Tag="71" IconVisible="False" LeftMargin="40.4212" RightMargin="1372.5789" TopMargin="912.2875" BottomMargin="189.7125" ctype="SpriteObjectData">
             <Size X="635.0000" Y="434.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="330.0798" Y="404.1815" />
+            <Position X="357.9212" Y="406.7125" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1612" Y="0.2631" />
+            <PrePosition X="0.1748" Y="0.2648" />
             <PreSize X="0.3101" Y="0.2826" />
             <FileData Type="PlistSubImage" Path="channel_who.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />

@@ -57,7 +57,7 @@ void TouchSprite::setDividedImg(){
             normalDivide();
             break;
         case 1:             //flower
-            sameHeightDivide();
+           // sameHeightDivide();
             break;
         case 2:            //water
             waterDivide();

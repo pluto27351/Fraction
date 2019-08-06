@@ -324,6 +324,7 @@
           <Project Name="q5_8.csd" Type="Node" />
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
+        <Image Name="0801.jpg" />
         <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />

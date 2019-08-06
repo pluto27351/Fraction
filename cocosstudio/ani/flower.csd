@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="78" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="0" ActionTag="1003141801" Tag="240" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="0" ActionTag="1003141801" Tag="12" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="0" ActionTag="2124558893" Alpha="92" Tag="12" IconVisible="False" LeftMargin="-165.0000" RightMargin="-165.0000" TopMargin="-251.5000" BottomMargin="-251.5000" ctype="SpriteObjectData">
@@ -141,15 +141,15 @@
                 <FileData Type="PlistSubImage" Path="flower_12.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_11" ActionTag="1839443954" Tag="16" RotationSkewX="-7.5757" RotationSkewY="-7.5774" IconVisible="False" LeftMargin="-81.9748" RightMargin="-58.0252" TopMargin="-52.9694" BottomMargin="-276.0306" ctype="SpriteObjectData">
-                <Size X="140.0000" Y="329.0000" />
+              <AbstractNodeData Name="1_11" ActionTag="1839443954" Tag="16" RotationSkewX="-7.5757" RotationSkewY="-7.5774" IconVisible="False" LeftMargin="-88.9748" RightMargin="-51.0252" TopMargin="-37.9694" BottomMargin="-235.0306" ctype="SpriteObjectData">
+                <Size X="140.0000" Y="273.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="-11.9748" Y="-111.5306" />
+                <Position X="-18.9748" Y="-98.5306" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="flower_11.png" Plist="img/teach_ui.plist" />
+                <FileData Type="PlistSubImage" Path="flower_13.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
