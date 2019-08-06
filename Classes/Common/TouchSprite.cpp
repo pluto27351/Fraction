@@ -298,3 +298,19 @@ float TouchSprite::getPicWidth(){
     CCLOG("width = %f",w);
     return (w);
 }
+
+
+void TouchSprite::setWaterline(int num){
+    Vec2 dmove = Vec2(0, getPicHeight());
+    float c_center = (num - 1) /2.0f;
+    
+    Vec2 centerPos = Vec2(-46,(dmove.y+7)/2);
+    for (int i = 0; i <num; i++) {
+        auto line = Sprite::createWithSpriteFrameName("water_line.png");
+        Vec2 m = (i- c_center) * dmove;
+        line->setPosition(centerPos + m);
+        line->setRotation(0);
+        _obj->addChild(line, 2);
+        _Pic.push_back(line);
+        }
+}

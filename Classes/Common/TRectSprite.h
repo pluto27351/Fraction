@@ -13,5 +13,6 @@ public:
     void setImgInfo_water(Point pos[],float r[],Vec2 scale);
     void setCollisionInfo(float totalPiece);
 
+
 };
 

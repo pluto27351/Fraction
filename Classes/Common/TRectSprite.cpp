@@ -100,3 +100,7 @@ void TRectSprite::setCollisionInfo(float totalPiece) {
 
 }
 
+
+
+    
+

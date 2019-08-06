@@ -390,6 +390,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             img[number].setPosition(_pos + _dPos*k);
             img[number].setSticky(number);
             img[number].setVisible(false);
+            img[number].setWaterline(_dividePiece);
             addChild(img[number].getNode(), BOTTOM_LEVEL+1);
             
             float y= img[number].getPicHeight() * (i+0.5f);

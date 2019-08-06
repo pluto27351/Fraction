@@ -44,6 +44,8 @@ public:
     virtual void setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2 scale){};
     virtual void setImgInfo_water(Point pos[],float r[],Vec2 scale){};
     virtual void setCollisionInfo(float totalPiece){};
+    
+    void setWaterline(int num);
 
 	bool touchesBegin(cocos2d::Point inPos, int id);
 	bool touchesMoved(cocos2d::Point inPos, int id);
