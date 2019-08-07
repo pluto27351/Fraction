@@ -26,11 +26,13 @@ public:
 	bool touchesBegin(cocos2d::Point inPos);
 	bool touchesMoved(cocos2d::Point inPos);
 	bool touchesEnded(cocos2d::Point inPos);
+    
 	void setVisible(bool bVis);
 	void setTouched();	// 設定這個按鈕目前是選取狀態
 	void setEnabled(bool bEnable);
 	void setPosition(Vec2 locPt);
 	void setScale(float fscale);
+    void setRotate(float frot);
 	void setTouchScale(float s);
     void setZ(int i);
 };

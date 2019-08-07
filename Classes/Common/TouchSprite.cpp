@@ -11,7 +11,7 @@ TouchSprite::~TouchSprite(){
 }
 
 void TouchSprite::setVisible(bool b){
-    for(int i=0; i<_piece; i++){
+    for(int i=0; i<_Pic.size(); i++){
         _Pic[i]->setVisible(b);
     }
 }

@@ -32,7 +32,7 @@ bool CMenuScene::init()
 	addChild(rootNode);
 
 	Point pt;
-	float scale;
+	float scale,rot;
 	// 設定按鈕
 	char spriteName[30], normalName[30], touchedName[30];
 	for (int i = 0; i < MAX_UNITS; i++)
@@ -43,9 +43,11 @@ bool CMenuScene::init()
 		sprintf(touchedName, "channel_%d_click.png", i + 1);
 		pt = spt->getPosition();
 		scale = spt->getScale();
+        rot =spt->getRotation();
 		_unitBtn[i] = new CButton();
 		_unitBtn[i]->setButtonInfo(normalName, touchedName, *this, pt, 1);
 		_unitBtn[i]->setScale(scale);
+        _unitBtn[i]->setRotate(rot);
 		_unitBtn[i]->setEnabled(true);
 		rootNode->removeChildByName(spriteName);
 	}

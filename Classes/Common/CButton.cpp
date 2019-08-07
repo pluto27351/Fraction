@@ -117,3 +117,9 @@ void CButton::setScale(float fscale)
 	_normalPic->setScale(_fScale);
 	_touchedPic->setScale(_fScale*_ftouchedScale);
 }
+
+void CButton::setRotate(float rot)
+{
+    _normalPic->setRotation(rot);
+    _touchedPic->setRotation(rot);
+}
