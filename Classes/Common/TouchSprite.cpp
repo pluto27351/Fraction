@@ -164,7 +164,7 @@ void TouchSprite::longPicDivide(){
 }
 
 void TouchSprite::downOneFloor(){
-    float y = (_Pic[0]->getContentSize().height - 10)*_Pic[0]->getScaleY();
+    float y = (_Pic[0]->getContentSize().height - 8)*_Pic[0]->getScaleY();
     Vec2 pos =_Pic[0]->getPosition();
     _Pic[0]->setPosition(pos - Vec2(0,y));
     _StickyNumber-=1;
@@ -304,7 +304,7 @@ void TouchSprite::setWaterline(int num){
     Vec2 dmove = Vec2(0, getPicHeight());
     float c_center = (num - 1) /2.0f;
     
-    Vec2 centerPos = Vec2(-46,(dmove.y+7)/2);
+    Vec2 centerPos = Vec2(-46,(dmove.y+20)/2);  //水杯底厚14
     for (int i = 0; i <num; i++) {
         auto line = Sprite::createWithSpriteFrameName("water_line.png");
         Vec2 m = (i- c_center) * dmove;

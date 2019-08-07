@@ -288,7 +288,7 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
             _StickyData[number].isSticky = true;
         }
         
-        Vec2 move = Vec2(0,(_fullImg[0]->getContentSize().height-10));
+        Vec2 move = Vec2(0,(_fullImg[0]->getContentSize().height-8));
         Vec2 cPos = _fullImg[k]->getPosition();
         if(_dividePiece == 3 ){
             move.y /= 3;
@@ -351,8 +351,7 @@ void CCutImage::CreateFlower(float scale,int num,int c){   //花
     _StickyData = new StickyData[_dividePiece * _fullAmount];
     
     for(int k=0;k<_fullAmount;k++){
-        if(c != 0)sprintf(picname, "%s_%d.png",_name,totalPiece);
-        else sprintf(picname, "%s_1.png",_name);  //歹改改改改改改改！！！！
+        sprintf(picname, "%s_%d.png",_name,totalPiece);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
@@ -419,7 +418,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
         float angle[1] = {0};
         float center = (_dividePiece-1)/2;
         Vec2 PicScale = Vec2(1,1.0/_dividePiece);
-        float height = 200*PicScale.y;
+       // float height = 200*PicScale.y;
         
         for (int i = 0; i < _dividePiece; i++) {
             int number = k*_dividePiece+i;
@@ -449,7 +448,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
         float c_center = (n_line-1) /2.0f;
         
         for(int k=0;k<_fullAmount;k++){
-            Vec2 centerPos =_pos + _dPos*k +Vec2(-46,(dmove.y+7)/2);
+            Vec2 centerPos =_pos + _dPos*k +Vec2(-46,(dmove.y+20)/2);  // 水杯底厚14
             for (int i = 0; i <n_line; i++) {
                 auto line = Sprite::createWithSpriteFrameName("water_line.png");
                 Vec2 m = (i- c_center) * dmove;
@@ -486,8 +485,7 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
-        if(c != 0)sprintf(picname, "%s_%d.png",_name,totalPiece);
-        else sprintf(picname, "%s_1.png",_name);    //為節省圖片這之後就不了劉上面那行？？ ex nut_2 = nut_8
+        sprintf(picname, "%s_%d.png",_name,totalPiece);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);

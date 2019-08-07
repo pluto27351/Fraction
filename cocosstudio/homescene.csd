@@ -6,14 +6,14 @@
       <ObjectData Name="Scene" Tag="97" ctype="GameNodeObjectData">
         <Size X="2048.0000" Y="1536.0000" />
         <Children>
-          <AbstractNodeData Name="cover_bk_3" ActionTag="-1489448148" Tag="116" IconVisible="False" LeftMargin="1001.0000" RightMargin="1001.0000" TopMargin="745.0000" BottomMargin="745.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="cover_bk_3" ActionTag="-1489448148" Tag="116" IconVisible="False" LeftMargin="-341.5000" RightMargin="-341.5000" ctype="SpriteObjectData">
             <Size X="2731.0000" Y="1536.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1024.0000" Y="768.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.0225" Y="0.0299" />
+            <PreSize X="1.3335" Y="1.0000" />
             <FileData Type="Normal" Path="img/story/bg_main.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -28,14 +28,14 @@
             <FileData Type="PlistSubImage" Path="main_start.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Boo" ActionTag="-134020347" Tag="185" IconVisible="False" LeftMargin="1644.5347" RightMargin="34.4653" TopMargin="226.5889" BottomMargin="943.4111" ctype="SpriteObjectData">
+          <AbstractNodeData Name="nut" ActionTag="-134020347" Tag="185" IconVisible="False" LeftMargin="1488.2163" RightMargin="190.7837" TopMargin="-377.6511" BottomMargin="1547.6511" ctype="SpriteObjectData">
             <Size X="369.0000" Y="366.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1829.0347" Y="1126.4111" />
+            <Position X="1672.7163" Y="1730.6511" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8931" Y="0.7333" />
-            <PreSize X="0.0225" Y="0.0299" />
+            <PrePosition X="0.8168" Y="1.1267" />
+            <PreSize X="0.1802" Y="0.2383" />
             <FileData Type="PlistSubImage" Path="main_nut.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

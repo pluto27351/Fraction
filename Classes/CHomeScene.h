@@ -17,8 +17,8 @@ class CHomeScene : public cocos2d::Layer
 
     CButton _startBtn;
     //CButton _Boo;
-	//Node *_BooAct;
-	//ActionTimeline *_BooActTime;
+    Node *_BooAct;
+    ActionTimeline *_BooActTime;
 
 public:
 	static cocos2d::Scene* createScene();

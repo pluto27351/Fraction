@@ -73,10 +73,10 @@ void TRectSprite::setImgInfo_water(Point pos[],float r[],Vec2 scale)
     char picname[20];
 
     sprintf(picname, "water_2.png");
-    auto pic = (Sprite *)Sprite::createWithSpriteFrameName(picname); // pic[0]=水杯
+    auto pic = (Sprite *)Sprite::createWithSpriteFrameName(picname); // pic[0]=水
     pic->setScale(scale.x,scale.y);
-    float y = pic->getContentSize().height*pic->getScaleY() /2;
-    pic->setPosition(pos[0] + Vec2(0,-100+y));
+    float y = (pic->getContentSize().height - 4)*pic->getScaleY() /2;
+    pic->setPosition(pos[0] + Vec2(0,-144+y));
     pic->setRotation(r[0]);
     _obj->addChild(pic);
     _Pic.push_back(pic);
