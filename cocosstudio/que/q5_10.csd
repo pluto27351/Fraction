@@ -41,10 +41,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="MN_1" ActionTag="693301630" Tag="103" IconVisible="False" LeftMargin="-519.8175" RightMargin="484.8175" TopMargin="-70.5162" BottomMargin="-33.4838" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="MN_1" ActionTag="693301630" Tag="103" IconVisible="False" LeftMargin="-524.9546" RightMargin="489.9546" TopMargin="-70.5159" BottomMargin="-33.4841" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="35.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-502.3175" Y="18.5162" />
+            <Position X="-507.4546" Y="18.5159" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />

@@ -3,7 +3,7 @@
 
 #define BRUSH_SIZE 0.35f
 #define color_red Color3B(197,95,80)
-#define color_blue Color3B(50,88,169)
+#define color_blue Color3B(52,116,233)
 #define color_black Color3B(84,84,84)
 
 CDrawingPanel* CDrawingPanel::_pHandDrawing = nullptr;

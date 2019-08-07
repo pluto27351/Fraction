@@ -18,7 +18,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="-22.5773" RightMargin="22.5773" TopMargin="-126.8278" BottomMargin="126.8278" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="-30.2826" RightMargin="30.2826" TopMargin="-128.1117" BottomMargin="128.1117" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-13.0000" RightMargin="-13.0000" TopMargin="-37.0000" BottomMargin="-37.0000" FontSize="50" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -35,7 +35,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="-22.5773" Y="126.8278" />
+            <Position X="-30.2826" Y="128.1117" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

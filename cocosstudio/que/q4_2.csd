@@ -18,7 +18,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="271.1899" RightMargin="-271.1899" TopMargin="-127.9326" BottomMargin="127.9326" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="-2013530149" IconVisible="True" LeftMargin="269.1902" RightMargin="-269.1902" TopMargin="-127.9326" BottomMargin="127.9326" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ntor" ActionTag="-1545611172" IconVisible="False" LeftMargin="-13.0000" RightMargin="-13.0000" TopMargin="-37.0000" BottomMargin="-37.0000" FontSize="50" LabelText="7" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -35,7 +35,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="271.1899" Y="127.9326" />
+            <Position X="269.1902" Y="127.9326" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -64,10 +64,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="-1709055989" Tag="40" IconVisible="False" LeftMargin="-203.1650" RightMargin="168.1650" TopMargin="-172.9736" BottomMargin="68.9736" FontSize="70" LabelText="F" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="N_1" ActionTag="-1709055989" Tag="40" IconVisible="False" LeftMargin="-207.0177" RightMargin="172.0177" TopMargin="-178.1102" BottomMargin="74.1102" FontSize="70" LabelText="6" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="35.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-185.6650" Y="120.9736" />
+            <Position X="-189.5177" Y="126.1102" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />

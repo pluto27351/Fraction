@@ -64,10 +64,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="-601196907" Tag="74" IconVisible="False" LeftMargin="-207.2839" RightMargin="172.2839" TopMargin="-175.9224" BottomMargin="71.9224" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="N_1" ActionTag="-601196907" Tag="74" IconVisible="False" LeftMargin="-212.4210" RightMargin="177.4210" TopMargin="-177.2064" BottomMargin="73.2064" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="35.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-189.7839" Y="123.9224" />
+            <Position X="-194.9210" Y="125.2064" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />
