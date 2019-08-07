@@ -313,7 +313,7 @@ void CQuePanel::setQue_quantity() {  //chap5-3.4.6
     do{
         int k = (rand() % r) +1;
         c = UNIT4[_curQue-7][k];
-    }while( c % _curNum != 0 || (_curNum <5  && c == _c)) ;
+    }while( c % _curNum != 0 || (_curNum <5  && c == _c) || (_curNum == 6 && (_curQue ==9 ||_curQue ==10|| _curQue == 12) && c == _c)) ;
     _c = c;
     
     

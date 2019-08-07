@@ -130,7 +130,7 @@
                 <FileData Type="PlistSubImage" Path="banana_4.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_2" ActionTag="-1172600432" Tag="147" RotationSkewX="7.6983" RotationSkewY="7.6986" IconVisible="False" LeftMargin="-162.8322" RightMargin="45.8322" TopMargin="-109.0993" BottomMargin="-139.9007" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_0" ActionTag="-1172600432" Tag="147" RotationSkewX="7.6983" RotationSkewY="7.6986" IconVisible="False" LeftMargin="-162.8322" RightMargin="45.8322" TopMargin="-109.0993" BottomMargin="-139.9007" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-104.3322" Y="-15.4007" />
@@ -141,7 +141,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_3" ActionTag="-1501263036" Tag="148" RotationSkewX="-1.6473" RotationSkewY="-1.6470" IconVisible="False" LeftMargin="-108.2980" RightMargin="-8.7020" TopMargin="-94.7680" BottomMargin="-154.2320" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_1" ActionTag="-1501263036" Tag="148" RotationSkewX="-1.6473" RotationSkewY="-1.6470" IconVisible="False" LeftMargin="-108.2980" RightMargin="-8.7020" TopMargin="-94.7680" BottomMargin="-154.2320" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-49.7980" Y="-29.7320" />
@@ -152,7 +152,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_4" ActionTag="221339814" Tag="149" RotationSkewX="-8.3154" RotationSkewY="-8.3137" IconVisible="False" LeftMargin="-56.3330" RightMargin="-60.6670" TopMargin="-83.7243" BottomMargin="-165.2757" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_2" ActionTag="221339814" Tag="149" RotationSkewX="-8.3154" RotationSkewY="-8.3137" IconVisible="False" LeftMargin="-56.3330" RightMargin="-60.6670" TopMargin="-83.7243" BottomMargin="-165.2757" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="2.1670" Y="-40.7757" />
@@ -163,7 +163,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_5" ActionTag="-1951325500" Tag="150" RotationSkewX="-25.5174" RotationSkewY="-25.5089" IconVisible="False" LeftMargin="6.0320" RightMargin="-123.0320" TopMargin="-76.5727" BottomMargin="-172.4273" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_3" ActionTag="-1951325500" Tag="150" RotationSkewX="-25.5174" RotationSkewY="-25.5089" IconVisible="False" LeftMargin="6.0320" RightMargin="-123.0320" TopMargin="-76.5727" BottomMargin="-172.4273" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="64.5320" Y="-47.9273" />
@@ -196,7 +196,7 @@
                 <FileData Type="PlistSubImage" Path="banana_6.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_1" ActionTag="-633527959" Tag="156" RotationSkewX="24.9877" RotationSkewY="24.9887" IconVisible="False" LeftMargin="-226.3606" RightMargin="109.3606" TopMargin="-135.8199" BottomMargin="-113.1801" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_0" ActionTag="-633527959" Tag="156" RotationSkewX="24.9877" RotationSkewY="24.9887" IconVisible="False" LeftMargin="-226.3606" RightMargin="109.3606" TopMargin="-135.8199" BottomMargin="-113.1801" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-167.8606" Y="11.3199" />
@@ -207,7 +207,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_2" ActionTag="-505202024" Tag="157" RotationSkewX="10.8977" RotationSkewY="10.8986" IconVisible="False" LeftMargin="-169.1899" RightMargin="52.1899" TopMargin="-112.4319" BottomMargin="-136.5681" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_1" ActionTag="-505202024" Tag="157" RotationSkewX="10.8977" RotationSkewY="10.8986" IconVisible="False" LeftMargin="-169.1899" RightMargin="52.1899" TopMargin="-112.4319" BottomMargin="-136.5681" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-110.6899" Y="-12.0681" />
@@ -218,7 +218,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_3" ActionTag="-1999217513" Tag="158" RotationSkewX="-1.6473" RotationSkewY="-1.6470" IconVisible="False" LeftMargin="-115.2709" RightMargin="-1.7291" TopMargin="-97.4862" BottomMargin="-151.5138" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_2" ActionTag="-1999217513" Tag="158" RotationSkewX="-1.6473" RotationSkewY="-1.6470" IconVisible="False" LeftMargin="-115.2709" RightMargin="-1.7291" TopMargin="-97.4862" BottomMargin="-151.5138" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-56.7709" Y="-27.0138" />
@@ -229,7 +229,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_4" ActionTag="-1537687104" Tag="159" RotationSkewX="-8.3154" RotationSkewY="-8.3137" IconVisible="False" LeftMargin="-63.3064" RightMargin="-53.6936" TopMargin="-86.4427" BottomMargin="-162.5573" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_3" ActionTag="-1537687104" Tag="159" RotationSkewX="-8.3154" RotationSkewY="-8.3137" IconVisible="False" LeftMargin="-63.3064" RightMargin="-53.6936" TopMargin="-86.4427" BottomMargin="-162.5573" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-4.8064" Y="-38.0573" />
@@ -240,7 +240,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_5" ActionTag="-438047362" Tag="160" RotationSkewX="-25.5174" RotationSkewY="-25.5089" IconVisible="False" LeftMargin="-0.9411" RightMargin="-116.0589" TopMargin="-79.2913" BottomMargin="-169.7087" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_4" ActionTag="-438047362" Tag="160" RotationSkewX="-25.5174" RotationSkewY="-25.5089" IconVisible="False" LeftMargin="-0.9411" RightMargin="-116.0589" TopMargin="-79.2913" BottomMargin="-169.7087" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="57.5589" Y="-45.2087" />
@@ -251,7 +251,7 @@
                 <FileData Type="PlistSubImage" Path="banana_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_6" ActionTag="-1773913329" Tag="161" RotationSkewX="-41.9680" RotationSkewY="-41.9696" IconVisible="False" LeftMargin="63.3687" RightMargin="-180.3687" TopMargin="-79.9382" BottomMargin="-169.0618" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_5" ActionTag="-1773913329" Tag="161" RotationSkewX="-41.9680" RotationSkewY="-41.9696" IconVisible="False" LeftMargin="63.3687" RightMargin="-180.3687" TopMargin="-79.9382" BottomMargin="-169.0618" ctype="SpriteObjectData">
                 <Size X="117.0000" Y="249.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="121.8687" Y="-44.5618" />

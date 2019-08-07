@@ -149,6 +149,18 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
+        case BIGRODE:
+            _name = "road_big";
+            _pos = Vec2(200,1150);
+            _dPos = Vec2(235,0);
+            CreatelinePic(scale,dividedP,a,b,dividedP);
+            break;
+        case BIGRIBBON:
+            _name = "ribbon_big";
+            _pos = Vec2(200,1150);
+            _dPos = Vec2(235,0);
+            CreatelinePic(scale,dividedP,a,b,dividedP);
+            break;
         default:
             _name = "banboo_big";
             _pos = Vec2(200,1150);
@@ -351,7 +363,7 @@ void CCutImage::CreateFlower(float scale,int num,int c){   //花
     _StickyData = new StickyData[_dividePiece * _fullAmount];
     
     for(int k=0;k<_fullAmount;k++){
-        sprintf(picname, "%s_%d.png",_name,totalPiece);
+        sprintf(picname, "%s_f%02d.png",_name,totalPiece);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(_pos + _dPos*k);
         fi->setScale(scale);
