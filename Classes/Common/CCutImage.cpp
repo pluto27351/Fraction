@@ -121,6 +121,19 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             _name = "apple";
             CreateNormalImg(scale,dividedP,c);
             break;
+        case SUGAR:
+            _name = "sugar";
+            _mode = 2;
+            CreateNormalImg(scale,dividedP,c);
+            break;
+        case COOKIE:
+            _name = "cookie";
+            CreateNormalImg(scale,dividedP,c);
+            break;
+        case PEAR:
+            _name = "pear";
+            CreateNormalImg(scale,dividedP,c);
+            break;
     }
     
 }
@@ -142,27 +155,28 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
     colorGLProgrameState->retain();
     
     _fullAmount = 1;
+    _hasline = true;
     switch (picNum) {
         case BIGBAMBOO:
-            _name = "banboo_big";
+            _name = "banboo";
             _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         case BIGRODE:
-            _name = "road_big";
+            _name = "road";
             _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         case BIGRIBBON:
-            _name = "ribbon_big";
+            _name = "ribbon";
             _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         default:
-            _name = "banboo_big";
+            _name = "banboo";
             _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
@@ -179,7 +193,7 @@ void CCutImage::setCutmode(int m){
 
 void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段＋圖片
     char picname[20];
-    
+    char line_name[20];
     _dividePiece = 1;
     _fullAmount = num;
     
@@ -189,7 +203,8 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
         
-    sprintf(picname, "%s.png", _name);              //切分圖
+    sprintf(picname, "%s_big.png", _name);              //切分圖
+    sprintf(line_name, "%s_line.png",_name);
     for (int i = 0; i < _fullAmount; i++) {
         float angle[1] = {0};
         Point pos[1] = {_pos + _dPos*i};
@@ -210,39 +225,49 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
         fi->setPosition(pos[0]);
         addChild(fi,BOTTOM_LEVEL);
         _fullImg.push_back(fi);
+        
+        if(i != _fullAmount-1){
+            auto line = Sprite::createWithSpriteFrameName(line_name);
+            line->setPosition(pos[0] +Vec2(117.5,0));
+            line->setVisible(false);
+            addChild(line, BOTTOM_LEVEL+2);
+            _line.push_back(line);
+        }
     }
     
+    //比例尺
     Vec2 initPos = _pos - _dPos / 2 +Vec2(0,-120);
     Vec2 movePos = _dPos / b;
-    int line_max = (b*c)>a?2:1;
+    int ruler_max = (b*c)>a?2:1;
     Vec2 length[3];
     int l = 0;
     
-    for(int i=0;i<(line_max*a)+1;i++){
-        Sprite *line;
+    for(int i=0;i<(ruler_max*a)+1;i++){
+        Sprite *rulerPic;
         if(i % a == 0){
             sprintf(picname, "length_b%d.png", i/a);
-            line = Sprite::createWithSpriteFrameName(picname);
+            rulerPic = Sprite::createWithSpriteFrameName(picname);
             length[l] = initPos + movePos*i;
         }
-        else line = Sprite::createWithSpriteFrameName("length_2.png");
-        line->setPosition(initPos + movePos*i);
-        line->setScale(scale);
-        line->setRotation(0);
-        line->setVisible(true);
-        addChild(line, BOTTOM_LEVEL+2);
-        _line.push_back(line);
+        else rulerPic = Sprite::createWithSpriteFrameName("length_2.png");
+        rulerPic->setPosition(initPos + movePos*i);
+        rulerPic->setScale(scale);
+        rulerPic->setRotation(0);
+        rulerPic->setVisible(true);
+        addChild(rulerPic, BOTTOM_LEVEL+2);
+        _fullImg.push_back(rulerPic);
     }
     
     movePos = movePos*a;
     initPos += movePos /2;
-    for(int i=0;i<line_max;i++){          //底圖->改線段！！！
-        auto line = (Sprite *)Sprite::createWithSpriteFrameName("length_big.png");
-        line->setScaleX((float)a / b);
-        line->setPosition(initPos + movePos*i);
-        addChild(line,BOTTOM_LEVEL);
-        _line.push_back(line);
+    for(int i=0;i<ruler_max;i++){          //底圖->改線段！！！
+        auto rulerPic = (Sprite *)Sprite::createWithSpriteFrameName("length_big.png");
+        rulerPic->setScaleX((float)a / b);
+        rulerPic->setPosition(initPos + movePos*i);
+        addChild(rulerPic,BOTTOM_LEVEL);
+        _fullImg.push_back(rulerPic);
     }
+    
     
     _StickyRadius = powf(img[0].ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
@@ -250,8 +275,8 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     rotateId = -1;
 }
 
-
-void CCutImage::CreatePaper(float scale,int num){   //紙
+//紙
+void CCutImage::CreatePaper(float scale,int num){  //紙
     char picname[20];
     char pp[5];
     _dividePiece = num;
@@ -345,6 +370,7 @@ void CCutImage::CreatePaper(float scale,int num){   //紙
     
 }
 
+//花
 void CCutImage::CreateFlower(float scale,int num,int c){   //花
     char picname[20],child[10];
     
@@ -406,6 +432,7 @@ void CCutImage::CreateFlower(float scale,int num,int c){   //花
     
 }
 
+// 水
 void CCutImage::CreateWater(float scale,int num){  // 水
     char picname[20];
     
@@ -480,6 +507,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
     rotateId = -1;
 }
 
+//非連續物件
 void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
     char picname[20],child[10];
     
