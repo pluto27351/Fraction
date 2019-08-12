@@ -9,7 +9,9 @@
 
 class CStoryScene : public cocos2d::Layer
 {
-    CButton *_unitBtn[MAX_UNITS];
+    CButton *_unitBtn[MAX_UNITS],*_charBtn[4];
+    Sprite *_char[4];
+    int _topPic;
     std::vector<Sprite *>_storyPic;
     
     int  _unitIdx;

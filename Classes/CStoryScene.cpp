@@ -49,6 +49,23 @@ bool CStoryScene::init()
 
     _unitIdx = 0;    // 設定成切換的單元，1 到 5
     
+    for(int i=0;i<4;i++){
+        sprintf(spriteName, "char_%d", i + 1);
+        _char[i] = (Sprite*)rootNode->getChildByName(spriteName);
+        this->addChild(_char[i], 5-i);
+        
+        sprintf(spriteName, "char_b%d", i + 1);
+        sprintf(normalName, "tab_%d.png", i + 1);
+        auto btn = (Sprite*)rootNode->getChildByName(spriteName);
+        pt = btn->getPosition();
+        _charBtn[i] = new CButton();
+        _charBtn[i]->setButtonInfo(normalName,normalName, *this, pt, 5-i);
+        rootNode->removeChildByName(spriteName);
+    }
+    
+    auto top = (Sprite*)rootNode->getChildByName("char_top");
+    this->addChild(top, 10);
+    _topPic = 0;
     
     _listener1 = EventListenerTouchOneByOne::create();    //創建一個一對一的事件聆聽器
     _listener1->onTouchBegan = CC_CALLBACK_2(CStoryScene::onTouchBegan, this);        //加入觸碰開始事件
@@ -82,6 +99,10 @@ bool  CStoryScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)/
     {
         _unitBtn[i]->touchesBegin(touchLoc);
     }
+    
+    for(int i=0;i<4;i++){
+        _charBtn[i]->touchesBegin(touchLoc);
+    }
     return true;
 }
 
@@ -93,6 +114,9 @@ void  CStoryScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) 
     for (int i = 0; i < MAX_UNITS; i++)
     {
         _unitBtn[i]->touchesMoved(touchLoc);
+    }
+    for(int i=0;i<4;i++){
+        _charBtn[i]->touchesMoved(touchLoc);
     }
 }
 
@@ -116,6 +140,15 @@ void  CStoryScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) 
             return;
         }
     }
+    for(int i=0;i<4;i++){
+        if(_charBtn[i]->touchesEnded(touchLoc)){
+            _char[_topPic]->setZOrder(4);
+            _charBtn[_topPic]->setZ(4);
+            _topPic = i;
+            _char[i]->setZOrder(5);
+            _charBtn[i]->setZ(5);
+        }
+    }
 }
 
 void CStoryScene::ShowUnitStory(int i) {
@@ -126,7 +159,7 @@ void CStoryScene::ShowUnitStory(int i) {
         auto sPic = (Sprite *)Sprite::create(spriteName);
         sPic->setPosition(Vec2(1024,768));
         sPic->setVisible(false);
-        this->addChild(sPic, 2);
+        this->addChild(sPic, 100);
         _storyPic.push_back(sPic);
     }
     _storyPic[0]->setVisible(true);

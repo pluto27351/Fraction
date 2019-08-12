@@ -7,8 +7,8 @@
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
 #define POS_1 Vec2(400,800)   //500,950
-#define POS_2 Vec2(400,975)
-#define POSD Vec2(0,-450)    //0,-450 ３大概
+#define POS_2 Vec2(400,1025)
+#define POSD Vec2(0,-475)    //0,-450 ３大概
 
 enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};  //sprite-cutMode
 
@@ -134,6 +134,15 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             _name = "pear";
             CreateNormalImg(scale,dividedP,c);
             break;
+        case BIGROLE:
+            _name = "role";
+            _pos = Vec2(650,1100);
+            _dPos = Vec2(0,-200);
+            _hasline = true;
+            _mode = 4;
+            CreateNormalImg(scale,dividedP,c);
+            setCutmode(LONGPIC);
+            break;
     }
     
 }
@@ -171,6 +180,12 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
             break;
         case BIGRIBBON:
             _name = "ribbon";
+            _pos = Vec2(200,1150);
+            _dPos = Vec2(235,0);
+            CreatelinePic(scale,dividedP,a,b,dividedP);
+            break;
+        case BIGROLE:
+            _name = "role";
             _pos = Vec2(200,1150);
             _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
@@ -559,7 +574,10 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
     }
     
     if(_hasline){
-        Vec2 dmove = Vec2(img[0].getPicWidth(),0);
+        Vec2 dmove;
+        if(_mode == 4) dmove = Vec2(220,0);
+        else  dmove = Vec2(img[0].getPicWidth(),0);
+
         int n_line =_dividePiece-1;
         float c_center = (n_line-1) /2.0f;
         

@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class CButton
+class CButton:public Node
 {
 private:
 	cocos2d::Sprite *_normalPic;

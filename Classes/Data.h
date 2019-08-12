@@ -25,13 +25,13 @@ const int UNIT_QUE[5][12] = {
     {4,4,3,3,4,3,4,4,4,4,4,4} };  //{4,4,3,3,4,3,4,4,4,4,4,4} };
 
 //            0       1     2     3      4       5       6      7     8      9    10    11    12    13     14    15     16        17      18
-enum OBJECT{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO,APPLE,SUGAR,COOKIE,PEAR,BIGBAMBOO,BIGRODE,BIGRIBBON,};
+enum OBJECT{PANCAKE,PAPER,WATER,BAMBOO,RIBBON,DISTANCE,BANANA,GRAPE,FLOWER,BRANCH,NUT,TOMATO,APPLE,SUGAR,COOKIE,PEAR,BIGBAMBOO,BIGRODE,BIGRIBBON,BIGROLE};
 const int UNIT_OBJ[5][12] = {
     {2,0,6,3,10,7,8,5,1,11,4,9},
     {0,10,6,3,12,1,7,8,2,5,9,4},
     {2,3,0,5,4,1,6,10,7,8,15,9},
     {2,0,3,5,0,4,6,10,7,8,12,9},
-    {2,13,16,17,0,18,6,10,7,14,15,9}};
+    {2,13,16,17,0,18,6,10,7,14,15,19}};
 
 const int PIECE[16][12] = {
     { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12},   //0  鬆餅
@@ -95,7 +95,7 @@ const int PIECE_U5[12][12] = {  //前面是選單設定 [11]=分子設定
     { 3, 4, 6,12, 0, 0, 0, 0, 0, 0, 0, 3},  //葡萄
     { 2, 5,10, 0, 0, 0, 0, 0, 0, 0, 0, 4},  //餅乾
     { 3, 2, 3, 6, 0, 0, 0, 0, 0, 0, 0, 1},  //水梨
-    { 3, 2, 4, 8, 0, 0, 0, 0, 0, 0, 0, 2}}; //繩子
+    { 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2}}; //繩子
 
         //    分母.倍數.分子
 const int UNIT5[5][6][5] = {  //1是可以用得值  比例尺題設定

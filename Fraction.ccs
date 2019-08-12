@@ -20,6 +20,7 @@
           <Project Name="road.csd" Type="Node" />
           <Project Name="sugar.csd" Type="Node" />
           <Project Name="tomato.csd" Type="Node" />
+          <Project Name="role.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -298,9 +299,11 @@
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
             <PlistImageFile Name="banana_3.png" Key="banana_3.png" />
-            <PlistImageFile Name="role_1.png" Key="role_1.png" />
-            <PlistImageFile Name="role_20.png" Key="role_20.png" />
             <PlistImageFile Name="tool_cut_no.png" Key="tool_cut_no.png" />
+            <PlistImageFile Name="role_big.png" Key="role_big.png" />
+            <PlistImageFile Name="role_line.png" Key="role_line.png" />
+            <PlistImageFile Name="role_2.png" Key="role_2.png" />
+            <PlistImageFile Name="role_5.png" Key="role_5.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
         </Folder>

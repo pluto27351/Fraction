@@ -215,7 +215,7 @@ void CQuePanel::setQue_multiple() {  //chap5其餘題
     ans_b = _c * que_b;
     
     if(ans_b > _curNum) _curPicAmount = 2;
-    else _curPicAmount = 2;
+    else _curPicAmount = 1;
     
     //設定題目
     _que = new CAnsCreater();
