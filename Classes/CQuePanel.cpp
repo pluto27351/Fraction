@@ -370,7 +370,7 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 
 	// 設定切分按鈕
 	pt = rootNode.getChildByName("cut")->getPosition();
-	_cutBtn.setButtonInfo("tool_cut.png", "tool_cut_click.png", parent, pt, SWITCHBOARD_LEVEL);
+	_cutBtn.setButtonInfo("tool_cut.png", "tool_cut_click.png","tool_cut_no.png", parent, pt, SWITCHBOARD_LEVEL);
 	rootNode.removeChildByName("cut");
 
 

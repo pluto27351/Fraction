@@ -31,17 +31,17 @@ bool CStoryScene::init()
     Point pt;
     float scale;
     // 設定按鈕
-    char spriteName[30], normalName[30], touchedName[30];
+    char spriteName[20],normalName[20],enableName[20];
     for (int i = 0; i < MAX_UNITS; i++)
     {
-        sprintf(spriteName, "levelbtn_%d", i + 1);
+        sprintf(spriteName, "story_%d", i + 1);
+        sprintf(normalName, "story_%d.png", i + 1);
+        sprintf(enableName, "story_n%d.png", i + 1);
         auto spt = (Sprite*)rootNode->getChildByName(spriteName);
-        sprintf(normalName, "character_%d.png", i + 1);
-        sprintf(touchedName, "character_%d_click.png", i + 1);
         pt = spt->getPosition();
         scale = spt->getScale();
         _unitBtn[i] = new CButton();
-        _unitBtn[i]->setButtonInfo(normalName, touchedName, *this, pt, 1);
+        _unitBtn[i]->setButtonInfo(normalName,normalName, enableName, *this, pt, 1);
         _unitBtn[i]->setScale(scale);
         _unitBtn[i]->setEnabled(true);
         rootNode->removeChildByName(spriteName);

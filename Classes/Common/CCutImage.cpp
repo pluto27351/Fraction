@@ -470,7 +470,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
             addChild(img[number].getNode(), BOTTOM_LEVEL+1);
             
             float y= img[number].getPicHeight() * (i+0.5f);
-            Point move = Point(0,-100+y);
+            Point move = Point(0,-135+y);
             _StickyData[number].createImgData(1);
             _StickyData[number]._NodeAngle = angle[0];
             _StickyData[number]._NodePos = img[number].getPosition();
@@ -487,7 +487,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
         float c_center = (n_line-1) /2.0f;
         
         for(int k=0;k<_fullAmount;k++){
-            Vec2 centerPos =_pos + _dPos*k +Vec2(-46,(dmove.y+20)/2);  // 水杯底厚14
+            Vec2 centerPos =_pos + _dPos*k +Vec2(-70,(dmove.y+20)/2);  // 水杯底厚14
             for (int i = 0; i <n_line; i++) {
                 auto line = Sprite::createWithSpriteFrameName("water_line.png");
                 Vec2 m = (i- c_center) * dmove;
