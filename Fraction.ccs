@@ -18,9 +18,9 @@
           <Project Name="pear.csd" Type="Node" />
           <Project Name="ribbon.csd" Type="Node" />
           <Project Name="road.csd" Type="Node" />
+          <Project Name="role.csd" Type="Node" />
           <Project Name="sugar.csd" Type="Node" />
           <Project Name="tomato.csd" Type="Node" />
-          <Project Name="role.csd" Type="Node" />
         </Folder>
         <Folder Name="ans">
           <Project Name="u1_1.csd" Type="Node" />
@@ -106,6 +106,7 @@
             <Image Name="story_5_2.png" />
           </Folder>
           <PlistImageFolder Image="teach_scene.png" PListFile="teach_scene.plist" Name=".teach_scene_PList.Dir">
+            <PlistImageFile Name="a77.png" Key="a77.png" />
             <PlistImageFile Name="channel_1.png" Key="channel_1.png" />
             <PlistImageFile Name="channel_1_click.png" Key="channel_1_click.png" />
             <PlistImageFile Name="channel_2.png" Key="channel_2.png" />
@@ -121,7 +122,6 @@
             <PlistImageFile Name="main_nut.png" Key="main_nut.png" />
             <PlistImageFile Name="main_start.png" Key="main_start.png" />
             <PlistImageFile Name="main_start_click.png" Key="main_start_click.png" />
-            <PlistImageFile Name="a77.png" Key="a77.png" />
             <PlistImageFile Name="story_1.png" Key="story_1.png" />
             <PlistImageFile Name="story_2.png" Key="story_2.png" />
             <PlistImageFile Name="story_3.png" Key="story_3.png" />
@@ -148,6 +148,7 @@
             <PlistImageFile Name="apple_9.png" Key="apple_9.png" />
             <PlistImageFile Name="backcolor.png" Key="backcolor.png" />
             <PlistImageFile Name="banana_2.png" Key="banana_2.png" />
+            <PlistImageFile Name="banana_3.png" Key="banana_3.png" />
             <PlistImageFile Name="banana_4.png" Key="banana_4.png" />
             <PlistImageFile Name="banana_6.png" Key="banana_6.png" />
             <PlistImageFile Name="banana_8.png" Key="banana_8.png" />
@@ -271,6 +272,10 @@
             <PlistImageFile Name="road_6.png" Key="road_6.png" />
             <PlistImageFile Name="road_big.png" Key="road_big.png" />
             <PlistImageFile Name="road_line.png" Key="road_line.png" />
+            <PlistImageFile Name="role_2.png" Key="role_2.png" />
+            <PlistImageFile Name="role_5.png" Key="role_5.png" />
+            <PlistImageFile Name="role_big.png" Key="role_big.png" />
+            <PlistImageFile Name="role_line.png" Key="role_line.png" />
             <PlistImageFile Name="sugar_12.png" Key="sugar_12.png" />
             <PlistImageFile Name="sugar_2.png" Key="sugar_2.png" />
             <PlistImageFile Name="tomato_12.png" Key="tomato_12.png" />
@@ -283,6 +288,7 @@
             <PlistImageFile Name="tool_clear_click.png" Key="tool_clear_click.png" />
             <PlistImageFile Name="tool_cut.png" Key="tool_cut.png" />
             <PlistImageFile Name="tool_cut_click.png" Key="tool_cut_click.png" />
+            <PlistImageFile Name="tool_cut_no.png" Key="tool_cut_no.png" />
             <PlistImageFile Name="tool_eraser.png" Key="tool_eraser.png" />
             <PlistImageFile Name="tool_eraser_click.png" Key="tool_eraser_click.png" />
             <PlistImageFile Name="tool_hand.png" Key="tool_hand.png" />
@@ -298,12 +304,6 @@
             <PlistImageFile Name="water_2.png" Key="water_2.png" />
             <PlistImageFile Name="water_line.png" Key="water_line.png" />
             <PlistImageFile Name="white.png" Key="white.png" />
-            <PlistImageFile Name="banana_3.png" Key="banana_3.png" />
-            <PlistImageFile Name="tool_cut_no.png" Key="tool_cut_no.png" />
-            <PlistImageFile Name="role_big.png" Key="role_big.png" />
-            <PlistImageFile Name="role_line.png" Key="role_line.png" />
-            <PlistImageFile Name="role_2.png" Key="role_2.png" />
-            <PlistImageFile Name="role_5.png" Key="role_5.png" />
           </PlistImageFolder>
           <Image Name="bar.png" />
         </Folder>

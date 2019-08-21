@@ -134,7 +134,7 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
         auto Dtor = cocos2d::ui::Text::create(); //分母
         
         bar = (Sprite *)Sprite::create("img/bar.png");
-        bar->setScale(6 * scale, 5);
+      //  bar->setScale(6 * scale, 5);
         bar->setColor(wcolor);
         
         Ntor->setFontSize(50);
