@@ -149,6 +149,7 @@ void CQuePanel::setQue(int k) {
 
     if(k == 11 ||k == 12){
         int a= _ans->getA();
+        if(a == 0)a=_curNum;
         _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,a);
     }else{
         _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum);

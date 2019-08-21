@@ -6,7 +6,7 @@
 #define RE_ANGLE(a) a*180/M_PI
 
 TCircleSprite::~TCircleSprite(){
-   // CCLOG("delete TCircleSprite");
+    CCLOG("delete TCircleSprite");
     _Pic.clear();
     
 }

@@ -7,7 +7,7 @@
 #define RE_ANGLE(a) a*180/M_PI
 
 TouchSprite::~TouchSprite(){
-   // CCLOG("delete TouchSprite");    
+    CCLOG("delete TouchSprite");    
 }
 
 void TouchSprite::setVisible(bool b){

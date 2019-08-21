@@ -17,10 +17,11 @@ CCutImage::~CCutImage()
     if (_dividePiece != 0) {
     //    CCLOG("delete cutimg");
        // removeAllChildren();
-        //for (int i = 0; i < _dividePiece; i++) delete img[i];
+        for (int i = 0; i < _dividePiece*_fullAmount; i++) delete img[i];
+        img.clear();
         _StickyData->deleteImgData();
         _line.clear();
-        delete [] img;
+
         delete [] _StickyData;
     }
 }
@@ -202,7 +203,7 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
 
 void CCutImage::setCutmode(int m){
     for(int i=0;i<_dividePiece * _fullAmount;i++){
-        img[i].setCutmode(m);
+        img[i]->setCutmode(m);
     }
 }
 
@@ -215,23 +216,25 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     _scale = scale;
     _divided = false;
     
-    img = new TRectSprite[_dividePiece * _fullAmount];
+  //  img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
         
     sprintf(picname, "%s_big.png", _name);              //切分圖
     sprintf(line_name, "%s_line.png",_name);
     for (int i = 0; i < _fullAmount; i++) {
+        TouchSprite *newimg = new TRectSprite;
         float angle[1] = {0};
         Point pos[1] = {_pos + _dPos*i};
-        img[i].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
-        img[i].setCollisionInfo(_fullAmount);
-        img[i].setSticky(i);
-        img[i].setVisible(false);
-        addChild(img[i].getNode(), BOTTOM_LEVEL+1);
+        newimg[i].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
+        newimg[i].setCollisionInfo(_fullAmount);
+        newimg[i].setSticky(i);
+        newimg[i].setVisible(false);
+        addChild(newimg[i].getNode(), BOTTOM_LEVEL+1);
+        img.push_back(newimg);
         
         _StickyData[i].createImgData(1);
         _StickyData[i]._NodeAngle = angle[0];
-        _StickyData[i]._NodePos = img[i].getPosition();
+        _StickyData[i]._NodePos = img[i]->getPosition();
         _StickyData[i]._imgPos[0] = pos[0];
         _StickyData[i]._imgAngle[0] = 0;
         _StickyData[i].isSticky = true;
@@ -284,7 +287,7 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     }
     
     
-    _StickyRadius = powf(img[0].ImgRadius, 2);
+    _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
@@ -305,7 +308,7 @@ void CCutImage::CreatePaper(float scale,int num){  //紙
     
     int totalPiece = obj->getTag();
     int gPicec = totalPiece / _dividePiece;
-    img = new TRectSprite[_dividePiece * _fullAmount];
+//    img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
@@ -328,15 +331,17 @@ void CCutImage::CreatePaper(float scale,int num){  //紙
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
                 n++;
             }
-            img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
-            img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(_pos + _dPos*k);
-            img[number].setSticky(number);
-            img[number].setVisible(false);
-            addChild(img[number].getNode(), BOTTOM_LEVEL+2);
+            TouchSprite *newimg = new TRectSprite;
+            newimg->setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
+            newimg->setCollisionInfo(_dividePiece);
+            newimg->setPosition(_pos + _dPos*k);
+            newimg->setSticky(number);
+            newimg->setVisible(false);
+            addChild(newimg->getNode(), BOTTOM_LEVEL+2);
+            img.push_back(newimg);
             
             _StickyData[number]._NodeAngle = 0;
-            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._NodePos = img[number]->getPosition();
             _StickyData[number].isSticky = true;
         }
         
@@ -377,7 +382,7 @@ void CCutImage::CreatePaper(float scale,int num){  //紙
     }
     
 
-    _StickyRadius = powf(img[0].ImgRadius, 2);
+    _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
@@ -400,7 +405,7 @@ void CCutImage::CreateFlower(float scale,int num,int c){   //花
     
 
     int gPicec = totalPiece / _dividePiece;
-    img = new TRectSprite[_dividePiece * _fullAmount];
+   // img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
     
     for(int k=0;k<_fullAmount;k++){
@@ -424,22 +429,23 @@ void CCutImage::CreateFlower(float scale,int num,int c){   //花
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
                 n++;
             }
-
-            img[number].setImgInfo_flower(i,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
-            img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(_pos + _dPos*k);
-            img[number].setSticky(number);
-            img[number].setVisible(false);
-            addChild(img[number].getNode(), BOTTOM_LEVEL+2);
+            TouchSprite *newimg = new TRectSprite;
+            newimg->setImgInfo_flower(i,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
+            newimg->setCollisionInfo(_dividePiece);
+            newimg->setPosition(_pos + _dPos*k);
+            newimg->setSticky(number);
+            newimg->setVisible(false);
+            addChild(newimg->getNode(), BOTTOM_LEVEL+2);
+            img.push_back(newimg);
             
             _StickyData[number]._NodeAngle = 0;
-            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._NodePos = img[number]->getPosition();
             _StickyData[number].isSticky = true;
         }
         
     }
     
-    _StickyRadius = powf(img[0].ImgRadius, 2);
+    _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
@@ -454,10 +460,9 @@ void CCutImage::CreateWater(float scale,int num){  // 水
     _dividePiece = num;
     _scale = scale;
     _divided = false;
-    
-    img = new TRectSprite[_dividePiece * _fullAmount];
+
     _StickyData = new StickyData[_dividePiece * _fullAmount];
-    
+   // img = new TRectSprite[_dividePiece * _fullAmount];
     for(int k=0;k<_fullAmount;k++){
         sprintf(picname, "%s_1.png",_name);
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
@@ -475,20 +480,22 @@ void CCutImage::CreateWater(float scale,int num){  // 水
        // float height = 200*PicScale.y;
         
         for (int i = 0; i < _dividePiece; i++) {
+            TouchSprite *newimg = new TRectSprite;
             int number = k*_dividePiece+i;
-            img[number].setImgInfo_water(pos,angle,PicScale);
-            img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(_pos + _dPos*k);
-            img[number].setSticky(number);
-            img[number].setVisible(false);
-            img[number].setWaterline(_dividePiece);
-            addChild(img[number].getNode(), BOTTOM_LEVEL+1);
+            newimg->setImgInfo_water(pos,angle,PicScale);
+            newimg->setCollisionInfo(_dividePiece);
+            newimg->setPosition(_pos + _dPos*k);
+            newimg->setSticky(number);
+            newimg->setVisible(false);
+            newimg->setWaterline(_dividePiece);
+            addChild(newimg->getNode(), BOTTOM_LEVEL+1);
+            img.push_back(newimg);
             
-            float y= img[number].getPicHeight() * (i+0.5f);
+            float y= img[number]->getPicHeight() * (i+0.5f);
             Point move = Point(0,-135+y);
             _StickyData[number].createImgData(1);
             _StickyData[number]._NodeAngle = angle[0];
-            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._NodePos = img[number]->getPosition();
             _StickyData[number]._imgPos[0] = move;
             _StickyData[number]._imgAngle[0] = 0;
             _StickyData[number].isSticky = true;
@@ -497,7 +504,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
     }
     
     if(_hasline){
-        Vec2 dmove = Vec2(0,img[0].getPicHeight());
+        Vec2 dmove = Vec2(0,img[0]->getPicHeight());
         int n_line =_dividePiece;
         float c_center = (n_line-1) /2.0f;
         
@@ -516,7 +523,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
         }
     }
     
-    _StickyRadius = powf(img[0].ImgRadius, 2);
+    _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
@@ -536,7 +543,7 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
     _divided = false;
 
     int gPicec = totalPiece / _dividePiece;
-    img = new TRectSprite[_dividePiece * _fullAmount];
+   // img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
@@ -559,15 +566,17 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
                 _StickyData[number]._imgAngle[v] =obj->getChildByName(p)->getRotation();
                 n++;
             }
-            img[number].setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
-            img[number].setCollisionInfo(_dividePiece);
-            img[number].setPosition(_pos + _dPos*k);
-            img[number].setSticky(number);
-            img[number].setVisible(false);
-            addChild(img[number].getNode(), BOTTOM_LEVEL+2);
-        
+            TouchSprite *newimg = new TRectSprite;
+            newimg->setImgInfo(picname,gPicec,_StickyData[number]._imgPos,_StickyData[number]._imgAngle,Vec2(scale,scale));
+            newimg->setCollisionInfo(_dividePiece);
+            newimg->setPosition(_pos + _dPos*k);
+            newimg->setSticky(number);
+            newimg->setVisible(false);
+            addChild(newimg->getNode(), BOTTOM_LEVEL+2);
+            img.push_back(newimg);
+            
             _StickyData[number]._NodeAngle = 0;
-            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._NodePos = img[number]->getPosition();
             _StickyData[number].isSticky = true;
             
         }
@@ -576,7 +585,7 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
     if(_hasline){
         Vec2 dmove;
         if(_mode == 4) dmove = Vec2(220,0);
-        else  dmove = Vec2(img[0].getPicWidth(),0);
+        else  dmove = Vec2(img[0]->getPicWidth(),0);
 
         int n_line =_dividePiece-1;
         float c_center = (n_line-1) /2.0f;
@@ -598,7 +607,7 @@ void CCutImage::CreateNormalImg(float scale,int num,int c){   //非連續物件
     }
     
     
-    _StickyRadius = powf(img[0].ImgRadius, 2);
+    _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
@@ -611,7 +620,7 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
     _scale = scale;
     _divided = false;
     
-    img = new TCircleSprite[_dividePiece * _fullAmount];
+   // img = new TCircleSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
@@ -625,18 +634,20 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
         sprintf(picname, "%s_%d.png", _name, _dividePiece);              //切分圖
         float a = 180 / _dividePiece;
         for (int i = 0; i < _dividePiece; i++) {
+            TouchSprite *newimg = new TCircleSprite;
             int number = k*_dividePiece+i;
             float angle[1] = {(360.0f / _dividePiece)*i};
             Point pos[1] = {_pos + _dPos*k};
-            img[number].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
-            img[number].setCollisionInfo(_dividePiece);
-            img[number].setSticky(number);
-            img[number].setVisible(false);
-            addChild(img[number].getNode(), BOTTOM_LEVEL+1);
+            newimg->setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
+            newimg->setCollisionInfo(_dividePiece);
+            newimg->setSticky(number);
+            newimg->setVisible(false);
+            addChild(newimg->getNode(), BOTTOM_LEVEL+1);
+            img.push_back(newimg);
             
             _StickyData[number].createImgData(1);
             _StickyData[number]._NodeAngle = angle[0];
-            _StickyData[number]._NodePos = img[number].getPosition();
+            _StickyData[number]._NodePos = img[number]->getPosition();
             _StickyData[number]._imgPos[0] = Point(0,0);
             _StickyData[number]._imgAngle[0] = 0;
             _StickyData[number].isSticky = true;
@@ -654,7 +665,7 @@ void CCutImage::CreatePancake(float scale,int num){  // 圓形
         
     }
 
-    _StickyRadius = powf(img[0].ImgRadius, 2);
+    _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量
     rotateImg = NULL;
     rotateId = -1;
@@ -668,9 +679,9 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             for(int k=0; k<_fullAmount; k++){
                 for(int i = 0; i < _dividePiece; i++){
                     int number = k*_dividePiece +i;
-                    img[number].setPosition(_StickyData[number]._NodePos);
-                    img[number].setRotation(_StickyData[number]._NodeAngle);
-                    img[number].setSticky(number);
+                    img[number]->setPosition(_StickyData[number]._NodePos);
+                    img[number]->setRotation(_StickyData[number]._NodeAngle);
+                    img[number]->setSticky(number);
                      _StickyData[number].setSticky(number);
                     
                 }
@@ -682,10 +693,10 @@ void CCutImage::setCutPos(){                  //計算切分時位置
             for(int k=0; k<_fullAmount; k++){
                 for(int i = 0; i < _dividePiece; i++){
                     int number = k*_dividePiece +i;
-                    img[number].setImgPandR(_StickyData[number]._imgPos, _StickyData[number]._imgAngle);
-                    img[number].setPosition(_StickyData[number]._NodePos);       //設定圖片位置與角度
-                    img[number].setRotation(_StickyData[number]._NodeAngle);
-                    img[number].setSticky(number);                          //紀錄區域
+                    img[number]->setImgPandR(_StickyData[number]._imgPos, _StickyData[number]._imgAngle);
+                    img[number]->setPosition(_StickyData[number]._NodePos);       //設定圖片位置與角度
+                    img[number]->setRotation(_StickyData[number]._NodeAngle);
+                    img[number]->setSticky(number);                          //紀錄區域
                     _StickyData[number].setSticky(number);
                 }
             }
@@ -713,7 +724,7 @@ void CCutImage::divide(bool d) {
     }
     
     for(int i = 0; i < _dividePiece*_fullAmount; i++){
-        img[i].setVisible(d);
+        img[i]->setVisible(d);
     }
     
     if(_hasline) {
@@ -724,13 +735,13 @@ void CCutImage::divide(bool d) {
 bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
     for (int i = 0; i < _dividePiece*_fullAmount ; i++) {
-        if (img[i].touchesBegin(inPos, id)) {
-            img[i].setPosition(inPos);
+        if (img[i]->touchesBegin(inPos, id)) {
+            img[i]->setPosition(inPos);
             if (rotateImg == NULL) {
-                rotateImg = &img[i];
+                rotateImg = img[i];
             }
             if(_mode == 2) return true; //花不用重置
-            int sticky = img[i].ResetSticky();        //重置磁鐵.釋放區域
+            int sticky = img[i]->ResetSticky();        //重置磁鐵.釋放區域
             if (sticky != -1) {
                 _StickyData[sticky].isSticky = false;
                 
@@ -740,7 +751,7 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
                         if(!_StickyData[kk].isSticky)return true;
                         CCLOG("NO.%d down  max = %d",kk,max * _dividePiece);
                         int number =_StickyData[kk]._num;
-                        img[number].downOneFloor();
+                        img[number]->downOneFloor();
                         _StickyData[kk-1].setSticky(number);
                         _StickyData[kk].isSticky = false;
                     }
@@ -764,7 +775,7 @@ bool CCutImage::touchesMoved(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
 
 	for (int i = 0; i < _dividePiece*_fullAmount; i++) {                   //當移動or旋轉
-        if( img[i].touchesMoved(inPos, id)) return true;
+        if( img[i]->touchesMoved(inPos, id)) return true;
 	}
 	return false;
 
@@ -774,9 +785,9 @@ void CCutImage::touchesEnded(cocos2d::Point inPos, int id) {
 	if (!_divided)return;
 
 	for (int i = 0; i < _dividePiece*_fullAmount; i++) {
-		if (img[i].touchesEnded(inPos, id)) {
-			if (rotateImg == &img[i]) rotateImg = NULL;
-			Sticky(&img[i],i,inPos);  //判斷是否吸上去
+		if (img[i]->touchesEnded(inPos, id)) {
+			if (rotateImg == img[i]) rotateImg = NULL;
+			Sticky(img[i],i,inPos);  //判斷是否吸上去
 		}
 	}
 }

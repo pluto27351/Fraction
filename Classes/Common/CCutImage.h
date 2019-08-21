@@ -44,7 +44,8 @@ struct StickyData  //磁鐵資訊
 class CCutImage : public cocos2d::Node
 {
 private:
-	TouchSprite *img;        //切塊圖片們
+	//TouchSprite *img;        //切塊圖片們
+    std::vector<TouchSprite *>img;
 	TouchSprite *rotateImg;  //指定被旋轉圖片
     std::vector<Sprite*> _fullImg;          //完整圖片
     std::vector<Sprite*> _line;

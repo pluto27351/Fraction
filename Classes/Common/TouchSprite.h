@@ -36,9 +36,8 @@ protected:
     virtual bool Collision(Point touch){};
     
 public:
-    float ImgRadius;
-
     virtual ~TouchSprite();
+    float ImgRadius;
     
     virtual void setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale){};
     virtual void setImgInfo_flower(int num,int piece,Point pos[],float r[],Vec2 scale){};
