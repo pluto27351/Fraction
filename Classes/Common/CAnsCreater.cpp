@@ -263,11 +263,12 @@ void CAnsCreater::queCreater(int uni, int queNo, int number,int c,int b) { //5-3
     
     //分數
     data = inputData;
+    int bstatus = b;
     for (int i = 0; i < data; i++) {
         sprintf(Input, "F_%d", i + 1);
         Node *Output_f = (Node *)Q->getChildByName(Input);
         Text *ntor = (Text *)Output_f->getChildByName("ntor");
-        if(b == -1){  //一般情況判斷分子
+        if(bstatus == -1){  //一般情況判斷分子
             sprintf(Input, "%d", number);
             b = std::atoi(Numerator(ntor->getString().c_str(), Input));
         }

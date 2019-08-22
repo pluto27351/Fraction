@@ -6,7 +6,7 @@
       <ObjectData Name="u1" Tag="7" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="F_1" ActionTag="1276126937" Tag="4" IconVisible="True" LeftMargin="70.0000" RightMargin="-70.0000" TopMargin="1.0524" BottomMargin="-1.0524" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="F_1" ActionTag="1276126937" Tag="3" IconVisible="True" LeftMargin="70.0000" RightMargin="-70.0000" TopMargin="1.0524" BottomMargin="-1.0524" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="ntor" ActionTag="-1839086129" Tag="-1" IconVisible="False" LeftMargin="-51.0000" RightMargin="-51.0000" TopMargin="-37.0000" BottomMargin="-37.0000" FontSize="50" LabelText="=F%4" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

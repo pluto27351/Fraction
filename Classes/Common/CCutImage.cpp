@@ -216,20 +216,21 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     _scale = scale;
     _divided = false;
     
-  //  img = new TRectSprite[_dividePiece * _fullAmount];
+  // img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
         
     sprintf(picname, "%s_big.png", _name);              //切分圖
     sprintf(line_name, "%s_line.png",_name);
+    
     for (int i = 0; i < _fullAmount; i++) {
         TouchSprite *newimg = new TRectSprite;
         float angle[1] = {0};
         Point pos[1] = {_pos + _dPos*i};
-        newimg[i].setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
-        newimg[i].setCollisionInfo(_fullAmount);
-        newimg[i].setSticky(i);
-        newimg[i].setVisible(false);
-        addChild(newimg[i].getNode(), BOTTOM_LEVEL+1);
+        newimg->setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
+        newimg->setCollisionInfo(_fullAmount);
+        newimg->setSticky(i);
+        newimg->setVisible(false);
+        addChild(newimg->getNode(), BOTTOM_LEVEL+1);
         img.push_back(newimg);
         
         _StickyData[i].createImgData(1);

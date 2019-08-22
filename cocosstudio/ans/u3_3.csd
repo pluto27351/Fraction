@@ -9,7 +9,7 @@
           <AbstractNodeData Name="F_1" ActionTag="1276126937" IconVisible="True" LeftMargin="56.5396" RightMargin="-56.5396" TopMargin="1.0524" BottomMargin="-1.0524" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="ntor" ActionTag="-1839086129" IconVisible="False" LeftMargin="-50.5000" RightMargin="-50.5000" TopMargin="-37.0000" BottomMargin="-37.0000" FontSize="50" LabelText="=F+2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="ntor" ActionTag="-1839086129" IconVisible="False" LeftMargin="-50.5000" RightMargin="-50.5000" TopMargin="-37.0000" BottomMargin="-37.0000" FontSize="50" LabelText="=F+1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="101.0000" Y="74.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />

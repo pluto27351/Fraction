@@ -158,8 +158,8 @@ void CQuePanel::setQue(int k) {
     
 }
 
-
-void CQuePanel::setQue_picline() {  //chap5-3.4.6
+//比例題 chap5-3.4.6
+void CQuePanel::setQue_picline() {  //比例題 chap5-3.4.6
     if(_curNum == -1){
         srand(time(NULL));
         int num = (rand() % switchdata[0]) + 1;
@@ -197,7 +197,8 @@ void CQuePanel::setQue_picline() {  //chap5-3.4.6
     _parentLayer->addChild(_cutImage);
 }
 
-void CQuePanel::setQue_multiple() {  //chap5其餘題
+//倍數題 chap5-其他題
+void CQuePanel::setQue_multiple() {  //倍數題 chap5-其他題
     if(_curNum == -1){
         srand(time(NULL));
         int num = (rand() % switchdata[0]) + 1;
@@ -239,8 +240,8 @@ void CQuePanel::setQue_multiple() {  //chap5其餘題
     _parentLayer->addChild(_cutImage);
 }
 
-
-void CQuePanel::setQue_line(){
+//線段題 chap3-6
+void CQuePanel::setQue_line(){  //線段題 chap3-6
     // 獲取題目分母資訊  隨幾取分母
     if(_curNum == -1){
         srand(time(NULL));
@@ -303,7 +304,8 @@ void CQuePanel::setQue_line(){
  
 }
 
-void CQuePanel::setQue_quantity() {  //chap5-3.4.6
+//變量題 chap4-7~12
+void CQuePanel::setQue_quantity() {  //變量題 chap4-7~12
     if(_curNum == -1){
         srand(time(NULL));
         int num = (rand() % switchdata[0]) + 1;
@@ -317,15 +319,29 @@ void CQuePanel::setQue_quantity() {  //chap5-3.4.6
     }while( c % _curNum != 0 || (_curNum <5  && c == _c) || (_curNum == 6 && (_curQue ==9 ||_curQue ==10|| _curQue == 12) && c == _c)) ;
     _c = c;
     
+//    std::vector<int>a_list;
+//    for(int i=2;i<=_curNum;i++){
+//        if(_curNum%i == 0){
+//            a_list.push_back(i);
+//        }
+//    }
+//    int a;
+//    do{
+//        int k = (rand()%a_list.size())+1;
+//        a = a_list[k];
+//    }while(a_list.size() != 1 && _c == a);
+//    _c = a;
     
     //設定題目
     _que = new CAnsCreater();
     _que->queCreater(_curUnit, _curQue, _curNum, _c);
+    //_que->queCreater(_curUnit, _curQue, _c, _curNum);
     _que->setPosition(QUE_POS);
     _parentLayer->addChild(_que);
     
     //設定答案
-    _ans = new CAnsCreater(_curUnit, _curQue, _curNum);
+    _ans = new CAnsCreater(_curUnit, _curQue,  _curNum);
+    //_ans = new CAnsCreater(_curUnit, _curQue, _c);
     _ans->setPosition(ANS_POS);
     _ans->setVisible(false);
     _parentLayer->addChild(_ans, 1);
@@ -338,6 +354,7 @@ void CQuePanel::setQue_quantity() {  //chap5-3.4.6
     //設定圖片
     _curPicAmount = 1;
     _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum,_c);
+  //  _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_c,_curNum);
     _parentLayer->addChild(_cutImage);
 }
 
