@@ -195,6 +195,11 @@ void CQuePanel::setQue_picline() {  //比例題 chap5-3.4.6
     //設定圖片
     _cutImage = new CCutImage(_objNum, 1.0f,_c,_curNum,_b);
     _parentLayer->addChild(_cutImage);
+    _bDivided = true;
+   // _cutImage->divide(_bDivided); //切圖片
+    _cutImage->setdivideStatus(_bDivided);
+    _bCutDown = _bDivided;
+    _cutBtn.setEnabled(false);
 }
 
 //倍數題 chap5-其他題

@@ -85,6 +85,7 @@ public:
     void CreatelinePic(float scale,int num,int a,int b,int c);
     
 	void divide(bool);
+    void setdivideStatus(bool s){_divided = s;}
     void setCutmode(int);
     
 	bool touchesBegin(cocos2d::Point inPos, int id);

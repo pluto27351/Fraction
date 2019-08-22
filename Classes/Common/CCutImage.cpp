@@ -165,36 +165,27 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
     colorGLProgrameState->retain();
     
     _fullAmount = 1;
-    _hasline = true;
+    _pos = Vec2(200,925);
+    _dPos = Vec2(0,-120);
     switch (picNum) {
         case BIGBAMBOO:
             _name = "banboo";
-            _pos = Vec2(200,1150);
-            _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         case BIGRODE:
             _name = "road";
-            _pos = Vec2(200,1150);
-            _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         case BIGRIBBON:
             _name = "ribbon";
-            _pos = Vec2(200,1150);
-            _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         case BIGROLE:
             _name = "role";
-            _pos = Vec2(200,1150);
-            _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
         default:
             _name = "banboo";
-            _pos = Vec2(200,1150);
-            _dPos = Vec2(235,0);
             CreatelinePic(scale,dividedP,a,b,dividedP);
             break;
     }
@@ -216,11 +207,12 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
     _scale = scale;
     _divided = false;
     
-  // img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
         
     sprintf(picname, "%s_big.png", _name);              //切分圖
     sprintf(line_name, "%s_line.png",_name);
+    Vec2 dp2 = Vec2(235,0);
+    Vec2 pos2 = _pos + Vec2(0,250);
     
     for (int i = 0; i < _fullAmount; i++) {
         TouchSprite *newimg = new TRectSprite;
@@ -229,34 +221,31 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
         newimg->setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
         newimg->setCollisionInfo(_fullAmount);
         newimg->setSticky(i);
-        newimg->setVisible(false);
+   //     newimg->setVisible(false);
         addChild(newimg->getNode(), BOTTOM_LEVEL+1);
         img.push_back(newimg);
         
+        pos[0] = {pos2 + dp2*i};
         _StickyData[i].createImgData(1);
         _StickyData[i]._NodeAngle = angle[0];
         _StickyData[i]._NodePos = img[i]->getPosition();
         _StickyData[i]._imgPos[0] = pos[0];
         _StickyData[i]._imgAngle[0] = 0;
-        _StickyData[i].isSticky = true;
+        if(i == 0) _StickyData[i].isSticky = true;
+        else _StickyData[i].isSticky = false;
         
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(pos[0]);
+      //  fi->setOpacity(100);
+        fi->setVisible(false);
         addChild(fi,BOTTOM_LEVEL);
         _fullImg.push_back(fi);
         
-        if(i != _fullAmount-1){
-            auto line = Sprite::createWithSpriteFrameName(line_name);
-            line->setPosition(pos[0] +Vec2(117.5,0));
-            line->setVisible(false);
-            addChild(line, BOTTOM_LEVEL+2);
-            _line.push_back(line);
-        }
     }
     
     //比例尺
-    Vec2 initPos = _pos - _dPos / 2 +Vec2(0,-120);
-    Vec2 movePos = _dPos / b;
+    Vec2 initPos = pos2 - dp2 / 2 +Vec2(0,-90);
+    Vec2 movePos = dp2 / b;
     int ruler_max = (b*c)>a?2:1;
     Vec2 length[3];
     int l = 0;

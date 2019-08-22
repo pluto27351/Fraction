@@ -16,7 +16,7 @@ bool TRectSprite::Collision(Point touch) {
         auto posInNode = _Pic[i]->convertToNodeSpace(touch);
         float w = _Pic[i]->getContentSize().width * _Pic[i]->getScaleX();
         float h = _Pic[i]->getContentSize().height * _Pic[i]->getScaleY();
-        if (Rect(0,0,w+8,h+8).containsPoint(posInNode))
+        if (Rect(0,0,w+12,h+12).containsPoint(posInNode))
         {
             return true;
         }
