@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="306" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1508649682" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="70" LabelText="6. 請完成下列空格的答案" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1508649682" IconVisible="False" LeftMargin="-700.0000" RightMargin="-700.0000" TopMargin="-178.0000" BottomMargin="-178.0000" IsCustomSize="True" FontSize="70" LabelText="6.請完成下列空格的答案" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="1400.0000" Y="356.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

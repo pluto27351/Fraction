@@ -29,10 +29,10 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg" ActionTag="937551134" Tag="1" IconVisible="False" LeftMargin="-142.9956" RightMargin="-137.0044" TopMargin="-57.7008" BottomMargin="-61.2992" FontSize="80" LabelText="答 :    " ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="280.0000" Y="119.0000" />
+          <AbstractNodeData Name="bg" ActionTag="1180999904" Tag="553" IconVisible="False" LeftMargin="-89.0000" RightMargin="-311.0000" TopMargin="-52.0000" BottomMargin="-52.0000" IsCustomSize="True" FontSize="70" LabelText="答:   籃" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="400.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-2.9956" Y="-1.7992" />
+            <Position X="111.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />

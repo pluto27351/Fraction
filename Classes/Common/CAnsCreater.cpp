@@ -13,7 +13,6 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．�
 	sprintf(name,"ans/u%d_%d.csb",uni, queNo);
     answer = CSLoader::createNode(name);
     Input_ans(*answer, number);
-
 	addChild(answer);
 }
 
@@ -30,6 +29,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) { //單元�
     sprintf(bc,"%d",b*c);
     sprintf(aa,"%d",number);
     Output_f->addChild(Set_CAnsCreater(bc,aa,""));  //分子.分母.帶分數
+    Output_f->setPosition(Vec2(70.66,3.70));
     Output_f->removeChildByName("ntor");
     addChild(answer);
 }
@@ -155,10 +155,15 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 
 	for (int i = 0; front[i] != NULL && front[i] != '0'; i++) {
 		auto Ftor = cocos2d::ui::Text::create();
-		Ftor->setFontSize(50);
 		Ftor->setString(front);
-		Ftor->setPosition(Point(-40, 0));
 		Ftor->setTextColor(wcolor4);
+        if(*numerator != '0'){
+            Ftor->setFontSize(50);
+            Ftor->setPosition(Point(-40, 0));
+        }else {
+            Ftor->setFontSize(70);
+            Ftor->setPosition(Point(0, 0));
+        }
 		fn->addChild(Ftor);
 	}
 	return(fn);
@@ -416,9 +421,9 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     sprintf(f, "%d", outNumber[0]);
     
     auto ans =Set_CAnsCreater(n,d,f);
-    ans->setPosition(Vec2(40,0));
+ //   ans->setPosition(Vec2(40,0));
     Output_f->addChild(ans);
-    
+    Output_f->setPosition(Vec2(70.66,3.70));
     Output_f->removeChildByName("ntor");
 
 }
