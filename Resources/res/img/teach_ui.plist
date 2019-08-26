@@ -46,7 +46,7 @@
             <key>apple_3.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3388,515},{603,304}}</string>
+                <string>{{3349,515},{603,304}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,15 +124,15 @@
             <key>banana_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2153,515},{160,256}}</string>
+                <string>{{2153,515},{121,266}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{160,256}}</string>
+                <string>{{0,0},{121,266}}</string>
                 <key>sourceSize</key>
-                <string>{160,256}</string>
+                <string>{121,266}</string>
             </dict>
             <key>banana_3.png</key>
             <dict>
@@ -384,7 +384,7 @@
             <key>flower_10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2422,515},{109,271}}</string>
+                <string>{{2383,515},{109,271}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -397,7 +397,7 @@
             <key>flower_11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2749,515},{109,291}}</string>
+                <string>{{2710,515},{109,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -436,7 +436,7 @@
             <key>flower_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3076,515},{109,294}}</string>
+                <string>{{3037,515},{109,294}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -462,7 +462,7 @@
             <key>flower_4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2640,515},{109,291}}</string>
+                <string>{{2601,515},{109,291}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -488,7 +488,7 @@
             <key>flower_6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2858,515},{109,292}}</string>
+                <string>{{2819,515},{109,292}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -501,7 +501,7 @@
             <key>flower_7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2967,515},{109,292}}</string>
+                <string>{{2928,515},{109,292}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -514,7 +514,7 @@
             <key>flower_8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2531,515},{109,287}}</string>
+                <string>{{2492,515},{109,287}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -527,7 +527,7 @@
             <key>flower_9.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2313,515},{109,269}}</string>
+                <string>{{2274,515},{109,269}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2126,7 +2126,7 @@
             <key>water_2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3185,515},{203,298}}</string>
+                <string>{{3146,515},{203,298}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -2176,7 +2176,7 @@
             <key>size</key>
             <string>{4096,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b6d9e960be7eb9989796d83abf368e3d:41c5c04a01b0cefd4c71c73ee0d58d57:a0ff510bb331eafa542d6069eac6f213$</string>
+            <string>$TexturePacker:SmartUpdate:f2b7bea6f88066650e5148a884ab3b12:b228e706bfabf6aba7aad11d724e80c3:a0ff510bb331eafa542d6069eac6f213$</string>
             <key>textureFileName</key>
             <string>teach_ui.png</string>
         </dict>
