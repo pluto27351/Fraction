@@ -726,15 +726,20 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
     for (int i = 0; i < _dividePiece*_fullAmount ; i++) {
         if (img[i]->touchesBegin(inPos, id)) {
-            img[i]->setPosition(inPos);
+      //      img[i]->setPosition(inPos);
             if (rotateImg == NULL) {
                 rotateImg = img[i];
             }
-            if(_mode == 2) return true; //花不用重置
+
             int sticky = img[i]->ResetSticky();        //重置磁鐵.釋放區域
             if (sticky != -1) {
-                _StickyData[sticky].isSticky = false;
+                img[i]->setAtFinger(inPos);
+                if(_mode == 2) {                 //花不用重置
+                    img[i]->setSticky(sticky);
+                    return true;
+                }
                 
+                _StickyData[sticky].isSticky = false;
                 if(_mode == 3){                       //水的特殊需求 移開時其他往下一層
                     int max = (sticky ) / _dividePiece + 1;
                     for(int kk = sticky+1;kk < max * _dividePiece ; kk++ ){

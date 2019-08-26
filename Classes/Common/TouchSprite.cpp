@@ -177,7 +177,8 @@ bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 			_bTouched = true;
 			touchID[0] = id;
 			touchPos[0] = inPos;
-            d = Vec2(0,0);
+          //  d = Vec2(0,0);
+            d = inPos - getPosition();
             setDividedImg();
 			return true;
 
@@ -313,4 +314,9 @@ void TouchSprite::setWaterline(int num){
         _obj->addChild(line, 2);
         _Pic.push_back(line);
         }
+}
+
+void TouchSprite::setAtFinger(Point pt){
+    setPosition(pt);
+    d = Vec2(0,0);
 }

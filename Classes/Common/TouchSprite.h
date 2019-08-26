@@ -55,6 +55,7 @@ public:
 	void RotateEnded(int i);
 
     Node *getNode(){return _obj;}
+    void setAtFinger(Point);
     
 	void setPosition(Point pos);
     void setImgPandR(int n,Point pos,float r);

@@ -29,7 +29,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bg" ActionTag="1221216017" Tag="59" IconVisible="False" LeftMargin="-89.0000" RightMargin="-311.0000" TopMargin="-52.0000" BottomMargin="-52.0000" IsCustomSize="True" FontSize="70" LabelText="答:   條" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1221216017" Tag="59" IconVisible="False" LeftMargin="-89.0000" RightMargin="-311.0000" TopMargin="-52.0000" BottomMargin="-52.0000" IsCustomSize="True" FontSize="70" LabelText="答:   公尺" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="400.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="111.0000" />
