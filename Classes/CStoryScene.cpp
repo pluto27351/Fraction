@@ -32,6 +32,8 @@ bool CStoryScene::init()
     float scale;
     // 設定按鈕
     char spriteName[20],normalName[20],enableName[20];
+
+    
     for (int i = 0; i < MAX_UNITS; i++)
     {
         sprintf(spriteName, "story_%d", i + 1);
@@ -43,11 +45,18 @@ bool CStoryScene::init()
         _unitBtn[i] = new CButton();
         _unitBtn[i]->setButtonInfo(normalName,normalName, enableName, *this, pt, 1);
         _unitBtn[i]->setScale(scale);
-        _unitBtn[i]->setEnabled(true);
         rootNode->removeChildByName(spriteName);
+        
+        
+        sprintf(spriteName, "STORY_%d", i + 1);
+        if(CCUserDefault::sharedUserDefault()->getBoolForKey(spriteName)){
+            _unitBtn[i]->setEnabled(true);
+        }else {
+            _unitBtn[i]->setEnabled(false);
+        }
     }
 
-    _unitIdx = 0;    // 設定成切換的單元，1 到 5
+    _unitIdx = 0;
     
     for(int i=0;i<4;i++){
         sprintf(spriteName, "char_%d", i + 1);

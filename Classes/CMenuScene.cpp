@@ -50,7 +50,20 @@ bool CMenuScene::init()
         _unitBtn[i]->setRotate(rot);
 		_unitBtn[i]->setEnabled(true);
 		rootNode->removeChildByName(spriteName);
+        
 	}
+    
+    if(!CCUserDefault::sharedUserDefault()->getBoolForKey("IS_EXISTED")){
+        CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",1);
+        for(int n=0;n<5;n++){
+            sprintf(spriteName, "STORY_%d", n + 1);
+            CCUserDefault::sharedUserDefault()->setBoolForKey(spriteName, 0);
+        }
+        CCUserDefault::sharedUserDefault()->setBoolForKey("STORY_1", 1);
+        CCUserDefault::sharedUserDefault()->flush();
+    }
+    
+
 	_unitIdx = 0;	// 設定成切換的單元，1 到 5
     
     pt = rootNode->getChildByName("storybtn")->getPosition();
@@ -160,6 +173,12 @@ void CMenuScene::ShowUnitStory(int i) {
 
     _storyNum = 0;
     _bstory = true;
+    
+    sprintf(spriteName, "STORY_%d", i);
+    CCUserDefault::sharedUserDefault()->setBoolForKey(spriteName, 1);
+    CCUserDefault::sharedUserDefault()->flush();
+    
+    
 }
 
 CMenuScene::~CMenuScene()
