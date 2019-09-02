@@ -52,7 +52,9 @@ bool CMenuScene::init()
 		rootNode->removeChildByName(spriteName);
         
 	}
-    
+    //reset  最後輸出時要重置！！！
+    //CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",0);
+    //
     if(!CCUserDefault::sharedUserDefault()->getBoolForKey("IS_EXISTED")){
         CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",1);
         for(int n=0;n<5;n++){
