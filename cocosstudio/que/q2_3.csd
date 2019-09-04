@@ -14,19 +14,19 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
+            <FontResource Type="Normal" Path="font/PingFang.ttc" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="N_1" ActionTag="1000799717" IconVisible="False" LeftMargin="351.0941" RightMargin="-386.0941" TopMargin="-177.5958" BottomMargin="73.5958" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="35.0000" Y="104.0000" />
+          <AbstractNodeData Name="N_1" ActionTag="1000799717" IconVisible="False" LeftMargin="327.8074" RightMargin="-368.8074" TopMargin="-173.1466" BottomMargin="75.1466" FontSize="70" LabelText="2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="41.0000" Y="98.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="368.5941" Y="125.5958" />
+            <Position X="348.3074" Y="124.1466" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="0" B="0" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="monospacemal.ttf" Plist="" />
+            <FontResource Type="Normal" Path="font/PingFang.ttc" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

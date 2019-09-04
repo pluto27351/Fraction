@@ -1,5 +1,6 @@
 #include "CStoryScene.h"
 #include "CTeachScene.h"
+#include "CMenuScene.h"
 
 USING_NS_CC;
 
@@ -72,6 +73,13 @@ bool CStoryScene::init()
         rootNode->removeChildByName(spriteName);
     }
     
+    //menubtn
+    pt = rootNode->getChildByName("home")->getPosition();
+    scale = rootNode->getChildByName("home")->getScale();
+    _menuBtn.setButtonInfo("ch_home.png", "ch_home_h.png", *this, pt, 1);
+    _menuBtn.setScale(scale);
+    rootNode->removeChildByName("home");
+    
     auto top = (Sprite*)rootNode->getChildByName("char_top");
     this->addChild(top, 10);
     _topPic = 0;
@@ -95,6 +103,12 @@ void CStoryScene::doStep(float dt)  // OnFrameMove
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
         Director::getInstance()->getTextureCache()->removeUnusedTextures();
         Director::getInstance()->replaceScene(CTeachScene::createScene(_unitIdx));
+    }else if(menuPressed){
+        this->unscheduleAllCallbacks();
+        this->removeAllChildren();
+        SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
+        Director::getInstance()->getTextureCache()->removeUnusedTextures();
+        Director::getInstance()->replaceScene(CMenuScene::createScene());
     }
     
 }
@@ -112,6 +126,9 @@ bool  CStoryScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)/
     for(int i=0;i<4;i++){
         _charBtn[i]->touchesBegin(touchLoc);
     }
+    
+    _menuBtn.touchesBegin(touchLoc);
+    
     return true;
 }
 
@@ -127,6 +144,7 @@ void  CStoryScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) 
     for(int i=0;i<4;i++){
         _charBtn[i]->touchesMoved(touchLoc);
     }
+    _menuBtn.touchesMoved(touchLoc);
 }
 
 void  CStoryScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件
@@ -141,6 +159,11 @@ void  CStoryScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) 
     }
     
     Point touchLoc = pTouch->getLocation();
+    
+    if(_menuBtn.touchesEnded(touchLoc)){
+        menuPressed = true;
+    }
+    
     for (int i = 0; i < MAX_UNITS; i++)
     {
         if (_unitBtn[i]->touchesEnded(touchLoc)) {

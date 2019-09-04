@@ -17,14 +17,14 @@
             <FileData Type="Normal" Path="img/story/bg_main.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="startBtn" ActionTag="1972834248" Tag="172" IconVisible="False" LeftMargin="1430.7026" RightMargin="93.2974" TopMargin="1065.2428" BottomMargin="21.7572" ctype="SpriteObjectData">
-            <Size X="524.0000" Y="449.0000" />
+          <AbstractNodeData Name="startBtn" ActionTag="1972834248" Tag="172" IconVisible="False" LeftMargin="1402.2943" RightMargin="130.7057" TopMargin="1070.8718" BottomMargin="7.1281" ctype="SpriteObjectData">
+            <Size X="515.0000" Y="458.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1692.7026" Y="246.2572" />
+            <Position X="1659.7943" Y="236.1281" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8265" Y="0.1603" />
-            <PreSize X="0.2559" Y="0.2923" />
+            <PrePosition X="0.8104" Y="0.1537" />
+            <PreSize X="0.2515" Y="0.2982" />
             <FileData Type="PlistSubImage" Path="main_start.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>

@@ -29,7 +29,7 @@ CAnsCreater::CAnsCreater(int uni, int queNo, int number,int c,int b) { //單元�
     sprintf(bc,"%d",b*c);
     sprintf(aa,"%d",number);
     Output_f->addChild(Set_CAnsCreater(bc,aa,""));  //分子.分母.帶分數
-    Output_f->setPosition(Vec2(70.66,3.70));
+    Output_f->setPosition(Vec2(65,3.5));
     Output_f->removeChildByName("ntor");
     addChild(answer);
 }
@@ -423,7 +423,7 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     auto ans =Set_CAnsCreater(n,d,f);
  //   ans->setPosition(Vec2(40,0));
     Output_f->addChild(ans);
-    Output_f->setPosition(Vec2(70.66,3.70));
+    Output_f->setPosition(Vec2(65,3.5));
     Output_f->removeChildByName("ntor");
 
 }

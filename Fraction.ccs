@@ -84,6 +84,9 @@
           <Project Name="u5_8.csd" Type="Node" />
           <Project Name="u5_9.csd" Type="Node" />
         </Folder>
+        <Folder Name="font">
+          <TTF Name="PingFang.ttc" />
+        </Folder>
         <Folder Name="img">
           <Folder Name="story">
             <Image Name="bg_main.png" />
@@ -136,6 +139,8 @@
             <PlistImageFile Name="tab_2.png" Key="tab_2.png" />
             <PlistImageFile Name="tab_3.png" Key="tab_3.png" />
             <PlistImageFile Name="tab_4.png" Key="tab_4.png" />
+            <PlistImageFile Name="ch_home.png" Key="ch_home.png" />
+            <PlistImageFile Name="ch_home_h.png" Key="ch_home_h.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
@@ -369,15 +374,10 @@
           <Project Name="q5_8.csd" Type="Node" />
           <Project Name="q5_9.csd" Type="Node" />
         </Folder>
-        <TTF Name="HanyiSentyTang.ttf" />
         <Project Name="homescene.csd" Type="Scene" />
         <Project Name="menuscene.csd" Type="Scene" />
-        <TTF Name="monospacemal.ttf" />
         <Project Name="storyscene.csd" Type="Scene" />
         <Project Name="TeachScene.csd" Type="Scene" />
-        <Folder Name="font">
-          <TTF Name="PingFang.ttc" />
-        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

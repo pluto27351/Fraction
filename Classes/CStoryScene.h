@@ -11,11 +11,13 @@ class CStoryScene : public cocos2d::Layer
 {
     CButton *_unitBtn[MAX_UNITS],*_charBtn[4];
     Sprite *_char[4];
+    CButton _menuBtn;
     int _topPic;
     std::vector<Sprite *>_storyPic;
     
     int  _unitIdx;
     bool goBtnPressed = false;
+    bool menuPressed = false;
     
     bool _bstory;
     int _storyNum,_maxstory;

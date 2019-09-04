@@ -160,7 +160,7 @@
             <FileData Type="PlistSubImage" Path="tab_4.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="char_top" ActionTag="-1667181579" Tag="203" IconVisible="False" LeftMargin="-84.3653" RightMargin="1887.3654" TopMargin="-6.9701" BottomMargin="1007.9701" ctype="SpriteObjectData">
+          <AbstractNodeData Name="char_top" ActionTag="-1667181579" Tag="203" IconVisible="False" LeftMargin="-84.3653" RightMargin="1887.3652" TopMargin="-6.9701" BottomMargin="1007.9701" ctype="SpriteObjectData">
             <Size X="245.0000" Y="535.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="38.1347" Y="1275.4701" />
@@ -169,6 +169,17 @@
             <PrePosition X="0.0186" Y="0.8304" />
             <PreSize X="0.1196" Y="0.3483" />
             <FileData Type="PlistSubImage" Path="a77.png" Plist="img/teach_scene.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="home" ActionTag="15037416" Tag="61" IconVisible="False" LeftMargin="29.1016" RightMargin="1883.8984" TopMargin="1268.9269" BottomMargin="88.0731" ctype="SpriteObjectData">
+            <Size X="135.0000" Y="179.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="96.6016" Y="177.5731" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0472" Y="0.1156" />
+            <PreSize X="0.0659" Y="0.1165" />
+            <FileData Type="PlistSubImage" Path="ch_home.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
