@@ -375,6 +375,9 @@
         <TTF Name="monospacemal.ttf" />
         <Project Name="storyscene.csd" Type="Scene" />
         <Project Name="TeachScene.csd" Type="Scene" />
+        <Folder Name="font">
+          <TTF Name="PingFang.ttc" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
