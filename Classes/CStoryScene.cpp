@@ -98,24 +98,16 @@ bool CStoryScene::init()
 void CStoryScene::doStep(float dt)  // OnFrameMove
 {
     if (goBtnPressed) {
-        this->removeAllChildren();
-        for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
-        for( int i=0 ; i<4 ; i++)delete _charBtn[i];
-        _storyPic.clear();
-        
         this->unscheduleAllCallbacks();
         this->removeAllChildren();
+        
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
         Director::getInstance()->getTextureCache()->removeUnusedTextures();
         Director::getInstance()->replaceScene(CTeachScene::createScene(_unitIdx));
     }else if(menuPressed){
-        this->removeAllChildren();
-        for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
-        for( int i=0 ; i<4 ; i++)delete _charBtn[i];
-        _storyPic.clear();
-        
         this->unscheduleAllCallbacks();
         this->removeAllChildren();
+        
         SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
         Director::getInstance()->getTextureCache()->removeUnusedTextures();
         Director::getInstance()->replaceScene(CMenuScene::createScene());
@@ -211,7 +203,9 @@ void CStoryScene::ShowUnitStory(int i) {
 
 CStoryScene::~CStoryScene()
 {
-
+    for (int i = 0; i < MAX_UNITS; i++)delete _unitBtn[i];
+    for( int i=0 ; i<4 ; i++)delete _charBtn[i];
+    _storyPic.clear();
 
 }
 
