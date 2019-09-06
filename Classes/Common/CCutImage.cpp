@@ -15,10 +15,11 @@ enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};  //sprite-cutMode
 CCutImage::~CCutImage()
 {
     if (_dividePiece != 0) {
-    //    CCLOG("delete cutimg");
        // removeAllChildren();
         for (int i = 0; i < _dividePiece*_fullAmount; i++) delete img[i];
         img.clear();
+        _fullImg.clear();
+        _line.clear();
         _StickyData->deleteImgData();
         _line.clear();
 

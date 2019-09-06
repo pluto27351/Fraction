@@ -2,9 +2,6 @@
 #include "CQuePanel.h"
 #include "cocostudio/CocoStudio.h"
 
-//#define QUEX_POS 1024
-//#define QUEY_POS 1360
-
 #define QUE_POS Vec2(1024,1295)
 #define ANS_POS Vec2(1650,400)
 
@@ -324,18 +321,6 @@ void CQuePanel::setQue_quantity() {  //變量題 chap4-7~12
     }while( c % _curNum != 0 || (_curNum <5  && c == _c) || (_curNum == 6 && (_curQue ==9 ||_curQue ==10|| _curQue == 12) && c == _c)) ;
     _c = c;
     
-//    std::vector<int>a_list;
-//    for(int i=2;i<=_curNum;i++){
-//        if(_curNum%i == 0){
-//            a_list.push_back(i);
-//        }
-//    }
-//    int a;
-//    do{
-//        int k = (rand()%a_list.size())+1;
-//        a = a_list[k];
-//    }while(a_list.size() != 1 && _c == a);
-//    _c = a;
     
     //設定題目
     _que = new CAnsCreater();
