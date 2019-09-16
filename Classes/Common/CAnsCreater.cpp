@@ -1,7 +1,7 @@
 #include "CAnsCreater.h"
 
 CAnsCreater::~CAnsCreater(){
-    CCLOG(" delete CAnsCreater");
+
 }
 
 CAnsCreater::CAnsCreater(int uni, int queNo, int number) { //單元．題目．數字
@@ -421,47 +421,9 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     sprintf(f, "%d", outNumber[0]);
     
     auto ans =Set_CAnsCreater(n,d,f);
- //   ans->setPosition(Vec2(40,0));
     Output_f->addChild(ans);
     Output_f->setPosition(Vec2(65,3.5));
     Output_f->removeChildByName("ntor");
 
 }
 
-//void CAnsCreater::Input_ans2(Node &Q, int number) {
-//    char Input[5];
-//    char fn[3];
-//    int inputData,data;
-//    
-//    //分數
-//    Node *Output_f = (Node *)Q.getChildByName("F_1");
-//    Text *ntor = (Text *)Output_f->getChildByName("ntor");
-//    
-//    outNumber[0] = ntor->getTag();    //帶分／分母／分子
-//    outNumber[1] = Output_f->getTag();
-//    outNumber[2] = 0;
-//    
-//    if(outNumber[0] != -1){  //一般情況判斷分子
-//        sprintf(Input, "%d", number);
-//        outNumber[2] = std::atoi(Numerator(ntor->getString().c_str(), Input));
-//    }
-//    else {  // 特殊情況(帶分數設定為-1) 假分數轉帶分數時用(應該僅第三章答案部分會用到)
-//        outNumber[0] = number / outNumber[1] +1;
-//        outNumber[2] = number % outNumber[1];
-//    }
-//    
-//    if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
-//    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 分母也為０;
-//    
-//    char n[4],d[4],f[4];
-//    sprintf(n, "%d", outNumber[2]);
-//    sprintf(d, "%d", outNumber[1]);
-//    sprintf(f, "%d", outNumber[0]);
-//    
-//    auto ans =Set_CAnsCreater(n,d,f);
-//    ans->setPosition(Vec2(40,0));
-//    Output_f->addChild(ans);
-//    
-//    Output_f->removeChildByName("ntor");
-//    
-//}

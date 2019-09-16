@@ -16,9 +16,9 @@ class CHomeScene : public cocos2d::Layer
 	bool   _bToMenuScene;
 
     CButton _startBtn;
-    //CButton _Boo;
     Node *_BooAct;
     ActionTimeline *_BooActTime;
+    bool _btouched = false;
 
 public:
 	static cocos2d::Scene* createScene();
@@ -27,7 +27,7 @@ public:
 
 	virtual bool init();
 	void doStep(float dt);
-    void onExit();
+
 	//觸碰
 	cocos2d::EventListenerTouchOneByOne *_listener1;
 	bool onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent); //觸碰開始事件

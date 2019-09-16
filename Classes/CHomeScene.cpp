@@ -68,22 +68,22 @@ void CHomeScene::doStep(float dt)  // OnFrameMove
 bool  CHomeScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//觸碰開始事件
 {
 	Point touchLoc = pTouch->getLocation();
-	_startBtn.touchesBegin(touchLoc);
+	if(_btouched == false)_startBtn.touchesBegin(touchLoc);
 	return true;
 }
 
 void  CHomeScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰移動事件
 {
 	Point touchLoc = pTouch->getLocation();
-	_startBtn.touchesMoved(touchLoc);
+	if(_btouched == false)_startBtn.touchesMoved(touchLoc);
 }
 
 void  CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
 {
 	Point touchLoc = pTouch->getLocation();
 
-
-    if (_startBtn.touchesEnded(touchLoc)) {
+    if (_startBtn.touchesEnded(touchLoc) && _btouched == false) {
+        _btouched = true; 
         _BooAct->setVisible(true);
         _BooActTime->gotoFrameAndPlay(0, 55, false);
         _BooActTime->setLastFrameCallFunc([=]()
@@ -96,7 +96,6 @@ void  CHomeScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
 
 CHomeScene::~CHomeScene()
 {
-    CCLOG("delete homeScene1");
 	this->removeAllChildren();
     
     SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_scene.plist");
@@ -105,12 +104,4 @@ CHomeScene::~CHomeScene()
 }
 
 
-void CHomeScene::onExit()
-{
-//    CCLOG("delete homeScene2");
-//    this->removeAllChildren();
-//    
-//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("Fraction_menu.plist");
-//    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("img/teach_ui.plist");
-//    Director::getInstance()->getTextureCache()->removeUnusedTextures();
-}
+
