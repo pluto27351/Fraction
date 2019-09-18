@@ -110,6 +110,8 @@
           </Folder>
           <PlistImageFolder Image="teach_scene.png" PListFile="teach_scene.plist" Name=".teach_scene_PList.Dir">
             <PlistImageFile Name="a77.png" Key="a77.png" />
+            <PlistImageFile Name="ch_home.png" Key="ch_home.png" />
+            <PlistImageFile Name="ch_home_h.png" Key="ch_home_h.png" />
             <PlistImageFile Name="channel_1.png" Key="channel_1.png" />
             <PlistImageFile Name="channel_1_click.png" Key="channel_1_click.png" />
             <PlistImageFile Name="channel_2.png" Key="channel_2.png" />
@@ -139,8 +141,6 @@
             <PlistImageFile Name="tab_2.png" Key="tab_2.png" />
             <PlistImageFile Name="tab_3.png" Key="tab_3.png" />
             <PlistImageFile Name="tab_4.png" Key="tab_4.png" />
-            <PlistImageFile Name="ch_home.png" Key="ch_home.png" />
-            <PlistImageFile Name="ch_home_h.png" Key="ch_home_h.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />

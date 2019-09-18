@@ -7,12 +7,9 @@
 
 CQuePanel::~CQuePanel()
 {
-    CCLOG("delete quePanel");
     if (_cutImage != NULL)delete _cutImage;
     if (_ans != NULL)delete _ans;
     if (_que != NULL)delete _que;
-    
-    
 }
 
 CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
