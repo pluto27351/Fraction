@@ -10,15 +10,18 @@
 class CMenuScene : public cocos2d::Layer
 {
 	CButton *_unitBtn[MAX_UNITS];
-    CButton _storyBtn;
+    CButton _storyBtn,_memberBtn,_backBtn;
+    Sprite *_member;
     std::vector<Sprite *>_storyPic;
     
 	int	_unitIdx;
 	bool goBtnPressed = false;
     bool storyPressed = false;
     
+    bool _bmemberOpened = false;
     bool _bstory;
     int _storyNum,_maxstory;
+
     
 	void ShowUnitStory(int i);
 

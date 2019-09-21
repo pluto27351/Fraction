@@ -28,7 +28,7 @@
             <FileData Type="PlistSubImage" Path="channel_5.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_4" ActionTag="-1760646640" Tag="38" IconVisible="False" LeftMargin="690.8007" RightMargin="775.1993" TopMargin="764.9445" BottomMargin="596.0555" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_4" ActionTag="-1760646640" Tag="38" IconVisible="False" LeftMargin="690.8007" RightMargin="775.1992" TopMargin="764.9445" BottomMargin="596.0555" ctype="SpriteObjectData">
             <Size X="582.0000" Y="175.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="981.8007" Y="683.5555" />
@@ -39,7 +39,7 @@
             <FileData Type="PlistSubImage" Path="channel_4.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="levelbtn_3" ActionTag="-982153176" Tag="37" RotationSkewY="-0.0455" IconVisible="False" LeftMargin="774.9342" RightMargin="717.0658" TopMargin="466.5476" BottomMargin="881.4523" ctype="SpriteObjectData">
+          <AbstractNodeData Name="levelbtn_3" ActionTag="-982153176" Tag="37" RotationSkewY="-0.0455" IconVisible="False" LeftMargin="774.9342" RightMargin="717.0658" TopMargin="466.5477" BottomMargin="881.4523" ctype="SpriteObjectData">
             <Size X="556.0000" Y="188.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1052.9342" Y="975.4523" />
@@ -81,6 +81,39 @@
             <PrePosition X="0.1748" Y="0.2648" />
             <PreSize X="0.3101" Y="0.2826" />
             <FileData Type="PlistSubImage" Path="channel_who.png" Plist="img/teach_scene.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="m_btn" ActionTag="-158120967" Tag="17" IconVisible="False" LeftMargin="695.9550" RightMargin="1010.0450" TopMargin="1233.0043" BottomMargin="76.9958" ctype="SpriteObjectData">
+            <Size X="342.0000" Y="226.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="866.9550" Y="189.9958" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4233" Y="0.1237" />
+            <PreSize X="0.1670" Y="0.1471" />
+            <FileData Type="PlistSubImage" Path="member_btn.png" Plist="img/teach_scene.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="member" ActionTag="-2029222632" Tag="19" IconVisible="False" LeftMargin="229.5000" RightMargin="229.5000" TopMargin="146.0000" BottomMargin="146.0000" ctype="SpriteObjectData">
+            <Size X="1589.0000" Y="1244.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1024.0000" Y="768.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.7759" Y="0.8099" />
+            <FileData Type="PlistSubImage" Path="member.png" Plist="img/teach_scene.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="m_back" ActionTag="-2033954005" Tag="18" IconVisible="False" LeftMargin="351.8800" RightMargin="1532.1200" TopMargin="249.1443" BottomMargin="1155.8557" ctype="SpriteObjectData">
+            <Size X="164.0000" Y="131.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="433.8800" Y="1221.3557" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.2119" Y="0.7952" />
+            <PreSize X="0.0801" Y="0.0853" />
+            <FileData Type="PlistSubImage" Path="member_back.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

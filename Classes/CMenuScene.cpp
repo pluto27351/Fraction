@@ -30,11 +30,22 @@ bool CMenuScene::init()
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("img/teach_scene.plist");
 	auto rootNode = CSLoader::createNode("menuscene.csb");
 	addChild(rootNode);
-
-	Point pt;
-	float scale,rot;
-	// 設定按鈕
-	char spriteName[30], normalName[30], touchedName[30];
+    
+    Point pt;
+    float scale,rot;
+    char spriteName[30], normalName[30], touchedName[30];
+    
+    //設定章節紀錄
+    if(!CCUserDefault::sharedUserDefault()->getBoolForKey("IS_EXISTED")){
+        CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",1);
+        for(int n=0;n<5;n++){
+            sprintf(spriteName, "STORY_%d", n + 1);
+            CCUserDefault::sharedUserDefault()->setBoolForKey(spriteName, 0);
+        }
+        CCUserDefault::sharedUserDefault()->flush();
+    }
+    
+    // 設定按鈕
 	for (int i = 0; i < MAX_UNITS; i++)
 	{
 		sprintf(spriteName, "levelbtn_%d", i + 1);
@@ -50,26 +61,36 @@ bool CMenuScene::init()
         _unitBtn[i]->setRotate(rot);
 		_unitBtn[i]->setEnabled(true);
 		rootNode->removeChildByName(spriteName);
-        
 	}
-
-    if(!CCUserDefault::sharedUserDefault()->getBoolForKey("IS_EXISTED")){
-        CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",1);
-        for(int n=0;n<5;n++){
-            sprintf(spriteName, "STORY_%d", n + 1);
-            CCUserDefault::sharedUserDefault()->setBoolForKey(spriteName, 0);
-        }
-        CCUserDefault::sharedUserDefault()->flush();
-    }
-    
-	_unitIdx = 0;	// 設定成切換的單元，1 到 5
-    
     pt = rootNode->getChildByName("storybtn")->getPosition();
     scale = rootNode->getChildByName("storybtn")->getScale();
     _storyBtn.setButtonInfo("channel_who.png", "channel_who2.png", *this, pt, 1);
     _storyBtn.setScale(scale);
     rootNode->removeChildByName("storybtn");
     
+    pt = rootNode->getChildByName("m_btn")->getPosition();
+    scale = rootNode->getChildByName("m_btn")->getScale();
+    _memberBtn.setButtonInfo("member_btn.png","member_btn.png", *this, pt, 1);
+   _memberBtn.setScale(scale);
+    rootNode->removeChildByName("m_btn");
+    
+    pt = rootNode->getChildByName("m_back")->getPosition();
+    scale = rootNode->getChildByName("m_back")->getScale();
+    _backBtn.setButtonInfo("member_back.png", "member_back.png", *this, pt, 3);
+    _backBtn.setScale(scale);
+    rootNode->removeChildByName("m_back");
+
+    pt = rootNode->getChildByName("member")->getPosition();
+    _member = Sprite::createWithSpriteFrameName("member.png");
+    _member->setPosition(pt);
+    addChild(_member, 2);
+    rootNode->removeChildByName("member");
+    
+    _bmemberOpened = false;
+    _backBtn.setVisible(_bmemberOpened);
+    _member->setVisible(_bmemberOpened);
+
+    _unitIdx = 0;
     _bstory = false;
 
 	_listener1 = EventListenerTouchOneByOne::create();	//創建一個一對一的事件聆聽器
@@ -110,13 +131,15 @@ bool  CMenuScene::onTouchBegan(cocos2d::Touch *pTouch, cocos2d::Event *pEvent)//
 {
     if(_bstory)return true;
     
-	Point touchLoc = pTouch->getLocation();
-    for (int i = 0; i < MAX_UNITS; i++)
+    Point touchLoc = pTouch->getLocation();
+    if(_bmemberOpened)
     {
-        _unitBtn[i]->touchesBegin(touchLoc);
+        _backBtn.touchesBegin(touchLoc);
+    }else{
+        for (int i = 0; i < MAX_UNITS; i++)_unitBtn[i]->touchesBegin(touchLoc);
+        _storyBtn.touchesBegin(touchLoc);
+        _memberBtn.touchesBegin(touchLoc);
     }
-
-    _storyBtn.touchesBegin(touchLoc);
 	return true;
 }
 
@@ -125,12 +148,14 @@ void  CMenuScene::onTouchMoved(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
     if(_bstory)return;
     
 	Point touchLoc = pTouch->getLocation();
-	for (int i = 0; i < MAX_UNITS; i++)
-	{
-		_unitBtn[i]->touchesMoved(touchLoc);
-	}
-
-    _storyBtn.touchesMoved(touchLoc);
+    if(_bmemberOpened){
+        _backBtn.touchesMoved(touchLoc);
+    }
+    else{
+        for (int i = 0; i < MAX_UNITS; i++) _unitBtn[i]->touchesMoved(touchLoc);
+        _storyBtn.touchesMoved(touchLoc);
+        _memberBtn.touchesMoved(touchLoc);
+    }
 }
 
 void  CMenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) //觸碰結束事件 
@@ -143,17 +168,31 @@ void  CMenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
         else _storyPic[_storyNum]->setVisible(true);
         return;
     }
+    
 	Point touchLoc = pTouch->getLocation();
-	for (int i = 0; i < MAX_UNITS; i++)
-	{
-		if (_unitBtn[i]->touchesEnded(touchLoc)) {
-			_unitIdx = i + 1;
-			ShowUnitStory(_unitIdx);
-			return;
-		}
-	}
-
-    if (_storyBtn.touchesEnded(touchLoc)) storyPressed = true;
+    if(_bmemberOpened){
+        if (_backBtn.touchesEnded(touchLoc)) {
+            _bmemberOpened = false;
+            _backBtn.setVisible(_bmemberOpened);
+            _member->setVisible(_bmemberOpened);
+        }
+    }
+    else{
+        for (int i = 0; i < MAX_UNITS; i++)
+        {
+            if (_unitBtn[i]->touchesEnded(touchLoc)) {
+                _unitIdx = i + 1;
+                ShowUnitStory(_unitIdx);
+                return;
+            }
+        }
+        if (_storyBtn.touchesEnded(touchLoc)) storyPressed = true;
+        if (_memberBtn.touchesEnded(touchLoc)) {
+            _bmemberOpened = true;
+            _member->setVisible(_bmemberOpened);
+            _backBtn.setVisible(_bmemberOpened);
+        }
+    }
 }
 
 void CMenuScene::ShowUnitStory(int i) {
@@ -164,7 +203,7 @@ void CMenuScene::ShowUnitStory(int i) {
         auto sPic = (Sprite *)Sprite::create(spriteName);
         sPic->setPosition(Vec2(1024,768));
         sPic->setVisible(false);
-        this->addChild(sPic, 2);
+        this->addChild(sPic, 10);
         _storyPic.push_back(sPic);
     }
     _storyPic[0]->setVisible(true);

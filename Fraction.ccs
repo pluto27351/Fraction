@@ -141,6 +141,9 @@
             <PlistImageFile Name="tab_2.png" Key="tab_2.png" />
             <PlistImageFile Name="tab_3.png" Key="tab_3.png" />
             <PlistImageFile Name="tab_4.png" Key="tab_4.png" />
+            <PlistImageFile Name="member.png" Key="member.png" />
+            <PlistImageFile Name="member_back.png" Key="member_back.png" />
+            <PlistImageFile Name="member_btn.png" Key="member_btn.png" />
           </PlistImageFolder>
           <PlistImageFolder Image="teach_ui.png" PListFile="teach_ui.plist" Name=".teach_ui_PList.Dir">
             <PlistImageFile Name="ans.png" Key="ans.png" />
