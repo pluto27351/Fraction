@@ -36,6 +36,7 @@ bool CMenuScene::init()
     char spriteName[30], normalName[30], touchedName[30];
     
     //設定章節紀錄
+   // CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",0);
     if(!CCUserDefault::sharedUserDefault()->getBoolForKey("IS_EXISTED")){
         CCUserDefault::sharedUserDefault()->setBoolForKey("IS_EXISTED",1);
         for(int n=0;n<5;n++){

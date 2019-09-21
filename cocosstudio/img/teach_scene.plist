@@ -473,7 +473,7 @@
             <key>size</key>
             <string>{2048,4096}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:1121554a8d7b210af58d08210cc3e239:5231a98735dce4eb48fb4c402ca7c8ab:ff5ae691f8e7334ac456bb95a8b33c1d$</string>
+            <string>$TexturePacker:SmartUpdate:b5bcbefecfef61f6456e683e1998e274:881f485b4860afcbecffdbe6d810bbb8:ff5ae691f8e7334ac456bb95a8b33c1d$</string>
             <key>textureFileName</key>
             <string>teach_scene.png</string>
         </dict>
