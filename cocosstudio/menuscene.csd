@@ -83,36 +83,36 @@
             <FileData Type="PlistSubImage" Path="channel_who.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="m_btn" ActionTag="-158120967" Tag="17" IconVisible="False" LeftMargin="695.9550" RightMargin="1010.0450" TopMargin="1233.0043" BottomMargin="76.9958" ctype="SpriteObjectData">
-            <Size X="342.0000" Y="226.0000" />
+          <AbstractNodeData Name="m_btn" ActionTag="-158120967" Tag="17" IconVisible="False" LeftMargin="698.1586" RightMargin="1009.8414" TopMargin="1225.9154" BottomMargin="78.0846" ctype="SpriteObjectData">
+            <Size X="340.0000" Y="232.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="866.9550" Y="189.9958" />
+            <Position X="868.1586" Y="194.0846" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4233" Y="0.1237" />
-            <PreSize X="0.1670" Y="0.1471" />
+            <PrePosition X="0.4239" Y="0.1264" />
+            <PreSize X="0.1660" Y="0.1510" />
             <FileData Type="PlistSubImage" Path="member_btn.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="member" ActionTag="-2029222632" Tag="19" IconVisible="False" LeftMargin="229.5000" RightMargin="229.5000" TopMargin="146.0000" BottomMargin="146.0000" ctype="SpriteObjectData">
-            <Size X="1589.0000" Y="1244.0000" />
+          <AbstractNodeData Name="member" Visible="False" ActionTag="-2029222632" Tag="19" IconVisible="False" LeftMargin="256.5002" RightMargin="256.4998" TopMargin="168.5000" BottomMargin="168.5000" ctype="SpriteObjectData">
+            <Size X="1535.0000" Y="1199.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1024.0000" Y="768.0000" />
+            <Position X="1024.0002" Y="768.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.7759" Y="0.8099" />
+            <PreSize X="0.7495" Y="0.7806" />
             <FileData Type="PlistSubImage" Path="member.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="m_back" ActionTag="-2033954005" Tag="18" IconVisible="False" LeftMargin="351.8800" RightMargin="1532.1200" TopMargin="249.1443" BottomMargin="1155.8557" ctype="SpriteObjectData">
-            <Size X="164.0000" Y="131.0000" />
+          <AbstractNodeData Name="m_back" ActionTag="-2033954005" Tag="18" IconVisible="False" LeftMargin="352.3800" RightMargin="1532.6200" TopMargin="251.6443" BottomMargin="1158.3557" ctype="SpriteObjectData">
+            <Size X="163.0000" Y="126.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="433.8800" Y="1221.3557" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2119" Y="0.7952" />
-            <PreSize X="0.0801" Y="0.0853" />
+            <PreSize X="0.0796" Y="0.0820" />
             <FileData Type="PlistSubImage" Path="member_back.png" Plist="img/teach_scene.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
