@@ -165,7 +165,10 @@ void  CMenuScene::onTouchEnded(cocos2d::Touch *pTouch, cocos2d::Event *pEvent) /
         _storyPic[_storyNum]->setVisible(false);
         _storyNum+=1;
         
-        if(_storyNum == _maxstory) goBtnPressed = true;
+        if(_storyNum == _maxstory) {
+            _bstory = false;
+            goBtnPressed = true;
+        }
         else _storyPic[_storyNum]->setVisible(true);
         return;
     }

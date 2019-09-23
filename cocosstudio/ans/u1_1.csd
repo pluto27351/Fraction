@@ -6,10 +6,10 @@
       <ObjectData Name="u1" Tag="7" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="1695500109" Tag="1" IconVisible="False" LeftMargin="-88.8221" RightMargin="-311.1779" TopMargin="-52.0000" BottomMargin="-52.0000" IsCustomSize="True" FontSize="70" LabelText="答:     杯" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="bg" ActionTag="1695500109" Tag="1" IconVisible="False" LeftMargin="-88.8200" RightMargin="-311.1800" TopMargin="-52.0000" BottomMargin="-52.0000" IsCustomSize="True" FontSize="70" LabelText="答:     杯" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="400.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="111.1779" />
+            <Position X="111.1800" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />

@@ -325,7 +325,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="9" Visible="False" ActionTag="1575641662" Tag="111" IconVisible="True" LeftMargin="10.0000" RightMargin="-10.0000" TopMargin="10.0000" BottomMargin="-10.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="9" ActionTag="1575641662" Tag="111" IconVisible="True" LeftMargin="10.0000" RightMargin="-10.0000" TopMargin="10.0000" BottomMargin="-10.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="0" ActionTag="1732252801" Alpha="103" Tag="9" IconVisible="False" LeftMargin="-301.5000" RightMargin="-301.5000" TopMargin="-159.0000" BottomMargin="-159.0000" ctype="SpriteObjectData">
@@ -394,7 +394,18 @@
                 <FileData Type="PlistSubImage" Path="apple_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_5" ActionTag="1689616722" Tag="119" IconVisible="False" LeftMargin="-31.2346" RightMargin="-76.7654" TopMargin="-17.6418" BottomMargin="-110.3582" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_5" ActionTag="294517537" Tag="120" IconVisible="False" LeftMargin="100.6990" RightMargin="-208.6990" TopMargin="-45.5418" BottomMargin="-82.4582" ctype="SpriteObjectData">
+                <Size X="108.0000" Y="128.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="154.6990" Y="-18.4582" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.0000" Y="0.0000" />
+                <FileData Type="PlistSubImage" Path="apple_2.png" Plist="img/teach_ui.plist" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="1_6" ActionTag="1689616722" Tag="119" IconVisible="False" LeftMargin="-31.2346" RightMargin="-76.7654" TopMargin="-17.6418" BottomMargin="-110.3582" ctype="SpriteObjectData">
                 <Size X="108.0000" Y="128.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="22.7654" Y="-46.3582" />
@@ -405,21 +416,10 @@
                 <FileData Type="PlistSubImage" Path="apple_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_6" ActionTag="557506074" Tag="116" IconVisible="False" LeftMargin="-126.1743" RightMargin="18.1743" TopMargin="-19.3434" BottomMargin="-108.6566" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_7" ActionTag="557506074" Tag="116" IconVisible="False" LeftMargin="-126.1743" RightMargin="18.1743" TopMargin="-19.3434" BottomMargin="-108.6566" ctype="SpriteObjectData">
                 <Size X="108.0000" Y="128.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-72.1743" Y="-44.6566" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="PlistSubImage" Path="apple_2.png" Plist="img/teach_ui.plist" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="1_7" ActionTag="294517537" Tag="120" IconVisible="False" LeftMargin="100.6990" RightMargin="-208.6990" TopMargin="-45.5418" BottomMargin="-82.4582" ctype="SpriteObjectData">
-                <Size X="108.0000" Y="128.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="154.6990" Y="-18.4582" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
@@ -446,7 +446,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="0" ActionTag="616042639" Tag="146" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="0" Visible="False" ActionTag="616042639" Tag="146" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="0" ActionTag="1209188049" Alpha="103" Tag="8" IconVisible="False" LeftMargin="-301.5000" RightMargin="-301.5000" TopMargin="-159.0000" BottomMargin="-159.0000" ctype="SpriteObjectData">

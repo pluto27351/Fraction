@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="Nut" Type="Node" ID="7ae3c425-69a2-4263-97ec-1b2d0a990a7b" Version="3.10.0.0" />
+  <PropertyGroup Name="nut" Type="Node" ID="7ae3c425-69a2-4263-97ec-1b2d0a990a7b" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -116,7 +116,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="6" Visible="False" ActionTag="-908587676" Tag="26" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="6" ActionTag="-908587676" Tag="26" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="0" ActionTag="-644445612" Alpha="119" Tag="6" IconVisible="False" LeftMargin="-302.0000" RightMargin="-302.0000" TopMargin="-161.5000" BottomMargin="-161.5000" ctype="SpriteObjectData">
@@ -163,7 +163,7 @@
                 <FileData Type="PlistSubImage" Path="nut_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_3" ActionTag="-780440489" Tag="31" IconVisible="False" LeftMargin="-165.8423" RightMargin="49.8423" TopMargin="-42.1662" BottomMargin="-93.8338" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_5" ActionTag="-780440489" Tag="31" IconVisible="False" LeftMargin="-165.8423" RightMargin="49.8423" TopMargin="-42.1662" BottomMargin="-93.8338" ctype="SpriteObjectData">
                 <Size X="116.0000" Y="136.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-107.8423" Y="-25.8338" />
@@ -185,7 +185,7 @@
                 <FileData Type="PlistSubImage" Path="nut_2.png" Plist="img/teach_ui.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="1_5" ActionTag="257921144" Tag="33" IconVisible="False" LeftMargin="115.1722" RightMargin="-231.1722" TopMargin="-41.9786" BottomMargin="-94.0214" ctype="SpriteObjectData">
+              <AbstractNodeData Name="1_3" ActionTag="257921144" Tag="33" IconVisible="False" LeftMargin="115.1722" RightMargin="-231.1722" TopMargin="-41.9786" BottomMargin="-94.0214" ctype="SpriteObjectData">
                 <Size X="116.0000" Y="136.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="173.1722" Y="-26.0214" />
@@ -446,7 +446,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="0" ActionTag="-844913854" Tag="611" IconVisible="True" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="0" Visible="False" ActionTag="-844913854" Tag="611" IconVisible="True" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="0" ActionTag="602808982" Alpha="119" Tag="8" IconVisible="False" LeftMargin="-302.0000" RightMargin="-302.0000" TopMargin="-161.5000" BottomMargin="-161.5000" ctype="SpriteObjectData">

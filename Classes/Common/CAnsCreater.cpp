@@ -413,7 +413,7 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     }
     
     if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
-    else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 ㄋ分母也為０;
+   // else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 分母也為０;
     
     char n[4],d[4],f[4];
     sprintf(n, "%d", outNumber[2]);

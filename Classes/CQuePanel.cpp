@@ -76,36 +76,29 @@ void CQuePanel::reset(int que, int num)  //queNo = 題號變化量(+1.0.-1) / nu
     _objNum = UNIT_OBJ[_curUnit - 1][_curQue - 1]; //圖片編號
     
     int queCate = UNIT_QUE[_curUnit - 1][_curQue - 1];
-    int cate = queCate%100;
-    int cate_data = queCate/100-1;
-    switch (cate) {
+    
+    switchdata = UNIT[_curUnit - 1][_curQue - 1];
+    switch (queCate) {
         case 1:                                 //一般題
-            switchdata = PIECE[_objNum];
-            setQue(cate);
+            setQue(queCate);
             break;
         case 2:                                 //變量題 chap4-7~12
-            switchdata = PIECE_U4[_curQue-7];
             setQue_quantity();
             break;
         case 3:                                 //比例題 chap5-3.4.6
-            switchdata = PIECE_U5[_curQue-1];
             setQue_picline();
             break;
         case 4:                                 //倍數題 chap5-其他題
-            switchdata = PIECE_U5[_curQue-1];
             setQue_multiple();
             break;
         case 5:                                 //線段題 chap3-6
-            switchdata = PIECE[0];
             setQue_line();
             break;
         case 11:                                //分子題1 chap2-3.5.8.11
-            switchdata = PIECE_U2[cate_data];
-            setQue(cate);
+            setQue(queCate);
             break;
         case 12:                                //分子題2 chap3-7~12
-            switchdata = PIECE_U3[cate_data];
-            setQue(cate);
+            setQue(queCate);
             break;
     }
 
