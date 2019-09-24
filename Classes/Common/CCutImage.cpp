@@ -65,7 +65,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
         case WATER:
             _mode = 3;
             _name = "water";
-            _hasline = true;
+         //   _hasline = true;
             CreateWater(scale,dividedP);
             setCutmode(WATERPIC);
             break;
@@ -494,7 +494,7 @@ void CCutImage::CreateWater(float scale,int num){  // 水
         }
     }
     
-    if(_hasline){
+   // if(_hasline){
         Vec2 dmove = Vec2(0,img[0]->getPicHeight());
         int n_line =_dividePiece;
         float c_center = (n_line-1) /2.0f;
@@ -507,12 +507,12 @@ void CCutImage::CreateWater(float scale,int num){  // 水
                 line->setPosition(centerPos + m);
                 line->setScale(scale);
                 line->setRotation(0);
-                line->setVisible(false);
+             //   line->setVisible(false);
                 addChild(line, BOTTOM_LEVEL+2);
                 _line.push_back(line);
             }
         }
-    }
+  //  }
     
     _StickyRadius = powf(img[0]->ImgRadius, 2);
     touchedAmount = 0; //被點擊的數量

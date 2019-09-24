@@ -310,7 +310,7 @@ void TouchSprite::setWaterline(int num){
         Vec2 m = (i- c_center) * dmove;
         line->setPosition(centerPos + m);
         line->setRotation(0);
-        _obj->addChild(line, 2);
+        line->setVisible(false);        _obj->addChild(line, 2);
         _Pic.push_back(line);
         }
 }
