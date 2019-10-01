@@ -222,7 +222,6 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
         newimg->setImgInfo(picname,1,pos,angle,Vec2(scale,scale));
         newimg->setCollisionInfo(_fullAmount);
         newimg->setSticky(i);
-   //     newimg->setVisible(false);
         addChild(newimg->getNode(), BOTTOM_LEVEL+1);
         img.push_back(newimg);
         
@@ -237,7 +236,6 @@ void CCutImage::CreatelinePic(float scale,int num,int a,int b,int c){   //線段
         
         auto fi = (Sprite *)Sprite::createWithSpriteFrameName(picname);
         fi->setPosition(pos[0]);
-      //  fi->setOpacity(100);
         fi->setVisible(false);
         addChild(fi,BOTTOM_LEVEL);
         _fullImg.push_back(fi);
@@ -299,7 +297,6 @@ void CCutImage::CreatePaper(float scale,int num){  //紙
     
     int totalPiece = obj->getTag();
     int gPicec = totalPiece / _dividePiece;
-//    img = new TRectSprite[_dividePiece * _fullAmount];
     _StickyData = new StickyData[_dividePiece * _fullAmount];
 
     for(int k=0;k<_fullAmount;k++){
@@ -328,7 +325,7 @@ void CCutImage::CreatePaper(float scale,int num){  //紙
             newimg->setPosition(_pos + _dPos*k);
             newimg->setSticky(number);
             newimg->setVisible(false);
-            addChild(newimg->getNode(), BOTTOM_LEVEL+2);
+            addChild(newimg->getNode(), BOTTOM_LEVEL+1);
             img.push_back(newimg);
             
             _StickyData[number]._NodeAngle = 0;
@@ -707,6 +704,7 @@ void CCutImage::divide(bool d) {
             _fullImg[i]->setGLProgramState(grayGLProgrameState);
             _fullImg[i]->setOpacity(100);
         }
+        rotateImg == NULL;
     }else{
         for(int i=0; i<_fullAmount; i++){
             _fullImg[i]->setOpacity(255);
@@ -727,7 +725,6 @@ bool CCutImage::touchesBegin(cocos2d::Point inPos, int id) {
 	if (!_divided)return false;
     for (int i = 0; i < _dividePiece*_fullAmount ; i++) {
         if (img[i]->touchesBegin(inPos, id)) {
-      //      img[i]->setPosition(inPos);
             if (rotateImg == NULL) {
                 rotateImg = img[i];
             }

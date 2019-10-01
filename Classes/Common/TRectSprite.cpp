@@ -20,6 +20,7 @@ bool TRectSprite::Collision(Point touch) {
             return true;
         }
     }
+    return false;
 }
 
 void TRectSprite::setImgInfo(const char *Img,int piece,Point pos[],float r[],Vec2 scale)

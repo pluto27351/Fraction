@@ -176,7 +176,6 @@ bool TouchSprite::touchesBegin(cocos2d::Point inPos, int id) {
 			_bTouched = true;
 			touchID[0] = id;
 			touchPos[0] = inPos;
-          //  d = Vec2(0,0);
             d = inPos - getPosition();
             setDividedImg();
 			return true;

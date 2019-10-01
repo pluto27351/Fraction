@@ -30,9 +30,9 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
     _blackMask->setScale(4);
     _blackMask->setVisible(false);
     _parentLayer->addChild(_blackMask,INTERFACE_LEVEL);
-    
-	//按鈕設定
-	setBtn(rootNode, parent);
+
+    //按鈕設定
+    setBtn(rootNode, parent);
     
     //出題
     _ans = NULL;
@@ -134,9 +134,8 @@ void CQuePanel::setQue(int k) {
     _curPicAmount = 1;
     if (_curUnit == 4 || _curUnit == 3 ||_curUnit == 2) _curPicAmount = 2;
 
-    if(k == 11 ||k == 12){
+    if(k == 11 ||k == 12){  //分子題 獲取答案分母做切分
         int a= _ans->getA();
-        if(a == 0)a=_curNum;
         _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,a);
     }else{
         _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum);
@@ -315,13 +314,11 @@ void CQuePanel::setQue_quantity() {  //變量題 chap4-7~12
     //設定題目
     _que = new CAnsCreater();
     _que->queCreater(_curUnit, _curQue, _curNum, _c);
-    //_que->queCreater(_curUnit, _curQue, _c, _curNum);
     _que->setPosition(QUE_POS);
     _parentLayer->addChild(_que);
     
     //設定答案
     _ans = new CAnsCreater(_curUnit, _curQue,  _curNum);
-    //_ans = new CAnsCreater(_curUnit, _curQue, _c);
     _ans->setPosition(ANS_POS);
     _ans->setVisible(false);
     _parentLayer->addChild(_ans, 1);
@@ -332,9 +329,8 @@ void CQuePanel::setQue_quantity() {  //變量題 chap4-7~12
     _numSwitcher.setVisible(false);
     
     //設定圖片
-    _curPicAmount = 1;
+    _curPicAmount = 2;
     _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_curNum,_c);
-  //  _cutImage = new CCutImage(_objNum,_curPicAmount, 1.0f,_c,_curNum);
     _parentLayer->addChild(_cutImage);
 }
 
@@ -345,7 +341,7 @@ void CQuePanel::setBtn(Node &rootNode, cocos2d::Layer &parent) {
 	auto scale = rootNode.getChildByName("prevbtn")->getScale();
 	_prevBtn.setButtonInfo("next_L.png", "next_L_click.png", parent, pt, INTERFACE_LEVEL);
 	_prevBtn.setScale(scale);
-	if (_curQue == 1)_prevBtn.setEnabled(false);
+	if (_curQue == 0)_prevBtn.setEnabled(false);
 	rootNode.removeChildByName("prevbtn");
 
 	//下一題

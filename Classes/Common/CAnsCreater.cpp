@@ -128,7 +128,7 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
 	for (int i = 0; numerator[i] != NULL; scale += 0.5f, i++);
 	auto fn = (Node *)Node::create(); //最後的回傳-分數的形狀
     Color4B wcolor4 = Color4B(wcolor.r,wcolor.g,wcolor.b,255);
-    if(*numerator != '0'){
+    if(*numerator != '0'){  //分子不為０ 生成分數
         Sprite *bar;
         auto Ntor = cocos2d::ui::Text::create(); //分子
         auto Dtor = cocos2d::ui::Text::create(); //分母
@@ -153,7 +153,7 @@ Node * CAnsCreater::Set_CAnsCreater(const char *numerator, const char *denominat
     }
 
 
-	for (int i = 0; front[i] != NULL && front[i] != '0'; i++) {
+	for (int i = 0; front[i] != NULL && front[i] != '0'; i++) {  //做整數(帶分數)
 		auto Ftor = cocos2d::ui::Text::create();
 		Ftor->setString(front);
 		Ftor->setTextColor(wcolor4);
@@ -413,7 +413,7 @@ void CAnsCreater::Input_ans(Node &Q, int number) {
     }
     
     if(outNumber[1] == 0)outNumber[1] = number;  //當分母設定為０表分母是隨題目變化
-   // else if(outNumber[2] == 0){outNumber[1] = 0;} //當分子是0 分母也為０;
+
     
     char n[4],d[4],f[4];
     sprintf(n, "%d", outNumber[2]);
