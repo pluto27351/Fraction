@@ -29,11 +29,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     
     if(!glview) {
-        glview = GLViewImpl::createWithRect("Fractional Number", Rect(0, 0, 2048, 1536), 1.0f);
+        glview = GLViewImpl::createWithRect("Fractional Number", Rect(0, 0, 2731, 1536), 1.0f);
         director->setOpenGLView(glview);
     }
-    
-    director->getOpenGLView()->setDesignResolutionSize(2048, 1536, ResolutionPolicy::SHOW_ALL);
+
+    director->getOpenGLView()->setDesignResolutionSize(2731, 1536, ResolutionPolicy::NO_BORDER);
     
     // turn on display FPS
     director->setDisplayStats(false);

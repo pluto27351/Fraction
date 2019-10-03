@@ -3,12 +3,12 @@
 #include <cmath>
 
 #define IMG_ANGLE 90 //圖片原角度
-
 #define ANGLE(a) a*M_PI/180 //角度轉弧度
 
-#define POS_1 Vec2(400,800)   //500,950
-#define POS_2 Vec2(400,1025)
-#define POSD Vec2(0,-475)    //0,-450 ３大概
+#define SCENE_POS Vec2(1365.5,768)
+#define POS_1 Vec2(SCENE_POS.x - 624,SCENE_POS.y + 32)
+#define POS_2 Vec2(SCENE_POS.x - 624,SCENE_POS.y + 257)
+#define POSD Vec2(0,-475)
 
 enum PIC_CUTMODE{NORMAL,SAMEHEIGHT,WATERPIC,LONGPIC};  //sprite-cutMode
 
@@ -65,13 +65,12 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
         case WATER:
             _mode = 3;
             _name = "water";
-         //   _hasline = true;
             CreateWater(scale,dividedP);
             setCutmode(WATERPIC);
             break;
         case BAMBOO:
             _name = "banboo";
-            _pos = Vec2(800,1100);
+            _pos = Vec2(SCENE_POS.x - 224,SCENE_POS.y+ 332);
             _dPos = Vec2(0,-200);
             _hasline = true;
             CreateNormalImg(scale,dividedP,c);
@@ -79,7 +78,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             break;
         case RIBBON:
             _name = "ribbon";
-            _pos = Vec2(650,1100);
+            _pos = Vec2(SCENE_POS.x - 374,SCENE_POS.y+ 332);
             _dPos = Vec2(0,-200);
             _hasline = true;
             CreateNormalImg(scale,dividedP,c);
@@ -87,7 +86,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             break;
         case DISTANCE:
             _name = "road";
-            _pos = Vec2(650,1100);
+            _pos = Vec2(SCENE_POS.x - 374,SCENE_POS.y+ 332);
             _dPos = Vec2(0,-200);
             _hasline = true;
             CreateNormalImg(scale,dividedP,c);
@@ -138,7 +137,7 @@ CCutImage::CCutImage(int picNum,int NodeAmount, float scale,int dividedP,int c)
             break;
         case BIGROLE:
             _name = "role";
-            _pos = Vec2(650,1100);
+            _pos = Vec2(SCENE_POS.x - 374,SCENE_POS.y+ 332);
             _dPos = Vec2(0,-200);
             _hasline = true;
             _mode = 4;
@@ -166,7 +165,7 @@ CCutImage::CCutImage(int picNum,float scale,int dividedP,int a,int b)
     colorGLProgrameState->retain();
     
     _fullAmount = 1;
-    _pos = Vec2(200,925);
+    _pos = Vec2(SCENE_POS.x - 824,SCENE_POS.y + 157);
     _dPos = Vec2(0,-120);
     switch (picNum) {
         case BIGBAMBOO:

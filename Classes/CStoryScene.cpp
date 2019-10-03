@@ -1,3 +1,5 @@
+#define SCREEN_POS Vec2(1365.5,768)
+
 #include "CStoryScene.h"
 #include "CTeachScene.h"
 #include "CMenuScene.h"
@@ -191,7 +193,7 @@ void CStoryScene::ShowUnitStory(int i) {
     for(int k=1; k<=_maxstory; k++){
         sprintf(spriteName, "img/story/story_%d_%d.png", i,k);
         auto sPic = (Sprite *)Sprite::create(spriteName);
-        sPic->setPosition(Vec2(1024,768));
+        sPic->setPosition(SCREEN_POS);
         sPic->setVisible(false);
         this->addChild(sPic, 100);
         _storyPic.push_back(sPic);

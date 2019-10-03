@@ -2,8 +2,10 @@
 #include "CQuePanel.h"
 #include "cocostudio/CocoStudio.h"
 
-#define QUE_POS Vec2(1024,1295)
-#define ANS_POS Vec2(1650,400)
+#define SCENE_POS Vec2(1365.5,768)
+#define QUE_POS Vec2(SCENE_POS.x,SCENE_POS.y + 527)
+#define ANS_POS Vec2(SCENE_POS.x + 650, SCENE_POS.y - 400)
+
 
 CQuePanel::~CQuePanel()
 {
@@ -26,8 +28,8 @@ CQuePanel::CQuePanel(int iUnitNo, Node &rootNode, cocos2d::Layer &parent)
     rootNode.removeChildByName("numPic");
 
     _blackMask = (Sprite *)Sprite::createWithSpriteFrameName("backcolor.png");
-    _blackMask->setPosition(Vec2(1024,768));
-    _blackMask->setScale(4);
+    _blackMask->setPosition(SCENE_POS);
+    _blackMask->setScale(5.5, 4);
     _blackMask->setVisible(false);
     _parentLayer->addChild(_blackMask,INTERFACE_LEVEL);
 

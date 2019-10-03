@@ -1,3 +1,5 @@
+#define SCREEN_POS Vec2(1365.5,768)
+
 #include "CMenuScene.h"
 #include "CTeachScene.h"
 #include "CStoryScene.h"
@@ -69,6 +71,7 @@ bool CMenuScene::init()
     _storyBtn.setScale(scale);
     rootNode->removeChildByName("storybtn");
     
+    //製作團隊
     pt = rootNode->getChildByName("m_btn")->getPosition();
     scale = rootNode->getChildByName("m_btn")->getScale();
     _memberBtn.setButtonInfo("member_btn.png","member_btn.png", *this, pt, 1);
@@ -82,8 +85,10 @@ bool CMenuScene::init()
     rootNode->removeChildByName("m_back");
 
     pt = rootNode->getChildByName("member")->getPosition();
+    scale = rootNode->getChildByName("member")->getScale();
     _member = Sprite::createWithSpriteFrameName("member.png");
     _member->setPosition(pt);
+    _member->setScale(scale);
     addChild(_member, 2);
     rootNode->removeChildByName("member");
     
@@ -205,7 +210,7 @@ void CMenuScene::ShowUnitStory(int i) {
     for(int k=1; k<=_maxstory; k++){
         sprintf(spriteName, "img/story/story_%d_%d.png", i,k);
         auto sPic = (Sprite *)Sprite::create(spriteName);
-        sPic->setPosition(Vec2(1024,768));
+        sPic->setPosition(SCREEN_POS);
         sPic->setVisible(false);
         this->addChild(sPic, 10);
         _storyPic.push_back(sPic);
