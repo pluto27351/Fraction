@@ -64,6 +64,8 @@
 		F13EDDF62222CD3C00DD2F00 /* CMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE02222CD3B00DD2F00 /* CMenuScene.cpp */; };
 		F13EDDF72222CD3C00DD2F00 /* CDrawingPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE42222CD3C00DD2F00 /* CDrawingPanel.cpp */; };
 		F13EDDF82222CD3C00DD2F00 /* CHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F13EDDE52222CD3C00DD2F00 /* CHomeScene.cpp */; };
+		F15F4E4223463A4B003FD238 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15F4E4123463A4B003FD238 /* Images.xcassets */; };
+		F15F4E4423463A55003FD238 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15F4E4323463A55003FD238 /* Images.xcassets */; };
 		F16CE27D22C9FF0500F7A329 /* CStoryScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F16CE27C22C9FF0500F7A329 /* CStoryScene.cpp */; };
 		F1BEE65822D1EA3900031F70 /* TCircleSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1BEE64822D1EA3900031F70 /* TCircleSprite.cpp */; };
 		F1BEE65922D1EA3900031F70 /* CCutImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1BEE64922D1EA3900031F70 /* CCutImage.cpp */; };
@@ -142,6 +144,8 @@
 		F13EDDE42222CD3C00DD2F00 /* CDrawingPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDrawingPanel.cpp; sourceTree = "<group>"; };
 		F13EDDE52222CD3C00DD2F00 /* CHomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CHomeScene.cpp; sourceTree = "<group>"; };
 		F13EDDF32222CD3C00DD2F00 /* CHomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHomeScene.h; sourceTree = "<group>"; };
+		F15F4E4123463A4B003FD238 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Fraction-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		F15F4E4323463A55003FD238 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Fraction-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		F16CE27C22C9FF0500F7A329 /* CStoryScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CStoryScene.cpp; sourceTree = "<group>"; };
 		F16CE27E22C9FF1400F7A329 /* CStoryScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CStoryScene.h; sourceTree = "<group>"; };
 		F1BEE64822D1EA3900031F70 /* TCircleSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TCircleSprite.cpp; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				F15F4E4323463A55003FD238 /* Images.xcassets */,
 				5087E77117EB970100C73F5D /* Icons */,
 				503AE0FA17EB989F00D1A890 /* AppController.h */,
 				503AE0FB17EB989F00D1A890 /* AppController.mm */,
@@ -273,6 +278,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F15F4E4123463A4B003FD238 /* Images.xcassets */,
 				01F741B993AED8B544209AD5 /* res */,
 			);
 			name = Resources;
@@ -466,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				F15F4E4223463A4B003FD238 /* Images.xcassets in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -473,6 +480,7 @@
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				F15F4E4423463A55003FD238 /* Images.xcassets in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -540,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
@@ -581,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
